@@ -1,0 +1,191 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Daily Deals Pipeline</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --bg:#F2F3F9;
+    --surface:#FFFFFF;
+    --surface-2:#E9EBF4;
+    --border:#DBDEEC;
+    --text:#17251C;
+    --text-dim:#5B6178;
+    --brand:#146C43;
+    --brand-soft:#E1EFE7;
+    --accent:#E8562F;
+    --accent-soft:#FDE7DE;
+    --gold:#D9B76A;
+    --shadow:0 1px 2px rgba(24,28,48,.05), 0 8px 24px rgba(24,28,48,.06);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1410;
+      --surface:#16201A;
+      --surface-2:#1C2820;
+      --border:#2A3A30;
+      --text:#EDF3EE;
+      --text-dim:#9AAA9F;
+      --brand:#3FAE7C;
+      --brand-soft:#1B3327;
+      --accent:#F0805A;
+      --accent-soft:#3A2419;
+      --gold:#E6C77E;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1410; --surface:#16201A; --surface-2:#1C2820; --border:#2A3A30;
+    --text:#EDF3EE; --text-dim:#9AAA9F; --brand:#3FAE7C; --brand-soft:#1B3327;
+    --accent:#F0805A; --accent-soft:#3A2419; --gold:#E6C77E;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Poppins',system-ui,sans-serif; font-variant-numeric:tabular-nums; }
+  h1,h2,h3{ font-family:'Archivo Black',sans-serif; margin:0; text-wrap:balance; }
+
+  .page{ max-width:1080px; margin:0 auto; padding:36px 20px 60px; display:flex; flex-direction:column; gap:32px; }
+
+  .hero{ display:flex; flex-direction:column; gap:10px; }
+  .eyebrow{ font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+  .hero h1{ font-size:clamp(28px,5vw,40px); font-weight:400; }
+  .hero p{ color:var(--text-dim); font-size:15.5px; max-width:620px; line-height:1.55; margin:0; }
+  .meta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:4px; }
+  .meta-pill{ font-size:12.5px; font-weight:600; padding:6px 13px; border-radius:999px; background:var(--surface-2); border:1px solid var(--border); color:var(--text-dim); }
+
+  .stats-bar{ display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+  .stat{ background:var(--surface); padding:16px 10px; text-align:center; display:flex; flex-direction:column; gap:3px; }
+  .stat-value{ font-family:'Archivo Black',sans-serif; font-size:clamp(16px,3vw,22px); }
+  .stat-label{ font-size:11px; color:var(--text-dim); text-transform:uppercase; letter-spacing:.06em; }
+
+  .section h2{ font-size:20px; font-weight:400; margin-bottom:4px; }
+  .section .sub{ font-size:13.5px; color:var(--text-dim); margin:0 0 16px; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px; }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; }
+  .card .photo{ background:#FFFFFF; padding:16px; display:flex; align-items:center; justify-content:center; height:150px; border-bottom:1px solid var(--border); }
+  .card .photo img{ max-width:100%; max-height:100%; object-fit:contain; }
+  .card .body{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .kicker{ font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
+  .card h3{ font-family:'Poppins',sans-serif; font-weight:700; font-size:14.5px; line-height:1.35; }
+  .card .product-name{ font-size:12px; color:var(--text-dim); }
+  .price-row{ display:flex; align-items:center; gap:8px; margin-top:2px; }
+  .price{ font-family:'Archivo Black',sans-serif; font-size:16px; color:var(--brand); }
+  .rating{ font-size:11.5px; color:var(--text-dim); }
+  .link-row{ margin-top:auto; padding-top:8px; border-top:1px dashed var(--border); }
+  .link-row a{ font-size:11px; color:var(--brand); word-break:break-all; text-decoration:none; }
+  .link-row a:hover{ text-decoration:underline; }
+  .status{ font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px; display:inline-block; }
+  .status.posted{ background:var(--brand-soft); color:var(--brand); }
+  .status.pending{ background:var(--accent-soft); color:var(--accent); }
+
+  .footer{ text-align:center; color:var(--text-dim); font-size:12.5px; line-height:1.6; padding-top:8px; border-top:1px solid var(--border); }
+
+  @media (max-width:480px){ .grid{ grid-template-columns:1fr 1fr; } .card .photo{ height:110px; } }
+</style>
+
+<div class="page">
+  <header class="hero">
+    <div class="eyebrow">Daily Deals UK · Production Pipeline</div>
+    <h1>Today's Picks</h1>
+    <p>Every batch brings 10 fresh, vetted trending products for the Pinterest board — real Amazon ratings checked (4.0★+ only), real product photos, ready-made headlines and affiliate links. Nothing here gets posted automatically — review it, then post the ones you like from pinterest.com/thedailydealsuk.</p>
+    <div class="meta-row">
+      <span class="meta-pill" id="updated-pill">Last updated 21 Sept 2026</span>
+      <span class="meta-pill">Board: thedailydealsuk</span>
+      <span class="meta-pill">Tag: dailydeal07d1-21</span>
+    </div>
+  </header>
+
+  <section class="stats-bar">
+    <div class="stat"><span class="stat-value">30</span><span class="stat-label">Posted so far</span></div>
+    <div class="stat"><span class="stat-value">0</span><span class="stat-label">Pending review</span></div>
+    <div class="stat"><span class="stat-value">4.0★+</span><span class="stat-label">Rating bar</span></div>
+    <div class="stat"><span class="stat-value">3</span><span class="stat-label">Batches run</span></div>
+  </section>
+
+  <section class="section">
+    <h2>Third batch — Halloween 2026 — already live</h2>
+    <p class="sub">Getting ahead of the season: 10 Halloween 2026 picks covering this year's trends (giant skeletons, gothic glam, fog &amp; lighting, rustic harvest, family-friendly and party supplies), verified against live Amazon UK listings and posted 21 Sept for the 6&ndash;10 week Pinterest lead time before 31 Oct.</p>
+    <div class="grid" id="halloween-grid"></div>
+  </section>
+
+  <section class="section">
+    <h2>Second batch — already live</h2>
+    <p class="sub">10 pins researched on 21 Sept and posted to the board. None repeat the first batch.</p>
+    <div class="grid" id="today-grid"></div>
+  </section>
+
+  <section class="section">
+    <h2>First batch — already live</h2>
+    <p class="sub">The 10 pins posted on 18 Sept. Shown here for reference; new batches will not repeat these.</p>
+    <div class="grid" id="live-grid"></div>
+  </section>
+
+  <footer class="footer">
+    <p>This page is refreshed automatically with each research batch. Posting to Pinterest always stays a manual step.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var TODAY = [
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51gRpH2hIyL._AC_SX679_.jpg", kicker:"Kitchen Find", headline:"The £6 corn hack every BBQ needs", product:"Joie Corn Star Cob Holders, 2 Sets", price:"£5.99", rating:"4.5★ · 1,712 reviews", link:"https://www.amazon.co.uk/dp/B00LMZJSVE?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61kSyC6HXDL._AC_SX679_.jpg", kicker:"Viral Kitchen Buy", headline:"Get every last bit out of the jar", product:"OTOTO Splatypus Jar Spatula", price:"£10.95", rating:"4.7★ · 5,465 reviews", link:"https://www.amazon.co.uk/dp/B07H7ZDBV4?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71dV3VJjqWL._AC_SX679_.jpg", kicker:"Kitchen Essential", headline:"One tool instead of six drawer gadgets", product:"Stainless Steel 6-in-1 Vegetable Peeler Set", price:"£10.89", rating:"4.6★ · 4,590 reviews", link:"https://www.amazon.co.uk/dp/B0BZ76P74N?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71VmV11AvIL._AC_SX679_.jpg", kicker:"Cleaning Hack", headline:"34,000 reviews can't be wrong about this scrubber", product:"SONICSCRUBBER Oscillating Scrubbing Brush", price:"£16.95", rating:"4.5★ · 34,533 reviews", link:"https://www.amazon.co.uk/dp/B01LVV6THF?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51leJY3vwvL._AC_SX679_.jpg", kicker:"Genius Find", headline:"Finally — a brush that fits every gap", product:"2pc Crevice Cleaning Brush Set", price:"£9.49", rating:"4.5★ · 2,312 reviews", link:"https://www.amazon.co.uk/dp/B0CHQ35R44?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71MTNFAQWgL._AC_SX679_.jpg", kicker:"Self Care", headline:"Spa night for under £6", product:"Face Mask Mixing Bowl Set", price:"£5.98", rating:"4.4★ · 901 reviews", link:"https://www.amazon.co.uk/dp/B08MXTCZ7C?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51bQ83TViCL._AC_SX679_.jpg", kicker:"Pro Beauty Pick", headline:"The brush makeup artists swear by", product:"Rose and Ben C42 Angled Foundation Brush", price:"£55.84", rating:"4.7★ · 208 reviews", link:"https://www.amazon.co.uk/dp/B0CYTDVMVD?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/710pcDuv7vL._AC_SX679_.jpg", kicker:"Beauty Hack", headline:"Clean brushes in 30 seconds flat", product:"Makeup Brush Cleaner Solution + Mat, 2pc Set", price:"£14.99", rating:"4.6★ · 77 reviews", link:"https://www.amazon.co.uk/dp/B0G4VVJZFJ?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51GmsABIidL._AC_SX679_.jpg", kicker:"Home Essential", headline:"The £12 caddy that tidies your sink instantly", product:"Metaltex Tidy-Tex Kitchen Sink Organiser", price:"£11.95", rating:"4.4★ · 18,282 reviews", link:"https://www.amazon.co.uk/dp/B06X9H6XN5?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71v8dlb7B3L._AC_SX679_.jpg", kicker:"Organisation Win", headline:"Finally organise that chaotic cupboard", product:"Vtopmart 4-Pack Clear Stackable Storage Drawers", price:"£38.99", rating:"4.7★ · 1,492 reviews", link:"https://www.amazon.co.uk/dp/B0DB5MH7YQ?tag=dailydeal07d1-21" }
+  ];
+
+  var HALLOWEEN = [
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61C-lNYSE5L._AC_SX679_.jpg", kicker:"Halloween 2026", headline:"This year's £57 garden showstopper", product:"JOYIN 5.6FT Posable Life Size Skeleton", price:"£56.99", rating:"4.6★ · 368 reviews", link:"https://www.amazon.co.uk/dp/B0CFXMQ3P4?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71QeuLqUaoL._AC_SX679_.jpg", kicker:"Go Big Or Go Home", headline:"The inflatable that stops traffic", product:"HOPOCO 12FT Inflatable Ghost with 3 Skulls", price:"£64.08", rating:"4.4★ · 215 reviews", link:"https://www.amazon.co.uk/dp/B0CBMMQFN1?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81qyeykgKQL._AC_SX679_.jpg", kicker:"Gothic Glam", headline:"Dark academia decor, all year round", product:"Black Sheer Gothic Curtains, 2 Panels", price:"£30.50", rating:"4.8★ · 3,648 reviews", link:"https://www.amazon.co.uk/dp/B0FHGXN8J2?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/611IY2kAI4L._AC_SX679_.jpg", kicker:"Novelty Find", headline:"The doorbell sign everyone's laughing at", product:"IRISIVITA \"Old Gods\" Gothic Metal Sign", price:"£15.41", rating:"4.8★ · 986 reviews", link:"https://www.amazon.co.uk/dp/B0B65F34GX?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81X5cF6cK1L._AC_SX679_.jpg", kicker:"Gothic Glam", headline:"Turns any window into stained glass", product:"Halloween Pumpkin Stained Glass Suncatcher", price:"£14.00", rating:"4.8★ · 810 reviews", link:"https://www.amazon.co.uk/dp/B0FJKZL2B6?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51GuBYcSwNL._SX522_.jpg", kicker:"Party Essential", headline:"4,300+ reviews swear by this fog juice", product:"QTX Fog Fluid, 5 Litres", price:"£16.69", rating:"4.6★ · 4,372 reviews", link:"https://www.amazon.co.uk/dp/B000L97WFQ?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71tGzJxXscL._AC_SX679_.jpg", kicker:"Set The Scene", headline:"Halloween fog, wedding-grade quality", product:"AGPtEK RGB LED Fog Machine", price:"£55.99", rating:"4.5★ · 169 reviews", link:"https://www.amazon.co.uk/dp/B088NSQ1DL?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71lW9ZpjHpL._AC_SX679_.jpg", kicker:"Rustic Harvest", headline:"Instant autumn mantel makeover", product:"DN DECONATION Fall Pumpkin Decor Set", price:"£28.96", rating:"4.7★ · 374 reviews", link:"https://www.amazon.co.uk/dp/B0GWLBHP2B?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/6188pVRtV2L._AC_SX679_.jpg", kicker:"Family-Friendly", headline:"Handmade wool garland kids will love", product:"Glaciart One Felt Balls + Ghosts Garland", price:"£19.56", rating:"4.4★ · 271 reviews", link:"https://www.amazon.co.uk/dp/B08CXTKY8F?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61PH2E-9uoL._AC_SX679_.jpg", kicker:"Party Starter", headline:"£9 for a full balloon arch", product:"100pc Black and Orange Balloons", price:"£8.99", rating:"4.6★ · 1,022 reviews", link:"https://www.amazon.co.uk/dp/B0C95TSNDN?tag=dailydeal07d1-21" }
+  ];
+
+  var LIVE = [
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81prpsh6q0L._AC_SX679_.jpg", kicker:"Trending Today", headline:"The £8 gadget that replaced 5 kitchen knives", product:"Fullstar Mandoline Vegetable Slicer", price:"£7.99", rating:"3.9★", link:"https://www.amazon.co.uk/dp/B0FZW8H1FL?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71zNI9AJzML._AC_SX679_.jpg", kicker:"Cleaning Hack", headline:"Why did no one tell me about this sooner?", product:"Snap Grip Lazy Flat Mop, 22 Cloths", price:"£26.52", rating:"4.4★", link:"https://www.amazon.co.uk/dp/B0H22FWD7S?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71ZjnwrH7iL._AC_SX679_.jpg", kicker:"Kitchen Find", headline:"Healthier cooking for under £10", product:"YARRAMATE 2-in-1 Oil Sprayer", price:"£7.19", rating:"4.4★", link:"https://www.amazon.co.uk/dp/B0CP4XY9QC?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61hOWCBXXDL._AC_SX679_.jpg", kicker:"Kitchen Essential", headline:"Never overcook meat again", product:"DOQAUS Meat Thermometer w/ Backlight", price:"£7.99", rating:"4.5★", link:"https://www.amazon.co.uk/dp/B0D2H1HR4G?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71cdvC09tUL._AC_SX679_.jpg", kicker:"Baking Hack", headline:"The oven hack nobody talks about", product:"Linda's Essentials Oven Liners (2 Pack)", price:"£6.64", rating:"4.5★", link:"https://www.amazon.co.uk/dp/B0D7MFC9JL?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/718Q630gnyL._AC_SX679_.jpg", kicker:"Home Essential", headline:"If you own a Henry Hoover, you need these", product:"Genuine Numatic Hepa-Flo Bags (10 Pack)", price:"£14.99", rating:"4.7★", link:"https://www.amazon.co.uk/dp/B09QMLG65D?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71+P5rHgrYL._AC_SX679_.jpg", kicker:"Household Pick", headline:"Best steam iron for a busy household", product:"Russell Hobbs Steam Iron, 3100W", price:"£34.00", rating:"4.4★", link:"https://www.amazon.co.uk/dp/B00K8S8OXO?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81eu+7-JDsL._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpg", kicker:"Genius Find", headline:"Stop wasting food — reseal any tin instantly", product:"OHMO 3-in-1 Silicone Can Lids", price:"£5.99", rating:"4.4★", link:"https://www.amazon.co.uk/dp/B095C2VCCZ?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51B1fN9WKVL._AC_SX679_.jpg", kicker:"Self Care", headline:"The £6 massager with 134,000 five-star reviews", product:"HEETA Scalp Massager Shampoo Brush", price:"£5.99", rating:"4.4★", link:"https://www.amazon.co.uk/dp/B095WCH2TD?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61vViCoZj7L._AC_SX679_.jpg", kicker:"Viral Beauty", headline:"16-hour laminated brows for £8", product:"NYX Brow Glue Crazy Lift 24HR Hold", price:"£7.99", rating:"4.3★", link:"https://www.amazon.co.uk/dp/B0F2TLPT18?tag=dailydeal07d1-21" }
+  ];
+
+  function card(item, status){
+    return '<div class="card">' +
+      '<div class="photo"><img src="'+item.img+'" referrerpolicy="no-referrer" alt=""></div>' +
+      '<div class="body">' +
+        '<span class="kicker">'+item.kicker+'</span>' +
+        '<h3>'+item.headline+'</h3>' +
+        '<span class="product-name">'+item.product+'</span>' +
+        '<div class="price-row"><span class="price">'+item.price+'</span><span class="rating">'+item.rating+'</span></div>' +
+        '<div class="link-row"><span class="status '+status+'">'+(status==='posted'?'Posted':'Pending')+'</span><br><a href="'+item.link+'" target="_blank" rel="noopener">'+item.link+'</a></div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  document.getElementById('halloween-grid').innerHTML = HALLOWEEN.map(function(i){return card(i,'posted');}).join('');
+  document.getElementById('today-grid').innerHTML = TODAY.map(function(i){return card(i,'posted');}).join('');
+  document.getElementById('live-grid').innerHTML = LIVE.map(function(i){return card(i,'posted');}).join('');
+})();
+</script>
+
+</body></html>
