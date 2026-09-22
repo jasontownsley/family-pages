@@ -92,7 +92,7 @@
     <h1>Today's Picks</h1>
     <p>Every batch brings 10 fresh, vetted trending products for the Pinterest board — real Amazon ratings checked (4.0★+ only), real product photos, ready-made headlines and affiliate links. Nothing here gets posted automatically — review it, then post the ones you like from pinterest.com/thedailydealsuk.</p>
     <div class="meta-row">
-      <span class="meta-pill" id="updated-pill">Last updated 21 Sept 2026</span>
+      <span class="meta-pill" id="updated-pill">Last updated 22 Sept 2026</span>
       <span class="meta-pill">Board: thedailydealsuk</span>
       <span class="meta-pill">Tag: dailydeal07d1-21</span>
     </div>
@@ -100,9 +100,15 @@
 
   <section class="stats-bar">
     <div class="stat"><span class="stat-value">30</span><span class="stat-label">Posted so far</span></div>
-    <div class="stat"><span class="stat-value">0</span><span class="stat-label">Pending review</span></div>
+    <div class="stat"><span class="stat-value">10</span><span class="stat-label">Pending review</span></div>
     <div class="stat"><span class="stat-value">4.0★+</span><span class="stat-label">Rating bar</span></div>
-    <div class="stat"><span class="stat-value">3</span><span class="stat-label">Batches run</span></div>
+    <div class="stat"><span class="stat-value">4</span><span class="stat-label">Batches run</span></div>
+  </section>
+
+  <section class="section">
+    <h2>Ready for review — new batch</h2>
+    <p class="sub">10 fresh picks researched on 22 Sept, not yet posted to the board. Every ASIN here is new — checked against everything already live or in a previous batch on this page.</p>
+    <div class="grid" id="review-grid"></div>
   </section>
 
   <section class="section">
@@ -130,7 +136,7 @@
 
 <script>
 (function(){
-  var TODAY = [
+  var BATCH2 = [
     { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51gRpH2hIyL._AC_SX679_.jpg", kicker:"Kitchen Find", headline:"The £6 corn hack every BBQ needs", product:"Joie Corn Star Cob Holders, 2 Sets", price:"£5.99", rating:"4.5★ · 1,712 reviews", link:"https://www.amazon.co.uk/dp/B00LMZJSVE?tag=dailydeal07d1-21" },
     { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61kSyC6HXDL._AC_SX679_.jpg", kicker:"Viral Kitchen Buy", headline:"Get every last bit out of the jar", product:"OTOTO Splatypus Jar Spatula", price:"£10.95", rating:"4.7★ · 5,465 reviews", link:"https://www.amazon.co.uk/dp/B07H7ZDBV4?tag=dailydeal07d1-21" },
     { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71dV3VJjqWL._AC_SX679_.jpg", kicker:"Kitchen Essential", headline:"One tool instead of six drawer gadgets", product:"Stainless Steel 6-in-1 Vegetable Peeler Set", price:"£10.89", rating:"4.6★ · 4,590 reviews", link:"https://www.amazon.co.uk/dp/B0BZ76P74N?tag=dailydeal07d1-21" },
@@ -141,6 +147,19 @@
     { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/710pcDuv7vL._AC_SX679_.jpg", kicker:"Beauty Hack", headline:"Clean brushes in 30 seconds flat", product:"Makeup Brush Cleaner Solution + Mat, 2pc Set", price:"£14.99", rating:"4.6★ · 77 reviews", link:"https://www.amazon.co.uk/dp/B0G4VVJZFJ?tag=dailydeal07d1-21" },
     { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51GmsABIidL._AC_SX679_.jpg", kicker:"Home Essential", headline:"The £12 caddy that tidies your sink instantly", product:"Metaltex Tidy-Tex Kitchen Sink Organiser", price:"£11.95", rating:"4.4★ · 18,282 reviews", link:"https://www.amazon.co.uk/dp/B06X9H6XN5?tag=dailydeal07d1-21" },
     { img:"https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71v8dlb7B3L._AC_SX679_.jpg", kicker:"Organisation Win", headline:"Finally organise that chaotic cupboard", product:"Vtopmart 4-Pack Clear Stackable Storage Drawers", price:"£38.99", rating:"4.7★ · 1,492 reviews", link:"https://www.amazon.co.uk/dp/B0DB5MH7YQ?tag=dailydeal07d1-21" }
+  ];
+
+  var TODAY = [
+    { img:"https://m.media-amazon.com/images/I/81IC5+bWDgL._AC_SL1500_.jpg", kicker:"Kitchen Find", headline:"The £7 mat with 117,000+ five-star reviews", product:"Amazon Basics Silicone Baking Mat, 2 Pack", price:"£6.59", rating:"4.6★ · 117,173 reviews", description:"Skip the parchment paper forever — this reusable non-stick mat handles cookies, roast veg and everything in between, and over 117,000 shoppers have rated it 4.6 stars. #kitchenhacks #bakingtips #amazonfinds #reusable", link:"https://www.amazon.co.uk/dp/B0725GYNG6?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/51dsvejAGIL._AC_SL1500_.jpg", kicker:"Cleaning Hack", headline:"The £17 scrubber that does bathroom day for you", product:"Homtronics Cordless Electric Spin Scrubber, 9 Heads", price:"£16.99", rating:"4.1★ · 424 reviews", description:"Waterproof, cordless and swaps between 9 brush heads for tile, grout, tubs and taps — no more scrubbing on your knees. #cleaninghacks #cleantok #amazonfinds #bathroomcleaning", link:"https://www.amazon.co.uk/dp/B0C7CPQDR7?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/81UZVEKgC+L._AC_SL1500_.jpg", kicker:"Organisation Win", headline:"The £18 set that fixes your chaotic fridge", product:"6-Pack Stackable Refrigerator Organiser Bins", price:"£17.99", rating:"4.5★ · 176 reviews", description:"Clear stackable bins with handles turn a messy fridge into a pantry-goals fridge in one afternoon. #fridgeorganisation #kitchenhacks #organisationhack #amazonfinds", link:"https://www.amazon.co.uk/dp/B098NYRZ81?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/81lES1qHoPL._AC_SL1500_.jpg", kicker:"Home Essential", headline:"Finally, a use for that dead space under the sink", product:"Puricon 2-Tier Pull-Out Under Sink Organiser", price:"£18.95", rating:"4.3★ · 629 reviews", description:"A sliding 2-tier drawer that fits around the pipework and instantly doubles your under-sink storage. #underthesink #organisationhack #kitchenstorage #amazonfinds", link:"https://www.amazon.co.uk/dp/B0BRPK63G2?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/51X2YAXWZpL._AC_.jpg", kicker:"Beauty Storage", headline:"The £9 spinner that ends the makeup drawer chaos", product:"BULLA 360° Rotating Makeup Organiser, 5 Compartments", price:"£8.99", rating:"4.7★ · 603 reviews · 300+ bought past month", description:"Every lipstick and brush within reach with one spin — 300+ people bought this in the past month alone. #makeuporganisation #vanitygoals #beautyhacks #amazonfinds", link:"https://www.amazon.co.uk/dp/B0CG96N7BT?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/81LCMRjcQ2L._AC_SL1500_.jpg", kicker:"Self Care", headline:"The £10 facial tool with 2,700+ five-star reviews", product:"Jade Roller & Gua Sha Facial Set", price:"£9.99", rating:"4.4★ · 2,719 reviews", description:"Five minutes of rolling depuffs and de-stresses — the at-home facial that keeps going viral for a reason. #selfcare #skincareroutine #guasha #amazonfinds", link:"https://www.amazon.co.uk/dp/B07ZX6KMRK?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/81x0IpMbnTL._AC_SL1500_.jpg", kicker:"Self Care", headline:"The Amazon's Choice shower head hard-water areas swear by", product:"MEKO 15-Stage Filtered Shower Head", price:"£27.99", rating:"4.3★ · 741 reviews · Amazon's Choice", description:"Softer skin, calmer hair, less limescale — this 15-stage filter head is an Amazon's Choice pick for hard water homes. #selfcare #showerupgrade #hardwater #amazonfinds", link:"https://www.amazon.co.uk/dp/B0BVM28CSL?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/713SGvXQ+pL._AC_SL1500_.jpg", kicker:"Home Essential", headline:"The £10 strip that stops your heating bill leaking out the door", product:"Silicone Self-Adhesive Door Draught Excluder", price:"£9.99", rating:"4.5★ · 88 reviews", description:"Peel, stick, done — blocks drafts, noise and dust for a fraction of the cost of a new door. #homehacks #energysaving #wintertips #amazonfinds", link:"https://www.amazon.co.uk/dp/B0FQ57VVRK?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/81ppxRnWj9L._AC_SL1500_.jpg", kicker:"Cleaning Hack", headline:"The premium spin scrubber with 1,000+ reviews", product:"HOTO Electric Spin Scrubber with Extension Pole", price:"£59.99", rating:"4.2★ · 1,017 reviews · 50+ bought past month", description:"Dual-speed, waterproof and comes with an extension pole for showers, floors and tiles without the backache. #cleaninghacks #deepclean #cleantok #amazonfinds", link:"https://www.amazon.co.uk/dp/B0CPXQ4XQK?tag=dailydeal07d1-21" },
+    { img:"https://m.media-amazon.com/images/I/71nDeul9+UL._AC_SL1500_.jpg", kicker:"Organisation Win", headline:"11 hooks, zero drilling, £14", product:"Amtido 11-Hook Over Door Coat Rack", price:"£13.99", rating:"4.2★ · 134 reviews", description:"Hangs straight over any door for instant coat, towel and bag storage — no tools, no damage. #organisationhack #smallspaceliving #homehacks #amazonfinds", link:"https://www.amazon.co.uk/dp/B07F778W25?tag=dailydeal07d1-21" }
   ];
 
   var HALLOWEEN = [
@@ -177,13 +196,15 @@
         '<h3>'+item.headline+'</h3>' +
         '<span class="product-name">'+item.product+'</span>' +
         '<div class="price-row"><span class="price">'+item.price+'</span><span class="rating">'+item.rating+'</span></div>' +
-        '<div class="link-row"><span class="status '+status+'">'+(status==='posted'?'Posted':'Pending')+'</span><br><a href="'+item.link+'" target="_blank" rel="noopener">'+item.link+'</a></div>' +
+        (item.description ? '<p class="product-name">'+item.description+'</p>' : '') +
+        '<div class="link-row"><span class="status '+status+'">'+(status==='posted'?'Posted':'Pending review')+'</span><br><a href="'+item.link+'" target="_blank" rel="noopener">'+item.link+'</a></div>' +
       '</div>' +
     '</div>';
   }
 
+  document.getElementById('review-grid').innerHTML = TODAY.map(function(i){return card(i,'pending');}).join('');
   document.getElementById('halloween-grid').innerHTML = HALLOWEEN.map(function(i){return card(i,'posted');}).join('');
-  document.getElementById('today-grid').innerHTML = TODAY.map(function(i){return card(i,'posted');}).join('');
+  document.getElementById('today-grid').innerHTML = BATCH2.map(function(i){return card(i,'posted');}).join('');
   document.getElementById('live-grid').innerHTML = LIVE.map(function(i){return card(i,'posted');}).join('');
 })();
 </script>
