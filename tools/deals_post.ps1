@@ -15,7 +15,7 @@ python tools\build_deals.py 2>&1 | Out-String
 if ($LASTEXITCODE) { throw "build_deals.py failed" }
 
 cmd /c "git add deals 2>&1" | Out-String
-cmd /c "git commit -m "Daily Deals UK: $Date roundup" 2>&1" | Out-String
+git commit -q -m "Daily Deals UK: $Date roundup" | Out-String
 cmd /c "git push 2>&1" | Out-String
 if ($LASTEXITCODE) { throw "git push failed" }
 "Published https://jasontownsley.github.io/family-pages/deals/$Date/"
