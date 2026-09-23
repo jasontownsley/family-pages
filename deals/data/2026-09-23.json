@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-23",
+  "theme": "Home Organisation",
+  "pin_title": "4 Home Organisation Storage Buys UK Homes Swear By",
+  "pin_hook": "Tidy drawers, closets and hallways made easy",
+  "pin_description": "Well-reviewed home organisation and storage finds from Amazon UK: foldable drawer organisers, stackable fabric storage cubes, an entryway shoe rack and a foldable closet organiser. Simple storage ideas to declutter every room. #ad #homeorganisation #storagesolutions #declutter #ukhome",
+  "intro": "A few clever, well-loved storage buys that make it easier to keep drawers, closets and entryways tidy without a big renovation.",
+  "products": [
+    {"asin": "B0B7VLWYS8", "name": "DIMJ 12 Pack Drawer Organisers Foldable Storage Box Fabric Drawer Dividers", "short_name": "DIMJ drawer organisers", "headline": "Stop drawers turning into a jumble", "why": "Foldable fabric dividers that keep socks, underwear and accessories separated and easy to find, and they collapse flat when not needed.", "category": "Storage"},
+    {"asin": "B01LKYX5O2", "name": "SONGMICS Set of 6 Foldable Storage Boxes, Fabric Storage Cubes", "short_name": "SONGMICS storage cubes", "headline": "Cube storage that actually looks tidy", "why": "Sturdy fabric cubes with handles that slot into shelving units or stand alone, handy for toys, clothes or general clutter.", "category": "Storage"},
+    {"asin": "B07SJZJ7YK", "name": "VASAGLE 5-Tier Shoe Rack with 4 Metal Mesh Shelves", "short_name": "VASAGLE shoe rack", "headline": "Get shoes off the hallway floor", "why": "A sturdy mesh shelf rack that holds a family's worth of shoes and still leaves a flat top surface for bags or keys.", "category": "Storage"},
+    {"asin": "B07MZKWS14", "name": "Simple Houseware 3 Pack Foldable Closet Organizer Clothing Storage Box", "short_name": "Foldable closet organiser", "headline": "Fold it flat, fill it, done", "why": "Clear-window boxes that make it easy to see what's inside, great for seasonal clothes, bedding or under-bed storage.", "category": "Storage"}
+  ]
+}
