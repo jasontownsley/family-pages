@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-24",
+  "theme": "Beauty & Self-Care",
+  "pin_title": "5 Beauty & Self-Care Buys UK Shoppers Rate Highly",
+  "pin_hook": "Little rituals that make a big difference",
+  "pin_description": "Well-reviewed beauty and self-care picks from Amazon UK: a mulberry silk pillowcase, a spa gift set, the cult Tangle Teezer hairbrush, Vaseline lip balm and CeraVe moisturiser. Simple self-care ideas and gifts for her. #ad #selfcare #beautyfinds #skincare #ukbeauty",
+  "intro": "A handful of small, well-loved beauty and self-care buys that make everyday routines feel a bit more like a treat.",
+  "products": [
+    {"asin": "B072NRYX1D", "name": "ALASKA BEAR 100% Mulberry Silk Pillowcase for Hair and Skin Health, Standard Size (White)", "short_name": "Alaska Bear silk pillowcase", "headline": "Wake up with softer hair and skin", "why": "A genuine mulberry silk pillowcase that's gentler on hair and skin overnight than cotton, and it's one of Amazon UK's most-reviewed silk pillowcases.", "category": "Self-care"},
+    {"asin": "B0C9G33R77", "name": "Sanctuary Spa Spa Day Discovery Gift Set", "short_name": "Sanctuary Spa gift set", "headline": "A ready-made at-home spa day", "why": "A vegan pamper set with a nice mix of body and skincare minis, easy to reach for on a slow evening or to give as a gift.", "category": "Self-care"},
+    {"asin": "B0086QEODO", "name": "Tangle Teezer The Original Detangling Hairbrush for Wet & Dry Hair", "short_name": "Tangle Teezer brush", "headline": "Detangles without the yanking", "why": "A cult-favourite brush that glides through knots on wet or dry hair, and it's one of the best-reviewed hairbrushes on Amazon UK.", "category": "Hair care"},
+    {"asin": "B09G8ZRT7L", "name": "Vaseline Lip Therapy Stick, Original Petroleum Jelly Lip Balm (4 Pack)", "short_name": "Vaseline lip balm 4-pack", "headline": "Keep one everywhere you need it", "why": "A simple, reliable lip balm that fixes dry lips fast, and the multipack means there's always one within reach.", "category": "Skincare"},
+    {"asin": "B07CH9XWHR", "name": "CeraVe Moisturising Cream for Dry to Very Dry Skin, Face & Body Cream, 340g", "short_name": "CeraVe moisturising cream", "headline": "A dermatologist-loved everyday moisturiser", "why": "A fragrance-free, ceramide-rich cream that a huge number of UK shoppers rely on for dry skin on both face and body.", "category": "Skincare"}
+  ]
+}
