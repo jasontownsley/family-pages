@@ -18,4 +18,4 @@ cmd /c "git add deals 2>&1" | Out-String
 git commit -q -m "Daily Deals UK: $Date roundup" | Out-String
 cmd /c "git push 2>&1" | Out-String
 if ($LASTEXITCODE) { throw "git push failed" }
-"Published https://jasontownsley.github.io/family-pages/deals/$Date/"
+"Published https://dailydealsuk.co.uk/deals/$Date/"

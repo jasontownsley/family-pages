@@ -20,7 +20,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-SITE_URL = "https://jasontownsley.github.io/family-pages/deals"
+SITE_URL = "https://dailydealsuk.co.uk/deals"
 BRAND = "Daily Deals UK"
 TAG = "dailydeal07d1-21"
 DISCLOSURE = "As an Amazon Associate I earn from qualifying purchases."
