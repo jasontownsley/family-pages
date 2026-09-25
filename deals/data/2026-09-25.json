@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-25",
+  "theme": "Gifts Under £20",
+  "pin_title": "4 Brilliant Gifts Under £20 UK Shoppers Love",
+  "pin_hook": "Budget-friendly presents that still feel generous",
+  "pin_description": "Well-reviewed gifts under £20 from Amazon UK: a Thorntons chocolate hamper, a light-up Baylis & Harding pamper decanter, a Cadbury Heroes tub and the classic Uno card game. Easy present ideas for birthdays, thank-yous and Christmas on a budget. #ad #giftsunder20 #giftideas #ukgifts #budgetgifts",
+  "intro": "A small budget doesn't mean a boring gift - these four are all crowd-pleasers that consistently earn great reviews without breaking £20.",
+  "products": [
+    {"asin": "B09D9N92Z6", "name": "Thorntons Classic Collection Chocolate Hamper Gift Box, Assorted Milk, White and Dark Chocolates, 449g", "short_name": "Thorntons Classic hamper", "headline": "A chocolate box that suits everyone", "why": "A well-loved mix of milk, white and dark chocolates in a proper gift box, easy to send for birthdays, thank-yous or just because.", "category": "Food gift"},
+    {"asin": "B0D5HYRRTW", "name": "Baylis & Harding The Fuzzy Duck Winter Wonderland Light Up Bath Bubbles Decanter Gift", "short_name": "Fuzzy Duck bath decanter", "headline": "A little at-home spa moment", "why": "A reusable glass decanter of bath bubbles with a light-up base, a fun, giftable way to dress up a simple bubble bath.", "category": "Self-care"},
+    {"asin": "B00EP2QYY0", "name": "Cadbury Heroes Chocolates Tub, 760g", "short_name": "Cadbury Heroes tub", "headline": "The tub everyone reaches into first", "why": "A mix of mini Cadbury favourites that works as a gift, a party sharer or a treat for the office, and it's a longstanding UK bestseller.", "category": "Food gift"},
+    {"asin": "B00004TZY8", "name": "Mattel Games UNO Card Game", "short_name": "Classic Uno card game", "headline": "A game night classic for under a tenner", "why": "The original Uno deck is cheap, portable and genuinely one of the best-reviewed card games on Amazon UK, a safe gift for almost anyone.", "category": "Games"}
+  ]
+}
