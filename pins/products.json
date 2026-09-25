@@ -1,18 +1,154 @@
 [
- {"asin": "B0B65F34GX", "category": "Halloween", "short_name": "'Old Gods' door sign", "headline": "The doorbell sign everyone laughs at", "why": "A metal no-soliciting sign with a spooky sense of humour. Fun for Halloween and funny enough to leave up all year.", "tags": "#halloweendecor #gothichome #funnysigns"},
- {"asin": "B0FHGXN8J2", "category": "Gothic Home", "short_name": "Black sheer gothic curtains", "headline": "Dark academia decor, all year round", "why": "Floral black sheer curtains that let the light through, a moody change for a bedroom or living room.", "tags": "#darkacademia #gothichome #curtains"},
- {"asin": "B07H7ZDBV4", "category": "Kitchen", "short_name": "Splatypus jar spatula", "headline": "Get every last bit out of the jar", "why": "A slim, flexible spatula shaped to reach the bottom of jars and bottles, and it's dishwasher safe.", "tags": "#kitchengadgets #kitchenhacks #foodwaste"},
- {"asin": "B0DB5MH7YQ", "category": "Organisation", "short_name": "Clear stackable drawers", "headline": "Finally see what's in the cupboard", "why": "A set of four clear stacking drawers with handles for bathrooms, kitchens and under-sink cupboards.", "tags": "#homeorganisation #storageideas #tidyhome"},
- {"asin": "B08MXTCZ7C", "category": "Self-Care", "short_name": "Face mask mixing bowl set", "headline": "Spa night at home, sorted", "why": "A bowl, spatulas and brush for mixing clay or powder masks without the mess.", "tags": "#selfcare #skincare #spanight"},
- {"asin": "B00LMZJSVE", "category": "Kitchen", "short_name": "Joie corn cob holders", "headline": "The small BBQ hack for buttery fingers", "why": "Star-shaped stainless steel holders that make corn on the cob easy to eat, handy for BBQs and family dinners.", "tags": "#bbqideas #kitchengadgets #familydinner"},
- {"asin": "B06X9H6XN5", "category": "Kitchen", "short_name": "Tidy-Tex sink organiser", "headline": "The sink caddy that ends the clutter", "why": "A caddy and drip tray for sponges, brushes and washing-up liquid that keeps the sink edge tidy.", "tags": "#kitchenorganisation #tidyhome #cleaningtips"},
- {"asin": "B01LVV6THF", "category": "Cleaning", "short_name": "Sonic Scrubber brush", "headline": "Scrubs grout so your arms don't have to", "why": "A battery-powered oscillating brush with interchangeable heads for grout, taps and tricky corners.", "tags": "#cleaninghacks #cleaningtips #bathroomcleaning"},
- {"asin": "B0CHQ35R44", "category": "Cleaning", "short_name": "Crevice cleaning brushes", "headline": "Gets into every gap and groove", "why": "Stiff-bristled gap brushes for window tracks, tile lines and the corners a sponge can't reach.", "tags": "#cleaninghacks #cleaningmotivation #tidyhome"},
- {"asin": "B0F2TLPT18", "category": "Beauty", "short_name": "NYX Brow Glue Crazy Lift", "headline": "The laminated-brow look without a salon", "why": "A clear brow gel that sets brows in place for a brushed-up, fluffy look.", "tags": "#browtips #makeup #beautyfinds"},
- {"asin": "B095WCH2TD", "category": "Self-Care", "short_name": "HEETA scalp massager", "headline": "The shampoo brush that feels like a treat", "why": "Soft silicone bristles for a deeper shampoo and a relaxing scalp massage in the shower.", "tags": "#haircare #selfcare #showerroutine"},
- {"asin": "B095C2VCCZ", "category": "Kitchen", "short_name": "OHMO silicone can lids", "headline": "Stop wasting half-used tins", "why": "Stretchy lids that fit three tin sizes, great for pet food, beans and tomatoes in the fridge.", "tags": "#kitchenhacks #foodwaste #petowners"},
- {"asin": "B09QMLG65D", "category": "Cleaning", "short_name": "Genuine Henry hoover bags", "headline": "If you own a Henry, you need these", "why": "Genuine Numatic Hepa-Flo bags for Henry, Hetty and similar vacuums, with fresheners included.", "tags": "#henryhoover #cleaningtips #homeessentials"},
- {"asin": "B0D7MFC9JL", "category": "Kitchen", "short_name": "Linda's oven liners", "headline": "Never scrub the oven floor again", "why": "Reusable non-stick liners that sit in the bottom of the oven and catch drips so you can just wipe them clean.", "tags": "#cleaninghacks #kitchenhacks #ovencleaning"},
- {"asin": "B0D2H1HR4G", "category": "Kitchen", "short_name": "DOQAUS meat thermometer", "headline": "Never overcook a roast again", "why": "An instant-read food thermometer with a backlit screen, so you know when the meat is done.", "tags": "#cookingtips #sundayroast #kitchengadgets"},
- {"asin": "B0CP4XY9QC", "category": "Kitchen", "short_name": "YARRAMATE oil sprayer", "headline": "Use less oil without trying", "why": "A 2-in-1 bottle that sprays or pours oil, handy for air fryers, salads and roasting trays.", "tags": "#airfryer #healthycooking #kitchengadgets"}
+ {
+  "asin": "B0B65F34GX",
+  "category": "Halloween",
+  "short_name": "'Old Gods' door sign",
+  "headline": "The doorbell sign everyone laughs at",
+  "why": "A metal no-soliciting sign with a spooky sense of humour. Fun for Halloween and funny enough to leave up all year.",
+  "tags": "#halloweendecor #gothichome #funnysigns"
+ },
+ {
+  "asin": "B0FHGXN8J2",
+  "category": "Gothic Home",
+  "short_name": "Black sheer gothic curtains",
+  "headline": "Dark academia decor, all year round",
+  "why": "Floral black sheer curtains that let the light through, a moody change for a bedroom or living room.",
+  "tags": "#darkacademia #gothichome #curtains"
+ },
+ {
+  "asin": "B07H7ZDBV4",
+  "category": "Kitchen",
+  "short_name": "Splatypus jar spatula",
+  "headline": "Get every last bit out of the jar",
+  "why": "A slim, flexible spatula shaped to reach the bottom of jars and bottles, and it's dishwasher safe.",
+  "tags": "#kitchengadgets #kitchenhacks #foodwaste"
+ },
+ {
+  "asin": "B0DB5MH7YQ",
+  "category": "Organisation",
+  "short_name": "Clear stackable drawers",
+  "headline": "Finally see what's in the cupboard",
+  "why": "A set of four clear stacking drawers with handles for bathrooms, kitchens and under-sink cupboards.",
+  "tags": "#homeorganisation #storageideas #tidyhome"
+ },
+ {
+  "asin": "B08MXTCZ7C",
+  "category": "Self-Care",
+  "short_name": "Face mask mixing bowl set",
+  "headline": "Spa night at home, sorted",
+  "why": "A bowl, spatulas and brush for mixing clay or powder masks without the mess.",
+  "tags": "#selfcare #skincare #spanight"
+ },
+ {
+  "asin": "B00LMZJSVE",
+  "category": "Kitchen",
+  "short_name": "Joie corn cob holders",
+  "headline": "The small BBQ hack for buttery fingers",
+  "why": "Star-shaped stainless steel holders that make corn on the cob easy to eat, handy for BBQs and family dinners.",
+  "tags": "#bbqideas #kitchengadgets #familydinner"
+ },
+ {
+  "asin": "B06X9H6XN5",
+  "category": "Kitchen",
+  "short_name": "Tidy-Tex sink organiser",
+  "headline": "The sink caddy that ends the clutter",
+  "why": "A caddy and drip tray for sponges, brushes and washing-up liquid that keeps the sink edge tidy.",
+  "tags": "#kitchenorganisation #tidyhome #cleaningtips"
+ },
+ {
+  "asin": "B01LVV6THF",
+  "category": "Cleaning",
+  "short_name": "Sonic Scrubber brush",
+  "headline": "Scrubs grout so your arms don't have to",
+  "why": "A battery-powered oscillating brush with interchangeable heads for grout, taps and tricky corners.",
+  "tags": "#cleaninghacks #cleaningtips #bathroomcleaning"
+ },
+ {
+  "asin": "B0CHQ35R44",
+  "category": "Cleaning",
+  "short_name": "Crevice cleaning brushes",
+  "headline": "Gets into every gap and groove",
+  "why": "Stiff-bristled gap brushes for window tracks, tile lines and the corners a sponge can't reach.",
+  "tags": "#cleaninghacks #cleaningmotivation #tidyhome"
+ },
+ {
+  "asin": "B0F2TLPT18",
+  "category": "Beauty",
+  "short_name": "NYX Brow Glue Crazy Lift",
+  "headline": "The laminated-brow look without a salon",
+  "why": "A clear brow gel that sets brows in place for a brushed-up, fluffy look.",
+  "tags": "#browtips #makeup #beautyfinds"
+ },
+ {
+  "asin": "B095WCH2TD",
+  "category": "Self-Care",
+  "short_name": "HEETA scalp massager",
+  "headline": "The shampoo brush that feels like a treat",
+  "why": "Soft silicone bristles for a deeper shampoo and a relaxing scalp massage in the shower.",
+  "tags": "#haircare #selfcare #showerroutine"
+ },
+ {
+  "asin": "B095C2VCCZ",
+  "category": "Kitchen",
+  "short_name": "OHMO silicone can lids",
+  "headline": "Stop wasting half-used tins",
+  "why": "Stretchy lids that fit three tin sizes, great for pet food, beans and tomatoes in the fridge.",
+  "tags": "#kitchenhacks #foodwaste #petowners"
+ },
+ {
+  "asin": "B09QMLG65D",
+  "category": "Cleaning",
+  "short_name": "Genuine Henry hoover bags",
+  "headline": "If you own a Henry, you need these",
+  "why": "Genuine Numatic Hepa-Flo bags for Henry, Hetty and similar vacuums, with fresheners included.",
+  "tags": "#henryhoover #cleaningtips #homeessentials"
+ },
+ {
+  "asin": "B0D7MFC9JL",
+  "category": "Kitchen",
+  "short_name": "Linda's oven liners",
+  "headline": "Never scrub the oven floor again",
+  "why": "Reusable non-stick liners that sit in the bottom of the oven and catch drips so you can just wipe them clean.",
+  "tags": "#cleaninghacks #kitchenhacks #ovencleaning"
+ },
+ {
+  "asin": "B0D2H1HR4G",
+  "category": "Kitchen",
+  "short_name": "DOQAUS meat thermometer",
+  "headline": "Never overcook a roast again",
+  "why": "An instant-read food thermometer with a backlit screen, so you know when the meat is done.",
+  "tags": "#cookingtips #sundayroast #kitchengadgets"
+ },
+ {
+  "asin": "B0CP4XY9QC",
+  "category": "Kitchen",
+  "short_name": "YARRAMATE oil sprayer",
+  "headline": "Use less oil without trying",
+  "why": "A 2-in-1 bottle that sprays or pours oil, handy for air fryers, salads and roasting trays.",
+  "tags": "#airfryer #healthycooking #kitchengadgets"
+ },
+ {
+  "asin": "B0C95TSNDN",
+  "category": "Halloween",
+  "short_name": "Black & orange balloons",
+  "headline": "A full Halloween balloon arch for less",
+  "why": "A 100-pack of thick latex balloons in black and orange, enough for an arch, garland or party backdrop.",
+  "tags": "#halloweenparty #halloweendecor #balloonarch"
+ },
+ {
+  "asin": "B0FJKZL2B6",
+  "category": "Halloween",
+  "short_name": "Pumpkin stained glass suncatcher",
+  "headline": "Turns any window into stained glass",
+  "why": "A hanging pumpkin-and-vine suncatcher that glows when the light shines through, for a window or front door.",
+  "tags": "#halloweendecor #autumndecor #suncatcher"
+ },
+ {
+  "asin": "B000L97WFQ",
+  "category": "Halloween",
+  "short_name": "QTX fog fluid, 5 litres",
+  "headline": "The fog juice for a spooky front door",
+  "why": "A big 5-litre bottle of water-based fog fluid for smoke machines, enough for Halloween night and parties after.",
+  "tags": "#halloweenparty #fogmachine #halloweennight"
+ }
 ]
