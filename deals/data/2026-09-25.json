@@ -1,14 +1,18 @@
 {
   "date": "2026-09-25",
-  "theme": "Gifts Under £20",
-  "pin_title": "4 Brilliant Gifts Under £20 UK Shoppers Love",
-  "pin_hook": "Budget-friendly presents that still feel generous",
-  "pin_description": "Well-reviewed gifts under £20 from Amazon UK: a Thorntons chocolate hamper, a light-up Baylis & Harding pamper decanter, a Cadbury Heroes tub and the classic Uno card game. Easy present ideas for birthdays, thank-yous and Christmas on a budget. #ad #giftsunder20 #giftideas #ukgifts #budgetgifts",
-  "intro": "A small budget doesn't mean a boring gift - these four are all crowd-pleasers that consistently earn great reviews without breaking £20.",
+  "theme": "Gifts",
+  "pin_title": "8 Thoughtful Gifts Under £20 UK Shoppers Love to Give",
+  "pin_hook": "Small budget, big smile - all highly rated",
+  "pin_description": "Thoughtful gift ideas under £20 from Amazon UK: a crystal tree of life, a colour-changing moon lamp, a personalised Spotify photo frame, a cashmere-feel scarf and more. Budget-friendly birthday gifts and treat-yourself finds. #ad #giftideas #giftsforher #ukgifts #budgetgifts",
+  "intro": "Eight easy, well-reviewed gift ideas that all come in under £20 - handy whether you're shopping for a birthday, a thank-you or just because.",
   "products": [
-    {"asin": "B09D9N92Z6", "name": "Thorntons Classic Collection Chocolate Hamper Gift Box, Assorted Milk, White and Dark Chocolates, 449g", "short_name": "Thorntons Classic hamper", "headline": "A chocolate box that suits everyone", "why": "A well-loved mix of milk, white and dark chocolates in a proper gift box, easy to send for birthdays, thank-yous or just because.", "category": "Food gift"},
-    {"asin": "B0D5HYRRTW", "name": "Baylis & Harding The Fuzzy Duck Winter Wonderland Light Up Bath Bubbles Decanter Gift", "short_name": "Fuzzy Duck bath decanter", "headline": "A little at-home spa moment", "why": "A reusable glass decanter of bath bubbles with a light-up base, a fun, giftable way to dress up a simple bubble bath.", "category": "Self-care"},
-    {"asin": "B00EP2QYY0", "name": "Cadbury Heroes Chocolates Tub, 760g", "short_name": "Cadbury Heroes tub", "headline": "The tub everyone reaches into first", "why": "A mix of mini Cadbury favourites that works as a gift, a party sharer or a treat for the office, and it's a longstanding UK bestseller.", "category": "Food gift"},
-    {"asin": "B00004TZY8", "name": "Mattel Games UNO Card Game", "short_name": "Classic Uno card game", "headline": "A game night classic for under a tenner", "why": "The original Uno deck is cheap, portable and genuinely one of the best-reviewed card games on Amazon UK, a safe gift for almost anyone.", "category": "Games"}
+    {"asin": "B07BNJ76LM", "name": "Crocon The Original 7 Chakra Crystal Tree of Life", "short_name": "Crystal tree of life", "headline": "A pretty desk piece that doubles as a gift", "why": "A handmade gemstone tree that looks far pricier than it is, and it's one of Amazon UK's most-reviewed crystal gifts.", "category": "Home decor"},
+    {"asin": "B07CZB7FLN", "name": "ACED 3D Printing Moon Lamp, 128 Colours, 15cm", "short_name": "128-colour moon lamp", "headline": "A cosy nightlight that changes with your mood", "why": "A realistic 3D-printed moon that cycles through colours via remote, a fun bedside gift for kids or adults alike.", "category": "Home decor"},
+    {"asin": "B0CJ3251YL", "name": "LUCKOR Personalised Spotify Photo Frame, Custom Acrylic Plaque Night Light", "short_name": "Personalised Spotify plaque", "headline": "Turn a favourite song into a keepsake", "why": "A custom acrylic plaque that plays a chosen Spotify track when scanned, a genuinely personal touch for very little money.", "category": "Personalised gifts"},
+    {"asin": "B098S6ZY76", "name": "ehsbuy Cashmere-Feel Scarf, Reversible Pashmina Shawl and Wrap", "short_name": "Cashmere-feel scarf", "headline": "A soft, cosy layer for chilly days", "why": "A reversible, soft-touch scarf that reads as a much more expensive gift than its price suggests.", "category": "Accessories"},
+    {"asin": "B07Z3TSPZL", "name": "Not A Day Over Fabulous Birthday Mug", "short_name": "'Not a day over fabulous' mug", "headline": "A cheeky birthday mug that gets used daily", "why": "A well-made mug with a fun slogan that's a reliable, low-effort gift for a friend, sister or mum.", "category": "Novelty gifts"},
+    {"asin": "B0BRZJDBD8", "name": "A-Z Personalised Makeup Bag, Birthday Gift for Women", "short_name": "Personalised makeup bag", "headline": "A practical gift with a personal initial", "why": "A sturdy, everyday makeup bag made personal with an initial, useful long after the wrapping paper's gone.", "category": "Personalised gifts"},
+    {"asin": "B0CQC9RZ51", "name": "Linkax Shower Steamers Aromatherapy, 8 Pack", "short_name": "Shower steamer set", "headline": "A little spa moment in the shower", "why": "Aromatherapy shower steamers that turn an ordinary shower into a relaxing ritual, an easy stocking-filler style gift.", "category": "Self-care"},
+    {"asin": "B0D7HTQS8B", "name": "Eletorot Birthday Gift Set for Women", "short_name": "Eletorot gift set", "headline": "A ready-to-wrap gift that needs no extra thought", "why": "A pre-packaged gift set that takes the guesswork out of last-minute birthday shopping.", "category": "Gift sets"}
   ]
 }
