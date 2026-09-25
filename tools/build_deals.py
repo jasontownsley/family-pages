@@ -3,6 +3,9 @@
 For each day's data file this renders:
   deals/<date>/index.html   roundup page with affiliate links
   deals/<date>/pin.jpg      1000x1500 Pinterest pin image
+  deals/<date>/spot/<ASIN>.jpg  single-product photo pins for the first few
+                            products with a photo_query (photo from Pexels, see
+                            photos.py; no photo means no single pin)
 and then deals/index.html (archive), deals/feed.xml (RSS for Pinterest
 auto-publish) and deals/data/exclude.txt (ASINs already used).
 
@@ -18,13 +21,16 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
+
+import photos
 
 SITE_URL = "https://dailydealsuk.co.uk/deals"
 BRAND = "Daily Deals UK"
 TAG = "dailydeal07d1-21"
 DISCLOSURE = "As an Amazon Associate I earn from qualifying purchases."
-FEED_ITEMS = 30
+FEED_ITEMS = 60      # roundup + single-product pins, newest first
+SPOTLIGHTS = 4      # single-product pins per day
 
 ROOT = Path(__file__).resolve().parent.parent
 DEALS = ROOT / "deals"
@@ -74,6 +80,9 @@ def validate(d, name="data"):
             errs.append(f"{name}: product {i} ASIN '{a}' looks wrong")
         if a in seen:
             errs.append(f"{name}: product {i} ASIN {a} repeated")
+        q = p.get("photo_query")
+        if q is not None and (not isinstance(q, str) or len(q) > 80):
+            errs.append(f"{name}: product {i} photo_query must be a short string")
         seen.add(a)
     return errs
 
@@ -185,6 +194,82 @@ def make_pin(d, out):
     img.save(out, "JPEG", quality=88, optimize=True)
 
 
+def make_spot_pin(p, photo, credit, out):
+    """Single-product pin: lifestyle photo on top, hook and product name below."""
+    W, H, M = 1000, 1500, 70
+    PH = 860
+    img = Image.new("RGB", (W, H), GREEN)
+    img.paste(ImageOps.fit(Image.open(photo).convert("RGB"), (W, PH), method=Image.LANCZOS), (0, 0))
+    dr = ImageDraw.Draw(img)
+
+    f_kick = font(FONT_BOLD, 34)
+    kicker = p["category"].upper()
+    kw = dr.textlength(kicker, font=f_kick)
+    dr.rounded_rectangle([M, 60, M + kw + 44, 60 + 58], radius=29, fill=ORANGE)
+    dr.text((M + 22, 89), kicker, font=f_kick, fill="white", anchor="lm")
+
+    f_credit = font(FONT_SEMI, 20)
+    ctext = f"Photo: {credit['photographer']} / Pexels"
+    cw = dr.textlength(ctext, font=f_credit)
+    dr.rounded_rectangle([W - M - cw - 20, PH - 46, W - M + 4, PH - 12], radius=10, fill=(0, 0, 0))
+    dr.text((W - M - cw - 8, PH - 29), ctext, font=f_credit, fill="white", anchor="lm")
+
+    # hook + product name, centred in the green panel
+    f_head, lines = fit(dr, p["headline"], FONT_HEAVY, W - 2 * M, 3, 76, 50)
+    lh = int(f_head.size * 1.12)
+    f_name = font(FONT_BOLD, 40)
+    name = wrap(dr, p.get("short_name") or p["name"], f_name, W - 2 * M)[0]
+    block = lh * len(lines) + 24 + 50
+    y = PH + (H - 150 - PH - block) // 2
+    for ln in lines:
+        dr.text((M, y), ln, font=f_head, fill="white")
+        y += lh
+    dr.text((M, y + 24), name, font=f_name, fill=GOLD)
+
+    dr.rectangle([0, H - 150, W, H], fill=GREEN_DARK)
+    dr.text((M, H - 95), BRAND.upper(), font=font(FONT_HEAVY, 46), fill=GOLD, anchor="lm")
+    dr.text((W - M, H - 95), "Tap for details", font=font(FONT_SEMI, 32), fill="white", anchor="rm")
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out, "JPEG", quality=88, optimize=True)
+
+
+def used_photo_ids():
+    ids = set()
+    for f in DEALS.glob("*/photos.json"):
+        ids |= {c["id"] for c in json.loads(f.read_text(encoding="utf-8")).values()}
+    return ids
+
+
+def spotlights(d):
+    """[(product, credit)] for this day's single-product pins, fetching photos as needed."""
+    folder = DEALS / d["date"]
+    cfile = folder / "photos.json"
+    credits = json.loads(cfile.read_text(encoding="utf-8")) if cfile.exists() else {}
+    picks = [p for p in d["products"] if p.get("photo_query")][:SPOTLIGHTS]
+    changed = False
+    for p in picks:
+        photo = folder / "photos" / f"{p['asin']}.jpg"
+        if p["asin"] in credits and photo.exists():
+            continue
+        credit = photos.fetch(p["photo_query"], photo, used_photo_ids())
+        if credit:
+            credits[p["asin"]] = credit
+            changed = True
+    if changed:
+        cfile.write_text(json.dumps(credits, indent=1), encoding="utf-8")
+    return [(p, credits[p["asin"]]) for p in picks if p["asin"] in credits]
+
+
+def spot_title(p):
+    return f"{p.get('short_name') or p['name']}: {p['headline']}"[:100]
+
+
+def spot_description(d, p):
+    tags = [t for t in re.findall(r"#\w+", d["pin_description"]) if t != "#ad"][:4]
+    return f"{p['headline']}. {p['why']} One of today's {d['theme']} picks. #ad {' '.join(tags)}"[:500]
+
+
 # ---------------------------------------------------------------- HTML
 
 CSS = """
@@ -205,6 +290,7 @@ display:grid;grid-template-columns:44px 1fr;gap:4px 14px}
 .num{grid-row:span 4;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;
 font-family:'Archivo Black',sans-serif;display:grid;place-items:center}
 .item h2{font-size:19px;margin:0}.name{color:var(--dim);font-size:14px;margin:0}.item p{margin:4px 0}
+.item:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
 .cat{font-size:12px;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.05em}
 .btn{justify-self:start;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;
 padding:9px 16px;border-radius:10px;margin-top:6px}
@@ -239,7 +325,7 @@ def pretty_date(iso):
     return f"{dt.day} {dt:%B %Y}"
 
 
-def day_page(d):
+def day_page(d, spots=()):
     url = f"{SITE_URL}/{d['date']}/"
     out = [HEAD.format(title=e(d["pin_title"]), desc=e(d["pin_description"]),
                        image=f"{url}pin.jpg", url=url, brand=e(BRAND), site=SITE_URL, css=CSS)]
@@ -250,13 +336,16 @@ def day_page(d):
     out.append(f'<p class="disc">{e(DISCLOSURE)} Links below are affiliate links (#ad).</p>')
     for i, p in enumerate(d["products"], 1):
         out.append(
-            f'<div class="item"><div class="num">{i}</div>'
+            f'<div class="item" id="{e(p["asin"])}"><div class="num">{i}</div>'
             f'<span class="cat">{e(p["category"])}</span>'
             f'<h2>{e(p["headline"])}</h2><p class="name">{e(p["name"])}</p>'
             f'<p>{e(p["why"])}</p>'
             f'<a class="btn" href="{aff(p["asin"])}" rel="sponsored nofollow noopener" target="_blank">'
             f'Check today\'s price on Amazon</a></div>')
     out.append(f'<p class="intro">Published {pretty_date(d["date"])}.</p>')
+    if spots:
+        cred = ", ".join(f'<a href="{e(c["page"])}">{e(c["photographer"])}</a>' for _, c in spots)
+        out.append(f'<p class="intro">Pin photos from Pexels: {cred}.</p>')
     out.append(FOOT.format(disc=e(DISCLOSURE), year=d["date"][:4], brand=e(BRAND)))
     return "".join(out)
 
@@ -278,19 +367,27 @@ def index_page(days):
     return "".join(out)
 
 
-def feed(days):
-    items = []
-    for d in days[:FEED_ITEMS]:
-        url = f"{SITE_URL}/{d['date']}/"
-        img = f"{url}pin.jpg"
-        size = (DEALS / d["date"] / "pin.jpg").stat().st_size
-        pub = format_datetime(datetime.strptime(d["date"], "%Y-%m-%d").replace(hour=8, tzinfo=timezone.utc))
-        items.append(
-            f"<item><title>{e(d['pin_title'])}</title><link>{url}</link><guid isPermaLink=\"true\">{url}</guid>"
-            f"<pubDate>{pub}</pubDate><description>{e(d['pin_description'])}</description>"
-            f"<enclosure url=\"{img}\" length=\"{size}\" type=\"image/jpeg\"/>"
-            f"<media:content url=\"{img}\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/>"
+def feed_item(title, link, desc, img_url, img_path, when):
+    return (f"<item><title>{e(title)}</title><link>{link}</link><guid isPermaLink=\"true\">{link}</guid>"
+            f"<pubDate>{format_datetime(when)}</pubDate><description>{e(desc)}</description>"
+            f"<enclosure url=\"{img_url}\" length=\"{img_path.stat().st_size}\" type=\"image/jpeg\"/>"
+            f"<media:content url=\"{img_url}\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/>"
             f"</item>")
+
+
+def feed(days, spots_by_date):
+    items = []
+    for d in days:
+        url = f"{SITE_URL}/{d['date']}/"
+        day = datetime.strptime(d["date"], "%Y-%m-%d").replace(hour=8, tzinfo=timezone.utc)
+        spots = list(enumerate(spots_by_date.get(d["date"], []), 1))
+        for n, (p, _) in reversed(spots):
+            items.append(feed_item(spot_title(p), f"{url}#{p['asin']}", spot_description(d, p),
+                                   f"{url}spot/{p['asin']}.jpg", DEALS / d["date"] / "spot" / f"{p['asin']}.jpg",
+                                   day.replace(hour=8 + 2 * n)))
+        items.append(feed_item(d["pin_title"], url, d["pin_description"], f"{url}pin.jpg",
+                               DEALS / d["date"] / "pin.jpg", day))
+    items = items[:FEED_ITEMS]
     now = format_datetime(datetime.now(timezone.utc))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
@@ -317,17 +414,25 @@ def main(argv):
 
     DATA.mkdir(parents=True, exist_ok=True)
     days = load_days()
+    spots_by_date = {}
     for d in days:
         folder = DEALS / d["date"]
         pin = folder / "pin.jpg"
         src = DATA / f"{d['date']}.json"
         if not pin.exists() or pin.stat().st_mtime < src.stat().st_mtime:
             make_pin(d, pin)
-        (folder / "index.html").write_text(day_page(d), encoding="utf-8")
+        spots = spots_by_date[d["date"]] = spotlights(d)
+        for p, credit in spots:
+            out = folder / "spot" / f"{p['asin']}.jpg"
+            if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
+                make_spot_pin(p, folder / "photos" / f"{p['asin']}.jpg", credit, out)
+        (folder / "index.html").write_text(day_page(d, spots), encoding="utf-8")
     (DEALS / "index.html").write_text(index_page(days), encoding="utf-8")
-    (DEALS / "feed.xml").write_text(feed(days), encoding="utf-8")
+    (DEALS / "feed.xml").write_text(feed(days, spots_by_date), encoding="utf-8")
     (DATA / "exclude.txt").write_text(exclude_list(days), encoding="utf-8")
-    print(f"Built {len(days)} day(s); latest {days[0]['date'] if days else 'none'}")
+    nspots = sum(len(v) for v in spots_by_date.values())
+    print(f"Built {len(days)} day(s), {nspots} single-product pin(s); latest {days[0]['date'] if days else 'none'}"
+          + ("" if photos.api_key() else " [no Pexels key: single-product pins off]"))
     return 0
 
 

@@ -42,7 +42,7 @@ STEP 3 - Write deals/data/{{DATE}}.json exactly in this shape (UTF-8, valid JSON
   "pin_description": "Clever kitchen gadgets under £15 that UK home cooks rate highly: jar spatula, 6-in-1 peeler, silicone can lids and more. Budget kitchen ideas and gifts for foodies. #ad #kitchengadgets #kitchenhacks #ukdeals",
   "intro": "One or two friendly sentences introducing the list.",
   "products": [
-    {"asin": "B07H7ZDBV4", "name": "OTOTO Splatypus Jar Spatula", "short_name": "Splatypus jar spatula", "headline": "Get every last bit out of the jar", "why": "One or two honest sentences on why it's worth it.", "category": "Kitchen"}
+    {"asin": "B07H7ZDBV4", "name": "OTOTO Splatypus Jar Spatula", "short_name": "Splatypus jar spatula", "headline": "Get every last bit out of the jar", "why": "One or two honest sentences on why it's worth it.", "category": "Kitchen", "photo_query": "cosy kitchen worktop jars"}
   ]
 }
 Field rules:
@@ -52,6 +52,8 @@ Field rules:
   - pin_description: max 500 characters, natural sentences packed with search keywords, starting or ending with "#ad", 3-5 relevant hashtags in total.
   - short_name: max ~28 characters, shown on the pin image.
   - headline: a punchy benefit, max ~60 characters. why: 1-2 sentences, honest, no made-up statistics.
+  - Order products best first: the first 4 also get their own single-product Pinterest pin, so put the most eye-catching, broadly appealing ones first.
+  - photo_query: 2-6 words to search a stock photo library for the pin's background. Describe the SETTING or mood where the product is used (e.g. "tidy bathroom shelf", "autumn front door", "cosy bedroom reading"), never the product itself or a brand, so the photo can't be mistaken for the item being sold.
   - Do NOT include prices, star ratings or review counts anywhere in the JSON (Amazon's rules - the page sends people to Amazon for the live price).
 
 STEP 4 - Final reply (this goes into the log): 3-6 lines with the theme, title, number of products, and anything that went wrong (e.g. sites that blocked you, products dropped and why).
