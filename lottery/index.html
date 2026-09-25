@@ -174,6 +174,23 @@
   .dr-total b{ color:var(--win); font-family:'Fraunces',serif; font-size:14.5px; }
 
   .results-list{ display:flex; flex-direction:column; gap:14px; }
+  .dr-drawn{ display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; }
+  .dr-drawn .rlabel{ font-size:11.5px; font-weight:700; color:var(--text-dim); margin-right:2px; }
+  .mini-balls{ display:flex; gap:4px; flex-wrap:wrap; align-items:center; }
+  .ball.mini{ width:28px; height:28px; font-size:12px; }
+  .ball.mini.star{ font-size:10.5px; }
+  .ball.mini.star .glyph{ font-size:8px; }
+  .ball.mini.bonus{ border-style:dashed; }
+  .ball.hit{ border:2.5px solid var(--win); box-shadow:0 0 0 2px var(--win-soft); color:var(--win); }
+  .dr-line .dl-left{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .dr-line .dl-right{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; margin-left:auto; }
+  .dr-line .dl-lose{ font-family:'Fraunces',serif; font-weight:600; font-size:15px; color:var(--text-dim); }
+  .dr-line .dl-count{ font-size:11.5px; color:var(--text-dim); }
+  .results-tools{ display:flex; justify-content:center; margin-top:14px; }
+  .show-all{
+    font:inherit; font-size:13.5px; font-weight:700; color:var(--accent); background:var(--surface);
+    border:1px solid var(--border); border-radius:999px; padding:9px 18px; cursor:pointer;
+  }
 
   /* ---- footer ---- */
   .site-footer{ text-align:center; color:var(--text-dim); font-size:12.5px; line-height:1.6; padding-top:8px; border-top:1px solid var(--border); }
@@ -203,7 +220,7 @@
   </section>
 
   <section class="results-section">
-    <h2>Results &amp; Winnings</h2>
+    <h2>Results</h2>
     <div id="results-container"></div>
   </section>
 
@@ -401,44 +418,110 @@
     }).join('  ·  ');
   }
 
-  function renderResults(){
+  function miniBall(n, opts){
+    opts = opts || {};
+    var cls = 'ball mini' + (opts.star ? ' star' : '') + (opts.bonus ? ' bonus' : '') + (opts.hit ? ' hit' : '');
+    var title = opts.hit ? ' title="Matched"' : (opts.bonus ? ' title="Bonus ball"' : '');
+    var inner = opts.star ? '<span class="glyph">★</span>' + n : n;
+    return '<div class="' + cls + '"' + title + '>' + inner + '</div>';
+  }
+
+  function drawnHtml(draw){
+    if (draw.game === 'euromillions'){
+      return '<div class="dr-drawn"><div class="mini-balls">' +
+        draw.numbers.map(function(n){ return miniBall(n); }).join('') +
+        draw.stars.map(function(n){ return miniBall(n, { star:true }); }).join('') +
+        '</div></div>';
+    }
+    return '<div class="dr-drawn">' + draw.rounds.map(function(r, i){
+      var label = draw.rounds.length > 1 ? '<span class="rlabel">R' + (i+1) + '</span>' : '';
+      return '<div class="mini-balls">' + label +
+        r.numbers.map(function(n){ return miniBall(n); }).join('') +
+        miniBall(r.bonus, { bonus:true }) + '</div>';
+    }).join('') + '</div>';
+  }
+
+  // Which of our line's numbers came up in this draw (any round for Lotto)
+  function matchesFor(draw, ours){
+    if (draw.game === 'euromillions'){
+      return {
+        nums: ours.numbers.filter(function(n){ return draw.numbers.indexOf(n) !== -1; }),
+        stars: (ours.stars || []).filter(function(n){ return draw.stars.indexOf(n) !== -1; })
+      };
+    }
+    var drawn = [];
+    draw.rounds.forEach(function(r){ drawn = drawn.concat(r.numbers); });
+    var perRound = draw.rounds.map(function(r){
+      return ours.numbers.filter(function(n){ return r.numbers.indexOf(n) !== -1; }).length;
+    });
+    return { nums: ours.numbers.filter(function(n){ return drawn.indexOf(n) !== -1; }), stars: [], perRound: perRound };
+  }
+
+  function countText(m, game){
+    if (!m.nums.length && !m.stars.length) return 'No numbers matched';
+    if (m.perRound && m.perRound.length > 1){
+      return m.perRound.map(function(k, i){ return 'R' + (i+1) + ': ' + k; }).join(' · ') + ' matched';
+    }
+    var t = m.nums.length + ' number' + (m.nums.length === 1 ? '' : 's');
+    if (game === 'euromillions' && m.stars.length) t += ' + ' + m.stars.length + ' star' + (m.stars.length === 1 ? '' : 's');
+    return t + ' matched';
+  }
+
+  var RESULTS_SHOWN = 10;
+
+  function renderResults(showAll){
     var el = document.getElementById('results-container');
-    var wins = DRAWS.filter(function(d){ return d.lines.some(function(l){ return l.tier !== 'No win'; }); });
-    if (!wins.length){
+    if (!DRAWS.length){
       var soonest = soonestGameLabel();
       el.innerHTML =
-        '<div class="empty-state">' +
-          '<div class="es-icon">🎟️</div>' +
-          '<h3>No wins logged yet</h3>' +
-          '<p>'+(DRAWS.length ? DRAWS.length+' draws checked so far, no luck yet. ' : '')+'The next result lands after the next '+soonest.label+' draw'+(soonest.date?' on '+fmtDate(soonest.date):'')+'.</p>' +
-        '</div>';
+        '<div class="empty-state"><div class="es-icon">🎟️</div><h3>No draws logged yet</h3>' +
+        '<p>The first result lands after the next ' + soonest.label + ' draw' +
+        (soonest.date ? ' on ' + fmtDate(soonest.date) : '') + '.</p></div>';
       return;
     }
-    var sorted = wins.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
-    var caption = '<p class="results-caption">' + wins.length + ' winning draw' + (wins.length===1?'':'s') + ' out of ' + DRAWS.length + ' checked since tracking began.</p>';
-    el.innerHTML = caption + '<div class="results-list">' + sorted.map(function(draw){
+    var wins = DRAWS.filter(function(d){ return d.lines.some(function(l){ return l.tier !== 'No win'; }); });
+    var sorted = DRAWS.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+    var shown = showAll ? sorted : sorted.slice(0, RESULTS_SHOWN);
+    var caption = '<p class="results-caption">' + DRAWS.length + ' draws checked since tracking began · ' +
+      wins.length + ' with a win. Numbers we matched are circled in green.</p>';
+
+    el.innerHTML = caption + '<div class="results-list">' + shown.map(function(draw){
       var g = LINES[draw.game];
       var dateStr = new Date(draw.date+'T12:00:00').toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
       var winningLines = draw.lines.filter(function(l){ return l.tier !== 'No win' && l.prize > 0; });
       var drawTotal = winningLines.reduce(function(sum,l){ return sum + l.prize; }, 0);
       var linesHtml = draw.lines.map(function(l){
+        var ours = g.lines.filter(function(x){ return x.id === l.id; })[0];
         var won = l.tier !== 'No win';
-        var prizeText = l.freebie ? 'Free Lucky Dip' : (won ? GBP.format(l.prize) : 'No win');
-        return '<div class="dr-line'+(won?' win':'')+'">' +
-          '<span class="dl-tag">Line '+l.id+'</span>' +
-          '<span class="dl-tier">'+l.tier+'</span>' +
-          '<span class="dl-prize">'+prizeText+'</span>' +
+        var m = ours ? matchesFor(draw, ours) : { nums:[], stars:[] };
+        var balls = ours ? '<div class="mini-balls">' +
+          ours.numbers.map(function(n){ return miniBall(n, { hit: m.nums.indexOf(n) !== -1 }); }).join('') +
+          (ours.stars || []).map(function(n){ return miniBall(n, { star:true, hit: m.stars.indexOf(n) !== -1 }); }).join('') +
+          '</div>' : '';
+        var right = won
+          ? '<span class="dl-tier">' + l.tier + '</span><span class="dl-prize">' + (l.freebie ? 'Free Lucky Dip' : GBP.format(l.prize)) + '</span>'
+          : '<span class="dl-count">' + countText(m, draw.game) + '</span><span class="dl-lose">Lose 😞</span>';
+        return '<div class="dr-line' + (won ? ' win' : '') + '">' +
+          '<div class="dl-left"><span class="dl-tag">Line ' + l.id + '</span>' + balls + '</div>' +
+          '<div class="dl-right">' + right + '</div>' +
         '</div>';
       }).join('');
       var totalHtml = winningLines.length > 1
-        ? '<div class="dr-total">Draw total: <b>'+GBP.format(drawTotal)+'</b></div>'
+        ? '<div class="dr-total">Draw total: <b>' + GBP.format(drawTotal) + '</b></div>'
         : '';
       return '<div class="draw-result">' +
-        '<div class="dr-head"><span class="dr-game">'+g.label+' · '+dateStr+'</span><span class="dr-date">'+numsStrFor(draw)+'</span></div>' +
-        '<div class="dr-lines">'+linesHtml+'</div>' +
+        '<div class="dr-head"><span class="dr-game">' + g.label + ' · ' + dateStr + '</span></div>' +
+        drawnHtml(draw) +
+        '<div class="dr-lines">' + linesHtml + '</div>' +
         totalHtml +
       '</div>';
-    }).join('') + '</div>';
+    }).join('') + '</div>' +
+    (!showAll && sorted.length > RESULTS_SHOWN
+      ? '<div class="results-tools"><button class="show-all" id="show-all">Show all ' + sorted.length + ' draws</button></div>'
+      : '');
+
+    var btn = document.getElementById('show-all');
+    if (btn) btn.addEventListener('click', function(){ renderResults(true); });
   }
 
   function renderUpdated(){
