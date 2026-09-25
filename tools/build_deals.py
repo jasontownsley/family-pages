@@ -31,6 +31,10 @@ TAG = "dailydeal07d1-21"
 DISCLOSURE = "As an Amazon Associate I earn from qualifying purchases."
 FEED_ITEMS = 60      # roundup + single-product pins, newest first
 SPOTLIGHTS = 4      # single-product pins per day
+# Paused 2026-09-25: stock photos rarely look like the product (e.g. a bedroom for a
+# lamp). Days that already have photos keep their pins; no new photos are fetched
+# until real product images are available (Awin feeds).
+FETCH_NEW_PHOTOS = False
 
 ROOT = Path(__file__).resolve().parent.parent
 DEALS = ROOT / "deals"
@@ -251,6 +255,8 @@ def spotlights(d):
     for p in picks:
         photo = folder / "photos" / f"{p['asin']}.jpg"
         if p["asin"] in credits and photo.exists():
+            continue
+        if not FETCH_NEW_PHOTOS:
             continue
         credit = photos.fetch(p["photo_query"], photo, used_photo_ids())
         if credit:
