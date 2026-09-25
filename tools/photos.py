@@ -53,5 +53,6 @@ def fetch(query, dest, used_ids):
         except Exception as ex:
             print(f"  Pexels download failed for photo {ph['id']}: {ex}")
             return None
-        return {"id": ph["id"], "photographer": ph["photographer"], "page": ph["url"], "query": query}
+        return {"id": ph["id"], "photographer": " ".join(ph["photographer"].split()), "page": ph["url"],
+                "query": query}
     return None
