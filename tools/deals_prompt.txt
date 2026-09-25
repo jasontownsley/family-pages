@@ -5,8 +5,8 @@ YOUR ONLY OUTPUT FILE: deals/data/{{DATE}}.json (relative to the current directo
 EFFICIENCY (this runs daily on a limited plan - keep it lean):
   - Aim to finish in about 25 tool calls or fewer.
   - Stop researching as soon as you have 6 verified products. Do not keep looking for "better" ones.
-  - Prefer WebSearch results and snippets; only WebFetch a page when a snippet is not enough to confirm a product.
-  - Do not re-read files you have already read. The shell is not available - don't try it.
+  - Use the Amazon lookup tool (below) for Amazon data; use WebSearch only for ideas from UK round-up sites.
+  - Do not re-read files you have already read. The only shell command you may run is the Amazon lookup tool.
 
 STEP 1 - Pick today's theme.
 Default rotation by weekday:
@@ -23,9 +23,14 @@ Read deals/data/*.json (Glob then Read) to see recent themes and titles, and do 
 STEP 2 - Research 6 to 10 products for that theme.
   - Read deals/data/exclude.txt: every ASIN listed there has already been used. Never use them again.
   - Use WebSearch for UK bestseller lists, "most loved"/"viral" round-ups from UK sites (e.g. Good Housekeeping UK, Ideal Home, The Independent, Mumsnet, Reddit UK threads, HotUKDeals) and Amazon UK search results.
-  - Get each product's ASIN (10 characters, starting B0) from an amazon.co.uk URL (/dp/ASIN or /gp/product/ASIN) that you actually saw in a search result or on a page. Never invent or guess an ASIN.
-  - Quality bar: roughly 4.3 stars or better with 500+ ratings, sold on Amazon UK, a typical price that fits the theme's budget. Confirm from at least one source besides your own assumptions.
-  - Amazon often blocks automated fetches of its product pages. Do NOT fight it: at most ONE WebFetch attempt per ASIN, and if Amazon blocks or strips the page, rely on search results and other sites instead. Do not use proxy/reader services to get around the block.
+  - Get each product's ASIN (10 characters, starting B0) from the lookup tool's search results or an amazon.co.uk URL you actually saw. Never invent or guess an ASIN.
+  - Quality bar: 4.3 stars or better with 500+ ratings, "available", and a current price that fits the theme's budget.
+  - AMAZON LOOKUP TOOL (run with Bash; it reads live Amazon UK pages, which WebFetch cannot):
+      python tools/amazon_lookup.py --search "<search words>"    -> up to 15 non-sponsored results
+      python tools/amazon_lookup.py <ASIN> <ASIN> ...             -> check up to 12 products at once
+    Each line is: ASIN | stars | ratings count | price | availability | title.
+    Every product you publish MUST pass the quality bar in an ASIN check from this tool run today - search snippets and review sites are not enough (they are often wrong or describe a different listing). Check all your candidates in one or two calls.
+    Do not WebFetch amazon.co.uk (it is blocked) and do not use proxy/reader services. If the tool says BLOCKED, wait by running it once more; if still blocked, publish nothing and say so.
   - 6-10 verified products is the goal. If you can only verify 3-5, publish those (fewer good products beats padding). If you cannot verify at least 3, write NO file and explain why in your final reply.
 
 STEP 3 - Write deals/data/{{DATE}}.json exactly in this shape (UTF-8, valid JSON, no comments):

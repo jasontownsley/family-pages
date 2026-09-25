@@ -4,3 +4,6 @@ Read
 Write
 Glob
 Grep
+Bash(python tools/amazon_lookup.py:*)
+PowerShell(python tools/amazon_lookup.py:*)
+PowerShell(python toolsmazon_lookup.py:*)
