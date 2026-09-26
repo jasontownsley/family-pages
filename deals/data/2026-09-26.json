@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-26",
+  "theme": "Cosy Home",
+  "pin_title": "7 Cosy Home Buys UK Homes Swear By This Autumn",
+  "pin_hook": "Snuggle-up staples with genuinely great reviews",
+  "pin_description": "Cosy home essentials from Amazon UK: a heated throw, a fleece sofa blanket, sherpa slipper boots, a fleece-covered hot water bottle, a Yankee Candle jar, warm white fairy lights and corduroy cushion covers. Autumn and winter home ideas for a snug living room and bedroom. #ad #cosyhome #autumnhome #hygge #ukhome",
+  "intro": "As the evenings draw in, here are seven well-reviewed buys that make it easy to turn any room into a proper snug spot.",
+  "products": [
+    {"asin": "B0DGM1QQFM", "name": "Silentnight Luxury Super Cosy Heated Throw, Chunky Knit Jacquard Fleece Electric Blanket, 120x160cm, Charcoal", "short_name": "Silentnight heated throw", "headline": "A sofa blanket that heats itself up", "why": "A chunky-knit fleece throw with 9 heat settings and a fast heat-up time, so movie night doesn't need the central heating cranked up.", "category": "Home", "photo_query": "cosy sofa autumn evening"},
+    {"asin": "B0C4L66L71", "name": "Bedsure Fleece Throw Blanket for Sofa, Fluffy Cosy Warm Blanket, Off White, 130x170cm", "short_name": "Bedsure fleece throw", "headline": "The blanket that lives permanently on the sofa", "why": "A soft, lightweight fleece throw that's big enough to share and just as easy to wash as it is to snuggle under.", "category": "Home", "photo_query": "cosy living room blanket"},
+    {"asin": "B086BGH1V5", "name": "LongBay Women's Slipper Boots, Warm Memory Foam Indoor Outdoor House Shoes", "short_name": "LongBay slipper boots", "headline": "Keep cold feet out of the equation", "why": "Fleece-lined boot slippers with a memory foam sole, warm enough for indoors but sturdy enough for a quick trip to the bin.", "category": "Footwear", "photo_query": "cosy hallway autumn morning"},
+    {"asin": "B076JF3FPB", "name": "CityComfort Hot Water Bottle with Soft Fleece Cover, Natural Rubber, 2 Litre", "short_name": "Fleece hot water bottle", "headline": "An old-school way to warm up a cold bed", "why": "A generous 2-litre rubber bottle with a genuinely soft fleece cover, one of the simplest ways to take the chill off an evening.", "category": "Home", "photo_query": "cosy bedroom autumn night"},
+    {"asin": "B001D6HB0M", "name": "Yankee Candle Scented Candle, Black Cherry, Large Jar, Up to 150 Hours Burn Time", "short_name": "Yankee Candle jar", "headline": "The candle that makes a room feel done", "why": "A long-burning, richly scented jar candle that's one of Amazon UK's most-reviewed home fragrances for a reason.", "category": "Home fragrance", "photo_query": "candlelit living room autumn"},
+    {"asin": "B01DAEKDMW", "name": "Lights4fun Indoor Fairy Lights, 200 Warm White LEDs, 16m Clear Cable with Plug", "short_name": "Warm white fairy lights", "headline": "Soft lighting that beats a bright overhead bulb", "why": "A long run of warm white LEDs on a mains plug, an easy way to add gentle light to a shelf, mirror or mantelpiece.", "category": "Home decor", "photo_query": "fairy lights shelf evening"},
+    {"asin": "B0CYZN8YGX", "name": "MIULEE Corduroy Cushion Covers, 50 x 50cm, Pack of 4, Dark Grey", "short_name": "Corduroy cushion covers", "headline": "An instant sofa refresh for autumn", "why": "Soft ribbed corduroy covers that swap a sofa's look in minutes and machine wash easily when they need a refresh.", "category": "Home decor", "photo_query": "textured sofa cushions autumn"}
+  ]
+}
