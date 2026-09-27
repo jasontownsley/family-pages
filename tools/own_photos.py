@@ -5,7 +5,8 @@ Photos are dropped into a shared OneDrive folder, named after the product
 then makes a real-photo pin for it. Only a cropped, re-encoded copy is ever
 published (EXIF, including GPS, is dropped); the originals stay in OneDrive.
 
-Folder: OWN_PHOTOS_DIR env var, else the server's synced OneDrive folder.
+Folder: OWN_PHOTOS_DIR env var, else the server's synced work OneDrive folder
+(JasonTownsley@BlueSkiesDigital, "OneDrive - Blue Skies Digital").
 Used photos are recorded in ClaudeJobs/own_photos_used.json (outside the repo).
 """
 import json
@@ -21,7 +22,7 @@ try:  # iPhone photos are HEIC
 except ImportError:
     pass
 
-OWN_DIR = Path(os.environ.get("OWN_PHOTOS_DIR", r"C:\Users\User\OneDrive\Daily Deals UK Photos"))
+OWN_DIR = Path(os.environ.get("OWN_PHOTOS_DIR", r"C:\Users\User\OneDrive - Blue Skies Digital\Daily Deals UK Photos"))
 USED_FILE = Path(os.environ.get("OWN_PHOTOS_USED", r"C:\Users\User\ClaudeJobs\own_photos_used.json"))
 EXTS = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp"}
 
