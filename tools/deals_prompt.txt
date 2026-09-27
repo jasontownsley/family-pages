@@ -6,7 +6,7 @@ EFFICIENCY (this runs daily on a limited plan - keep it lean):
   - Aim to finish in about 25 tool calls or fewer.
   - Stop researching as soon as you have 6 verified products. Do not keep looking for "better" ones.
   - Use the Amazon lookup tool (below) for Amazon data; use WebSearch only for ideas from UK round-up sites.
-  - Do not re-read files you have already read. The only shell command you may run is the Amazon lookup tool.
+  - Do not re-read files you have already read. The only shell commands you may run are the two helpers: python tools/recent_deals.py and python tools/amazon_lookup.py (no other commands, no python -c, no cd, ls or loops).
 
 STEP 1 - Pick today's theme.
 Default rotation by weekday:
@@ -18,10 +18,10 @@ Seasonal overrides (UK):
   - 1 November - 20 December: Friday, Saturday and Sunday become Christmas gifts (for her / for him / for kids / stocking fillers / secret Santa under £10 - vary it).
   - From the Monday before Black Friday up to and including Cyber Monday: every day is a Black Friday themed gift or home roundup.
   - 21-31 December: New Year organising / fresh start.
-Read deals/data/*.json (Glob then Read) to see recent themes and titles, and do not repeat a title or angle used in the last 14 days.
+Run: python tools/recent_deals.py  - it lists the last 14 days' themes, titles and products plus every ASIN already used. Do not repeat a title or angle from it.
 
 STEP 2 - Research 6 to 10 products for that theme.
-  - Read deals/data/exclude.txt: every ASIN listed there has already been used. Never use them again.
+  - Never use an ASIN from the 'ASINS ALREADY USED' list printed by recent_deals.py.
   - Use WebSearch for UK bestseller lists, "most loved"/"viral" round-ups from UK sites (e.g. Good Housekeeping UK, Ideal Home, The Independent, Mumsnet, Reddit UK threads, HotUKDeals) and Amazon UK search results.
   - Get each product's ASIN (10 characters, starting B0) from the lookup tool's search results or an amazon.co.uk URL you actually saw. Never invent or guess an ASIN.
   - Quality bar: 4.3 stars or better with 500+ ratings, "available", and a current price that fits the theme's budget.

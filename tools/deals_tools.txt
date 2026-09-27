@@ -6,4 +6,5 @@ Glob
 Grep
 Bash(python tools/amazon_lookup.py:*)
 PowerShell(python tools/amazon_lookup.py:*)
-PowerShell(python toolsmazon_lookup.py:*)
+Bash(python tools/recent_deals.py:*)
+PowerShell(python tools/recent_deals.py:*)
