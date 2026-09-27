@@ -54,6 +54,8 @@ Field rules:
   - headline: a punchy benefit, max ~60 characters. why: 1-2 sentences, honest, no made-up statistics.
   - Order products best first: the first 4 also get their own single-product Pinterest pin, so put the most eye-catching, broadly appealing ones first.
   - photo_query: 2-6 words to search a stock photo library for the pin's background. Describe the SETTING or mood where the product is used (e.g. "tidy bathroom shelf", "autumn front door", "cosy bedroom reading"), never the product itself or a brand, so the photo can't be mistaken for the item being sold.
+  - FAMILY FAVOURITES: recent_deals.py lists FAMILY PHOTOS AVAILABLE - our own photos of products the family owns, named after the product.
+    If one clearly fits today's theme, feature it (at most ONE per day): find that exact product with the lookup tool (search the filename words), check it passes the quality bar like any other product, put it FIRST in the list, and add "own_photo": "<exact filename>" to it. Its why can say the family uses and rates it. Only link a photo to the product actually shown in it; if you can't match it confidently, skip it. Never mention the photo otherwise.
   - Do NOT include prices, star ratings or review counts anywhere in the JSON (Amazon's rules - the page sends people to Amazon for the live price).
 
 STEP 4 - Final reply (this goes into the log): 3-6 lines with the theme, title, number of products, and anything that went wrong (e.g. sites that blocked you, products dropped and why).

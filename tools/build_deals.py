@@ -23,6 +23,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
+import own_photos
 import photos
 
 SITE_URL = "https://dailydealsuk.co.uk/deals"
@@ -87,6 +88,9 @@ def validate(d, name="data"):
         q = p.get("photo_query")
         if q is not None and (not isinstance(q, str) or len(q) > 80):
             errs.append(f"{name}: product {i} photo_query must be a short string")
+        op = p.get("own_photo")
+        if op is not None and (not isinstance(op, str) or not op.strip()):
+            errs.append(f"{name}: product {i} own_photo must be a filename")
         seen.add(a)
     return errs
 
@@ -213,7 +217,7 @@ def make_spot_pin(p, photo, credit, out):
     dr.text((M + 22, 89), kicker, font=f_kick, fill="white", anchor="lm")
 
     f_credit = font(FONT_SEMI, 20)
-    ctext = f"Photo: {credit['photographer']} / Pexels"
+    ctext = "Our own photo" if credit.get("own") else f"Photo: {credit['photographer']} / Pexels"
     cw = dr.textlength(ctext, font=f_credit)
     dr.rounded_rectangle([W - M - cw - 20, PH - 46, W - M + 4, PH - 12], radius=10, fill=(0, 0, 0))
     dr.text((W - M - cw - 8, PH - 29), ctext, font=f_credit, fill="white", anchor="lm")
@@ -241,7 +245,7 @@ def make_spot_pin(p, photo, credit, out):
 def used_photo_ids():
     ids = set()
     for f in DEALS.glob("*/photos.json"):
-        ids |= {c["id"] for c in json.loads(f.read_text(encoding="utf-8")).values()}
+        ids |= {c["id"] for c in json.loads(f.read_text(encoding="utf-8")).values() if not c.get("own")}
     return ids
 
 
@@ -250,15 +254,21 @@ def spotlights(d):
     folder = DEALS / d["date"]
     cfile = folder / "photos.json"
     credits = json.loads(cfile.read_text(encoding="utf-8")) if cfile.exists() else {}
-    picks = [p for p in d["products"] if p.get("photo_query")][:SPOTLIGHTS]
+    # family photos first (always allowed), then Pexels photos if enabled
+    picks = [p for p in d["products"] if p.get("own_photo")]
+    picks += [p for p in d["products"] if p.get("photo_query") and not p.get("own_photo")]
+    picks = picks[:SPOTLIGHTS]
     changed = False
     for p in picks:
         photo = folder / "photos" / f"{p['asin']}.jpg"
         if p["asin"] in credits and photo.exists():
             continue
-        if not FETCH_NEW_PHOTOS:
+        if p.get("own_photo"):
+            credit = own_photos.prepare(p["own_photo"], photo, p["asin"])
+        elif FETCH_NEW_PHOTOS:
+            credit = photos.fetch(p["photo_query"], photo, used_photo_ids())
+        else:
             continue
-        credit = photos.fetch(p["photo_query"], photo, used_photo_ids())
         if credit:
             credits[p["asin"]] = credit
             changed = True
@@ -349,8 +359,9 @@ def day_page(d, spots=()):
             f'<a class="btn" href="{aff(p["asin"])}" rel="sponsored nofollow noopener" target="_blank">'
             f'Check today\'s price on Amazon</a></div>')
     out.append(f'<p class="intro">Published {pretty_date(d["date"])}.</p>')
-    if spots:
-        cred = ", ".join(f'<a href="{e(c["page"])}">{e(c["photographer"])}</a>' for _, c in spots)
+    pex = [c for _, c in spots if not c.get("own")]
+    if pex:
+        cred = ", ".join(f'<a href="{e(c["page"])}">{e(c["photographer"])}</a>' for c in pex)
         out.append(f'<p class="intro">Pin photos from Pexels: {cred}.</p>')
     out.append(FOOT.format(disc=e(DISCLOSURE), year=d["date"][:4], brand=e(BRAND)))
     return "".join(out)

@@ -8,6 +8,8 @@ import json
 import sys
 from pathlib import Path
 
+import own_photos
+
 DATA = Path(__file__).resolve().parent.parent / "deals" / "data"
 
 if __name__ == "__main__":
@@ -23,3 +25,6 @@ if __name__ == "__main__":
     used = exclude.read_text(encoding="utf-8").split() if exclude.exists() else []
     print(f"\nASINS ALREADY USED ({len(used)}) - never reuse these:")
     print(" ".join(used))
+    fam = own_photos.available()
+    print(f"\nFAMILY PHOTOS AVAILABLE ({len(fam)}) - products we own, photographed by us:")
+    print("\n".join(fam) if fam else "(none)")
