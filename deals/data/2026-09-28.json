@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-28",
+  "theme": "Kitchen Finds",
+  "pin_title": "6 Kitchen Gadgets UK Home Cooks Swear By",
+  "pin_hook": "Small buys that make cooking easier",
+  "pin_description": "Clever kitchen gadgets UK home cooks rate highly: mini chopper, vegetable slicer, meat thermometer, olive oil spray bottle, stainless steel utensil set and a garlic press. Budget kitchen finds and gift ideas for foodies. #ad #kitchengadgets #kitchenhacks #ukdeals #homecooking",
+  "intro": "A handful of clever kitchen buys that keep coming up in UK shopper reviews - nothing fancy, just genuinely useful.",
+  "products": [
+    {"asin": "B01B81R34U", "name": "Ninja Express Chop Mini Herb & Vegetable Chopper", "short_name": "Ninja mini chopper", "headline": "Chops herbs and veg in seconds, no board needed", "why": "A compact pull-cord chopper that shoppers reach for daily instead of getting the big food processor out.", "category": "Kitchen", "photo_query": "tidy kitchen worktop chopping"},
+    {"asin": "B0BHSXFTGH", "name": "Fullstar Pro Core Vegetable Chopper & Mandoline Slicer", "short_name": "Fullstar veg chopper", "headline": "6 blades for dicing, slicing and spiralising", "why": "One tool that replaces several knives and graters, with a container that catches everything as you go.", "category": "Kitchen", "photo_query": "fresh vegetables kitchen counter"},
+    {"asin": "B07WKKS4HB", "name": "DOQAUS Meat Thermometer, 3s Instant Read", "short_name": "Instant-read thermometer", "headline": "No more guessing if dinner's cooked through", "why": "Gives an accurate reading in a few seconds, handy for roasts, BBQs and getting steak just right.", "category": "Kitchen", "photo_query": "sunday roast dinner table"},
+    {"asin": "B0D54PM77N", "name": "TrendPlain 470ml Olive Oil Spray Bottle", "short_name": "Olive oil spray bottle", "headline": "A fine, even mist instead of a heavy glug", "why": "Handy for controlling how much oil goes on salads, pans or air fryer baskets without the waste.", "category": "Kitchen", "photo_query": "healthy salad prep kitchen"},
+    {"asin": "B08GFR4F5T", "name": "Berglander 13 Piece Stainless Steel Kitchen Utensil Set", "short_name": "Utensil set with stand", "headline": "A full matching set that actually looks tidy", "why": "Covers most everyday cooking tasks in one set, and the stand keeps the worktop clutter-free.", "category": "Kitchen", "photo_query": "cosy kitchen worktop utensils"},
+    {"asin": "B07N7KFHVH", "name": "Zulay Kitchen Premium Garlic Press Set", "short_name": "Zulay garlic press", "headline": "Crushes garlic in one squeeze, no peeling needed", "why": "A sturdy press that shoppers say holds up far better than flimsier versions, and it's easy to clean.", "category": "Kitchen", "photo_query": "rustic kitchen herbs garlic"}
+  ]
+}
