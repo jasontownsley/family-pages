@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-30",
+  "theme": "Home Organisation",
+  "pin_title": "7 Clever Home Organisation & Storage Buys UK Homes Love",
+  "pin_hook": "Tidy wardrobes, drawers and doors made easy",
+  "pin_description": "Clever home organisation and storage ideas UK homes swear by: under-bed storage bags, vacuum compression bags, an over-door organiser, drawer dividers and makeup trays. Easy small-space storage hacks and tidy home inspiration for bedrooms, wardrobes and bathrooms. #ad #homeorganisation #storagehacks #tidyhome #ukdeals",
+  "intro": "Ready to reclaim some space? Here are seven storage buys that UK shoppers keep coming back to for tidying up wardrobes, drawers and doors.",
+  "products": [
+    {"asin": "B0BPSFPFVP", "name": "Lifewit 95L Clothes Storage Bags", "short_name": "Lifewit storage bags", "headline": "Fold away out-of-season clothes fast", "why": "Foldable and sturdy with carry handles, they're a simple way to free up wardrobe space for bulky jumpers and bedding.", "category": "Home Organisation", "photo_query": "tidy bedroom wardrobe folded clothes"},
+    {"asin": "B0C781BNJL", "name": "ULG 5-Tier Over Door Organizer", "short_name": "5-tier over door organiser", "headline": "Turn wasted door space into storage", "why": "Five roomy pockets plus mesh side pockets make this a favourite for hallway cupboards, pantries and kids' rooms.", "category": "Home Organisation", "photo_query": "tidy hallway cupboard door"},
+    {"asin": "B07RSCPH4N", "name": "Amazon Basics Vacuum Compression Storage Bags", "short_name": "Vacuum storage bags", "headline": "Shrink bulky bedding down to size", "why": "Squeeze the air out with a hoover and duvets, coats and blankets take up a fraction of the space in the loft or under the bed.", "category": "Home Organisation", "photo_query": "airing cupboard folded bedding"},
+    {"asin": "B0CGX6W3GZ", "name": "SpaceAid Drawer Organiser 12 Pack", "short_name": "SpaceAid drawer organiser", "headline": "Never dig through a messy drawer again", "why": "The clear bins slot together so socks, underwear and accessories all get their own spot instead of one tangled pile.", "category": "Home Organisation", "photo_query": "tidy bedroom chest of drawers"},
+    {"asin": "B0D9XDR312", "name": "Vtopmart 25 Pack Drawer Organiser Trays", "short_name": "Vtopmart organiser trays", "headline": "Sort makeup and bits and pieces instantly", "why": "A mix of tray sizes means you can build a layout that fits any bathroom or bedroom drawer without wasted space.", "category": "Home Organisation", "photo_query": "tidy bathroom vanity drawer"},
+    {"asin": "B0C4L9MTB7", "name": "Lifewit Adjustable Drawer Dividers", "short_name": "Lifewit drawer dividers", "headline": "Keep clothes upright and easy to see", "why": "They expand to fit almost any drawer and work brilliantly with the folding method for t-shirts and leggings.", "category": "Home Organisation", "photo_query": "tidy dresser drawer clothes"},
+    {"asin": "B07JGWT25L", "name": "Amazon Basics Collapsible Wardrobe Organiser", "short_name": "Collapsible wardrobe organiser", "headline": "A tidy shelf system that folds flat", "why": "Great for jumpers and jeans on a wardrobe shelf, and it collapses down when you don't need it.", "category": "Home Organisation", "photo_query": "tidy wardrobe shelf folded jumpers"}
+  ]
+}
