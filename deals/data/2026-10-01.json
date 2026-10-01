@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-01",
+  "theme": "Beauty & Self-Care",
+  "pin_title": "7 Beauty & Self-Care Staples UK Shoppers Keep Repurchasing",
+  "pin_hook": "Haircare & skincare staples worth the repurchase",
+  "pin_description": "Beauty and self-care staples UK shoppers keep repurchasing: hydrating water gel, bond-repair shampoo, cult hand creams, a foaming shower gel and more. Honest picks for a simple skincare and haircare routine. #ad #selfcare #skincare #haircare #ukbeauty",
+  "intro": "The beauty buys that earn a permanent spot in the bathroom cabinet - simple, well-reviewed and easy to restock.",
+  "products": [
+    {"asin": "B01LZUCVV5", "name": "Neutrogena Hydro Boost Water Gel", "short_name": "Hydro Boost water gel", "headline": "Lightweight hydration that soaks right in", "why": "A hyaluronic acid gel-cream that layers well under makeup and doesn't feel heavy, which is why it keeps selling out.", "category": "Skincare", "photo_query": "bright bathroom shelf morning light"},
+    {"asin": "B07D37PQGL", "name": "Olaplex No.4 Bond Maintenance Shampoo", "short_name": "Olaplex bond shampoo", "headline": "Salon-grade repair for coloured or damaged hair", "why": "A gentler everyday shampoo that works alongside Olaplex's treatments to keep hair feeling stronger between salon visits.", "category": "Haircare", "photo_query": "cosy bathroom shower shelf"},
+    {"asin": "B07MWF1956", "name": "Soap & Glory Clean On Me Shower Gel", "short_name": "Clean On Me shower gel", "headline": "The shower gel that turns a wash into a treat", "why": "A creamy, sweet-scented gel that lathers generously, a long-time favourite for an easy daily pick-me-up.", "category": "Bath & Body", "photo_query": "steamy shower tiles self-care"},
+    {"asin": "B011KMZ2WW", "name": "O'Keeffe's Working Hands Cream", "short_name": "O'Keeffe's hand cream", "headline": "Fixes properly dry, cracked hands fast", "why": "Unscented and fast-absorbing, it's become the go-to for anyone whose hands take a daily beating.", "category": "Skincare", "photo_query": "kitchen sink autumn light"},
+    {"asin": "B07JK519V7", "name": "Weleda Skin Food Light Moisturiser", "short_name": "Weleda Skin Food Light", "headline": "A multi-tasking cream for face, hands and body", "why": "A lighter take on the cult classic Skin Food, rich enough for dry patches but quick to sink in for everyday use.", "category": "Skincare", "photo_query": "bedside table soft morning light"},
+    {"asin": "B0B1JC34VP", "name": "Imperial Leather Foamburst Body Wash", "short_name": "Foamburst body wash", "headline": "Turns every shower into a little pamper session", "why": "A foam-to-gel formula with a light floral scent, an easy way to make a weekday shower feel a bit more indulgent.", "category": "Bath & Body", "photo_query": "cosy bathtub candles relaxing"},
+    {"asin": "B0FFN9SMND", "name": "L'Occitane Shea Butter Hand Cream", "short_name": "L'Occitane hand cream", "headline": "A little luxury that lives in every handbag", "why": "Light, quick-absorbing and nicely scented, the kind of small treat that makes a handbag or desk drawer feel special.", "category": "Skincare", "photo_query": "handbag desk autumn cosy"}
+  ]
+}
