@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-02",
+  "theme": "Gifts",
+  "pin_title": "7 Thoughtful Gifts Under £20 UK Shoppers Love to Give",
+  "pin_hook": "Budget gifts that still feel generous",
+  "pin_description": "Thoughtful gifts under £20 that UK shoppers rate highly: scented candles, a herbal tea gift set, a personalised photo blanket, a candle warmer lamp and more. Great budget presents for birthdays, Christmas or just because. #ad #giftideas #giftsunder20 #ukdeals #presentideas",
+  "intro": "Proof that a great gift doesn't need a big budget - these are the under-£20 buys UK shoppers keep coming back for.",
+  "products": [
+    {"asin": "B07DK8P544", "name": "YMing Scented Candles Gift Set", "short_name": "YMing scented candle set", "headline": "A cosy, affordable treat she'll actually use", "why": "A soy wax candle gift set that consistently racks up glowing reviews - an easy win for almost anyone on your list.", "category": "Home", "photo_query": "cosy candlelit living room"},
+    {"asin": "B0D5MFLFM2", "name": "Pukka Herbs Herbal Tea Selection Gift Set", "short_name": "Pukka herbal tea gift set", "headline": "A premium-feeling gift for tea lovers", "why": "Nine flavours in one box makes this feel like a proper treat, and it suits almost any relative or colleague.", "category": "Food & Drink", "photo_query": "warm autumn tea table"},
+    {"asin": "B08NVMH86X", "name": "LNM Personalised Photo Blanket", "short_name": "Personalised photo blanket", "headline": "Turns a favourite photo into a cosy keepsake", "why": "A properly personal gift that shoppers say photographs beautifully and keeps its print wash after wash.", "category": "Home", "photo_query": "cosy sofa blanket evening"},
+    {"asin": "B0CKY1QDPD", "name": "Personalized Toiletry Bag for Men", "short_name": "Engraved men's toiletry bag", "headline": "A practical gift that still feels special", "why": "Custom-engraved and genuinely useful for travel, which is why it's become a go-to pick for the men in your life.", "category": "Travel", "photo_query": "packed weekend travel bag"},
+    {"asin": "B07YPXFQY6", "name": "Hippowarehouse Personalised Photo Cushion", "short_name": "Personalised photo cushion", "headline": "A funny or sentimental touch for any sofa", "why": "Add any photo or text for a gift that's as fun for a joke present as it is for a sentimental one.", "category": "Home", "photo_query": "cosy sofa cushions corner"},
+    {"asin": "B0DP99C2ZC", "name": "Candeldo Gold Candle Warmer Lamp", "short_name": "Gold candle warmer lamp", "headline": "A stylish way to make any candle last longer", "why": "Melts candles safely from the top down instead of burning them, so her favourite candle stretches much further.", "category": "Home", "photo_query": "elegant bedside lamp glow"},
+    {"asin": "B0B7JYQGSQ", "name": "Sanctuary Spa Lost In The Moment Gift Set", "short_name": "Sanctuary Spa gift set", "headline": "Spa-night-in, boxed and ready to gift", "why": "A vegan pampering set that needs zero extra wrapping thought - just add a card.", "category": "Beauty", "photo_query": "relaxing bathroom spa evening"}
+  ]
+}
