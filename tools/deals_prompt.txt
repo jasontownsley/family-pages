@@ -11,14 +11,14 @@ EFFICIENCY (this runs daily on a limited plan - keep it lean):
 STEP 1 - Pick today's theme.
 Default rotation by weekday:
   Monday: Kitchen finds | Tuesday: Cleaning & laundry | Wednesday: Home organisation & storage
-  Thursday: Beauty & self-care | Friday: Gifts (pick a budget, e.g. under £20) | Saturday: Cosy home
+  Thursday: Beauty & self-care | Friday: Gifts (rotate the angle each week - for her, for him, for kids, for teens, for the home, stocking fillers, secret Santa; and the budget - under £10, £15, £20, £25, £30) | Saturday: Cosy home
   Sunday: Viral / TikTok-famous finds
 Seasonal overrides (UK):
   - 15-31 October: Saturday and Sunday become Halloween.
   - 1 November - 20 December: Friday, Saturday and Sunday become Christmas gifts (for her / for him / for kids / stocking fillers / secret Santa under £10 - vary it).
   - From the Monday before Black Friday up to and including Cyber Monday: every day is a Black Friday themed gift or home roundup.
   - 21-31 December: New Year organising / fresh start.
-Run: python tools/recent_deals.py  - it lists the last 14 days' themes, titles and products plus every ASIN already used. Do not repeat a title or angle from it.
+Run: python tools/recent_deals.py  - it lists the last 14 days' themes, titles and products plus every ASIN already used. Do not repeat a title or angle from it, and do not reword one: a new title must differ in its main keywords and structure, not just the number of products (e.g. after "8 Thoughtful Gifts Under £20 UK Shoppers Love to Give", NOT "7 Thoughtful Gifts Under £20..."; instead e.g. "Cosy Gifts for Her Under £15 That Feel Expensive"). The same goes for the theme's angle: if the last roundup of this theme was "gifts under £20", pick a different recipient or budget today.
 
 STEP 2 - Research 6 to 10 products for that theme.
   - Never use an ASIN from the 'ASINS ALREADY USED' list printed by recent_deals.py.
