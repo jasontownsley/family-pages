@@ -53,7 +53,11 @@ Field rules:
   - short_name: max ~28 characters, shown on the pin image.
   - headline: a punchy benefit, max ~60 characters. why: 1-2 sentences, honest, no made-up statistics.
   - Order products best first: the first 4 also get their own single-product Pinterest pin, so put the most eye-catching, broadly appealing ones first.
-  - photo_query: 2-6 words to search a stock photo library for the pin's background. Describe the SETTING or mood where the product is used (e.g. "tidy bathroom shelf", "autumn front door", "cosy bedroom reading"), never the product itself or a brand, so the photo can't be mistaken for the item being sold.
+  - PHOTO PINS (for up to 4 of the first products, skipping any with own_photo): a pin only gets a stock photo if you have LOOKED at it and it clearly shows the same kind of item.
+    1. Only try products that are a recognisable, generic type of thing (a throw, fairy lights, a candle, a mug, storage baskets, a tumbler). Skip specific gadgets or branded tools that no stock photo will show (e.g. a particular garlic press) - they stay text-only.
+    2. Run: python tools/photo_candidates.py <ASIN> "<2-5 words naming the item itself, e.g. grey knitted throw on sofa>" - it prints up to 4 photo_ids with a file path and description.
+    3. Open each listed file with the Read tool and look at it. Accept one only if the MAIN subject is clearly the same type of item as the product (similar style and colour where that matters), it looks natural, and it has no prominent faces, other brands' logos or text. If none pass, you may try ONE different search; if still none, leave that product without a photo.
+    4. For the chosen photo set "photo_id": <number> on that product (also keep "photo_query": "<the words you searched>"). Never set photo_id for a photo you haven't opened.
   - FAMILY FAVOURITES: recent_deals.py lists FAMILY PHOTOS AVAILABLE - our own photos of products the family owns, named after the product.
     If one clearly fits today's theme, feature it (at most ONE per day): find that exact product with the lookup tool (search the filename words), check it passes the quality bar like any other product, put it FIRST in the list, and add "own_photo": "<exact filename>" to it. Its why can say the family uses and rates it. Only link a photo to the product actually shown in it; if you can't match it confidently, skip it. Never mention the photo otherwise.
   - Do NOT include prices, star ratings or review counts anywhere in the JSON (Amazon's rules - the page sends people to Amazon for the live price).

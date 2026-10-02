@@ -35,7 +35,9 @@ SPOTLIGHTS = 4      # single-product pins per day
 # Paused 2026-09-25: stock photos rarely look like the product (e.g. a bedroom for a
 # lamp). Days that already have photos keep their pins; no new photos are fetched
 # until real product images are available (Awin feeds).
-FETCH_NEW_PHOTOS = False
+# Stock photos are only used when the deals job has LOOKED at the candidates and
+# approved one (photo_id); unchecked photo_query matches are never used.
+FETCH_NEW_PHOTOS = True
 
 ROOT = Path(__file__).resolve().parent.parent
 DEALS = ROOT / "deals"
@@ -88,6 +90,9 @@ def validate(d, name="data"):
         q = p.get("photo_query")
         if q is not None and (not isinstance(q, str) or len(q) > 80):
             errs.append(f"{name}: product {i} photo_query must be a short string")
+        pid = p.get("photo_id")
+        if pid is not None and not (isinstance(pid, int) or (isinstance(pid, str) and pid.isdigit())):
+            errs.append(f"{name}: product {i} photo_id must be a Pexels photo number")
         op = p.get("own_photo")
         if op is not None and (not isinstance(op, str) or not op.strip()):
             errs.append(f"{name}: product {i} own_photo must be a filename")
@@ -256,7 +261,7 @@ def spotlights(d):
     credits = json.loads(cfile.read_text(encoding="utf-8")) if cfile.exists() else {}
     # family photos first (always allowed), then Pexels photos if enabled
     picks = [p for p in d["products"] if p.get("own_photo")]
-    picks += [p for p in d["products"] if p.get("photo_query") and not p.get("own_photo")]
+    picks += [p for p in d["products"] if p.get("photo_id") and not p.get("own_photo")]
     picks = picks[:SPOTLIGHTS]
     changed = False
     for p in picks:
@@ -266,7 +271,7 @@ def spotlights(d):
         if p.get("own_photo"):
             credit = own_photos.prepare(p["own_photo"], photo, p["asin"])
         elif FETCH_NEW_PHOTOS:
-            credit = photos.fetch(p["photo_query"], photo, used_photo_ids())
+            credit = photos.fetch_id(p["photo_id"], photo, p.get("photo_query", ""))
         else:
             continue
         if credit:

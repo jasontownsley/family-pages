@@ -26,6 +26,49 @@ def api_key():
     return None
 
 
+def _get(url, key=None, timeout=25):
+    headers = {"User-Agent": "DailyDealsUK/1.0"}
+    if key:
+        headers["Authorization"] = key
+    return urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=timeout).read()
+
+
+def _credit(ph, query=""):
+    return {"id": ph["id"], "photographer": " ".join(ph["photographer"].split()), "page": ph["url"],
+            "query": query, "alt": ph.get("alt", "")}
+
+
+def candidates(query, n, used_ids):
+    """Up to n unused portrait/square results for query, as Pexels photo dicts."""
+    key = api_key()
+    if not key or not query:
+        return []
+    url = API + urllib.parse.urlencode({"query": query, "per_page": 30, "locale": "en-GB"})
+    try:
+        results = json.loads(_get(url, key)).get("photos", [])
+    except Exception as ex:
+        print(f"Pexels search failed for '{query}': {ex}")
+        return []
+    keep = [ph for ph in results if ph["id"] not in used_ids and ph["height"] >= ph["width"] * 0.8]
+    return keep[:n]
+
+
+def fetch_id(photo_id, dest, query=""):
+    """Download one specific Pexels photo (already checked by eye) to dest; return its credit or None."""
+    key = api_key()
+    if not key:
+        return None
+    try:
+        ph = json.loads(_get(f"https://api.pexels.com/v1/photos/{int(photo_id)}", key))
+        src = ph["src"]["original"] + "?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=1000"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(_get(src, timeout=30))
+    except Exception as ex:
+        print(f"  Pexels download failed for photo {photo_id}: {ex}")
+        return None
+    return _credit(ph, query)
+
+
 def fetch(query, dest, used_ids):
     """Download a portrait photo for query to dest; return its credit dict or None.
 
