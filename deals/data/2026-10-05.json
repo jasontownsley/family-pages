@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-05",
+  "theme": "Kitchen Finds",
+  "pin_title": "6 Autumn Baking Essentials UK Home Bakers Rely On",
+  "pin_hook": "Everything you need to start baking season right",
+  "pin_description": "Autumn baking essentials UK home bakers love: a Kenwood hand mixer, stainless steel mixing bowls, a Salter digital scale, a cake decorating kit, a cooling rack and heat-resistant oven gloves. Perfect for weekend bakes and kitchen gifts. #ad #baking #kitchenfinds #ukdeals #homebaking",
+  "intro": "Nights are drawing in and the oven's getting a proper workout - here are the baking buys UK home cooks keep coming back to.",
+  "products": [
+    {"asin": "B0829FF68Q", "name": "Kenwood QuickMix Hand Mixer", "short_name": "Kenwood hand mixer", "headline": "Takes the arm-ache out of whisking", "why": "5 speeds plus a turbo boost make quick work of cake batter and meringue, and it's compact enough to store in a drawer.", "category": "Kitchen", "photo_query": "hand mixer baking kitchen"},
+    {"asin": "B07N646N9S", "name": "Wildone Mixing Bowls Set of 5 with Airtight Lids", "short_name": "Wildone mixing bowl set", "headline": "Five bowls that nest, seal and double as storage", "why": "Stainless steel bowls with lids that turn leftover mix straight into fridge storage, plus measurement marks inside for less washing-up.", "category": "Kitchen", "photo_query": "stainless steel mixing bowls stacked", "photo_id": 33775628},
+    {"asin": "B000ZNM51O", "name": "Salter 1036 Digital Kitchen Scale", "short_name": "Salter digital scale", "headline": "Precise measuring for reliable bakes", "why": "A simple, accurate scale that's been a UK kitchen staple for years - handy for getting flour and sugar ratios spot on.", "category": "Kitchen", "photo_query": "digital kitchen scale on counter"},
+    {"asin": "B01KZBY806", "name": "GEEKHOM Silicone Oven Gloves", "short_name": "GEEKHOM oven gloves", "headline": "Grip hot trays with confidence", "why": "Waterproof silicone with a textured grip, so they're safer for pulling trays out than thin cotton mitts.", "category": "Kitchen", "photo_query": "silicone oven gloves kitchen"},
+    {"asin": "B000SA8A4A", "name": "Tala Large Non-Stick Cooling Rack", "short_name": "Tala cooling rack", "headline": "Lets bakes cool evenly without going soggy", "why": "A classic, sturdy wire rack that's big enough for a full batch of biscuits or a loaf cake.", "category": "Kitchen", "photo_query": "wire cooling rack baking", "photo_id": 28976919},
+    {"asin": "B091Z2PGPP", "name": "RFAQK 100-Piece Cake Decorating Kit", "short_name": "RFAQK decorating kit", "headline": "Everything for piping and finishing cakes", "why": "A big bundle of nozzles, bags and a scraper that covers birthday cakes through to piped biscuits without buying separate bits.", "category": "Kitchen", "photo_query": "cake decorating piping nozzles"}
+  ]
+}
