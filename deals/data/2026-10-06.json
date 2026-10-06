@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-06",
+  "theme": "Cleaning & Laundry",
+  "pin_title": "7 Washing Machine & Laundry Freshness Buys Under £20 UK Homes Rely On",
+  "pin_hook": "Keep machines fresh and clothes fuzz-free, all highly rated",
+  "pin_description": "Washing machine and laundry freshness buys UK homes rely on: descaler tablets, lint removers, fabric shavers and limescale cleaners under £20. Easy laundry hacks and cleaning essentials for a fresher home. #ad #cleaningtips #laundryhacks #ukhomes #cleanhome",
+  "intro": "A smelly washing machine or a bobbly jumper can undo a whole laundry day - these budget buys sort both in minutes.",
+  "products": [
+    {"asin": "B0GXTSRTYW", "name": "BEAUTURAL Rechargeable Lint Remover", "short_name": "Rechargeable lint remover", "headline": "Zaps bobbles off jumpers in seconds", "why": "A fast way to make tired knitwear look new again, with adjustable settings so it's gentle on delicate fabrics too.", "category": "Laundry", "photo_query": "handheld fabric lint remover on sweater"},
+    {"asin": "B00E3862DE", "name": "Philips Lint Remover and Fabric Shaver", "short_name": "Philips fabric shaver", "headline": "A bestseller for refreshing pilled fabrics", "why": "Simple to use and gentle enough for jumpers, blankets and sofas, which is why it's stayed a go-to for so long.", "category": "Laundry", "photo_query": "electric fabric shaver removing lint from clothing"},
+    {"asin": "B08DVFZTTG", "name": "Washing Machine Cleaner Descaler 24 Pack", "short_name": "Washing machine descaler 24pk", "headline": "A months' supply of deep-clean tablets", "why": "Drops straight into an empty wash cycle to clear limescale, detergent build-up and musty smells from the drum.", "category": "Cleaning"},
+    {"asin": "B07QZXJH6B", "name": "Dettol Washing Machine Cleaner, Lemon", "short_name": "Dettol washing machine cleaner", "headline": "Tackles hidden bacteria, not just limescale", "why": "A trusted name for keeping the drum and seals properly hygienic, with a fresh lemon scent left behind.", "category": "Cleaning"},
+    {"asin": "B08MV7HCZS", "name": "Calgon Hygiene Plus Washing Machine Cleaner", "short_name": "Calgon Hygiene Plus tablets", "headline": "Softens water and fights limescale together", "why": "Doubles up as a limescale protector and deep cleaner, which can help washes come out brighter over time.", "category": "Cleaning"},
+    {"asin": "B07VNSWZHP", "name": "Dr. Beckmann Service-it Power Descaler", "short_name": "Dr Beckmann descaler", "headline": "A cheap top-up between deep cleans", "why": "Handy sachets to run through the machine every so often to stop limescale building up in hard water areas.", "category": "Cleaning"},
+    {"asin": "B083YLK75K", "name": "Oust Dishwasher & Washing Machine Descaler", "short_name": "Oust dishwasher & washer descaler", "headline": "One descaler for two hardworking appliances", "why": "Useful for anyone who'd rather buy one product for the washing machine and the dishwasher than two.", "category": "Cleaning"}
+  ]
+}
