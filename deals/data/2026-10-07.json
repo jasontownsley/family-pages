@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-07",
+  "theme": "Entryway Organisation",
+  "pin_title": "6 Entryway & Hallway Organisation Buys UK Homes Swear By",
+  "pin_hook": "Tidy hallways start here - all highly rated",
+  "pin_description": "Entryway and hallway organisation buys UK homes love: a shoe storage bench, wall coat hooks, a wooden key holder, and woven baskets for shelves and shoes. Easy hallway tidy ideas and home organisation inspiration. #ad #hallwaystorage #homeorganisation #entrywaydecor #ukhomes",
+  "intro": "If your hallway is where coats, shoes and keys go to pile up, these highly rated buys make it easy to keep everything in its place.",
+  "products": [
+    {"asin": "B0BSH2L8Y2", "name": "VASAGLE Shoe Storage Bench with Cushion", "short_name": "Shoe storage bench", "headline": "Sit, store shoes and tidy up in one go", "why": "A padded bench that hides shoes underneath, perfect for small hallways where space is tight.", "category": "Entryway", "photo_query": "shoe storage bench entryway", "photo_id": 8112993},
+    {"asin": "B077NCMHMQ", "name": "VonHaus Wall Mounted Coat Hooks with Storage Baskets", "short_name": "Coat hooks & baskets", "headline": "Coats on hooks, clutter in baskets", "why": "Five hooks plus two baskets underneath give coats, bags and gloves a proper home by the door.", "category": "Entryway", "photo_query": "wall mounted coat hooks baskets"},
+    {"asin": "B0C5XH5893", "name": "SWTYMIKI Wall Key Holder with Wood Tray", "short_name": "Wooden key holder", "headline": "Never hunt for your keys again", "why": "Six hooks and a little tray for post keep keys, mail and odds and ends off the counter.", "category": "Entryway", "photo_query": "wall key holder wood hooks entryway", "photo_id": 11105524},
+    {"asin": "B01C4G9XEQ", "name": "VonHaus Seagrass Storage Baskets, Set of 4", "short_name": "Seagrass baskets", "headline": "Smarten up open shelves instantly", "why": "Handwoven seagrass baskets that look good on open shelving while hiding scarves, gloves and general hallway clutter.", "category": "Storage", "photo_query": "seagrass storage baskets shelf", "photo_id": 31390663},
+    {"asin": "B01NBOX74Z", "name": "La Jolíe Muse Woven Storage Baskets, Set of 4", "short_name": "Woven storage baskets", "headline": "Four sizes for every odd bit and bob", "why": "A nesting set that works just as well for shoes by the door as it does for makeup or stationery elsewhere in the house.", "category": "Storage", "photo_query": "woven storage baskets set"},
+    {"asin": "B0CGXCNXW8", "name": "LA JOLIE MUSE Small Cotton Woven Storage Baskets, 3 Pack", "short_name": "Small woven baskets", "headline": "Corral small items without the mess", "why": "Neat little baskets that are ideal for sunglasses, dog leads and other entryway odds and ends.", "category": "Storage", "photo_query": "small woven storage baskets"}
+  ]
+}
