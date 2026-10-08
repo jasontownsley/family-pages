@@ -14,8 +14,8 @@ DEALS = ROOT / "deals"
 DATA = DEALS / "data"
 SITE = "https://dailydealsuk.co.uk/deals"
 PINTEREST = "https://uk.pinterest.com/thedailydealsuk/"
-DISCLOSURE = ("We earn a small commission if you buy through our links (#ad), at no extra cost to you. "
-              "As an Amazon Associate I earn from qualifying purchases.")
+# slim one-liner under the header; the full Amazon Associates statement stays in the footer
+DISCLOSURE = "Some links are affiliate links (#ad): we may earn a small commission at no extra cost to you."
 
 # slug, chip label, regex on a roundup's theme + titles, which shop collection to show with it
 CATEGORIES = [
@@ -73,7 +73,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0
 .hero p{color:var(--soft);font-size:18px;margin:0 0 22px}
 .cta{display:flex;gap:12px;flex-wrap:wrap}.cta a{text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px}
 .cta .a1{background:#fff;color:var(--deep)}.cta .a2{border:2px solid rgba(255,255,255,.6);color:#fff}
-.disc{font-size:13px;color:var(--dim);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:-26px 0 0;position:relative}
+.disc{font-size:12px;color:var(--dim);margin:10px 0 0;padding:0}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:22px 0 4px;scrollbar-width:none}
 .chips a{flex:none;text-decoration:none;background:var(--surface);border:1px solid var(--border);padding:8px 14px;border-radius:99px;font-weight:500;font-size:14px}
 .chips a.on{background:var(--blue);border-color:var(--blue);color:#fff}
