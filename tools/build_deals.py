@@ -306,7 +306,7 @@ def make_spot_pin(p, photo, credit, out):
     pill(dr, M + 30, 80, p["category"].upper(), 30)
 
     f_credit = font(FONT_SEMI, 20)
-    ctext = "Our own photo" if credit.get("own") else f"Photo: {credit['photographer']} / Pexels"
+    ctext = "Our own photo" if credit.get("own") else f"Photo: {re.sub(r'[^0-9A-Za-z .,&_-]+', '', credit['photographer']).strip(' ._-') or 'Pexels contributor'} / Pexels"
     cw = dr.textlength(ctext, font=f_credit)
     dr.rounded_rectangle([W - M - cw - 40, PH - 56, W - M - 14, PH - 22], radius=10, fill=(0, 0, 0))
     dr.text((W - M - cw - 27, PH - 39), ctext, font=f_credit, fill="white", anchor="lm")

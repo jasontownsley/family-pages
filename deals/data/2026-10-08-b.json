@@ -1,0 +1,20 @@
+{
+ "date": "2026-10-08",
+ "slot": "b",
+ "theme": "Car Essentials",
+ "pin_title": "8 Car Essentials UK Drivers Swear By This Winter",
+ "pin_title_alt": "3 Winter Car Must-Haves for Frosty UK Mornings",
+ "pin_hook": "Beat frosty mornings, flat batteries and messy cars",
+ "pin_description": "Winter car essentials UK drivers rate highly: an ice scraper and snow brush, a magnetic windscreen frost cover, a jump starter power pack, a digital tyre inflator, a cordless car vacuum and more. Smart buys for frosty mornings, breakdowns and keeping the car clean, and great gifts for new drivers. #ad #carEssentials #winterdriving #ukdeals",
+ "intro": "Frosty windscreens, flat batteries and soft tyres all arrive with the cold weather. These are the car essentials UK drivers keep in the boot and rate highly, from a proper ice scraper to a jump starter that could save you a call-out.",
+ "products": [
+  {"asin": "B07V37GVY9", "name": "AstroAI Ice Scraper and Snow Brush, 2-in-1 Detachable", "short_name": "AstroAI ice scraper & brush", "headline": "Clear a frozen windscreen in minutes", "why": "The scraper and snow brush split apart for tight spots, and the long reach makes clearing the whole windscreen and roof far easier on frosty mornings.", "category": "Winter"},
+  {"asin": "B077CY4DVF", "name": "BEEWAY Heavy Duty Windscreen Frost Cover", "short_name": "Windscreen frost cover", "headline": "Skip the scraping altogether", "why": "Fit it the night before and peel it off in the morning to a clear windscreen. It also protects wiper blades from freezing to the glass.", "category": "Winter"},
+  {"asin": "B0FB2L7CCX", "name": "AstroAI B8 Car Jump Starter Power Pack (7.0L Petrol / 5.5L Diesel)", "short_name": "AstroAI jump starter", "headline": "Start a flat battery without another car", "why": "Cold snaps are hard on car batteries. A compact power pack in the boot lets you jump start yourself, and it doubles as a power bank for your phone.", "category": "Breakdown"},
+  {"asin": "B015TKPT1A", "name": "NOCO Boost GB20 500A UltraSafe Jump Starter", "short_name": "NOCO Boost GB20", "headline": "A premium pick with built-in safety", "why": "A well-known brand with spark-proof, reverse-polarity protection, so it's hard to connect wrongly even in the dark and cold.", "category": "Breakdown"},
+  {"asin": "B0C2H652ZJ", "name": "AstroAI Digital Tyre Inflator, 12V, 150PSI", "short_name": "AstroAI tyre inflator", "headline": "Top up your tyres from the car socket", "why": "Tyre pressures drop in cold weather. Set the pressure on the digital gauge and it stops automatically, so you're not queuing at the garage air machine.", "category": "Breakdown"},
+  {"asin": "B0H3T7QDKG", "name": "SCOVEE Cordless Handheld Car Vacuum, 4-in-1", "short_name": "SCOVEE handheld car vacuum", "headline": "Muddy footwells sorted in minutes", "why": "Light and cordless, with strong suction and attachments for crevices and seats. Ideal for crumbs, grit and pet hair through the muddy months.", "category": "Cleaning", "photo_query": "handheld vacuum cleaning car interior", "photo_id": 4120479},
+  {"asin": "B0F5HCCRVD", "name": "Miracase Air Vent Car Phone Holder, 360° Rotation", "short_name": "Miracase phone holder", "headline": "Sat nav at eye level, hands free", "why": "A steel hook grips the air vent firmly, and one button releases the phone. A safer way to follow directions on dark winter evenings.", "category": "Driving"},
+  {"asin": "B08PBYXD6N", "name": "MR.SIGA Professional Microfibre Car Towels, 3 Pack", "short_name": "MR.SIGA microfibre towels", "headline": "Streak-free glass and a scratch-free finish", "why": "Soft, absorbent microfibre for drying the car and clearing misted-up windows, without scratching paintwork.", "category": "Cleaning", "photo_query": "microfibre cloth cleaning car door", "photo_id": 31389821}
+ ]
+}
