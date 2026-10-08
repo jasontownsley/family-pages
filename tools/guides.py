@@ -167,6 +167,86 @@ def used_car_body(g):
     ])
 
 
+# ---------------------------------------------------------------- eSIM phone checker
+# Conservative list of UK models known to support eSIM (phone must also be unlocked).
+# Anything not listed gets the *#06# EID test rather than a guess. "no" = known not to support eSIM.
+ESIM_DEVICES = {
+    "Apple iPhone": {
+        "yes": ["iPhone 17 Pro Max", "iPhone 17 Pro", "iPhone Air", "iPhone 17", "iPhone 16e", "iPhone 16 Pro Max", "iPhone 16 Pro",
+                "iPhone 16 Plus", "iPhone 16", "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15 Plus", "iPhone 15",
+                "iPhone 14 Pro Max", "iPhone 14 Pro", "iPhone 14 Plus", "iPhone 14", "iPhone SE (3rd gen, 2022)",
+                "iPhone 13 Pro Max", "iPhone 13 Pro", "iPhone 13", "iPhone 13 mini", "iPhone 12 Pro Max", "iPhone 12 Pro",
+                "iPhone 12", "iPhone 12 mini", "iPhone SE (2nd gen, 2020)", "iPhone 11 Pro Max", "iPhone 11 Pro", "iPhone 11",
+                "iPhone XS Max", "iPhone XS", "iPhone XR"],
+        "no": ["iPhone X", "iPhone 8 Plus", "iPhone 8", "iPhone 7 or older", "iPhone SE (1st gen, 2016)"],
+    },
+    "Google Pixel": {
+        "yes": ["Pixel 10 Pro Fold", "Pixel 10 Pro XL", "Pixel 10 Pro", "Pixel 10", "Pixel 9a", "Pixel 9 Pro Fold", "Pixel 9 Pro XL",
+                "Pixel 9 Pro", "Pixel 9", "Pixel 8a", "Pixel 8 Pro", "Pixel 8", "Pixel Fold", "Pixel 7a", "Pixel 7 Pro", "Pixel 7",
+                "Pixel 6a", "Pixel 6 Pro", "Pixel 6", "Pixel 5a", "Pixel 5", "Pixel 4a 5G", "Pixel 4a", "Pixel 4 XL", "Pixel 4",
+                "Pixel 3a XL", "Pixel 3a", "Pixel 3 XL", "Pixel 3"],
+        "no": ["Pixel 2 or older"],
+    },
+    "Samsung Galaxy": {
+        "yes": ["Galaxy S25 Ultra", "Galaxy S25 Edge", "Galaxy S25+", "Galaxy S25", "Galaxy S24 Ultra", "Galaxy S24+", "Galaxy S24",
+                "Galaxy S23 Ultra", "Galaxy S23+", "Galaxy S23", "Galaxy S22 Ultra", "Galaxy S22+", "Galaxy S22",
+                "Galaxy S21 Ultra", "Galaxy S21+", "Galaxy S21", "Galaxy S20 Ultra", "Galaxy S20+", "Galaxy S20",
+                "Galaxy Z Fold7", "Galaxy Z Fold6", "Galaxy Z Fold5", "Galaxy Z Fold4", "Galaxy Z Fold3", "Galaxy Z Fold2",
+                "Galaxy Z Flip7", "Galaxy Z Flip6", "Galaxy Z Flip5", "Galaxy Z Flip4", "Galaxy Z Flip3", "Galaxy Z Flip",
+                "Galaxy Note20 Ultra", "Galaxy Note20"],
+        "no": [],
+    },
+}
+# Android model codes (navigator.userAgentData) -> model name, for auto-detect
+SAMSUNG_CODES = {
+    "SM-S938": "Galaxy S25 Ultra", "SM-S937": "Galaxy S25 Edge", "SM-S936": "Galaxy S25+", "SM-S931": "Galaxy S25",
+    "SM-S928": "Galaxy S24 Ultra", "SM-S926": "Galaxy S24+", "SM-S921": "Galaxy S24",
+    "SM-S918": "Galaxy S23 Ultra", "SM-S916": "Galaxy S23+", "SM-S911": "Galaxy S23",
+    "SM-S908": "Galaxy S22 Ultra", "SM-S906": "Galaxy S22+", "SM-S901": "Galaxy S22",
+    "SM-G998": "Galaxy S21 Ultra", "SM-G996": "Galaxy S21+", "SM-G991": "Galaxy S21",
+    "SM-G988": "Galaxy S20 Ultra", "SM-G986": "Galaxy S20+", "SM-G985": "Galaxy S20+", "SM-G981": "Galaxy S20", "SM-G980": "Galaxy S20",
+    "SM-F966": "Galaxy Z Fold7", "SM-F956": "Galaxy Z Fold6", "SM-F946": "Galaxy Z Fold5", "SM-F936": "Galaxy Z Fold4",
+    "SM-F926": "Galaxy Z Fold3", "SM-F916": "Galaxy Z Fold2", "SM-F766": "Galaxy Z Flip7", "SM-F741": "Galaxy Z Flip6",
+    "SM-F731": "Galaxy Z Flip5", "SM-F721": "Galaxy Z Flip4", "SM-F711": "Galaxy Z Flip3", "SM-F707": "Galaxy Z Flip", "SM-F700": "Galaxy Z Flip",
+    "SM-N986": "Galaxy Note20 Ultra", "SM-N985": "Galaxy Note20 Ultra", "SM-N981": "Galaxy Note20", "SM-N980": "Galaxy Note20",
+}
+
+
+def esim_checker():
+    import json
+    data = json.dumps({"devices": ESIM_DEVICES, "samsung": SAMSUNG_CODES})
+    return ("""<section class="checker" id="checker"><h2>&#128241; Is my phone eSIM compatible?</h2>
+<p>Pick your phone below for an instant answer.</p><p class="detect" id="esimDetect" hidden></p>
+<div class="selects"><label>Brand<select id="esimBrand"><option value="">Choose brand&hellip;</option></select></label>
+<label>Model<select id="esimModel" disabled><option value="">Choose model&hellip;</option></select></label></div>
+<div class="result" id="esimResult" hidden></div>
+<p class="small">Based on UK models. Your phone also needs to be <strong>unlocked</strong> (not tied to one network). Some phones
+sold outside the UK, for example in mainland China or Hong Kong, may not support eSIM.</p></section>
+<script>(function(){var D=""" + data + """,b=document.getElementById('esimBrand'),m=document.getElementById('esimModel'),
+r=document.getElementById('esimResult'),det=document.getElementById('esimDetect');
+var test='<p><strong>Quick test:</strong> open your phone&rsquo;s dialler and type <strong>*#06#</strong>. If you see an <strong>EID</strong> number, your phone supports eSIM.</p>';
+Object.keys(D.devices).concat(['Other brand']).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;b.appendChild(o)});
+function fill(){m.innerHTML='<option value="">Choose model&hellip;</option>';var d=D.devices[b.value];r.hidden=true;
+if(b.value==='Other brand'){m.disabled=true;show('maybe');return}
+if(!d){m.disabled=true;return}m.disabled=false;
+d.yes.concat(d.no).concat(['My model isn\\u2019t listed']).forEach(function(x){var o=document.createElement('option');o.value=x;o.textContent=x;m.appendChild(o)})}
+function show(kind,name){r.hidden=false;r.className='result '+kind;
+if(kind==='yes'){r.innerHTML='<h3>&#9989; Yes &ndash; the '+name+' supports eSIM</h3><p>As long as it&rsquo;s unlocked, you can use a travel eSIM on this phone.</p><a class="btn" href="#picks">See travel eSIM plans &rsaquo;</a>'}
+else if(kind==='no'){r.innerHTML='<h3>&#10060; Sorry &ndash; the '+name+' doesn&rsquo;t support eSIM</h3><p>You&rsquo;d need a physical travel SIM, or a newer phone. Check your network&rsquo;s roaming add-ons before you go.</p>'}
+else{r.innerHTML='<h3>&#129300; Not sure? It&rsquo;s easy to check</h3>'+test+'<a class="btn" href="#picks">See travel eSIM plans &rsaquo;</a>'}}
+b.addEventListener('change',fill);
+m.addEventListener('change',function(){var d=D.devices[b.value],v=m.value;if(!v){r.hidden=true;return}
+show(d.yes.indexOf(v)>=0?'yes':(d.no.indexOf(v)>=0?'no':'maybe'),v)});
+function pick(brand,model){b.value=brand;fill();if(model){m.value=model;m.dispatchEvent(new Event('change'))}}
+var ua=navigator.userAgent||'';
+if(/iPhone/.test(ua)){pick('Apple iPhone');det.hidden=false;det.textContent='You seem to be on an iPhone \\u2013 choose your model below.'}
+else if(navigator.userAgentData&&navigator.userAgentData.getHighEntropyValues){
+navigator.userAgentData.getHighEntropyValues(['model']).then(function(v){var mo=(v.model||'').trim();if(!mo)return;
+var px=mo.match(/^Pixel.*/);if(px&&D.devices['Google Pixel'].yes.indexOf(mo)>=0){pick('Google Pixel',mo);det.hidden=false;det.textContent='We think you\\u2019re on a Google '+mo+'.';return}
+var c=mo.slice(0,7).toUpperCase();if(D.samsung[c]){pick('Samsung Galaxy',D.samsung[c]);det.hidden=false;det.textContent='We think you\\u2019re on a Samsung '+D.samsung[c]+'.'}}).catch(function(){})}
+})();</script>""")
+
+
 def _provider_card(name, link, site, tagline, points):
     href, rel = (link, "sponsored nofollow noopener") if link else (site, "noopener")
     lis = "".join(f"<li>{p}</li>" for p in points)
@@ -194,6 +274,8 @@ def esim_body(g):
         '<p>Travel eSIMs are usually <strong>data-only</strong>. You use the data for maps, browsing, WhatsApp, FaceTime and other apps, '
         'while your UK number can stay switched on in the background for texts such as bank security codes.</p></div></section>',
 
+        esim_checker(),
+
         '<section class="step"><div class="sn">&pound;</div><div><h2>Why it saves money</h2>'
         '<p>Since Brexit, UK networks are free to charge for roaming in Europe again, and most do. Many charge a daily fee, typically '
         '<strong>around &pound;2 to &pound;3 a day</strong> in Europe, and outside Europe (the USA, Turkey, Dubai, Asia and so on) roaming '
@@ -217,7 +299,7 @@ def esim_body(g):
         '<section class="step"><div class="sn">4</div><div><h2>How to set one up (about 5 minutes)</h2>'
         '<ol class="howto">'
         '<li><strong>Check your phone supports eSIM and is unlocked.</strong> Most iPhones from 2018 onwards and most recent Android '
-        'phones do. A quick check: dial <strong>*#06#</strong>, and if you see an <strong>EID</strong> number, your phone supports eSIM.</li>'
+        'phones do. Use <a href="#checker">our checker above</a>, or dial <strong>*#06#</strong>: if you see an <strong>EID</strong> number, your phone supports eSIM.</li>'
         '<li><strong>Choose a plan</strong> for your destination: how much data and for how many days.</li>'
         '<li><strong>Install it at home on Wi-Fi</strong> before you travel, by scanning the QR code or tapping install in the app. '
         'It will not start using data until you switch to it abroad.</li>'
@@ -225,7 +307,7 @@ def esim_body(g):
         'Turn data roaming <strong>off</strong> on your UK SIM so you are not charged for data on it.</li>'
         '</ol></div></section>',
 
-        '<h2 class="ph2">Our picks</h2><div class="provs">',
+        '<h2 class="ph2" id="picks">Our picks</h2><div class="provs">',
         _provider_card("Saily", L.get("saily"), L.get("saily_site"), "From the team behind NordVPN", [
             "Plans for 200+ destinations, according to Saily",
             "Everything runs in the Saily app: buy, install and top up",
@@ -296,7 +378,18 @@ GUIDE_CSS = """
 .compare .lbl{display:block;font-size:13px;color:var(--dim)}.compare strong{display:block;font-family:Georgia,serif;font-size:26px;margin:4px 0}
 .compare small{color:var(--dim)}.compare .vs{border:0;font-weight:700;color:var(--dim)}
 .ben{margin:0;padding-left:20px}.ben li{margin:6px 0}.howto{margin:0;padding-left:22px}.howto li{margin:8px 0}
-.ph2{font-family:Georgia,serif;font-size:28px;margin:26px 0 4px}
+.ph2{font-family:Georgia,serif;font-size:28px;margin:26px 0 4px;scroll-margin-top:16px}
+.checker{background:linear-gradient(135deg,var(--deep),var(--blue));color:#fff;border-radius:20px;padding:22px;margin:16px 0;scroll-margin-top:16px}
+.checker h2{font-family:Georgia,serif;font-size:26px;margin:0 0 4px}.checker>p{margin:0 0 12px;color:var(--soft)}
+.checker .detect{background:rgba(255,255,255,.14);border-radius:10px;padding:8px 12px;color:#fff}
+.selects{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 12px}
+.selects label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+.selects select{font:500 16px Poppins,system-ui,sans-serif;padding:12px;border-radius:12px;border:0;background:#fff;color:#14213D}
+.selects select:disabled{opacity:.6}
+.result{background:#fff;color:#14213D;border-radius:14px;padding:16px;margin:0 0 12px}.result h3{margin:0 0 6px;font-size:19px}
+.result p{margin:0 0 10px}.result.yes{border-left:6px solid #1E9E5A}.result.no{border-left:6px solid var(--red)}.result.maybe{border-left:6px solid #F5A623}
+.checker .small{color:var(--soft)}
+@media (max-width:560px){.selects{grid-template-columns:1fr}}
 .provs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:12px 0}
 .prov{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;display:flex;flex-direction:column}
 .prov h3{font-family:Georgia,serif;font-size:26px;margin:0}.prov .tag2{color:var(--blue);font-weight:600;margin:2px 0 8px}

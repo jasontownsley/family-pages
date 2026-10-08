@@ -113,7 +113,18 @@ footer a{color:#fff}
 .compare .lbl{display:block;font-size:13px;color:var(--dim)}.compare strong{display:block;font-family:Georgia,serif;font-size:26px;margin:4px 0}
 .compare small{color:var(--dim)}.compare .vs{border:0;font-weight:700;color:var(--dim)}
 .ben{margin:0;padding-left:20px}.ben li{margin:6px 0}.howto{margin:0;padding-left:22px}.howto li{margin:8px 0}
-.ph2{font-family:Georgia,serif;font-size:28px;margin:26px 0 4px}
+.ph2{font-family:Georgia,serif;font-size:28px;margin:26px 0 4px;scroll-margin-top:16px}
+.checker{background:linear-gradient(135deg,var(--deep),var(--blue));color:#fff;border-radius:20px;padding:22px;margin:16px 0;scroll-margin-top:16px}
+.checker h2{font-family:Georgia,serif;font-size:26px;margin:0 0 4px}.checker>p{margin:0 0 12px;color:var(--soft)}
+.checker .detect{background:rgba(255,255,255,.14);border-radius:10px;padding:8px 12px;color:#fff}
+.selects{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 12px}
+.selects label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+.selects select{font:500 16px Poppins,system-ui,sans-serif;padding:12px;border-radius:12px;border:0;background:#fff;color:#14213D}
+.selects select:disabled{opacity:.6}
+.result{background:#fff;color:#14213D;border-radius:14px;padding:16px;margin:0 0 12px}.result h3{margin:0 0 6px;font-size:19px}
+.result p{margin:0 0 10px}.result.yes{border-left:6px solid #1E9E5A}.result.no{border-left:6px solid var(--red)}.result.maybe{border-left:6px solid #F5A623}
+.checker .small{color:var(--soft)}
+@media (max-width:560px){.selects{grid-template-columns:1fr}}
 .provs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:12px 0}
 .prov{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;display:flex;flex-direction:column}
 .prov h3{font-family:Georgia,serif;font-size:26px;margin:0}.prov .tag2{color:var(--blue);font-weight:600;margin:2px 0 8px}
