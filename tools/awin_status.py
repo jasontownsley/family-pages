@@ -16,7 +16,7 @@ PUBLISHER = "3105665"
 JOBS = Path(r"C:\Users\User\ClaudeJobs")
 TOKEN_FILE = JOBS / "awin_api_token.txt"
 STATE = JOBS / "awin_programmes.json"
-RELATIONSHIPS = ("joined", "pending", "rejected", "suspended", "notjoined_invited")
+RELATIONSHIPS = ("joined", "pending", "rejected", "suspended")
 
 
 def token():
