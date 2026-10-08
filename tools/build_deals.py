@@ -3,6 +3,7 @@
 For each day's data file this renders:
   deals/<date>/index.html   roundup page with affiliate links
   deals/<date>/pin.jpg      1000x1500 Pinterest pin image
+  deals/<date>/pin2.jpg     second roundup pin (top 3) when the data has pin_title_alt
   deals/<date>/spot/<ASIN>.jpg  single-product photo pins for the first few
                             products with a photo_query (photo from Pexels, see
                             photos.py; no photo means no single pin)
@@ -31,7 +32,7 @@ BRAND = "Daily Deals UK"
 TAG = "dailydeal07d1-21"
 DISCLOSURE = "As an Amazon Associate I earn from qualifying purchases."
 FEED_ITEMS = 60      # roundup + single-product pins, newest first
-SPOTLIGHTS = 4      # single-product pins per day
+SPOTLIGHTS = 5      # single-product pins per day
 # Paused 2026-09-25: stock photos rarely look like the product (e.g. a bedroom for a
 # lamp). Days that already have photos keep their pins; no new photos are fetched
 # until real product images are available (Awin feeds).
@@ -75,6 +76,9 @@ def validate(d, name="data"):
         errs.append(f"{name}: date must be YYYY-MM-DD")
     if len(d["pin_title"]) > 100:
         errs.append(f"{name}: pin_title over 100 chars")
+    alt = d.get("pin_title_alt")
+    if alt is not None and (not isinstance(alt, str) or not 10 <= len(alt) <= 100 or alt == d["pin_title"]):
+        errs.append(f"{name}: pin_title_alt must be a different title of 10-100 chars")
     if len(d["pin_description"]) > 500:
         errs.append(f"{name}: pin_description over 500 chars")
     prods = d["products"]
@@ -233,6 +237,54 @@ def make_pin(d, out):
     more = len(prods) - len(items)
     footer(dr, W, H, M, f"+{more} more inside · tap to see" if more else "Tap for the full list")
 
+    out.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out, "JPEG", quality=88, optimize=True)
+
+
+def make_top3_pin(d, out):
+    """Second roundup pin: the top 3 picks as big cards (photo where approved), alternative title."""
+    W, H, M = 1000, 1500, 60
+    img = Image.new("RGB", (W, H), BLUE)
+    dr = ImageDraw.Draw(img)
+    pill(dr, M, 60, "TOP 3 · " + d["theme"].upper())
+    f_title, lines = fit(dr, d["pin_title_alt"], FONT_HEAVY, W - 2 * M, 3, 76, 52)
+    y = 150
+    for ln in lines:
+        dr.text((M, y), ln, font=f_title, fill="white")
+        y += int(f_title.size * 1.1)
+    y += 30
+    photos_dir = out.parent / "photos"
+    top, bottom, gap = y, H - 180, 22
+    ch = (bottom - top - 2 * gap) // 3
+    f_name, f_head = font(FONT_HEAVY, 40), font(FONT_SEMI, 32)
+    for i, p in enumerate(d["products"][:3], 1):
+        y0 = top + (i - 1) * (ch + gap)
+        src = photos_dir / f"{p['asin']}.jpg"
+        tx = M + 40
+        if src.exists():
+            photo_card(img, src, (M, y0, M + ch, y0 + ch), i)
+            dr.rounded_rectangle([M + ch + 16, y0, W - M, y0 + ch], radius=28, fill="white")
+            tx = M + ch + 46
+        else:
+            dr.rounded_rectangle([M, y0, W - M, y0 + ch], radius=28, fill="white")
+            r = 34
+            dr.ellipse([M + 30, y0 + ch // 2 - r, M + 30 + 2 * r, y0 + ch // 2 + r], fill=RED)
+            dr.text((M + 30 + r, y0 + ch // 2), str(i), font=font(FONT_HEAVY, 40), fill="white", anchor="mm")
+            tx = M + 130
+        tw = W - M - 30 - tx
+        name = wrap(dr, p.get("short_name") or p["name"], f_name, tw)[:2]
+        head = wrap(dr, p["headline"], f_head, tw)[:2]
+        block = 48 * len(name) + 10 + 40 * len(head)
+        ty = y0 + (ch - block) // 2
+        for ln in name:
+            dr.text((tx, ty), ln, font=f_name, fill=INK_BLUE)
+            ty += 48
+        ty += 10
+        for ln in head:
+            dr.text((tx, ty), ln, font=f_head, fill="#4A5578")
+            ty += 40
+    more = len(d["products"]) - 3
+    footer(dr, W, H, M, f"+{more} more picks · tap to see" if more > 0 else "Tap for the full list")
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, "JPEG", quality=88, optimize=True)
 
@@ -426,6 +478,9 @@ def feed(days, spots_by_date):
             items.append(feed_item(spot_title(p), f"{url}#{p['asin']}", spot_description(d, p),
                                    f"{url}spot/{p['asin']}.jpg", DEALS / d["date"] / "spot" / f"{p['asin']}.jpg",
                                    day.replace(hour=8 + 2 * n)))
+        if d.get("pin_title_alt") and (DEALS / d["date"] / "pin2.jpg").exists():
+            items.append(feed_item(d["pin_title_alt"], f"{url}#top3", d["pin_description"], f"{url}pin2.jpg",
+                                   DEALS / d["date"] / "pin2.jpg", day.replace(hour=19)))
         items.append(feed_item(d["pin_title"], url, d["pin_description"], f"{url}pin.jpg",
                                DEALS / d["date"] / "pin.jpg", day))
     items = items[:FEED_ITEMS]
@@ -460,9 +515,12 @@ def main(argv):
         folder = DEALS / d["date"]
         pin = folder / "pin.jpg"
         src = DATA / f"{d['date']}.json"
+        spots = spots_by_date[d["date"]] = spotlights(d)   # first, so the roundups can show the photos
         if not pin.exists() or pin.stat().st_mtime < src.stat().st_mtime:
             make_pin(d, pin)
-        spots = spots_by_date[d["date"]] = spotlights(d)
+        pin2 = folder / "pin2.jpg"
+        if d.get("pin_title_alt") and (not pin2.exists() or pin2.stat().st_mtime < src.stat().st_mtime):
+            make_top3_pin(d, pin2)
         for p, credit in spots:
             out = folder / "spot" / f"{p['asin']}.jpg"
             if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
