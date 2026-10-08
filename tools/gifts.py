@@ -39,7 +39,7 @@ RUDE = re.compile(r"\b(fuck\w*|cunt\w*|shit\w*|knobs?|arse\w*|bums?|gusset|twat\
 
 def clean(text):
     text = html.unescape(re.sub(r"<[^>]+>", " ", text or ""))
-    text = re.sub(r"^[A-Z][A-Z &'-]{3,}:\s*", "", text.strip())     # "CHRISTMAS GIFT: Send a..." -> "Send a..."
+    text = re.sub(r"^[A-Z][\w &'-]{2,30}:\s*", "", text.strip())    # "CHRISTMAS GIFT: Send a..." -> "Send a..."
     return re.sub(r"\s+", " ", text).strip()
 
 
