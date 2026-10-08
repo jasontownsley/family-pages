@@ -225,3 +225,69 @@ def build(days, spots_by_key):
         out_file = DEALS / "c" / slug / "index.html"
         out_file.parent.mkdir(parents=True, exist_ok=True)
         out_file.write_text("".join(page), encoding="utf-8")
+
+
+# ---------------------------------------------------------------- day pages
+
+DAY_CSS = """
+.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 14px}
+.meta .pill{font-size:12px}.meta span.d{color:var(--soft);font-size:14px}
+.hero .save{background:var(--red);color:#fff}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;padding-top:28px}
+.items{display:flex;flex-direction:column;gap:16px}
+.item{background:var(--surface);border:1px solid var(--border);border-radius:18px;display:grid;grid-template-columns:170px 1fr;overflow:hidden;scroll-margin-top:16px}
+.item.noimg{grid-template-columns:72px 1fr}
+.item:target{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue)}
+.ipic{position:relative;background:#fff;display:block}.ipic img{width:100%;height:100%;min-height:170px;object-fit:cover;display:block}
+.num{position:absolute;left:10px;top:10px;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-family:'Archivo Black',sans-serif;display:grid;place-items:center;font-size:15px}
+.noimg .ipic{background:transparent}.noimg .num{position:static;margin:18px 0 0 18px}
+.ib{padding:16px 18px 18px}.ib .cat{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.ib h2{font-family:Georgia,serif;font-size:22px;line-height:1.2;margin:4px 0 2px}.ib .name{color:var(--dim);font-size:14px;margin:0 0 8px}
+.ib p{margin:0 0 12px}
+.side{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px}
+.side .box{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:14px}
+.side img{width:100%;border-radius:12px;display:block}.side h3{margin:2px 0 10px;font-size:16px}
+.side .btn{width:100%;text-align:center;margin-top:10px}.side .btn.red{background:var(--red)}
+.credits{color:var(--dim);font-size:13px;margin-top:14px}
+@media (max-width:860px){.layout{grid-template-columns:1fr}.side{position:static}}
+@media (max-width:560px){.item{grid-template-columns:1fr}.item.noimg{grid-template-columns:1fr}.ipic img{min-height:0;aspect-ratio:4/3}}
+"""
+
+
+def day_page(d, spots, days, aff):
+    """Roundup page in the homepage style. spots: [(product, credit)] with a photo in <key>/photos/."""
+    from urllib.parse import quote
+    k = key(d)
+    url = f"{SITE}/{k}/"
+    photos = {p["asin"] for p, _ in spots if (DEALS / k / "photos" / f"{p['asin']}.jpg").exists()}
+    save = (f"https://www.pinterest.com/pin/create/button/?url={quote(url, safe='')}"
+            f"&media={quote(url + 'pin.jpg', safe='')}&description={quote(d['pin_title'], safe='')}")
+    hero = (f'<div class="hero small"><div class="meta"><span class="pill">{e(d["theme"])}</span><span class="d">{pretty(d["date"])}</span></div>'
+            f'<h1>{e(d["pin_title"])}</h1><p>{e(d.get("intro") or d["pin_description"])}</p>'
+            f'<div class="cta"><a class="a1" href="#list">See the {len(d["products"])} picks</a>'
+            f'<a class="a2 save" href="{save}" rel="noopener" target="_blank">&#9733; Save to Pinterest</a></div></div>')
+    out = [head(f"{d['pin_title']} | Daily Deals UK", d["pin_description"], url, f"{url}pin.jpg")
+           .replace("</style>", DAY_CSS + "</style>").replace('<meta property="og:type" content="website">',
+                                                             '<meta property="og:type" content="article"><meta name="pinterest-rich-pin" content="true">'),
+           topbar(hero), chips(""), '<div class="layout"><div class="items" id="list">']
+    for i, p in enumerate(d["products"], 1):
+        has = p["asin"] in photos
+        pic = (f'<img src="photos/{e(p["asin"])}.jpg" alt="{e(p.get("short_name") or p["name"])}" loading="lazy">' if has else "")
+        out.append(f'<article class="item{"" if has else " noimg"}" id="{e(p["asin"])}"><div class="ipic">{pic}<span class="num">{i}</span></div>'
+                   f'<div class="ib"><span class="cat">{e(p["category"])}</span><h2>{e(p["headline"])}</h2><p class="name">{e(p["name"])}</p>'
+                   f'<p>{e(p["why"])}</p><a class="btn" href="{aff(p["asin"])}" rel="sponsored nofollow noopener" target="_blank">'
+                   f'Check today\'s price on Amazon &rsaquo;</a></div></article>')
+    pex = [c for _, c in spots if not c.get("own")]
+    if pex:
+        cred = ", ".join(f'<a href="{e(c["page"])}">{e(c["photographer"])}</a>' for c in pex)
+        out.append(f'<p class="credits">Photos are illustrative, from Pexels: {cred}. Always check the listing for the exact product.</p>')
+    out.append('</div><aside class="side">')
+    out.append(f'<div class="box"><img src="pin.jpg" alt="{e(d["pin_title"])}"><a class="btn red" href="{save}" rel="noopener" target="_blank">'
+               f'&#9733; Save to Pinterest</a></div>')
+    others = [o for o in days if key(o) != k][:3]
+    if others:
+        links = "".join(f'<li><a href="{SITE}/{key(o)}/">{e(o["pin_title"])}</a></li>' for o in others)
+        out.append(f'<div class="box"><h3>More roundups</h3><ul style="margin:0;padding-left:18px">{links}</ul></div>')
+    out.append('</aside></div>')
+    out.append(footer())
+    return "".join(out)

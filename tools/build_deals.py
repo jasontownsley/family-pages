@@ -534,7 +534,7 @@ def main(argv):
             out = folder / "spot" / f"{p['asin']}.jpg"
             if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
                 make_spot_pin(p, folder / "photos" / f"{p['asin']}.jpg", credit, out)
-        (folder / "index.html").write_text(day_page(d, spots), encoding="utf-8")
+        (folder / "index.html").write_text(home.day_page(d, spots, days, aff), encoding="utf-8")
     home.build(days, spots_by_date)          # homepage + category pages
     (DEALS / "feed.xml").write_text(feed(days, spots_by_date), encoding="utf-8")
     (DATA / "exclude.txt").write_text(exclude_list(days), encoding="utf-8")
