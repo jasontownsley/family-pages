@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-08",
+  "theme": "Beauty & Self-Care",
+  "pin_title": "7 Self-Care Buys for a Spa Night at Home UK Shoppers Love",
+  "pin_hook": "Turn your bathroom into a mini spa tonight",
+  "pin_description": "Self-care buys UK shoppers rate highly for an at-home spa night: jade roller and gua sha set, bath bombs, facial cleansing brush, body scrub, hair towel wrap and more. Easy relaxation ideas and beauty gifts. #ad #selfcare #spanight #beautyfinds #ukdeals",
+  "intro": "No spa booking needed - these are the self-care buys UK shoppers keep coming back to for an easy night of pampering at home.",
+  "products": [
+    {"asin": "B07WWC3T9Q", "name": "BAIMEI Jade Roller & Gua Sha Set, Rose Quartz", "short_name": "Jade roller & gua sha set", "headline": "A soothing 5-minute face massage ritual", "why": "A simple way to de-puff and unwind after a long day, and it looks lovely sitting out on the bathroom shelf.", "category": "Beauty", "photo_query": "jade roller gua sha skincare tool", "photo_id": 11595257},
+    {"asin": "B07Q8XDQYJ", "name": "Aofmee Bath Bombs Gift Set", "short_name": "Bath bombs gift set", "headline": "Fizzy, moisturising bath bombs for a proper soak", "why": "Shea and cocoa butter leave skin soft, and the set makes an easy ready-made gift too.", "category": "Beauty", "photo_query": "bath bombs spa bath", "photo_id": 11270390},
+    {"asin": "B0B3XLSCNC", "name": "YoulerTex Microfibre Hair Towel Wrap, 2 Pack", "short_name": "Microfibre hair towel wrap", "headline": "Cuts drying time and frizz after every wash", "why": "Far gentler on hair than rough-rubbing with a normal towel, and it twists on in seconds.", "category": "Beauty", "photo_query": "hair towel wrap turban"},
+    {"asin": "B0CJDXV7YY", "name": "Heatable Vibrating Facial Cleansing Brush", "short_name": "Facial cleansing brush", "headline": "A deeper clean than fingers alone", "why": "The gentle warmth and vibration make it feel like a proper facial without leaving the house.", "category": "Beauty", "photo_query": "facial cleansing brush"},
+    {"asin": "B0794N16ZD", "name": "Dove Exfoliating Body Polish, Macadamia & Rice Milk", "short_name": "Dove body scrub", "headline": "Buffs away dry skin and leaves it soft", "why": "A budget-friendly staple that smells great and works a treat before fake tan or just for softer skin.", "category": "Beauty", "photo_query": "body scrub jar"},
+    {"asin": "B09W9FV2QB", "name": "Sanctuary Spa Exfoliating Body Scrub", "short_name": "Sanctuary Spa body scrub", "headline": "A spa-brand scrub at a high-street price", "why": "Cruelty-free and free from mineral oil, with the signature Sanctuary Spa scent people keep repurchasing.", "category": "Beauty", "photo_query": "spa body scrub"},
+    {"asin": "B0BVMS7J3Z", "name": "Microwavable Lavender Neck and Shoulder Wrap", "short_name": "Lavender heat wrap", "headline": "Melts away tension in minutes, no plugs needed", "why": "Pop it in the microwave for an instant warm, lavender-scented hug around tight shoulders.", "category": "Self-Care"}
+  ]
+}
