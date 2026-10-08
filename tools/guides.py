@@ -16,6 +16,8 @@ GUIDES = [
         "updated": "2026-10-08",
         # filled in when an affiliate programme approves us (e.g. carVertical)
         "links": {"history_check": None},
+        # roundups to recommend on the guide (day keys under deals/)
+        "related": ["2026-10-08-b"],
     },
 ]
 
@@ -31,6 +33,25 @@ def _history_check_box(link):
             'about <strong>outstanding finance</strong>, <strong>insurance write-offs</strong>, <strong>stolen markers</strong> '
             'or <strong>number plate changes</strong>. A paid history check does, and costs far less than getting it wrong.</p>'
             f'{cta}</div>')
+
+
+def _related_box(g):
+    """Cards linking to related Amazon roundups (title and pin from each day's data file)."""
+    import json
+    cards = []
+    for k in g.get("related", []):
+        f = home.DATA / f"{k}.json"
+        if not f.exists():
+            continue
+        d = json.loads(f.read_text(encoding="utf-8"))
+        url = f"{home.SITE}/{k}/"
+        names = ", ".join(p.get("short_name") or p["name"] for p in d["products"][:4])
+        cards.append(f'<a class="rel" href="{url}"><img src="{url}pin.jpg" alt="" loading="lazy"><span><strong>{home.e(d["pin_title"])}</strong>'
+                     f'<small>{home.e(names)} and more</small><em>See the list &rsaquo;</em></span></a>')
+    if not cards:
+        return ""
+    return ('<div class="related"><h3>&#128663; Kit out your new car</h3><p>Once it&rsquo;s yours, these are the essentials UK drivers '
+            'keep in the car, especially through winter.</p>' + "".join(cards) + "</div>")
 
 
 def used_car_body(g):
@@ -105,6 +126,8 @@ def used_car_body(g):
             "Book a service if one is due, and note the date of the next MOT",
         ]),
 
+        _related_box(g),
+
         '<div class="callout soft"><h3>&#128664; Red flags: walk away if&hellip;</h3><ul>'
         "<li>There's no V5C, or the seller's details don't match it</li>"
         "<li>The VIN doesn't match the paperwork, or looks tampered with</li>"
@@ -132,6 +155,12 @@ GUIDE_CSS = """
 .callout h3{font-family:Georgia,serif;font-size:21px;margin:0 0 6px}.callout .btn{background:#fff;color:var(--deep);margin-top:6px}
 .callout .small{color:var(--soft)}.callout.soft{background:var(--surface);color:var(--text);border:2px solid var(--red)}
 .small{font-size:13px;color:var(--dim)}
+.related{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;margin:16px 0}
+.related h3{font-family:Georgia,serif;font-size:21px;margin:0 0 4px}.related>p{margin:0 0 12px;color:var(--dim)}
+.rel{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;text-decoration:none;border-top:1px solid var(--border);padding-top:12px}
+.rel img{width:96px;aspect-ratio:2/3;object-fit:cover;border-radius:10px}.rel strong{display:block;font-size:17px}
+.rel small{display:block;color:var(--dim);margin:2px 0 6px}.rel em{font-style:normal;color:var(--blue);font-weight:600}
+@media print{.related{display:none}}
 @media print{header.top,.chips,.disc,.tools,.follow,footer,.callout .btn{display:none!important}body{background:#fff;color:#000}
 .step,.callout{break-inside:avoid;border:1px solid #999;box-shadow:none}.callout{background:#fff;color:#000}.callout .small{color:#333}}
 """
