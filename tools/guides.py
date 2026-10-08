@@ -418,6 +418,8 @@ def xmas_body(g):
     out.append(home.offers_strip(pr, [], []))
     out.append('<div class="toppicks"><h2>&#11088; Our top picks</h2><ol>' + "".join(
         f'<li><strong>{lab}:</strong> {_a(find[k])}</li>' for lab, k in top) + "</ol></div>")
+    import quiz
+    out.append(quiz.html())
     out.append('<nav class="jump">' + "".join(f'<a href="#{s["id"]}">{s["title"]}</a>' for s in secs) +
                '<a href="#quick">Quick picks table</a></nav>')
     for s in secs:
@@ -517,7 +519,7 @@ def build():
         hero = (f'<div class="hero small"><div class="meta"><span class="pill">Guide</span></div><h1>{home.e(g["title"])}</h1>'
                 f'<p>{home.e(g["desc"])}</p></div>')
         page = (home.head(f"{g['title']} | Daily Deals UK", g["desc"], url, f"{home.SITE}/guides/{g['slug']}/og.jpg")
-                .replace("</style>", home.DAY_CSS + GUIDE_CSS + "</style>")
+                .replace("</style>", home.DAY_CSS + GUIDE_CSS + (__import__("quiz").CSS if g["slug"] == "christmas-gift-guide" else "") + "</style>")
                 + home.topbar(hero) + home.chips("") + '<div class="gwrap">' + BODIES[g["slug"]](g) + "</div>"
                 + home.footer().replace("</body>", TICK_JS + "</body>"))
         out = home.DEALS / "guides" / g["slug"] / "index.html"

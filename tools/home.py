@@ -271,6 +271,9 @@ def build(days, spots_by_key):
                 "Hand-picked, well-reviewed UK finds for home, kitchen, beauty and gifts, plus Christmas gift ideas - new picks every day.",
                 f"{SITE}/", latest_pin), topbar(hero), chips("")]
     out.append(offers_strip(pr, gifts, candles))
+    import quiz
+    out[0] = out[0].replace('</style>', quiz.CSS + '</style>')
+    out.append(quiz.html())
     if gifts:
         out.append(f'<section id="gifts"><div class="sh"><div><h2>&#127876; Christmas Gift Ideas</h2><p>Real products from '
                    f'Cadbury Gifts Direct, Bare Kind, Scottish Fine Soaps and more. New picks daily.</p></div>'
