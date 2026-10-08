@@ -188,7 +188,7 @@ def build(days, spots_by_key):
 
     hero = ('<div class="hero"><h1>Hand-picked UK finds &amp; gift ideas, fresh every day</h1>'
             '<p>Well-reviewed home, kitchen, beauty and gift picks from UK shops, plus Christmas gift ideas from brands you love.</p>'
-            '<div class="cta"><a class="a1" href="#gifts">&#127876; Christmas gift ideas</a><a class="a2" href="#today">Today\'s finds</a></div></div>')
+            f'<div class="cta"><a class="a1" href="{SITE}/guides/christmas-gift-guide/">&#127876; Christmas gift guide</a><a class="a2" href="#today">Today\'s finds</a></div></div>')
     out = [head("Daily Deals UK - hand-picked UK finds and gift ideas",
                 "Hand-picked, well-reviewed UK finds for home, kitchen, beauty and gifts, plus Christmas gift ideas - new picks every day.",
                 f"{SITE}/", latest_pin), topbar(hero), chips("")]

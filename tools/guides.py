@@ -8,6 +8,19 @@ import home
 
 GUIDES = [
     {
+        "slug": "christmas-gift-guide",
+        "title": "Christmas Gift Ideas UK 2026: For Her, Him, Kids & Stocking Fillers",
+        "short": "Christmas gift guide 2026",
+        "desc": "Our hand-picked Christmas gift ideas for 2026: gifts for her, for him, for kids, for the home, stocking fillers "
+                "under \u00a315 and show-stopper hampers, from UK shops including Cadbury, Yankee Candle, Bare Kind and Amazon.",
+        "updated": "2026-10-08",
+        "links": {},
+        "related": [],
+        "og": {"pill": "CHRISTMAS 2026", "lines": ["Christmas", "Gift Ideas"], "sub": "Hand-picked for 2026",
+               "items": ["Gifts for her", "Gifts for him", "Gifts for kids", "For the home & host",
+                         "Stocking fillers under \u00a315", "Show-stopper hampers"]},
+    },
+    {
         "slug": "used-car-checklist",
         "title": "Buying a Used Car in the UK: The Complete Checklist",
         "short": "Used car buying checklist",
@@ -350,6 +363,81 @@ def esim_body(g):
     ])
 
 
+# ---------------------------------------------------------------- Christmas gift guide (article with in-text links)
+AMAZON_TAG = "dailydeal07d1-21"
+KIND_EMOJI = {"Cosy": "&#128715;&#65039;", "Drinks": "&#129347;", "Winter": "&#129507;", "Games": "&#127922;",
+              "Decor": "&#10024;", "Bath & body": "&#129506;"}
+
+
+def _item_url(it):
+    return f"https://www.amazon.co.uk/dp/{it['asin']}?tag={AMAZON_TAG}" if it["src"] == "amazon" else it["url"]
+
+
+def _a(it, text=None):
+    return (f'<a href="{home.e(_item_url(it))}" rel="sponsored nofollow noopener" target="_blank">'
+            f'{home.e(text or it["name"])}</a>')
+
+
+def _band(it):
+    if it["src"] != "awin":
+        return ""
+    p = it["price"]
+    return next(b for lim, b in ((10, "Under &pound;10"), (15, "Under &pound;15"), (20, "Under &pound;20"), (30, "Under &pound;30"),
+                                 (50, "Under &pound;50"), (10**9, "&pound;50+")) if p < lim)
+
+
+def _card(it):
+    if it["src"] == "awin":
+        pic = f'<img src="img/{home.e(it["key"])}.jpg" alt="{home.e(it["name"])}" loading="lazy">'
+    else:
+        pic = f'<span class="emo">{KIND_EMOJI.get(it.get("kind"), "&#127873;")}</span>'
+    band = _band(it)
+    return (f'<article class="pcard"><a class="ph{"" if it["src"] == "awin" else " noimg"}" href="{home.e(_item_url(it))}" '
+            f'rel="sponsored nofollow noopener" target="_blank">{pic}{f"<span class=tag>{band}</span>" if band else ""}</a>'
+            f'<div class="pb"><span class="brand">{home.e(it.get("kind") or it["shop"])}</span><h3>{home.e(it["name"])}</h3>'
+            f'<p class="kind">From {home.e(it["shop"])}</p><p class="why">{home.e(it["why"])}</p>'
+            f'<a class="btn" href="{home.e(_item_url(it))}" rel="sponsored nofollow noopener" target="_blank">'
+            f'See it at {home.e(it["shop"])} &rsaquo;</a></div></article>')
+
+
+def xmas_body(g):
+    import json
+    d = json.loads((home.DATA / "guide-christmas.json").read_text(encoding="utf-8"))
+    secs = d["sections"]
+    find = {it["key"]: it for s in secs for it in s["items"]}
+    top = [("Best for her", "B0FF4LX6V5"), ("Best for him", "aw-53984693911937"), ("Best for kids", "aw-36225688688"),
+           ("Best for the home", "aw-38031934423195"), ("Best show-stopper", "aw-27900252065")]
+    out = ['<div class="intro"><p>Christmas shopping doesn&rsquo;t need to mean hours of scrolling. We&rsquo;ve picked the gifts '
+           'we&rsquo;d genuinely be happy to give this year, from cosy treats like a '
+           f'{_a(find["B0FF4LX6V5"], "heated throw")} to a classic {_a(find["aw-44777982177"], "tub of Cadbury Roses")} for the '
+           'stocking. Everything comes from well-known UK shops, and every Amazon pick has hundreds or thousands of good reviews.</p>'
+           '<p class="small">Prices and stock change quickly in the run-up to Christmas, so check the latest price and the last '
+           'order dates for Christmas delivery on each shop&rsquo;s site.</p></div>']
+    out.append('<div class="toppicks"><h2>&#11088; Our top picks</h2><ol>' + "".join(
+        f'<li><strong>{lab}:</strong> {_a(find[k])}</li>' for lab, k in top) + "</ol></div>")
+    out.append('<nav class="jump">' + "".join(f'<a href="#{s["id"]}">{s["title"]}</a>' for s in secs) +
+               '<a href="#quick">Quick picks table</a></nav>')
+    for s in secs:
+        links = [_a(it) for it in s["items"][:2]]
+        intro = s["intro"].format(*links)
+        out.append(f'<section class="gsec" id="{s["id"]}"><h2>{s["emoji"]} {s["title"]}</h2><p class="lead">{intro}</p>'
+                   '<div class="grid">' + "".join(_card(it) for it in s["items"]) + "</div></section>")
+    rows = "".join(f'<tr><td>{s["title"].replace("Gifts for ", "").replace(" (and the host)", "").capitalize()}</td>'
+                   f'<td>{_a(s["items"][0])}</td><td>{_band(s["items"][0]) or "See price"}</td>'
+                   f'<td>{home.e(s["items"][0]["shop"])}</td></tr>' for s in secs)
+    out.append('<section class="gsec" id="quick"><h2>&#9989; Quick picks at a glance</h2><div class="tablewrap"><table class="qt">'
+               '<thead><tr><th>Who for</th><th>Our pick</th><th>Budget</th><th>Shop</th></tr></thead>'
+               f'<tbody>{rows}</tbody></table></div></section>')
+    out.append('<div class="related"><h3>&#127876; More Christmas ideas</h3><p>New picks are added every day.</p>'
+               f'<p><a href="{home.SITE}/c/christmas/">Browse all Christmas finds &rsaquo;</a> &middot; '
+               f'<a href="{home.SITE}/c/candles/">Christmas candles &rsaquo;</a> &middot; '
+               f'<a href="{home.SITE}/c/gifts/">Gift roundups &rsaquo;</a></p></div>')
+    out.append(f'<p class="small">Links on this page are affiliate links (#ad): we may earn a small commission if you buy, at no '
+               f'extra cost to you. As an Amazon Associate I earn from qualifying purchases. Last updated '
+               f'{home.pretty(d["updated"])} {d["updated"][:4]}.</p>')
+    return "".join(out)
+
+
 GUIDE_CSS = """
 .gwrap{max-width:820px;margin:0 auto;padding-top:22px}
 .intro p{font-size:17px}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 10px}
@@ -394,6 +482,16 @@ GUIDE_CSS = """
 .prov{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;display:flex;flex-direction:column}
 .prov h3{font-family:Georgia,serif;font-size:26px;margin:0}.prov .tag2{color:var(--blue);font-weight:600;margin:2px 0 8px}
 .prov ul{margin:0 0 14px;padding-left:20px;flex:1}.prov li{margin:5px 0}
+.toppicks{background:linear-gradient(135deg,var(--deep),var(--blue));color:#fff;border-radius:18px;padding:20px 22px;margin:16px 0}
+.toppicks h2{font-family:Georgia,serif;font-size:24px;margin:0 0 8px}.toppicks ol{margin:0;padding-left:22px}.toppicks li{margin:6px 0}
+.toppicks a{color:#fff;text-decoration:underline;text-decoration-color:var(--gold, #F5D27A);text-underline-offset:3px;font-weight:600}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.jump a{text-decoration:none;background:var(--surface);border:1px solid var(--border);padding:7px 13px;border-radius:99px;font-size:14px;font-weight:500}
+.gsec{padding:22px 0 6px;scroll-margin-top:12px}.gsec h2{font-family:Georgia,serif;font-size:clamp(24px,4vw,30px);margin:0 0 6px}
+.lead{font-size:17px;margin:0 0 16px}.lead a,.intro a,.qt a{color:var(--blue);font-weight:600}
+.pcard .why{color:var(--dim);font-size:15px;margin:0 0 14px;flex:1}
+.ph.noimg{background:linear-gradient(135deg,#FFF6E5,#E8F1FF)}.emo{font-size:72px;line-height:1}
+.tablewrap{overflow-x:auto}.qt{width:100%;border-collapse:collapse;background:var(--surface);border-radius:14px;overflow:hidden}
+.qt th,.qt td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:15px}.qt th{background:var(--blue);color:#fff;font-weight:600}
 @media (max-width:560px){.compare{grid-template-columns:1fr}.compare .vs{display:none}}
 @media print{header.top,.chips,.disc,.tools,.follow,footer,.callout .btn{display:none!important}body{background:#fff;color:#000}
 .step,.callout{break-inside:avoid;border:1px solid #999;box-shadow:none}.callout{background:#fff;color:#000}.callout .small{color:#333}}
@@ -407,7 +505,7 @@ try{localStorage.setItem(k,JSON.stringify(boxes.map(function(x){return x.checked
 window.clearTicks=function(){boxes.forEach(function(b){b.checked=false});try{localStorage.removeItem(k)}catch(e){}}})();
 </script>"""
 
-BODIES = {"used-car-checklist": used_car_body, "travel-esim": esim_body}
+BODIES = {"used-car-checklist": used_car_body, "travel-esim": esim_body, "christmas-gift-guide": xmas_body}
 
 
 def build():
