@@ -207,7 +207,7 @@ def make_pin(p, photo, out, label):
 
     # scent description (italic serif) + notes
     f_quote = font(SERIF_I, 38)
-    quote = wrap(dr, f"\u201C{first_sentence(p['blurb'])}\u201D", f_quote, W - 2 * M)[:3]
+    quote = wrap(dr, f"\u201C{first_sentence(p['blurb'], 125)}\u201D", f_quote, W - 2 * M)[:3]
     y = card_bottom + 44
     for ln in quote:
         dr.text((M, y), ln, font=f_quote, fill="white")
@@ -222,7 +222,7 @@ def make_pin(p, photo, out, label):
     # footer
     dr.rectangle([0, H - 130, W, H], fill=BLUE_DARK)
     dr.text((M, H - 65), "DAILY DEALS UK", font=font(HEAVY, 42), fill="white", anchor="lm")
-    dr.text((W - M, H - 65), "Shop at Candles Direct \u203A", font=font(SEMI, 30), fill=SOFT, anchor="rm")
+    dr.text((W - M, H - 65), f"Shop at {p.get('shop', 'Candles Direct')} \u203A", font=font(SEMI, 30), fill=SOFT, anchor="rm")
 
     out.parent.mkdir(parents=True, exist_ok=True)
     img.convert("RGB").save(out, "JPEG", quality=90, optimize=True)
@@ -230,9 +230,10 @@ def make_pin(p, photo, out, label):
 
 # ---------------------------------------------------------------- page
 
-def page(p):
+def page(p, site=SITE):
     e = lambda s: html.escape(str(s), quote=True)
-    url = f"{SITE}/{p['id']}/"
+    url = f"{site}/{p['id']}/"
+    shop = p.get("shop", "Candles Direct")
     title = f"{p['brand']} {p['name']} {p['kind']}"
     notes = ", ".join(p["notes"])
     return f"""<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
@@ -256,9 +257,9 @@ h1{{font-family:'Archivo Black',sans-serif;font-size:clamp(26px,6vw,38px);line-h
 <div class="card"><img src="photo.jpg" alt="{e(title)}"><span class="brand">{e(p['brand'])}</span>
 <h1>{e(p['name'])}</h1><p class="kind">{e(p['kind'])}</p><p>{e(p['blurb'])}</p>
 {f'<p class="notes"><strong>Fragrance notes:</strong> {e(notes)}</p>' if notes else ''}
-<a class="btn" href="{e(p['url'])}" rel="sponsored nofollow noopener" target="_blank">See it at Candles Direct</a></div>
+<a class="btn" href="{e(p['url'])}" rel="sponsored nofollow noopener" target="_blank">See it at {e(shop)}</a></div>
 <p class="disc">This is an affiliate link (#ad): we may earn a small commission if you buy, at no extra cost to you.
-Prices and stock change often, so check the current price on Candles Direct.</p></div></body></html>"""
+Prices and stock change often, so check the current price on {e(shop)}.</p></div></body></html>"""
 
 
 # ---------------------------------------------------------------- RSS (own Pinterest board)
