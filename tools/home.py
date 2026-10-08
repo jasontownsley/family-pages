@@ -200,6 +200,13 @@ def build(days, spots_by_key):
         out.append(f'<section id="candles"><div class="sh"><div><h2>&#128367;&#65039; Candles &amp; Home Fragrance</h2><p>Yankee Candle, '
                    f'WoodWick and P.F. Candle Co. scents for cosy nights and Christmas.</p></div><a href="{SITE}/c/candles/">See all &rsaquo;</a></div>'
                    '<div class="grid">' + "".join(product_card(p, "candles") for p in latest(candles, 8)) + "</div></section>")
+    import guides
+    gl = guides.build()
+    out.append('<section id="guides"><div class="sh"><div><h2>&#128214; Helpful guides</h2><p>Free, practical UK buying guides.</p></div></div>'
+               '<div class="sgrid">' + "".join(
+                   f'<a class="scard" href="{SITE}/guides/{g["slug"]}/"><span class="simg"><img src="{SITE}/guides/{g["slug"]}/og.jpg" alt="" loading="lazy"></span>'
+                   f'<span class="cat">Guide</span><strong>{e(g["short"])}</strong><small>{e(g["desc"][:90])}&hellip;</small></a>' for g in gl)
+               + "</div></section>")
     if len(days) > 4:
         out.append('<section id="archive"><div class="sh"><div><h2>More roundups</h2><p>Every list we\'ve published.</p></div></div>'
                    '<div class="rgrid">' + "".join(roundup_card(d) for d in days[4:]) + "</div></section>")
@@ -303,6 +310,8 @@ def write_sitemap(days):
     urls = [(f"{SITE}/", newest, "daily", "1.0")]
     urls += [(f"{SITE}/c/{slug}/", newest, "daily", "0.8") for slug, *_ in CATEGORIES]
     urls += [(f"{SITE}/{key(d)}/", d["date"], "weekly", "0.6") for d in days]
+    import guides
+    urls += [(f"{SITE}/guides/{g['slug']}/", g["updated"], "monthly", "0.7") for g in guides.GUIDES]
     for name, folder in (("gifts.json", "gifts"), ("candles.json", "candles")):
         urls += [(f"{SITE}/{folder}/{m['id']}/", m["date"], "weekly", "0.6") for m in load(name)]
     body = "".join(f"<url><loc>{e(u)}</loc><lastmod>{d}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>"
