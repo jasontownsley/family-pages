@@ -20,6 +20,24 @@ GUIDES = [
         "links": {"history_check": None, "history_check_site": "https://www.carvertical.com/gb"},
         # roundups to recommend on the guide (day keys under deals/)
         "related": ["2026-10-08-b"],
+        "og": {"pill": "FREE UK GUIDE", "lines": ["Buying a", "Used Car?"], "sub": "The complete checklist",
+               "items": ["Budget & research", "Free GOV.UK MOT history check", "Vehicle history check", "V5C & VIN checks",
+                         "Look the car over", "Test drive", "Pay safely", "Tax & insure before driving"]},
+    },
+    {
+        "slug": "travel-esim",
+        "title": "Travel eSIMs Explained: Cheaper Mobile Data Abroad",
+        "short": "Travel eSIMs explained",
+        "desc": "How a travel eSIM works, why it can cost far less than roaming, and how to set one up in minutes before you fly. "
+                "No contract, keep your UK number, top up in an app.",
+        "updated": "2026-10-08",
+        # affiliate links go in saily / breeze once approved on Awin (then marked #ad); *_site are plain links until then
+        "links": {"saily": None, "saily_site": "https://saily.com/",
+                  "breeze": None, "breeze_site": "https://www.breezesim.com/"},
+        "related": [],
+        "og": {"pill": "TRAVEL GUIDE", "lines": ["Travel", "eSIMs"], "sub": "Cheaper data abroad",
+               "items": ["No contract", "Keep your UK number", "Set up before you fly", "Data in 190+ countries",
+                         "Top up in the app", "No surprise roaming bills"]},
     },
 ]
 
@@ -149,6 +167,107 @@ def used_car_body(g):
     ])
 
 
+def _provider_card(name, link, site, tagline, points):
+    href, rel = (link, "sponsored nofollow noopener") if link else (site, "noopener")
+    lis = "".join(f"<li>{p}</li>" for p in points)
+    note = '<p class="small">Affiliate link (#ad).</p>' if link else ""
+    return (f'<div class="prov"><h3>{name}</h3><p class="tag2">{tagline}</p><ul>{lis}</ul>'
+            f'<a class="btn" href="{home.e(href)}" rel="{rel}" target="_blank">See {name} plans &rsaquo;</a>{note}</div>')
+
+
+def esim_body(g):
+    L = g["links"]
+
+    def tick(items):
+        return '<ul class="check">' + "".join(
+            f'<li><label><input type="checkbox"> <span>{i}</span></label></li>' for i in items) + "</ul>"
+
+    return "".join([
+        '<div class="intro"><p>Coming home from holiday to a big phone bill is a feeling most of us know. A travel eSIM is a simple '
+        'way to avoid it: you buy a data plan for where you are going, install it on your phone in a few minutes, and use local-rate '
+        'data while you are away, with your normal UK number still working.</p></div>',
+
+        '<section class="step"><div class="sn">?</div><div><h2>What is an eSIM?</h2>'
+        '<p>An eSIM is a digital SIM built into your phone. Instead of a plastic card, you download a mobile plan by scanning a QR code '
+        'or tapping a button in an app. Most phones can hold several eSIMs alongside your normal SIM, so you can add a travel data plan '
+        '<strong>without removing your UK SIM or changing your number</strong>.</p>'
+        '<p>Travel eSIMs are usually <strong>data-only</strong>. You use the data for maps, browsing, WhatsApp, FaceTime and other apps, '
+        'while your UK number can stay switched on in the background for texts such as bank security codes.</p></div></section>',
+
+        '<section class="step"><div class="sn">&pound;</div><div><h2>Why it saves money</h2>'
+        '<p>Since Brexit, UK networks are free to charge for roaming in Europe again, and most do. Many charge a daily fee, typically '
+        '<strong>around &pound;2 to &pound;3 a day</strong> in Europe, and outside Europe (the USA, Turkey, Dubai, Asia and so on) roaming '
+        'can cost a lot more. Prices depend on your network and when you joined, so check your own network\u2019s roaming page.</p>'
+        '<div class="compare"><div><span class="lbl">Roaming, 14 days in Spain</span><strong>&pound;28 &ndash; &pound;42</strong>'
+        '<small>at a typical &pound;2&ndash;&pound;3 a day</small></div><div class="vs">vs</div>'
+        '<div class="win"><span class="lbl">Travel eSIM for Europe</span><strong>around &pound;10 &ndash; &pound;15</strong>'
+        '<small>for a typical 10GB, 30-day plan</small></div></div>'
+        '<p class="small">Illustrative example only. Roaming charges and eSIM prices change, so check current prices before you buy. '
+        'Families can save even more, as a roaming charge applies to every phone.</p></div></section>',
+
+        '<section class="step"><div class="sn">&#10003;</div><div><h2>The benefits at a glance</h2><ul class="ben">'
+        '<li><strong>No contract</strong>: pay once for the data you need, with no subscription and no credit check.</li>'
+        '<li><strong>Keep your UK number</strong>: your normal SIM stays in the phone for calls and texts.</li>'
+        '<li><strong>Set up before you fly</strong>: no hunting for a local SIM shop at the airport.</li>'
+        '<li><strong>Connected as you land</strong>: maps, taxi apps and messages work straight away.</li>'
+        '<li><strong>No bill shock</strong>: you can only use what you have paid for, and you can top up in the app.</li>'
+        '<li><strong>Works in lots of countries</strong>: single-country and regional plans (for example all of Europe) are available.</li>'
+        '</ul></div></section>',
+
+        '<section class="step"><div class="sn">4</div><div><h2>How to set one up (about 5 minutes)</h2>'
+        '<ol class="howto">'
+        '<li><strong>Check your phone supports eSIM and is unlocked.</strong> Most iPhones from 2018 onwards and most recent Android '
+        'phones do. A quick check: dial <strong>*#06#</strong>, and if you see an <strong>EID</strong> number, your phone supports eSIM.</li>'
+        '<li><strong>Choose a plan</strong> for your destination: how much data and for how many days.</li>'
+        '<li><strong>Install it at home on Wi-Fi</strong> before you travel, by scanning the QR code or tapping install in the app. '
+        'It will not start using data until you switch to it abroad.</li>'
+        '<li><strong>When you land</strong>, set the travel eSIM as your mobile data line and turn on data roaming <em>for the eSIM</em>. '
+        'Turn data roaming <strong>off</strong> on your UK SIM so you are not charged for data on it.</li>'
+        '</ol></div></section>',
+
+        '<h2 class="ph2">Our picks</h2><div class="provs">',
+        _provider_card("Saily", L.get("saily"), L.get("saily_site"), "From the team behind NordVPN", [
+            "Plans for 200+ destinations, according to Saily",
+            "Everything runs in the Saily app: buy, install and top up",
+            "Switch between country plans without installing a new eSIM",
+            "Optional extras including ad and tracker blocking, and a virtual location feature",
+            "24/7 support in the app",
+        ]),
+        _provider_card("Breeze", L.get("breeze"), L.get("breeze_site"), "Simple, no-contract travel data", [
+            "Data plans for 190+ countries, including regional plans such as Europe",
+            "No contract, with instant activation by QR code",
+            "Usage alerts, and you are never charged beyond the plan you bought",
+            "Save 10% when you buy 2 or more plans, handy for families",
+            "Top up or add another plan when you need more",
+        ]),
+        '</div>',
+
+        '<section class="step"><div class="sn">&#9992;</div><div><h2>Before you fly: eSIM checklist</h2>',
+        tick([
+            "Phone is <strong>unlocked</strong> and supports eSIM (dial *#06# and look for an EID)",
+            "Plan bought for the right country or region, with enough data for the trip",
+            "eSIM <strong>installed at home on Wi-Fi</strong>, and labelled something like \u201cTravel\u201d",
+            "Know how to switch your mobile data line to the eSIM when you land",
+            "Data roaming on your UK SIM set to <strong>off</strong> (calls and texts can stay on)",
+            "WhatsApp or FaceTime set up for calls home over data",
+            "Offline maps downloaded as a backup",
+        ]),
+        '</div></section>',
+
+        '<section class="step"><div class="sn">FAQ</div><div><h2>Quick answers</h2>'
+        '<p><strong>Will I still get texts to my UK number?</strong> Usually yes, if your UK SIM stays switched on. Receiving texts abroad '
+        'is often free, but check your network\u2019s roaming terms.</p>'
+        '<p><strong>Can I make normal phone calls on a travel eSIM?</strong> Most travel eSIMs are data-only, so use WhatsApp, FaceTime '
+        'or similar apps for calls.</p>'
+        '<p><strong>Can I use it again on my next trip?</strong> Often yes: many apps let you top up or buy a new plan for the same eSIM.</p>'
+        '<p><strong>Does it work for the whole family?</strong> Each phone needs its own plan, and some providers give a discount for '
+        'buying several.</p></div></section>',
+
+        '<p class="small">This guide is general information, not financial advice. Features, coverage and prices are as stated by each '
+        f'provider and can change, so check before you buy. Last updated {home.pretty(g["updated"])} {g["updated"][:4]}.</p>',
+    ])
+
+
 GUIDE_CSS = """
 .gwrap{max-width:820px;margin:0 auto;padding-top:22px}
 .intro p{font-size:17px}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 10px}
@@ -170,6 +289,19 @@ GUIDE_CSS = """
 .rel img{width:96px;aspect-ratio:2/3;object-fit:cover;border-radius:10px}.rel strong{display:block;font-size:17px}
 .rel small{display:block;color:var(--dim);margin:2px 0 6px}.rel em{font-style:normal;color:var(--blue);font-weight:600}
 @media print{.related{display:none}}
+.step p{margin:0 0 10px}.sn{font-size:15px}
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:12px 0}
+.compare>div{border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+.compare .win{border:2px solid var(--blue);background:color-mix(in srgb,var(--blue) 8%,transparent)}
+.compare .lbl{display:block;font-size:13px;color:var(--dim)}.compare strong{display:block;font-family:Georgia,serif;font-size:26px;margin:4px 0}
+.compare small{color:var(--dim)}.compare .vs{border:0;font-weight:700;color:var(--dim)}
+.ben{margin:0;padding-left:20px}.ben li{margin:6px 0}.howto{margin:0;padding-left:22px}.howto li{margin:8px 0}
+.ph2{font-family:Georgia,serif;font-size:28px;margin:26px 0 4px}
+.provs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:12px 0}
+.prov{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;display:flex;flex-direction:column}
+.prov h3{font-family:Georgia,serif;font-size:26px;margin:0}.prov .tag2{color:var(--blue);font-weight:600;margin:2px 0 8px}
+.prov ul{margin:0 0 14px;padding-left:20px;flex:1}.prov li{margin:5px 0}
+@media (max-width:560px){.compare{grid-template-columns:1fr}.compare .vs{display:none}}
 @media print{header.top,.chips,.disc,.tools,.follow,footer,.callout .btn{display:none!important}body{background:#fff;color:#000}
 .step,.callout{break-inside:avoid;border:1px solid #999;box-shadow:none}.callout{background:#fff;color:#000}.callout .small{color:#333}}
 """
@@ -182,7 +314,7 @@ try{localStorage.setItem(k,JSON.stringify(boxes.map(function(x){return x.checked
 window.clearTicks=function(){boxes.forEach(function(b){b.checked=false});try{localStorage.removeItem(k)}catch(e){}}})();
 </script>"""
 
-BODIES = {"used-car-checklist": used_car_body}
+BODIES = {"used-car-checklist": used_car_body, "travel-esim": esim_body}
 
 
 def build():
@@ -204,6 +336,7 @@ def build():
 
 def make_og(g, out):
     """1000x1500 pin image for a guide (blue style), made once."""
+    og = g["og"]
     from PIL import Image, ImageDraw, ImageFont
     F = "C:/Windows/Fonts/"
     f = lambda n, s: ImageFont.truetype(F + n, s)
@@ -212,17 +345,16 @@ def make_og(g, out):
     img = Image.composite(Image.new("RGB", (W, H), "#0678FF"), Image.new("RGB", (W, H), "#0A3FA8"), grad)
     dr = ImageDraw.Draw(img)
     pf = f("segoeuib.ttf", 30)
-    dr.rounded_rectangle([M, 60, M + dr.textlength("FREE UK GUIDE", font=pf) + 44, 114], radius=27, fill="#D0021B")
-    dr.text((M + 22, 87), "FREE UK GUIDE", font=pf, fill="white", anchor="lm")
+    dr.rounded_rectangle([M, 60, M + dr.textlength(og["pill"], font=pf) + 44, 114], radius=27, fill="#D0021B")
+    dr.text((M + 22, 87), og["pill"], font=pf, fill="white", anchor="lm")
     y = 160
-    for ln in ("Buying a", "Used Car?"):
+    for ln in og["lines"]:
         dr.text((M, y), ln, font=f("georgiab.ttf", 104), fill="white"); y += 116
-    dr.text((M, y + 10), "The complete checklist", font=f("seguisb.ttf", 46), fill="#CFE3FF")
+    dr.text((M, y + 10), og["sub"], font=f("seguisb.ttf", 46), fill="#CFE3FF")
     dr.line([M, y + 84, M + 140, y + 84], fill="#F5D27A", width=5)
     top = y + 130
     dr.rounded_rectangle([M, top, W - M, H - 190], radius=32, fill="white")
-    steps = ["Budget & research", "Free GOV.UK MOT history check", "Vehicle history check", "V5C & VIN checks",
-             "Look the car over", "Test drive", "Pay safely", "Tax & insure before driving"]
+    steps = og["items"]
     step = (H - 190 - top - 40) / len(steps)
     for i, s in enumerate(steps, 1):
         cy = int(top + 20 + step * (i - 0.5))
@@ -231,6 +363,6 @@ def make_og(g, out):
         dr.text((M + 104, cy), s, font=f("segoeuib.ttf", 38), fill="#14213D", anchor="lm")
     dr.rectangle([0, H - 130, W, H], fill="#0052CC")
     dr.text((M, H - 65), "DAILY DEALS UK", font=f("ariblk.ttf", 42), fill="white", anchor="lm")
-    dr.text((W - M, H - 65), "Tap for the full list \u203A", font=f("seguisb.ttf", 30), fill="#CFE3FF", anchor="rm")
+    dr.text((W - M, H - 65), "Tap to read the guide \u203A", font=f("seguisb.ttf", 30), fill="#CFE3FF", anchor="rm")
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, "JPEG", quality=90, optimize=True)
