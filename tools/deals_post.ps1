@@ -2,7 +2,18 @@
 param([string]$Date = (Get-Date -Format yyyy-MM-dd))
 $file = "deals\data\$Date.json"
 
-if (-not (Test-Path $file)) { throw "No $file written - nothing published today" }
+# Candles Direct picks (Awin feed) don't depend on the Amazon research, so they go out either way
+python tools\candles.py --pick $Date 2>&1 | Out-String
+$candlesOk = -not $LASTEXITCODE
+
+if (-not (Test-Path $file)) {
+    if ($candlesOk) {
+        cmd /c "git add deals 2>&1" | Out-String
+        git commit -q -m "Daily Deals UK: $Date candles only" | Out-String
+        cmd /c "git push 2>&1" | Out-String
+    }
+    throw "No $file written - no roundup today (candles published: $candlesOk)"
+}
 
 $check = python tools\build_deals.py --check $file 2>&1 | Out-String
 if ($LASTEXITCODE) {
@@ -15,7 +26,7 @@ python tools\build_deals.py 2>&1 | Out-String
 if ($LASTEXITCODE) { throw "build_deals.py failed" }
 
 cmd /c "git add deals 2>&1" | Out-String
-git commit -q -m "Daily Deals UK: $Date roundup" | Out-String
+git commit -q -m "Daily Deals UK: $Date roundup and candles" | Out-String
 cmd /c "git push 2>&1" | Out-String
 if ($LASTEXITCODE) { throw "git push failed" }
 "Published https://dailydealsuk.co.uk/deals/$Date/"
