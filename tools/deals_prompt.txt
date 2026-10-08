@@ -13,9 +13,13 @@ Default rotation by weekday:
   Monday: Kitchen finds | Tuesday: Cleaning & laundry | Wednesday: Home organisation & storage
   Thursday: Beauty & self-care | Friday: Gifts (rotate the angle each week - for her, for him, for kids, for teens, for the home, stocking fillers, secret Santa; and the budget - under £10, £15, £20, £25, £30) | Saturday: Cosy home
   Sunday: Viral / TikTok-famous finds
-Seasonal overrides (UK):
-  - 15-31 October: Saturday and Sunday become Halloween.
-  - 1 November - 20 December: Friday, Saturday and Sunday become Christmas gifts (for her / for him / for kids / stocking fillers / secret Santa under £10 - vary it).
+Seasonal overrides (UK) - these beat the weekday rotation. If more than one applies, Black Friday wins, then Bonfire Night, then Halloween, then Christmas:
+  - 1-31 October: Saturday, Sunday and Wednesday become Halloween (decorations, party bits, kids' costumes and accessories, trick-or-treat bowls and bags, spooky baking, pumpkin carving). Vary the angle each time (e.g. outdoor decor, indoor decor, kids, party hosting, baking).
+  - Bonfire Night (5 November): 20 October, 27 October, 2 November and 4 November become Bonfire Night (cosy outdoor night: blankets, flasks, hand warmers, hot chocolate kits, glow sticks, fire pit and garden bits). NEVER include fireworks, sparklers or anything age-restricted.
+  - From 9 October: every Friday becomes Christmas gifts instead of general gifts.
+  - 1-15 November: Friday, Saturday and Sunday become Christmas.
+  - 16 November - 20 December: every day except Tuesday and Wednesday becomes Christmas.
+  - Christmas angles to rotate (never repeat the last one): gifts for her / for him / for kids / for teens / for the home, stocking fillers, secret Santa under £10, Christmas decorations, Christmas table and baking, advent and countdown, cosy Christmas night in. Vary the budget too.
   - From the Monday before Black Friday up to and including Cyber Monday: every day is a Black Friday themed gift or home roundup.
   - 21-31 December: New Year organising / fresh start.
 Run: python tools/recent_deals.py  - it lists the last 14 days' themes, titles and products plus every ASIN already used. Do not repeat a title or angle from it, and do not reword one: a new title must differ in its main keywords and structure, not just the number of products (e.g. after "8 Thoughtful Gifts Under £20 UK Shoppers Love to Give", NOT "7 Thoughtful Gifts Under £20..."; instead e.g. "Cosy Gifts for Her Under £15 That Feel Expensive"). The same goes for the theme's angle: if the last roundup of this theme was "gifts under £20", pick a different recipient or budget today.

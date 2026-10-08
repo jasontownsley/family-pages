@@ -47,6 +47,9 @@ LEGACY_PAGE = ROOT / "pinterest" / "index.html"
 GREEN, GREEN_DARK = "#146C43", "#0E4F31"
 ORANGE, GOLD = "#E8562F", "#E6C77E"
 INK, PAPER = "#17251C", "#F7F5EF"
+# pin style from 2026-10-09: bright blue (green above kept for the older product pins)
+BLUE, BLUE_DARK = "#0678FF", "#0052CC"
+RED, INK_BLUE, SOFT = "#D0021B", "#14213D", "#CFE3FF"
 
 FONT_DIR = Path("C:/Windows/Fonts")
 FONT_HEAVY = FONT_DIR / "ariblk.ttf"
@@ -149,99 +152,115 @@ def fit(draw, text, path, width, max_lines, start, smallest):
     return f, wrap(draw, text, f, width)[:max_lines]
 
 
-def make_pin(d, out):
-    W, H, M = 1000, 1500, 70
-    img = Image.new("RGB", (W, H), PAPER)
+def pill(dr, x, y, text, size=34):
+    f = font(FONT_BOLD, size)
+    w = dr.textlength(text, font=f)
+    dr.rounded_rectangle([x, y, x + w + 44, y + 58], radius=29, fill=RED)
+    dr.text((x + 22, y + 29), text, font=f, fill="white", anchor="lm")
+
+
+def footer(dr, W, H, M, cta):
+    dr.rectangle([0, H - 150, W, H], fill=BLUE_DARK)
+    dr.text((M, H - 95), BRAND.upper(), font=font(FONT_HEAVY, 46), fill="white", anchor="lm")
+    dr.text((W - M, H - 95), cta, font=font(FONT_SEMI, 32), fill=SOFT, anchor="rm")
+
+
+def photo_card(img, src, box, num=None):
+    """Photo inside a white rounded frame, with an optional red number badge."""
+    x0, y0, x1, y1 = box
     dr = ImageDraw.Draw(img)
+    dr.rounded_rectangle(box, radius=28, fill="white")
+    pad = 14
+    ph = ImageOps.fit(Image.open(src).convert("RGB"), (x1 - x0 - 2 * pad, y1 - y0 - 2 * pad), method=Image.LANCZOS)
+    mask = Image.new("L", ph.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, *ph.size], radius=18, fill=255)
+    img.paste(ph, (x0 + pad, y0 + pad), mask)
+    if num is not None:
+        r = 30
+        dr.ellipse([x0 + 26, y0 + 26, x0 + 26 + 2 * r, y0 + 26 + 2 * r], fill=RED)
+        dr.text((x0 + 26 + r, y0 + 26 + r), str(num), font=font(FONT_HEAVY, 34), fill="white", anchor="mm")
 
-    # header block sized to fit the title and hook
-    f_title, lines = fit(dr, d["pin_title"], FONT_HEAVY, W - 2 * M, 4, 92, 56)
-    lh = int(f_title.size * 1.12)
-    f_hook = font(FONT_SEMI, 36)
-    hook = wrap(dr, d["pin_hook"], f_hook, W - 2 * M)[:2] if d.get("pin_hook") else []
-    header_h = 187 + lh * len(lines) + 52 * len(hook) + 45
-    dr.rectangle([0, 0, W, header_h], fill=GREEN)
 
-    f_kick = font(FONT_BOLD, 34)
-    kicker = d["theme"].upper()
-    kw = dr.textlength(kicker, font=f_kick)
-    dr.rounded_rectangle([M, 70, M + kw + 44, 70 + 58], radius=29, fill=ORANGE)
-    dr.text((M + 22, 99), kicker, font=f_kick, fill="white", anchor="lm")
-
-    y = 170
+def make_pin(d, out):
+    """Roundup pin: blue header, up to 2 approved photos, numbered list in a white card."""
+    W, H, M = 1000, 1500, 60
+    img = Image.new("RGB", (W, H), BLUE)
+    dr = ImageDraw.Draw(img)
+    pill(dr, M, 60, d["theme"].upper())
+    # keep the title to 3 lines where possible so the list has room; 4 only if needed
+    f_title, lines = fit(dr, d["pin_title"], FONT_HEAVY, W - 2 * M, 3, 76, 60)
+    if len(wrap(dr, d["pin_title"], f_title, W - 2 * M)) > 3:
+        f_title, lines = fit(dr, d["pin_title"], FONT_HEAVY, W - 2 * M, 4, 60, 48)
+    y = 150
     for ln in lines:
         dr.text((M, y), ln, font=f_title, fill="white")
-        y += lh
-    y += 12
-    for ln in hook:
-        y += 8
-        dr.text((M, y), ln, font=f_hook, fill=GOLD)
-        y += 44
+        y += int(f_title.size * 1.1)
+    if d.get("pin_hook"):
+        f_hook = font(FONT_SEMI, 36)
+        y += 10
+        for ln in wrap(dr, d["pin_hook"], f_hook, W - 2 * M)[:2]:
+            dr.text((M, y), ln, font=f_hook, fill=SOFT)
+            y += 48
+    y += 25
 
-    # numbered product list
-    prods = d["products"][:8]
-    top, bottom = header_h + 40, H - 190
-    step = (bottom - top) / len(prods)
-    r = int(min(32, step * 0.4))
-    f_num = font(FONT_HEAVY, int(r * 1.2))
-    f_item = font(FONT_BOLD, min(44, int(step * 0.5)))
-    for i, p in enumerate(prods, 1):
-        cy = int(top + step * (i - 0.5))
-        dr.ellipse([M, cy - r, M + 2 * r, cy + r], fill=ORANGE)
-        dr.text((M + r, cy), str(i), font=f_num, fill="white", anchor="mm")
-        label = p.get("short_name") or p["name"]
-        ln = wrap(dr, label, f_item, W - 2 * M - 100)
+    # photo row: only photos already approved for this day (own or checked Pexels)
+    prods = d["products"]
+    photos_dir = out.parent / "photos"
+    shots = [(i, photos_dir / f"{p['asin']}.jpg") for i, p in enumerate(prods, 1)
+             if (photos_dir / f"{p['asin']}.jpg").exists()][:2]
+    if shots:
+        gap, ph_h = 24, 300
+        cw = (W - 2 * M - gap * (len(shots) - 1)) // len(shots)
+        for k, (num, src) in enumerate(shots):
+            x = M + k * (cw + gap)
+            photo_card(img, src, (x, y, x + cw, y + ph_h), num)
+        y += ph_h + 24
+
+    # numbered list in a white card
+    top, bottom = y, H - 180
+    dr.rounded_rectangle([M, top, W - M, bottom], radius=28, fill="white")
+    items = prods[:8]
+    step = (bottom - top - 30) / len(items)
+    r = int(min(26, step * 0.36))
+    f_num, f_item = font(FONT_HEAVY, int(r * 1.2)), font(FONT_BOLD, min(40, int(step * 0.48)))
+    for i, p in enumerate(items, 1):
+        cy = int(top + 15 + step * (i - 0.5))
+        dr.ellipse([M + 30, cy - r, M + 30 + 2 * r, cy + r], fill=RED)
+        dr.text((M + 30 + r, cy), str(i), font=f_num, fill="white", anchor="mm")
+        ln = wrap(dr, p.get("short_name") or p["name"], f_item, W - 2 * M - 130)
         text = ln[0] if len(ln) == 1 else ln[0].rstrip(",;:-") + "…"
-        dr.text((M + 96, cy), text, font=f_item, fill=INK, anchor="lm")
-    more = len(d["products"]) - len(prods)
-
-    # footer
-    dr.rectangle([0, H - 150, W, H], fill=GREEN_DARK)
-    f_foot = font(FONT_HEAVY, 46)
-    f_cta = font(FONT_SEMI, 32)
-    dr.text((M, H - 95), BRAND.upper(), font=f_foot, fill=GOLD, anchor="lm")
-    cta = f"+{more} more inside · tap to see" if more else "Tap for the full list"
-    dr.text((W - M, H - 95), cta, font=f_cta, fill="white", anchor="rm")
+        dr.text((M + 56 + 2 * r, cy), text, font=f_item, fill=INK_BLUE, anchor="lm")
+    more = len(prods) - len(items)
+    footer(dr, W, H, M, f"+{more} more inside · tap to see" if more else "Tap for the full list")
 
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, "JPEG", quality=88, optimize=True)
 
 
 def make_spot_pin(p, photo, credit, out):
-    """Single-product pin: lifestyle photo on top, hook and product name below."""
-    W, H, M = 1000, 1500, 70
-    PH = 860
-    img = Image.new("RGB", (W, H), GREEN)
-    img.paste(ImageOps.fit(Image.open(photo).convert("RGB"), (W, PH), method=Image.LANCZOS), (0, 0))
+    """Single-product pin: framed photo on top, hook and product name below."""
+    W, H, M, PH = 1000, 1500, 60, 860
+    img = Image.new("RGB", (W, H), BLUE)
+    photo_card(img, photo, (M, 50, W - M, PH))
     dr = ImageDraw.Draw(img)
-
-    f_kick = font(FONT_BOLD, 34)
-    kicker = p["category"].upper()
-    kw = dr.textlength(kicker, font=f_kick)
-    dr.rounded_rectangle([M, 60, M + kw + 44, 60 + 58], radius=29, fill=ORANGE)
-    dr.text((M + 22, 89), kicker, font=f_kick, fill="white", anchor="lm")
+    pill(dr, M + 30, 80, p["category"].upper(), 30)
 
     f_credit = font(FONT_SEMI, 20)
     ctext = "Our own photo" if credit.get("own") else f"Photo: {credit['photographer']} / Pexels"
     cw = dr.textlength(ctext, font=f_credit)
-    dr.rounded_rectangle([W - M - cw - 20, PH - 46, W - M + 4, PH - 12], radius=10, fill=(0, 0, 0))
-    dr.text((W - M - cw - 8, PH - 29), ctext, font=f_credit, fill="white", anchor="lm")
+    dr.rounded_rectangle([W - M - cw - 40, PH - 56, W - M - 14, PH - 22], radius=10, fill=(0, 0, 0))
+    dr.text((W - M - cw - 27, PH - 39), ctext, font=f_credit, fill="white", anchor="lm")
 
-    # hook + product name, centred in the green panel
-    f_head, lines = fit(dr, p["headline"], FONT_HEAVY, W - 2 * M, 3, 76, 50)
+    # hook + product name, centred in the blue panel
+    f_head, lines = fit(dr, p["headline"], FONT_HEAVY, W - 2 * M, 3, 72, 50)
     lh = int(f_head.size * 1.12)
     f_name = font(FONT_BOLD, 40)
-    name = wrap(dr, p.get("short_name") or p["name"], f_name, W - 2 * M)[0]
-    block = lh * len(lines) + 24 + 50
-    y = PH + (H - 150 - PH - block) // 2
+    y = PH + (H - 150 - PH - (lh * len(lines) + 74)) // 2
     for ln in lines:
         dr.text((M, y), ln, font=f_head, fill="white")
         y += lh
-    dr.text((M, y + 24), name, font=f_name, fill=GOLD)
-
-    dr.rectangle([0, H - 150, W, H], fill=GREEN_DARK)
-    dr.text((M, H - 95), BRAND.upper(), font=font(FONT_HEAVY, 46), fill=GOLD, anchor="lm")
-    dr.text((W - M, H - 95), "Tap for details", font=font(FONT_SEMI, 32), fill="white", anchor="rm")
+    dr.text((M, y + 24), wrap(dr, p.get("short_name") or p["name"], f_name, W - 2 * M)[0], font=f_name, fill=SOFT)
+    footer(dr, W, H, M, "Tap for details")
 
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, "JPEG", quality=88, optimize=True)
