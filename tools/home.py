@@ -61,6 +61,11 @@ header.top{background:linear-gradient(180deg,var(--deep),var(--blue));color:#fff
 header.top:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 30%,rgba(255,214,140,.35) 0 22px,transparent 23px),radial-gradient(circle at 92% 20%,rgba(255,214,140,.28) 0 30px,transparent 31px),radial-gradient(circle at 85% 75%,rgba(255,214,140,.22) 0 18px,transparent 19px),radial-gradient(circle at 15% 85%,rgba(255,214,140,.2) 0 26px,transparent 27px);filter:blur(6px)}
 nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:relative}
 .logo{font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:.02em;text-decoration:none}
+.navr{display:flex;gap:10px;align-items:center}.navlink{color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:8px 14px;border:2px solid rgba(255,255,255,.55);border-radius:99px;white-space:nowrap}
+.gfeat{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:18px;text-decoration:none;box-shadow:0 6px 20px rgba(10,63,168,.06);margin-bottom:14px}
+.gfeat img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:12px;display:block}
+.gfeat h3{font-family:Georgia,serif;font-size:clamp(22px,3vw,28px);line-height:1.15;margin:6px 0 8px}.gfeat p{color:var(--dim);margin:0 0 14px}
+@media (max-width:560px){.gfeat{grid-template-columns:110px 1fr;gap:14px}.gfeat p{display:none}.navlink{padding:7px 10px}}
 .pin{background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:9px 16px;border-radius:99px;font-size:14px;white-space:nowrap}
 .hero{padding:36px 0 56px;position:relative;max-width:720px}.hero.small{padding:10px 0 48px}
 .hero h1{font-family:Georgia,serif;font-size:clamp(34px,6vw,58px);line-height:1.05;margin:0 0 14px}
@@ -121,7 +126,8 @@ def head(title, desc, url, image):
 
 def topbar(hero):
     return (f'<header class="top"><div class="wrap"><nav><a class="logo" href="{SITE}/">DAILY DEALS UK</a>'
-            f'<a class="pin" href="{PINTEREST}" rel="noopener" target="_blank">&#9733; <span>Follow on </span>Pinterest</a></nav>'
+            f'<span class="navr"><a class="navlink" href="{SITE}/guides/">&#128214; Guides</a>'
+            f'<a class="pin" href="{PINTEREST}" rel="noopener" target="_blank">&#9733; <span>Follow on </span>Pinterest</a></span></nav>'
             f'{hero}</div></header><main class="wrap"><p class="disc">{e(DISCLOSURE)}</p>')
 
 
@@ -129,6 +135,7 @@ def chips(active):
     out = [f'<a{" class=on" if active == "" else ""} href="{SITE}/">All</a>']
     for slug, label, _, _ in CATEGORIES:
         out.append(f'<a{" class=on" if active == slug else ""} href="{SITE}/c/{slug}/">{label}</a>')
+    out.append(f'<a{" class=on" if active == "guides" else ""} href="{SITE}/guides/">&#128214; Guides</a>')
     return '<div class="chips">' + "".join(out) + "</div>"
 
 
@@ -193,6 +200,11 @@ def build(days, spots_by_key):
     out.append(f'<section id="today"><div class="band"><div class="sh"><div><h2>Today\'s Amazon finds</h2><p>Two fresh roundups a day, '
                f'every product checked for great reviews.</p></div><a href="#archive">Archive &rsaquo;</a></div><div class="rgrid">'
                + "".join(roundup_card(d) for d in days[:4]) + "</div></div></section>")
+    import guides
+    gl = guides.build()
+    if gl:
+        out.append(guides_section(gl, "Helpful guides", "Free, practical UK buying guides and checklists."))
+        guides_index(gl, latest_pin)
     if spots:
         out.append('<section><div class="sh"><div><h2>Spotlight picks</h2><p>Single finds worth a closer look.</p></div></div>'
                    '<div class="sgrid">' + "".join(spot_card(d, p) for d, p in spots) + "</div></section>")
@@ -200,13 +212,6 @@ def build(days, spots_by_key):
         out.append(f'<section id="candles"><div class="sh"><div><h2>&#128367;&#65039; Candles &amp; Home Fragrance</h2><p>Yankee Candle, '
                    f'WoodWick and P.F. Candle Co. scents for cosy nights and Christmas.</p></div><a href="{SITE}/c/candles/">See all &rsaquo;</a></div>'
                    '<div class="grid">' + "".join(product_card(p, "candles") for p in latest(candles, 8)) + "</div></section>")
-    import guides
-    gl = guides.build()
-    out.append('<section id="guides"><div class="sh"><div><h2>&#128214; Helpful guides</h2><p>Free, practical UK buying guides.</p></div></div>'
-               '<div class="sgrid">' + "".join(
-                   f'<a class="scard" href="{SITE}/guides/{g["slug"]}/"><span class="simg"><img src="{SITE}/guides/{g["slug"]}/og.jpg" alt="" loading="lazy"></span>'
-                   f'<span class="cat">Guide</span><strong>{e(g["short"])}</strong><small>{e(g["desc"][:90])}&hellip;</small></a>' for g in gl)
-               + "</div></section>")
     if len(days) > 4:
         out.append('<section id="archive"><div class="sh"><div><h2>More roundups</h2><p>Every list we\'ve published.</p></div></div>'
                    '<div class="rgrid">' + "".join(roundup_card(d) for d in days[4:]) + "</div></section>")
@@ -311,6 +316,7 @@ def write_sitemap(days):
     urls += [(f"{SITE}/c/{slug}/", newest, "daily", "0.8") for slug, *_ in CATEGORIES]
     urls += [(f"{SITE}/{key(d)}/", d["date"], "weekly", "0.6") for d in days]
     import guides
+    urls += [(f"{SITE}/guides/", newest, "weekly", "0.7")]
     urls += [(f"{SITE}/guides/{g['slug']}/", g["updated"], "monthly", "0.7") for g in guides.GUIDES]
     for name, folder in (("gifts.json", "gifts"), ("candles.json", "candles")):
         urls += [(f"{SITE}/{folder}/{m['id']}/", m["date"], "weekly", "0.6") for m in load(name)]
@@ -323,3 +329,26 @@ def write_sitemap(days):
                                      "Disallow: /pinterest/\nDisallow: /lottery/\nDisallow: /deals/_candidates/\n"
                                      f"\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
     return len(urls)
+
+
+def guide_card(g):
+    url = f"{SITE}/guides/{g['slug']}/"
+    return (f'<a class="gfeat" href="{url}"><img src="{url}og.jpg" alt="{e(g["title"])}" loading="lazy"><div>'
+            f'<span class="pill">Free guide</span><h3>{e(g["title"])}</h3><p>{e(g["desc"])}</p>'
+            f'<span class="btn">Read the checklist &rsaquo;</span></div></a>')
+
+
+def guides_section(gl, title, sub):
+    return (f'<section id="guides"><div class="sh"><div><h2>&#128214; {title}</h2><p>{sub}</p></div>'
+            f'<a href="{SITE}/guides/">All guides &rsaquo;</a></div>' + "".join(guide_card(g) for g in gl) + "</section>")
+
+
+def guides_index(gl, image):
+    hero = ('<div class="hero small"><h1>Guides &amp; checklists</h1>'
+            '<p>Free, practical UK guides to help you buy with confidence.</p></div>')
+    page = [head("Guides and checklists | Daily Deals UK", "Free, practical UK buying guides and checklists from Daily Deals UK.",
+                 f"{SITE}/guides/", image), topbar(hero), chips("guides"),
+            '<section>' + "".join(guide_card(g) for g in gl) + "</section>", footer()]
+    out = DEALS / "guides" / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("".join(page), encoding="utf-8")
