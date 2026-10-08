@@ -395,7 +395,8 @@ def _card(it):
     return (f'<article class="pcard"><a class="ph{"" if it["src"] == "awin" else " noimg"}" href="{home.e(_item_url(it))}" '
             f'rel="sponsored nofollow noopener" target="_blank">{pic}{f"<span class=tag>{band}</span>" if band else ""}</a>'
             f'<div class="pb"><span class="brand">{home.e(it.get("kind") or it["shop"])}</span><h3>{home.e(it["name"])}</h3>'
-            f'<p class="kind">From {home.e(it["shop"])}</p><p class="why">{home.e(it["why"])}</p>'
+            f'<p class="kind">From {home.e(it["shop"])}</p>{home.price_html(it["key"][3:]) if it["src"] == "awin" else ""}'
+            f'<p class="why">{home.e(it["why"])}</p>'
             f'<a class="btn" href="{home.e(_item_url(it))}" rel="sponsored nofollow noopener" target="_blank">'
             f'See it at {home.e(it["shop"])} &rsaquo;</a></div></article>')
 
@@ -413,6 +414,8 @@ def xmas_body(g):
            'stocking. Everything comes from well-known UK shops, and every Amazon pick has hundreds or thousands of good reviews.</p>'
            '<p class="small">Prices and stock change quickly in the run-up to Christmas, so check the latest price and the last '
            'order dates for Christmas delivery on each shop&rsquo;s site.</p></div>']
+    pr = home.prices()
+    out.append(home.offers_strip(pr, [], []))
     out.append('<div class="toppicks"><h2>&#11088; Our top picks</h2><ol>' + "".join(
         f'<li><strong>{lab}:</strong> {_a(find[k])}</li>' for lab, k in top) + "</ol></div>")
     out.append('<nav class="jump">' + "".join(f'<a href="#{s["id"]}">{s["title"]}</a>' for s in secs) +

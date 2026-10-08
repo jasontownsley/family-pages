@@ -107,6 +107,15 @@ section{padding:34px 0 8px}
 .follow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;margin:34px 0}
 .follow h2{font-family:Georgia,serif;margin:0 0 4px}.follow p{margin:0;color:var(--dim)}
 .empty{color:var(--dim)}
+.price{margin:2px 0 0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.price strong{font-size:20px}.price s{color:var(--dim)}
+.save{background:var(--red);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px}
+.price.oos{color:var(--red);font-weight:600}.pchk{font-size:11px;color:var(--dim);margin:2px 0 8px}
+.ostrip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(190px,220px);gap:14px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.ocard{text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;padding-bottom:10px}
+.oimg{position:relative;background:#fff;aspect-ratio:1;display:grid;place-items:center;padding:10px}.oimg img{max-width:100%;max-height:100%;object-fit:contain}
+.osave{position:absolute;right:8px;top:8px;background:var(--red);color:#fff;font-weight:800;border-radius:99px;padding:6px 9px;font-size:14px}
+.obrand{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:10px 12px 0}
+.ocard strong{padding:2px 12px 0;font-size:15px;line-height:1.3}.ocard .price,.ocard .pchk{padding:0 12px}
 footer{background:var(--dark);color:var(--soft);padding:28px 0 40px;margin-top:20px;font-size:14px}footer strong{color:#fff;font-family:'Archivo Black',sans-serif;font-size:18px}
 footer a{color:#fff}
 @media (max-width:560px){.rgrid{grid-template-columns:1fr}.rcard{grid-template-columns:130px 1fr}.hero p{font-size:16px}.pin span{display:none}}
@@ -152,7 +161,7 @@ def product_card(p, folder):
     url = f"{SITE}/{folder}/{p['id']}/"
     return (f'<article class="pcard"><a class="ph" href="{url}"><img src="{url}photo.jpg" alt="{e(p["brand"])} {e(p["name"])}" loading="lazy">'
             f'<span class="tag">{e(p["label"])}</span></a><div class="pb"><span class="brand">{e(p["brand"])}</span>'
-            f'<h3>{e(p["name"])}</h3><p class="kind">{e(p["kind"])}</p><p class="quote">{e(first_sentence(p["blurb"]))}</p>'
+            f'<h3>{e(p["name"])}</h3><p class="kind">{e(p["kind"])}</p>{price_html(raw_id(p["id"]))}<p class="quote">{e(first_sentence(p["blurb"]))}</p>'
             f'<a class="btn" href="{url}">See it at {e(p.get("shop", "Candles Direct"))} &rsaquo;</a></div></article>')
 
 
@@ -170,6 +179,71 @@ def spot_card(d, p):
             f'<span class="cat">{e(p["category"])}</span><strong>{e(p.get("short_name") or p["name"])}</strong><small>{e(p["headline"])}</small></a>')
 
 
+def prices():
+    p = DATA / "prices.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def raw_id(item_id):
+    """Feed id behind a manifest id ("cgd-123" -> "123", candle ids are already raw)."""
+    s = str(item_id)
+    return s.split("-", 1)[1] if s.split("-", 1)[0] in ("cgd", "bk", "sfs", "aw") else s
+
+
+def price_html(rid, pr=None):
+    """'£27.99 £34.99 Save 20%' plus when it was checked; empty if we have no price."""
+    v = (pr if pr is not None else prices()).get(str(rid))
+    if not v or not v.get("price"):
+        return ""
+    if not v.get("in_stock", True):
+        return '<p class="price oos">Currently out of stock</p>'
+    was = f' <s>&pound;{v["was"]:.2f}</s> <span class="save">Save {v["save"]}%</span>' if v.get("was") and v.get("save", 0) >= 5 else ""
+    when = datetime.strptime(v["checked"], "%Y-%m-%dT%H:%M")
+    return (f'<p class="price"><strong>&pound;{v["price"]:.2f}</strong>{was}</p>'
+            f'<p class="pchk">Price checked {when.day} {when:%b}, {when:%H:%M}. Prices can change.</p>')
+
+
+def in_stock(rid, pr):
+    v = pr.get(str(rid))
+    return not v or v.get("in_stock", True)
+
+
+def offers(pr, gifts, candles_):
+    """Products on offer right now: (url, image, brand, name, shop, rid) from gifts, candles and the gift guide."""
+    out = []
+    for coll, items in (("gifts", gifts), ("candles", candles_)):
+        for p in items:
+            rid = raw_id(p["id"])
+            out.append((f"{SITE}/{coll}/{p['id']}/", f"{SITE}/{coll}/{p['id']}/photo.jpg", p["brand"], p["name"], p.get("shop", "Candles Direct"), rid))
+    g = DATA / "guide-christmas.json"
+    if g.exists():
+        for s in json.loads(g.read_text(encoding="utf-8"))["sections"]:
+            for it in s["items"]:
+                if it["src"] == "awin":
+                    out.append((it["url"], f"{SITE}/guides/christmas-gift-guide/img/{it['key']}.jpg", it["brand"], it["name"], it["shop"], raw_id(it["key"])))
+    seen, res = set(), []
+    for o in out:
+        v = pr.get(o[5], {})
+        if o[5] not in seen and v.get("in_stock", True) and v.get("save", 0) >= 5:
+            seen.add(o[5])
+            res.append(o)
+    return sorted(res, key=lambda o: -pr[o[5]]["save"])
+
+
+def offers_strip(pr, gifts, candles_, n=8):
+    items = offers(pr, gifts, candles_)[:n]
+    if not items:
+        return ""
+    cards = "".join(
+        f'<a class="ocard" href="{e(u)}"{" rel=\"sponsored nofollow noopener\" target=\"_blank\"" if not u.startswith(SITE) else ""}>'
+        f'<span class="oimg"><img src="{e(img)}" alt="" loading="lazy"><span class="osave">-{pr[rid]["save"]}%</span></span>'
+        f'<span class="obrand">{e(brand)}</span><strong>{e(name)}</strong>{price_html(rid, pr)}</a>'
+        for u, img, brand, name, shop, rid in items)
+    return ('<section id="offers"><div class="sh"><div><h2>&#128293; On offer today</h2><p>Genuine savings on products we feature, '
+            'checked twice a day against each shop&rsquo;s own &ldquo;was&rdquo; price.</p></div></div>'
+            f'<div class="ostrip">{cards}</div></section>')
+
+
 def latest(items, n):
     return sorted(items, key=lambda m: (m["date"], m["id"]), reverse=True)[:n]
 
@@ -182,6 +256,10 @@ def matches(d, rx):
 def build(days, spots_by_key):
     """days: newest first; spots_by_key: {key: [(product, credit), ...]}"""
     gifts, candles = load("gifts.json"), load("candles.json")
+    pr = prices()
+    refresh_product_pages(gifts, candles, pr)
+    gifts = [p for p in gifts if in_stock(raw_id(p["id"]), pr)]
+    candles = [p for p in candles if in_stock(raw_id(p["id"]), pr)]
     spots = [(d, p) for d in days for p, _ in spots_by_key.get(key(d), [])
              if (DEALS / key(d) / "photos" / f"{p['asin']}.jpg").exists()][:10]
     latest_pin = f"{SITE}/{key(days[0])}/pin.jpg" if days else ""
@@ -192,6 +270,7 @@ def build(days, spots_by_key):
     out = [head("Daily Deals UK - hand-picked UK finds and gift ideas",
                 "Hand-picked, well-reviewed UK finds for home, kitchen, beauty and gifts, plus Christmas gift ideas - new picks every day.",
                 f"{SITE}/", latest_pin), topbar(hero), chips("")]
+    out.append(offers_strip(pr, gifts, candles))
     if gifts:
         out.append(f'<section id="gifts"><div class="sh"><div><h2>&#127876; Christmas Gift Ideas</h2><p>Real products from '
                    f'Cadbury Gifts Direct, Bare Kind, Scottish Fine Soaps and more. New picks daily.</p></div>'
@@ -352,3 +431,14 @@ def guides_index(gl, image):
     out = DEALS / "guides" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("".join(page), encoding="utf-8")
+
+
+def refresh_product_pages(gifts, candles_, pr):
+    """Rewrite each candle/gift product page so it shows today's price, saving and stock."""
+    import candles as cmod
+    import gifts as gmod
+    for items, folder, site in ((candles_, DEALS / "candles", cmod.SITE), (gifts, DEALS / "gifts", gmod.SITE)):
+        for p in items:
+            page = folder / str(p["id"]) / "index.html"
+            if page.parent.exists():
+                page.write_text(cmod.page(p, site, price_html(raw_id(p["id"]), pr)), encoding="utf-8")

@@ -2,7 +2,16 @@
 param([string]$Date = (Get-Date -Format yyyy-MM-dd))
 $file = "deals\data\$Date-b.json"
 
-if (-not (Test-Path $file)) { throw "No $file written - no afternoon roundup today" }
+# Second price check of the day (savings and stock), done even when there is no afternoon roundup
+python tools\prices.py 2>&1 | Out-String
+
+if (-not (Test-Path $file)) {
+    python tools\build_deals.py 2>&1 | Out-String
+    cmd /c "git add deals sitemap.xml robots.txt 2>&1" | Out-String
+    git commit -q -m "Daily Deals UK: $Date afternoon price refresh" | Out-String
+    cmd /c "git push 2>&1" | Out-String
+    throw "No $file written - no afternoon roundup today (prices refreshed)"
+}
 
 $check = python tools\build_deals.py --check $file 2>&1 | Out-String
 if ($LASTEXITCODE) {

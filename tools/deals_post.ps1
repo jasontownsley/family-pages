@@ -12,6 +12,9 @@ $candlesOk = -not $LASTEXITCODE
 python tools\gifts.py --pick $Date 2>&1 | Out-String
 if ($LASTEXITCODE) { $candlesOk = $false }
 
+# Prices, savings and stock for every featured shop product (shown on the site; Amazon is never priced)
+python tools\prices.py 2>&1 | Out-String
+
 if (-not (Test-Path $file)) {
     if ($candlesOk) {
         python tools\build_deals.py 2>&1 | Out-String     # refresh the homepage with the new picks

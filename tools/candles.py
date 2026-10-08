@@ -230,7 +230,7 @@ def make_pin(p, photo, out, label):
 
 # ---------------------------------------------------------------- page
 
-def page(p, site=SITE):
+def page(p, site=SITE, price=""):
     e = lambda s: html.escape(str(s), quote=True)
     url = f"{site}/{p['id']}/"
     shop = p.get("shop", "Candles Direct")
@@ -252,10 +252,11 @@ def page(p, site=SITE):
 h1{{font-family:'Archivo Black',sans-serif;font-size:clamp(26px,6vw,38px);line-height:1.15;margin:6px 0}}
 .kind{{color:var(--dim);margin:0 0 12px}}.notes{{color:var(--dim);font-size:15px}}
 .btn{{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;margin-top:10px}}
-.disc{{font-size:13px;color:var(--dim);margin-top:28px}}</style></head><body><div class="wrap">
+.disc{{font-size:13px;color:var(--dim);margin-top:28px}}
+.price{{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin:0 0 4px}}.price strong{{font-size:24px}}.price s{{color:var(--dim)}}.save{{background:var(--accent);color:#fff;font-weight:700;font-size:13px;padding:2px 8px;border-radius:6px}}.oos{{color:var(--accent);font-weight:600}}.pchk{{font-size:12px;color:var(--dim);margin:0 0 12px}}</style></head><body><div class="wrap">
 <a class="home" href="https://dailydealsuk.co.uk/deals/">&larr; Daily Deals UK</a>
 <div class="card"><img src="photo.jpg" alt="{e(title)}"><span class="brand">{e(p['brand'])}</span>
-<h1>{e(p['name'])}</h1><p class="kind">{e(p['kind'])}</p><p>{e(p['blurb'])}</p>
+<h1>{e(p['name'])}</h1><p class="kind">{e(p['kind'])}</p>{price}<p>{e(p['blurb'])}</p>
 {f'<p class="notes"><strong>Fragrance notes:</strong> {e(notes)}</p>' if notes else ''}
 <a class="btn" href="{e(p['url'])}" rel="sponsored nofollow noopener" target="_blank">See it at {e(shop)}</a></div>
 <p class="disc">This is an affiliate link (#ad): we may earn a small commission if you buy, at no extra cost to you.
