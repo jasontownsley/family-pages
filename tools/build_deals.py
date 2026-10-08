@@ -74,6 +74,8 @@ def validate(d, name="data"):
         return errs
     if not DATE_RE.match(d["date"]):
         errs.append(f"{name}: date must be YYYY-MM-DD")
+    if d.get("slot") not in (None, "b"):
+        errs.append(f"{name}: slot must be \"b\" (afternoon run) or left out")
     if len(d["pin_title"]) > 100:
         errs.append(f"{name}: pin_title over 100 chars")
     alt = d.get("pin_title_alt")
@@ -109,13 +111,18 @@ def validate(d, name="data"):
 
 def load_days():
     days = []
-    for f in sorted(DATA.glob("*.json")):
+    for f in sorted(DATA.glob("????-??-??*.json")):   # day files only (not candles.json)
         d = json.loads(f.read_text(encoding="utf-8"))
         errs = validate(d, f.name)
         if errs:
             raise SystemExit("Invalid data:\n  " + "\n  ".join(errs))
         days.append(d)
-    return sorted(days, key=lambda d: d["date"], reverse=True)
+    return sorted(days, key=key, reverse=True)
+
+
+def key(d):
+    """Folder / URL / data-file name: the date, plus "-b" for the afternoon roundup."""
+    return d["date"] + (f"-{d['slot']}" if d.get("slot") else "")
 
 
 def aff(asin):
@@ -327,7 +334,7 @@ def used_photo_ids():
 
 def spotlights(d):
     """[(product, credit)] for this day's single-product pins, fetching photos as needed."""
-    folder = DEALS / d["date"]
+    folder = DEALS / key(d)
     cfile = folder / "photos.json"
     credits = json.loads(cfile.read_text(encoding="utf-8")) if cfile.exists() else {}
     # family photos first (always allowed), then Pexels photos if enabled
@@ -418,7 +425,7 @@ def pretty_date(iso):
 
 
 def day_page(d, spots=()):
-    url = f"{SITE_URL}/{d['date']}/"
+    url = f"{SITE_URL}/{key(d)}/"
     out = [HEAD.format(title=e(d["pin_title"]), desc=e(d["pin_description"]),
                        image=f"{url}pin.jpg", url=url, brand=e(BRAND), site=SITE_URL, css=CSS)]
     out.append(f'<header><a href="{SITE_URL}/">&larr; {e(BRAND)}</a></header>')
@@ -447,12 +454,12 @@ def index_page(days):
     latest = days[0] if days else None
     desc = "Hand-picked, well-reviewed UK finds for home, kitchen, cleaning and gifts - a new list every day."
     out = [HEAD.format(title=e(f"{BRAND} - daily finds"), desc=e(desc),
-                       image=f"{SITE_URL}/{latest['date']}/pin.jpg" if latest else "",
+                       image=f"{SITE_URL}/{key(latest)}/pin.jpg" if latest else "",
                        url=f"{SITE_URL}/", brand=e(BRAND), site=SITE_URL, css=CSS)]
     out.append(f"<h1>{e(BRAND)}</h1><p class=\"intro\">{e(desc)}</p>")
     out.append(f'<p class="disc">{e(DISCLOSURE)}</p><div class="grid">')
     for d in days:
-        out.append(f'<a href="{SITE_URL}/{d["date"]}/"><img src="{SITE_URL}/{d["date"]}/pin.jpg" '
+        out.append(f'<a href="{SITE_URL}/{key(d)}/"><img src="{SITE_URL}/{key(d)}/pin.jpg" '
                    f'alt="{e(d["pin_title"])}" loading="lazy"><span>{e(d["pin_title"])}</span>'
                    f'<small>{pretty_date(d["date"])}</small></a>')
     out.append("</div>")
@@ -471,18 +478,19 @@ def feed_item(title, link, desc, img_url, img_path, when):
 def feed(days, spots_by_date):
     items = []
     for d in days:
-        url = f"{SITE_URL}/{d['date']}/"
-        day = datetime.strptime(d["date"], "%Y-%m-%d").replace(hour=8, tzinfo=timezone.utc)
-        spots = list(enumerate(spots_by_date.get(d["date"], []), 1))
+        k = key(d)
+        url = f"{SITE_URL}/{k}/"
+        day = datetime.strptime(d["date"], "%Y-%m-%d").replace(hour=14 if d.get("slot") else 8, tzinfo=timezone.utc)
+        spots = list(enumerate(spots_by_date.get(k, []), 1))
         for n, (p, _) in reversed(spots):
             items.append(feed_item(spot_title(p), f"{url}#{p['asin']}", spot_description(d, p),
-                                   f"{url}spot/{p['asin']}.jpg", DEALS / d["date"] / "spot" / f"{p['asin']}.jpg",
-                                   day.replace(hour=8 + 2 * n)))
-        if d.get("pin_title_alt") and (DEALS / d["date"] / "pin2.jpg").exists():
+                                   f"{url}spot/{p['asin']}.jpg", DEALS / k / "spot" / f"{p['asin']}.jpg",
+                                   day.replace(hour=day.hour + 1 + n)))
+        if d.get("pin_title_alt") and (DEALS / k / "pin2.jpg").exists():
             items.append(feed_item(d["pin_title_alt"], f"{url}#top3", d["pin_description"], f"{url}pin2.jpg",
-                                   DEALS / d["date"] / "pin2.jpg", day.replace(hour=19)))
+                                   DEALS / k / "pin2.jpg", day.replace(hour=day.hour + 6 if day.hour < 12 else 21)))
         items.append(feed_item(d["pin_title"], url, d["pin_description"], f"{url}pin.jpg",
-                               DEALS / d["date"] / "pin.jpg", day))
+                               DEALS / k / "pin.jpg", day))
     items = items[:FEED_ITEMS]
     now = format_datetime(datetime.now(timezone.utc))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -512,10 +520,10 @@ def main(argv):
     days = load_days()
     spots_by_date = {}
     for d in days:
-        folder = DEALS / d["date"]
+        folder = DEALS / key(d)
         pin = folder / "pin.jpg"
-        src = DATA / f"{d['date']}.json"
-        spots = spots_by_date[d["date"]] = spotlights(d)   # first, so the roundups can show the photos
+        src = DATA / f"{key(d)}.json"
+        spots = spots_by_date[key(d)] = spotlights(d)   # first, so the roundups can show the photos
         if not pin.exists() or pin.stat().st_mtime < src.stat().st_mtime:
             make_pin(d, pin)
         pin2 = folder / "pin2.jpg"

@@ -10,7 +10,7 @@ and appends it to deals/data/candles.json, which build_deals.py adds to feed.xml
 The Awin key is NOT in the repo: env AWIN_KEY or C:\\Users\\User\\ClaudeJobs\\awin_key.txt.
 
 Usage:
-  python tools/candles.py --pick [YYYY-MM-DD] [N]   add today's picks (default 2)
+  python tools/candles.py --pick [YYYY-MM-DD] [N]   add today's picks (default 3)
   python tools/candles.py --render ID              re-render one pin (design changes)
 Feed for its own Pinterest board: deals/candles/feed.xml
 """
@@ -269,7 +269,7 @@ def write_feed(manifest):
     for n, m in enumerate(sorted(manifest, key=lambda m: m["date"], reverse=True)[:60]):
         url = f"{SITE}/{m['id']}/"
         pin = OUT / m["id"] / "pin.jpg"
-        hour = 12 + 4 * (n % 2)                       # spread the day's picks out
+        hour = 11 + 4 * (n % 3)                       # spread the day's picks out
         when = datetime.fromisoformat(m["date"]).replace(hour=hour, tzinfo=timezone.utc)
         title = f"{m['brand']} {m['name']} {m['kind']}"[:100]
         tags = "#candles #homefragrance #" + re.sub(r"\W", "", m["brand"]).lower() + (
@@ -351,7 +351,7 @@ def pick(day, n):
 def main(argv):
     if len(argv) >= 2 and argv[1] == "--pick":
         day = Date.fromisoformat(argv[2]) if len(argv) > 2 else Date.today()
-        return pick(day, int(argv[3]) if len(argv) > 3 else 2)
+        return pick(day, int(argv[3]) if len(argv) > 3 else 3)
     if len(argv) == 3 and argv[1] == "--render":
         p = next(m for m in load_manifest() if m["id"] == argv[2])
         publish(p, p.get("label", "Candle of the day"))
