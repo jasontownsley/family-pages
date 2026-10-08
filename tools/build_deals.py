@@ -24,6 +24,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
+import home
 import own_photos
 import photos
 
@@ -372,10 +373,10 @@ def spot_description(d, p):
 # ---------------------------------------------------------------- HTML
 
 CSS = """
-:root{--bg:#F2F3F9;--surface:#fff;--text:#17251C;--dim:#5B6178;--brand:#146C43;
---brand-soft:#E1EFE7;--accent:#E8562F;--border:#DBDEEC}
-@media (prefers-color-scheme:dark){:root{--bg:#0E1410;--surface:#16201A;--text:#EDF3EE;
---dim:#9AAA9F;--brand:#3FAE7C;--brand-soft:#1B3327;--accent:#F0805A;--border:#2A3A30}}
+:root{--bg:#F3F6FC;--surface:#fff;--text:#14213D;--dim:#5B6178;--brand:#0678FF;
+--brand-soft:#E3EEFF;--accent:#D0021B;--border:#DCE4F2}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1220;--surface:#131C2E;--text:#EAF0FA;
+--dim:#9AA6BC;--brand:#4C9BFF;--brand-soft:#16264A;--accent:#FF4D5E;--border:#26324A}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);
 font-family:'Poppins',system-ui,sans-serif;line-height:1.55}
 .wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
@@ -534,7 +535,7 @@ def main(argv):
             if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
                 make_spot_pin(p, folder / "photos" / f"{p['asin']}.jpg", credit, out)
         (folder / "index.html").write_text(day_page(d, spots), encoding="utf-8")
-    (DEALS / "index.html").write_text(index_page(days), encoding="utf-8")
+    home.build(days, spots_by_date)          # homepage + category pages
     (DEALS / "feed.xml").write_text(feed(days, spots_by_date), encoding="utf-8")
     (DATA / "exclude.txt").write_text(exclude_list(days), encoding="utf-8")
     nspots = sum(len(v) for v in spots_by_date.values())

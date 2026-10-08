@@ -14,6 +14,7 @@ if ($LASTEXITCODE) { $candlesOk = $false }
 
 if (-not (Test-Path $file)) {
     if ($candlesOk) {
+        python tools\build_deals.py 2>&1 | Out-String     # refresh the homepage with the new picks
         cmd /c "git add deals 2>&1" | Out-String
         git commit -q -m "Daily Deals UK: $Date candles only" | Out-String
         cmd /c "git push 2>&1" | Out-String
