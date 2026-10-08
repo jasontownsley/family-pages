@@ -13,7 +13,7 @@ if ($LASTEXITCODE) {
 python tools\build_deals.py 2>&1 | Out-String
 if ($LASTEXITCODE) { throw "build_deals.py failed" }
 
-cmd /c "git add deals 2>&1" | Out-String
+cmd /c "git add deals sitemap.xml robots.txt 2>&1" | Out-String
 git commit -q -m "Daily Deals UK: $Date afternoon roundup" | Out-String
 cmd /c "git push 2>&1" | Out-String
 if ($LASTEXITCODE) { throw "git push failed" }

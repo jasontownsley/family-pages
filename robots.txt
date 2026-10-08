@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /pinterest/
+Disallow: /lottery/
+Disallow: /deals/_candidates/
+
+Sitemap: https://dailydealsuk.co.uk/sitemap.xml

@@ -225,6 +225,7 @@ def build(days, spots_by_key):
         out_file = DEALS / "c" / slug / "index.html"
         out_file.parent.mkdir(parents=True, exist_ok=True)
         out_file.write_text("".join(page), encoding="utf-8")
+    write_sitemap(days)
 
 
 # ---------------------------------------------------------------- day pages
@@ -291,3 +292,25 @@ def day_page(d, spots, days, aff):
     out.append('</aside></div>')
     out.append(footer())
     return "".join(out)
+
+
+# ---------------------------------------------------------------- sitemap + robots (for Google)
+
+def write_sitemap(days):
+    """sitemap.xml and robots.txt at the site root, listing every public page."""
+    base = "https://dailydealsuk.co.uk"
+    newest = days[0]["date"] if days else datetime.now().strftime("%Y-%m-%d")
+    urls = [(f"{SITE}/", newest, "daily", "1.0")]
+    urls += [(f"{SITE}/c/{slug}/", newest, "daily", "0.8") for slug, *_ in CATEGORIES]
+    urls += [(f"{SITE}/{key(d)}/", d["date"], "weekly", "0.6") for d in days]
+    for name, folder in (("gifts.json", "gifts"), ("candles.json", "candles")):
+        urls += [(f"{SITE}/{folder}/{m['id']}/", m["date"], "weekly", "0.6") for m in load(name)]
+    body = "".join(f"<url><loc>{e(u)}</loc><lastmod>{d}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>"
+                   for u, d, f, p in urls)
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+                                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + body + "</urlset>\n",
+                                      encoding="utf-8")
+    (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\n"
+                                     "Disallow: /pinterest/\nDisallow: /lottery/\nDisallow: /deals/_candidates/\n"
+                                     f"\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
+    return len(urls)

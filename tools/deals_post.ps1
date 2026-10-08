@@ -15,7 +15,7 @@ if ($LASTEXITCODE) { $candlesOk = $false }
 if (-not (Test-Path $file)) {
     if ($candlesOk) {
         python tools\build_deals.py 2>&1 | Out-String     # refresh the homepage with the new picks
-        cmd /c "git add deals 2>&1" | Out-String
+        cmd /c "git add deals sitemap.xml robots.txt 2>&1" | Out-String
         git commit -q -m "Daily Deals UK: $Date candles only" | Out-String
         cmd /c "git push 2>&1" | Out-String
     }
@@ -32,7 +32,7 @@ if ($LASTEXITCODE) {
 python tools\build_deals.py 2>&1 | Out-String
 if ($LASTEXITCODE) { throw "build_deals.py failed" }
 
-cmd /c "git add deals 2>&1" | Out-String
+cmd /c "git add deals sitemap.xml robots.txt 2>&1" | Out-String
 git commit -q -m "Daily Deals UK: $Date roundup and candles" | Out-String
 cmd /c "git push 2>&1" | Out-String
 if ($LASTEXITCODE) { throw "git push failed" }
