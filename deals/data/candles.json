@@ -1,0 +1,40 @@
+[
+ {
+  "id": "48267050942619",
+  "brand": "WoodWick",
+  "name": "Wood Smoke",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Sophisticated notes of black cedar logs and leaves are enveloped in smouldering embers, evoking late-night bonfires.",
+  "notes": [
+   "Clove Bud",
+   "Warm Incense",
+   "Pine Needle",
+   "Cedar Leaf",
+   "Glowing Amber"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Wood-Smoke-Ellipse-Jar-2670672E.jpg?v=1776352249",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-wood-smoke-ellipse-jar-candle-2670672e%3Fvariant%3D48267050942619",
+  "price": 27.99,
+  "date": "2026-10-08",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48164500111515",
+  "brand": "Yankee Candle",
+  "name": "Silver Birch",
+  "kind": "Large Jar Candle",
+  "blurb": "Crisp fall air swirls among the just-turning leaves of a silver-barked birch tree. Notes of Siberian pine and eucalyptus add freshness, while a hint of patchouli contributes grounding spiciness.",
+  "notes": [
+   "Watery Notes",
+   "Ozone",
+   "Siberian Pine",
+   "Clove",
+   "Eucalyptus"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Silver-Birch-Large-Jar-2671955E-1.jpg?v=1776767750",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-silver-birch-signature-large-jar-candle-2671955e%3Fvariant%3D48164500111515",
+  "price": 23.99,
+  "date": "2026-10-08",
+  "label": "Autumn scent"
+ }
+]
