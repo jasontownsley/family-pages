@@ -15,21 +15,30 @@ GUIDES = [
                 "what to look at on a viewing, test drive tips, paying safely and what to do after you buy.",
         "updated": "2026-10-08",
         # filled in when an affiliate programme approves us (e.g. carVertical)
-        "links": {"history_check": None},
+        # history_check: carVertical AFFILIATE link once approved (then the button is marked #ad);
+        # history_check_site: plain link used until then
+        "links": {"history_check": None, "history_check_site": "https://www.carvertical.com/gb"},
         # roundups to recommend on the guide (day keys under deals/)
         "related": ["2026-10-08-b"],
     },
 ]
 
 
-def _history_check_box(link):
-    if link:
-        cta = (f'<a class="btn" href="{home.e(link)}" rel="sponsored nofollow noopener" target="_blank">'
-               'Run a vehicle history check &rsaquo;</a><p class="small">Affiliate link (#ad).</p>')
+def _history_check_box(links):
+    aff, site = links.get("history_check"), links.get("history_check_site")
+    if aff or site:
+        rel = "sponsored nofollow noopener" if aff else "noopener"
+        note = ("Affiliate link (#ad): we may earn a small commission, at no extra cost to you." if aff else
+                "Other providers such as HPI, the AA and the RAC offer checks too. Whichever you use, make sure it covers "
+                "outstanding finance, write-offs and stolen markers.")
+        cta = (f'<p>We recommend <strong>carVertical</strong>: enter the registration and you get a report covering '
+               f'outstanding finance, write-off records, stolen markers, mileage history and more.</p>'
+               f'<a class="btn" href="{home.e(aff or site)}" rel="{rel}" target="_blank">Check a car with carVertical &rsaquo;</a>'
+               f'<p class="small">{note}</p>')
     else:
         cta = ('<p class="small">Paid checks are available from several UK providers (for example HPI, the AA, RAC and '
                'carVertical). Use one that covers outstanding finance, write-off records and stolen markers.</p>')
-    return ('<div class="callout"><h3>&#128269; Do a full vehicle history check</h3><p>The free GOV.UK checks don\'t tell you '
+    return ('<div class="callout"><h3>&#128269; Do a full vehicle history check</h3><p>The free GOV.UK checks don&rsquo;t tell you '
             'about <strong>outstanding finance</strong>, <strong>insurance write-offs</strong>, <strong>stolen markers</strong> '
             'or <strong>number plate changes</strong>. A paid history check does, and costs far less than getting it wrong.</p>'
             f'{cta}</div>')
@@ -81,7 +90,7 @@ def used_car_body(g):
             "Make sure the details match the advert. A different colour or engine size can mean a cloned car",
         ]),
 
-        _history_check_box(g["links"].get("history_check")),
+        _history_check_box(g["links"]),
 
         step(3, "Paperwork and identity checks at the viewing", [
             "View the car <strong>at the seller's home address</strong>, in daylight, not in a car park or lay-by",
