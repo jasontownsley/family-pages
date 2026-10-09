@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-09",
+  "slot": "b",
+  "theme": "Christmas Gifts",
+  "pin_title": "7 Christmas Gifts for Him Under £25 UK Shoppers Swear By",
+  "pin_title_alt": "3 Easy Christmas Presents for Dad, Husband or Brother",
+  "pin_hook": "Whisky glasses to stocking fillers - all highly rated",
+  "pin_description": "Christmas gifts for him under £25: crystal whisky glasses, a hanging wash bag, beard grooming kit, shower steamers and a funny mug. Easy present ideas for dad, husband, brother or boyfriend that UK shoppers rate highly. #ad #christmasgifts #giftsforhim #ukgiftideas",
+  "intro": "Stuck on what to get the men in your life this Christmas? Here are seven well-reviewed picks that work as a main gift or a stocking filler, all under £25.",
+  "products": [
+    {"asin": "B0BVX2VC5H", "name": "Whisiskey Crystal Whiskey Glass Set", "short_name": "Crystal whisky glasses", "headline": "A proper dram deserves a proper glass", "why": "Cut-crystal tumblers that look far pricier than they are - a safe bet for whisky fans.", "category": "Drinkware", "photo_query": "crystal whisky tumbler glasses pair", "photo_id": 7799797},
+    {"asin": "B07SK1DB9M", "name": "Hanging Travel Toiletry Bag", "short_name": "Hanging wash bag", "headline": "Keeps the bathroom shelf tidy on every trip", "why": "Unrolls and hangs so everything is visible at once - handy for weekends away or the gym bag.", "category": "Travel", "photo_query": "hanging toiletry wash bag", "photo_id": 9185867},
+    {"asin": "B0747LBSVT", "name": "Glencairn Whisky Glasses, Set of 2", "short_name": "Glencairn whisky glasses", "headline": "The official glass whisky connoisseurs use", "why": "The tulip shape is designed to bring out a whisky's aroma, and it comes in a neat gift box.", "category": "Drinkware", "photo_query": "whisky tasting glasses pair"},
+    {"asin": "B07GJKFRGH", "name": "Beard Grooming Kit for Men", "short_name": "Beard grooming kit", "headline": "Oil, balm and comb sorted in one box", "why": "A no-fuss way to cover beard care for anyone who already has one, or wants to start growing one.", "category": "Grooming", "photo_query": "beard grooming kit box"},
+    {"asin": "B0F5MNF8KS", "name": "Linkax Shower Steamers Aromatherapy, 8 Pack", "short_name": "Shower steamers 8pk", "headline": "An easy stocking filler under £7", "why": "Drop one in the shower for an instant spa-style boost - cheap, light and simple to post or wrap.", "category": "Self-care", "photo_query": "shower steamer tablets"},
+    {"asin": "B09WHR53VL", "name": "Toiletry Bag for Men, Large Travel Wash Bag", "short_name": "Men's travel wash bag", "headline": "A budget-friendly everyday upgrade", "why": "Water-resistant and roomy enough for a full washbag, at a price that works as a smaller extra gift.", "category": "Travel", "photo_query": "mens travel wash bag"},
+    {"asin": "B0CS3HGMTB", "name": "'I Came I Saw I Forgot' Novelty Mug", "short_name": "Funny novelty mug", "headline": "A cheap laugh for his morning coffee", "why": "A silly, well-rated mug that works nicely as a secret Santa or stocking filler add-on.", "category": "Kitchen", "photo_query": "funny coffee mug"}
+  ]
+}
