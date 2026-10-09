@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09",
+  "theme": "Christmas Gifts",
+  "pin_title": "6 Christmas Gifts for Her Under £25 UK Shoppers Love",
+  "pin_title_alt": "Cosy Christmas Gift Ideas That Feel Expensive",
+  "pin_hook": "Thoughtful, highly rated and budget friendly",
+  "pin_description": "Christmas gifts for her under £25 that UK shoppers rate highly: a fluffy fleece blanket, soy wax candle tin set, gold trinket dish, suede slipper boots, a preserved rose necklace and a fun mug set. Easy Christmas gift ideas for mum, sister or best friend. #ad #christmasgifts #giftsforher #ukchristmas #giftideas",
+  "intro": "Still working through the Christmas list? These are the gifts for her that UK shoppers keep buying and rating highly year after year - cosy, pretty and all under £25.",
+  "products": [
+    {"asin": "B0FSCTRDKK", "name": "BEDELITE Fluffy Fleece Blanket", "short_name": "Fluffy fleece blanket", "headline": "The blanket everyone fights over on movie night", "why": "Soft, generously sized and machine washable - a cosy gift that gets used all winter, not left in a drawer.", "category": "Home", "photo_query": "pink fluffy fleece blanket sofa", "photo_id": 30363028},
+    {"asin": "B09FKGDBDH", "name": "Dsclavacy Scented Candle Tin Set", "short_name": "Scented candle tin set", "headline": "12 travel tin candles, one thoughtful gift", "why": "A set of long-lasting soy wax candles in different scents, so there's something for every mood - an easy win for a gift that feels bigger than its price.", "category": "Home", "photo_query": "scented candle tins set", "photo_id": 15503326},
+    {"asin": "B0DNZG27NY", "name": "Gold Trinket Dish Jewellery Tray", "short_name": "Gold trinket dish", "headline": "Pretty catch-all for rings and earrings", "why": "A small decorative dish for the bedside table or vanity - looks far more expensive than it is and suits almost any decor.", "category": "Home", "photo_query": "gold trinket dish jewellery tray", "photo_id": 3998910},
+    {"asin": "B07ZV9S488", "name": "EverFoams Suede Bootie Slippers", "short_name": "Suede bootie slippers", "headline": "Memory foam comfort she'll live in", "why": "A genuinely loved slipper with a faux fur collar and memory foam sole - consistently one of the best-reviewed slippers on Amazon UK.", "category": "Fashion", "photo_query": "suede bootie slippers"},
+    {"asin": "B0B63NTT2M", "name": "Preserved Rose with Necklace Gift Box", "short_name": "Rose and necklace gift box", "headline": "A rose that lasts and a necklace that stays", "why": "A preserved rose paired with a simple pendant necklace, boxed and ready to give - a sentimental gift that needs no extra wrapping.", "category": "Gifts", "photo_query": "preserved rose gift box necklace"},
+    {"asin": "B01BI8W654", "name": "The Leonardo Collection His & Her Mug Set", "short_name": "His & Her mug set", "headline": "A fine china mug set with a bit of fun", "why": "Individually gift-boxed 'His Lordship' and 'Her Ladyship' mugs - a playful pairing that works as a couple's gift or a cheeky stocking filler.", "category": "Kitchen", "photo_query": "fine china mug set gift box"}
+  ]
+}

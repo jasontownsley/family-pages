@@ -36,5 +36,62 @@
   "price": 23.99,
   "date": "2026-10-08",
   "label": "Autumn scent"
+ },
+ {
+  "id": "42896099508379",
+  "brand": "Yankee Candle",
+  "name": "Coconut Beach",
+  "kind": "Large Jar Candle",
+  "blurb": "A taste of the tropics - warm coconut notes blended with scents of pineapple and vanilla.",
+  "notes": [
+   "Salty Air",
+   "Pineapple",
+   "Fresh Coconut",
+   "Lei Blossom",
+   "Airy Musk"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Coconut-Beach-Large-Jar-2235529-1.jpg?v=1776505284",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-coconut-beach-signature-large-jar-candle-1629967e%3Fvariant%3D42896099508379",
+  "price": 23.99,
+  "date": "2026-10-09",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "37975159505051",
+  "brand": "WoodWick",
+  "name": "Fireside",
+  "kind": "Large Jar Candle",
+  "blurb": "The balance of the rich scents of amber, vetiver and musk to perfectly capture the essence of a perfect evening by a warm fire.",
+  "notes": [
+   "Italian Bergamot",
+   "Apple Peel",
+   "Golden Amber",
+   "Black Oak",
+   "Smoked Mahogany"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Fireside-Large-Jar-2674263E.jpg?v=1776289500",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-fireside-large-jar-candle%3Fvariant%3D37975159505051",
+  "price": 26.39,
+  "date": "2026-10-09",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "47606043836571",
+  "brand": "P.F. Candle Co.",
+  "name": "Arroyo Oak",
+  "kind": "Reed Diffuser",
+  "blurb": "A love letter to the quiet wild of the Arroyo Seco. A passageway of twisted terrain perfumed by native sagebrush, crushed oak leaves, shady creek beds, and canyon stone.",
+  "notes": [
+   "wild sage",
+   "silver artemisia",
+   "bay laurel",
+   "black pepper",
+   "chopped cedar"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/ArroyoOakDiffuserEcomm.png?v=1767566691",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-arroyo-oak-rd37%3Fvariant%3D47606043836571",
+  "price": 28.0,
+  "date": "2026-10-09",
+  "label": "Autumn scent"
  }
 ]
