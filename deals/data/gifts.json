@@ -90,5 +90,51 @@
   "dedupe": "fir & firelight hand care set",
   "label": "Christmas gift",
   "date": "2026-10-09"
+ },
+ {
+  "brand": "Cadbury",
+  "name": "Christmas Santa Jumper-LRG",
+  "kind": "Christmas Chocolate Gift",
+  "price": 30.0,
+  "image": "https://www.cadburygiftsdirect.co.uk/media/catalog/product/j/u/jumper-l_1.jpg",
+  "url": "https://www.awin1.com/pclick.php?p=31297154721&a=3105665&m=736",
+  "blurb": "Large Cadbury Secret Santa Christmas jumper. Novelty design with a Cadbury Santa body on the front and back of the jumper design, making the wearer the Secret Santa! Exclusively available on the Cadbury Gifts online shop.",
+  "id": "cgd-31297154721",
+  "xmas": true,
+  "shop": "Cadbury Gifts Direct",
+  "notes": [],
+  "dedupe": "christmas santa jumper-lrg",
+  "label": "Christmas gift",
+  "date": "2026-10-10"
+ },
+ {
+  "brand": "Bare Kind",
+  "name": "The Dark Forest Bundle of 3",
+  "kind": "Bamboo Sock Gift Set",
+  "price": 26.97,
+  "image": "https://cdn.shopify.com/s/files/1/0025/9027/7685/files/The_Dark_Forest_Bundle_of_3_2.jpg?v=1778670123",
+  "url": "https://www.awin1.com/pclick.php?p=45178853201&a=3105665&m=30533",
+  "blurb": "Step into the shadows of the woodland with our Dark Forest Bundle of 3 – a striking trio inspired by mysterious forests and the wildlife that calls them home.. Featuring our Raven, Hedgehog and Wolf socks, this bundle blends deep, nature-inspired colours with bold animal designs. From moonlit skies to woodland trails, it’s the perfect collection for lovers of darker tones and wild adventures.. They make great work socks, gym socks, and dress socks. These animal socks make the perfect thoughtful gift for wildlife lovers — or a bold addition to your own sock drawer.. We donate 10% of profits from these socks to North Wales Wildlife Trust, the British Hedgehog Preservation Society and the Wolves and Humans Foundation, supporting their incredible work protecting wildlife and natural habitats.. This Dark Forest Bundle includes:. Black Raven socks. Blue Hedgehog socks. Green Wolf socks",
+  "id": "bk-45178853201",
+  "shop": "Bare Kind",
+  "notes": [],
+  "dedupe": "the dark forest bundle of 3",
+  "label": "Christmas gift",
+  "date": "2026-10-10"
+ },
+ {
+  "brand": "Scottish Fine Soaps",
+  "name": "Thistle & Black Pepper Signature Gift Set",
+  "kind": "Bath & Body Gift Set",
+  "price": 21.95,
+  "image": "https://cdn.shopify.com/s/files/1/0025/1691/0192/files/S30022.jpg?v=1750074577",
+  "url": "https://www.awin1.com/cread.php?awinmid=101517&awinaffid=3105665&ued=https%3A%2F%2Fwww.scottishfinesoaps.com%2Fproducts%2Fthistle-black-pepper-signature-gift-set%3Fvariant%3D53984693911937",
+  "blurb": "Immerse yourself in the essence of the Scottish Highlands with the Thistle & Black Pepper Signature Gift Set. Infused with soothing milk thistle and the bold scent of pepper, amber and musk, this set includes Face & Beard Wash, Hair & Body Wash, Moisturiser and Body Bar. Perfect for a complete grooming routine, it leaves you feeling refreshed, refined and ready for the day. Gift Set Includes: Face & Beard Wash 75ml Moisturiser 75ml Hair & Body Wash 75ml Body Bar 40g",
+  "id": "sfs-53984693911937",
+  "shop": "Scottish Fine Soaps",
+  "notes": [],
+  "dedupe": "thistle & black pepper signature gift set",
+  "label": "Christmas gift",
+  "date": "2026-10-10"
  }
 ]

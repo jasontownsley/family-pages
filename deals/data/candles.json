@@ -93,5 +93,62 @@
   "price": 28.0,
   "date": "2026-10-09",
   "label": "Autumn scent"
+ },
+ {
+  "id": "37975463592091",
+  "brand": "WoodWick",
+  "name": "Cinnamon Chai",
+  "kind": "Small Jar Candle",
+  "blurb": "Relish the warm, intoxicating aroma of spicy cinnamon and rich vanilla notes.",
+  "notes": [
+   "Fruity",
+   "Peach Nectar",
+   "Coconut Milk",
+   "Cinnamon",
+   "Clove"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cinnamon-Chai-Small-Jar-2674572E.jpg?v=1776289034",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cinnamon-chai-small-jar-candle%3Fvariant%3D37975463592091",
+  "price": 8.79,
+  "date": "2026-10-10",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48164500734107",
+  "brand": "Yankee Candle",
+  "name": "Sugared Cinnamon Apple",
+  "kind": "Medium Jar Candle",
+  "blurb": "The delicious aroma of crunchy apple slices sugared with cinnamon and vanilla. This sweet and spicy fragrance will make you crave the fruits of autumn — or a big mug of cider.",
+  "notes": [
+   "Apple Slices",
+   "Cinnamon Cider",
+   "Sugar",
+   "Fresh Vanilla",
+   "Nutmeg"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Sugared-Cinnamon-Apple-Medium-Jar-2671927E.jpg?v=1776797728",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-sugared-cinnamon-apple-signature-medium-jar-candle-2671927e%3Fvariant%3D48164500734107",
+  "price": 19.99,
+  "date": "2026-10-10",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "47606046392475",
+  "brand": "P.F. Candle Co.",
+  "name": "Wild Herb Tonic",
+  "kind": "Reed Diffuser",
+  "blurb": "Barefoot walks through wild herb gardens, cool mountain stream baths, crisp morning air.",
+  "notes": [
+   "lemon balm",
+   "orange rind",
+   "canadian fir needle",
+   "eucalyptus",
+   "clove leaf"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/RD36_WildHerbTonic.png?v=1767566886",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-wild-herb-tonic-rd36%3Fvariant%3D47606046392475",
+  "price": 28.0,
+  "date": "2026-10-10",
+  "label": "Candle of the day"
  }
 ]

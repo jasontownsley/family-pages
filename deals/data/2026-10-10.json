@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-10",
+  "theme": "Halloween",
+  "pin_title": "6 Halloween Decorations UK Shoppers Swear By This Year",
+  "pin_title_alt": "3 Easy Halloween Decor Buys for a Spooky Front Porch",
+  "pin_hook": "Spooky, cosy and highly rated - sorted for Halloween night",
+  "pin_description": "Halloween decorations UK shoppers love: hanging skeletons, pumpkin fairy lights, stretch spider web, a pumpkin carving kit, a girls' vampire costume and SFX face paint. Easy indoor and porch Halloween decor ideas for trick-or-treat night. #ad #halloweendecor #halloweenuk #spookyseason #ukshopping",
+  "intro": "Halloween is creeping up fast - here are the highly-rated buys UK shoppers keep adding to their baskets for a spooky-but-easy set-up this year.",
+  "products": [
+    {"asin": "B07VVH83KM", "name": "JOYIN 3 Pack Hanging Halloween Skeleton Ghosts", "short_name": "Hanging skeleton ghosts", "headline": "Instant spooky porch in minutes", "why": "A pack of three hanging skeletons that go up in seconds on a porch, window or tree and set the scene for trick-or-treaters.", "category": "Halloween", "photo_query": "hanging skeleton halloween decoration", "photo_id": 1587462},
+    {"asin": "B07TYGQ854", "name": "JOYIN Halloween Pumpkin String Lights", "short_name": "Pumpkin fairy lights", "headline": "Cosy glow for porch or mantel", "why": "Battery-powered 3D pumpkin and ghost lights that drape easily around a doorway, banister or shelf for a warm Halloween glow.", "category": "Halloween", "photo_query": "orange pumpkin string lights halloween", "photo_id": 18542857},
+    {"asin": "B07VVFT2MZ", "name": "JOYIN 400 sqft Halloween Spider Web with Giant Spider", "short_name": "Stretch spider web & spider", "headline": "Covers a porch or doorway fast", "why": "Stretches to cover a big area of bush, door frame or banister, and comes with a giant spider for extra drama.", "category": "Halloween", "photo_query": "halloween spider web stretch decoration", "photo_id": 19127459},
+    {"asin": "B07GXFWS1L", "name": "Professional Pumpkin Carving Kit, 11 Piece", "short_name": "Pumpkin carving tool kit", "headline": "Sharper, easier carving for all ages", "why": "Sturdy stainless steel tools and a carry case make carving faces into pumpkins much easier than a kitchen knife.", "category": "Halloween", "photo_query": "pumpkin carving tools kit"},
+    {"asin": "B07H3CRDLX", "name": "Spooktacular Creations Royal Vampire Costume for Girls", "short_name": "Girls' vampire costume", "headline": "A dress-up favourite for trick-or-treat", "why": "A deluxe vampiress dress-up set that regularly tops Halloween costume lists for girls and holds up well for party and trick-or-treat wear.", "category": "Halloween", "photo_query": "girls vampire costume dress up"},
+    {"asin": "B08B62GQPQ", "name": "UCANBE 15 Colour Face & Body Paint Palette", "short_name": "SFX face paint palette", "headline": "One palette, any Halloween look", "why": "A well-rated all-in-one palette for turning costumes into proper Halloween looks, from zombie to clown to classic spooky face paint.", "category": "Halloween", "photo_query": "face paint palette colours"}
+  ]
+}
