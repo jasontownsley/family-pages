@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-10",
+  "slot": "b",
+  "theme": "Halloween",
+  "pin_title": "6 Spooky Window & Yard Halloween Decorations UK Shoppers Love",
+  "pin_title_alt": "3 Easy Ways to Make Your Porch and Windows Halloween-Ready",
+  "pin_hook": "Instant spooky curb appeal, no DIY needed",
+  "pin_description": "Spooky Halloween decorations for your windows, doors and yard: light-up inflatable ghosts, skeleton and zombie door covers, and reusable window stickers. Easy outdoor and indoor Halloween decor UK shoppers rate highly. #ad #halloweendecor #halloween2026 #spookyseason #ukdeals",
+  "intro": "Turn your front door and windows spooky in minutes with these highly-rated Halloween decorations - perfect for trick-or-treaters.",
+  "products": [
+    {
+      "asin": "B097QGBJ9B",
+      "name": "Joiedomi 4.5FT Halloween Inflatable Flying Ghost",
+      "short_name": "Light-up inflatable ghost",
+      "headline": "A giant glowing ghost for the front yard",
+      "why": "Self-inflates with built-in LEDs for an instant spooky glow after dark, and it's a genuine crowd-stopper on the street.",
+      "category": "Halloween",
+      "photo_query": "halloween inflatable ghost yard decoration",
+      "photo_id": 29210704
+    },
+    {
+      "asin": "B0B6WCTW53",
+      "name": "Halloween Window Stickers 8 Sheet Set",
+      "short_name": "Reusable window stickers",
+      "headline": "Spooky silhouettes without any mess",
+      "why": "Double-sided clings go straight onto glass and peel off clean afterwards, so windows look eerie without any sticky residue.",
+      "category": "Halloween",
+      "photo_query": "halloween window stickers decals on glass",
+      "photo_id": 5693760
+    },
+    {
+      "asin": "B08BWLR3DB",
+      "name": "Joiedomi 5FT Inflatable Hanging Flying Dragon",
+      "short_name": "Inflatable hanging dragon",
+      "headline": "A dramatic hanging centrepiece for porches",
+      "why": "Hangs from a porch roof or tree with built-in LEDs, an easy way to make an entrance feel properly haunted.",
+      "category": "Halloween",
+      "photo_query": "halloween inflatable hanging decoration porch"
+    },
+    {
+      "asin": "B08BW8KD8L",
+      "name": "JOYIN 3D Scary Skeleton Door Cover",
+      "short_name": "Skeleton door cover",
+      "headline": "Turns the front door into a skeleton's lair",
+      "why": "Slips straight over the door in seconds and the 3D print gives it real depth, one of the easiest ways to transform an entryway.",
+      "category": "Halloween",
+      "photo_query": "halloween skeleton door cover decoration"
+    },
+    {
+      "asin": "B075TY5WN2",
+      "name": "JOYIN Zombie Hands Haunted House Door Cover",
+      "short_name": "Zombie hands door cover",
+      "headline": "Clawing hands burst through the doorway",
+      "why": "A budget-friendly way to make a front door look genuinely haunted, and it rolls up flat for easy storage after 31 October.",
+      "category": "Halloween",
+      "photo_query": "halloween zombie hands door decoration"
+    },
+    {
+      "asin": "B0H838Q5JK",
+      "name": "Halloween Window Stickers 9 Spooky Designs",
+      "short_name": "Spooky window decal set",
+      "headline": "Nine designs to fill every pane",
+      "why": "Self-adhesive and removable, so even rented homes can join in without leaving a mark on the glass.",
+      "category": "Halloween",
+      "photo_query": "halloween window decal stickers"
+    }
+  ]
+}
