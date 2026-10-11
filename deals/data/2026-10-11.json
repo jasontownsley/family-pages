@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-11",
+  "theme": "Halloween Baking",
+  "pin_title": "6 Halloween Baking Buys UK Home Bakers Swear By",
+  "pin_title_alt": "Easy Ways to Make Halloween Cupcakes Extra Spooky",
+  "pin_hook": "Spooky bakes made easy this October",
+  "pin_description": "Halloween baking buys UK home bakers love: bat cupcake toppers, pumpkin fairy lights, Halloween cookie cutters, black cupcake cases and pumpkin sprinkles. Easy Halloween party and baking ideas for trick-or-treat gatherings. #ad #halloweenbaking #halloweenparty #ukdeals #spookyseason",
+  "intro": "Turning out a tray of spooky bakes doesn't need much - these highly rated Halloween baking buys make any batch of cupcakes or biscuits look party-ready.",
+  "products": [
+    {"asin": "B07HF7PLQP", "name": "FEPITO 60-Piece Halloween Cupcake Toppers", "short_name": "Bat cupcake toppers", "headline": "Turns plain cupcakes into party bakes", "why": "A simple toothpick topper that makes a batch of cupcakes look properly Halloween without any extra icing skills.", "category": "Baking", "photo_query": "Halloween cupcakes with toppers party", "photo_id": 5477986},
+    {"asin": "B0B49NZHVD", "name": "Jsdoin Pumpkin String Lights 5M", "short_name": "Pumpkin fairy lights", "headline": "Warm pumpkin glow for the party table", "why": "Battery-powered and easy to drape along a mantel, window or dessert table for instant Halloween atmosphere.", "category": "Decor", "photo_query": "orange pumpkin string lights indoor", "photo_id": 18542859},
+    {"asin": "B0H14V98K6", "name": "MrCookie Large Halloween Cookie Cutters 12pc", "short_name": "Large cookie cutter set", "headline": "Sturdy shapes for pumpkin and bat biscuits", "why": "Thick stainless steel holds its shape batch after batch, handy for a Halloween baking session with kids.", "category": "Baking"},
+    {"asin": "B084HJQGD6", "name": "Cake N Bake Black Cupcake Cases (75 Pack)", "short_name": "Black cupcake cases", "headline": "An easy way to theme any bake", "why": "Plain black cases make even a simple sponge look suitably spooky, and they're a kitchen staple well beyond October.", "category": "Baking"},
+    {"asin": "B0FFH4MZ7T", "name": "Twisweet Halloween Sprinkles 130g", "short_name": "Pumpkin cake sprinkles", "headline": "A quick finishing touch for any bake", "why": "A ready-mixed pumpkin and orange sprinkle blend for scattering over cupcakes, biscuits or popcorn in seconds.", "category": "Baking"},
+    {"asin": "B0B5G1BX7G", "name": "Halloween Cookie Cutters Set, 10 Pieces", "short_name": "Mini cookie cutter set", "headline": "A budget set of classic spooky shapes", "why": "Ghosts, bats and pumpkins in one inexpensive stainless steel set, a handy backup for a busy baking afternoon.", "category": "Baking"}
+  ]
+}

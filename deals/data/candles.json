@@ -150,5 +150,62 @@
   "price": 28.0,
   "date": "2026-10-10",
   "label": "Candle of the day"
+ },
+ {
+  "id": "48164500209819",
+  "brand": "Yankee Candle",
+  "name": "Dried Lavender and Oak",
+  "kind": "Large Jar Candle",
+  "blurb": "At an outdoor farmer’s market, the scents of hand-tied bunches of lavender combine with woodsy notes and spices. Enriching the scene are top notes of peppercorn and a base of cedarwood and vanilla.",
+  "notes": [
+   "White Peppercorn",
+   "Lavender",
+   "Bergamot",
+   "Davana",
+   "White Flowers"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Dried-Lavender-and-Oak-Large-Jar-2671949E-1.jpg?v=1776682261",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-dried-lavender-and-oak-signature-large-jar-candle-2671949e%3Fvariant%3D48164500209819",
+  "price": 23.99,
+  "date": "2026-10-11",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48267048943771",
+  "brand": "WoodWick",
+  "name": "Verdant Fig",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "The luscious scent of ripe, juicy fig is tempered by woody notes of fig leaves and cedarwood.",
+  "notes": [
+   "Juicy Fig",
+   "Black Currant",
+   "Green Stems",
+   "Fig Leaves",
+   "Geranium"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Verdant-Fig-Ellipse-Jar-2674291E.jpg?v=1776352112",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-verdant-fig-ellipse-jar-candle-2674291e%3Fvariant%3D48267048943771",
+  "price": 27.99,
+  "date": "2026-10-11",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "42223778758811",
+  "brand": "P.F. Candle Co.",
+  "name": "Ojai Lavender",
+  "kind": "Reed Diffuser",
+  "blurb": "Inspired by idyllic days spent in Ojai, surrounded by the Topatopa Mountains and nestled amongst golden hills of dry grass, citrus groves, and lavender farms. This bright and aromatic scent folds herbaceous mint and calming lavender with zesty citrus and grounding red cedar.",
+  "notes": [
+   "Bergamot",
+   "Orange",
+   "Eucalyptus",
+   "Rose",
+   "Lily"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/PF-Candle-Co-Ojai-Lavender-Reed-Diffuser-1.jpg?v=1657710108",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-ojai-lavender-reed-diffuser-reed-diffuser%3Fvariant%3D42223778758811",
+  "price": 28.0,
+  "date": "2026-10-11",
+  "label": "Candle of the day"
  }
 ]
