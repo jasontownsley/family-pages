@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-11",
+  "slot": "b",
+  "theme": "Halloween",
+  "pin_title": "6 Halloween Trick-or-Treat Night Buys UK Families Swear By",
+  "pin_title_alt": "3 Easy Ways to Light Up Your Halloween Porch This Year",
+  "pin_hook": "Lights, webs and treat bags sorted for the big night",
+  "pin_description": "Halloween trick-or-treat night essentials UK shoppers love: orange and purple fairy lights, stretchy spider web decor, solar porch string lights, fabric treat bags, glow sticks for safety and spooky window stickers. Easy Halloween party and porch ideas for families. #ad #halloween #trickortreat #halloweendecor #ukshopping",
+  "intro": "Get the porch glowing and the treat bags ready - these are the trick-or-treat night buys UK families keep coming back to.",
+  "products": [
+    {"asin": "B0H1H9LYSL", "name": "Twinkle Star Halloween Battery Fairy Lights, Orange Purple 10M 100 LED", "short_name": "Orange & purple fairy lights", "headline": "Instant spooky glow, no wiring needed", "why": "Battery powered so they go anywhere - porch, mantel or pumpkin display - and they're a quick way to make a space feel festive.", "category": "Halloween", "photo_query": "orange purple halloween fairy lights porch", "photo_id": 18542862},
+    {"asin": "B07WG47BY6", "name": "JOYIN 1200 sqft Spider Web Cobwebs with 80 pcs Small Spiders", "short_name": "Stretchy spider web decor", "headline": "Covers a huge area for the price", "why": "Stretches to cover doorways, bushes or bannisters in seconds, and it comes with plenty of spiders to scatter through it.", "category": "Halloween", "photo_query": "stretchy spider web halloween decoration", "photo_id": 5477671},
+    {"asin": "B0D6WD7NJ9", "name": "btfarm 2 Pack Halloween Orange Purple Solar String Lights Outdoor Garden", "short_name": "Solar outdoor string lights", "headline": "Charges in the day, glows all night", "why": "No batteries or sockets needed outdoors, which makes it an easy way to light up a front garden or path for trick-or-treaters.", "category": "Halloween", "photo_query": "solar string lights outdoor halloween garden", "photo_id": 34130892},
+    {"asin": "B0144ZQ7DA", "name": "Henbrandt 2 x Fabric Treat Bags for Halloween", "short_name": "Fabric trick-or-treat bags", "headline": "Sturdier than the usual plastic bucket", "why": "A simple, well-reviewed fabric bag that holds up better than flimsy plastic pails on a long trick-or-treat round.", "category": "Halloween", "photo_query": "halloween trick or treat bags pumpkins"},
+    {"asin": "B0BKTS39DL", "name": "JOYIN 100 pcs Glow Sticks Bulk 8\" Glow in the Dark Halloween Decorations", "short_name": "Bulk glow sticks", "headline": "Keeps kids visible after dark", "why": "An easy safety add-on for trick-or-treating after dusk, and there are enough here to hand out to the whole group.", "category": "Halloween", "photo_query": "glow sticks halloween party night"},
+    {"asin": "B08BHXTFJL", "name": "Halloween Window Decorations Zombie Posters - 3 Pcs Giant Bloody Handprints Zombie Silhouettes", "short_name": "Spooky window silhouettes", "headline": "Turns a plain window spooky in minutes", "why": "Peel-and-stick silhouettes that make a front window look haunted for trick-or-treaters without any mess to clean up after.", "category": "Halloween", "photo_query": "spooky halloween window decoration silhouette"}
+  ]
+}
