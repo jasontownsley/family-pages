@@ -320,6 +320,10 @@ def publish(p, label):
 
 
 def pick(day, n):
+    import merchant_health
+    if int(MERCHANT) in merchant_health.paused_ids():
+        print("Candles: Candles Direct is paused (merchant health), no picks today")
+        return 0
     manifest = load_manifest()
     if any(m["date"] == day.isoformat() for m in manifest):
         print(f"Candles already picked for {day}")

@@ -4,6 +4,8 @@ $file = "deals\data\$Date.json"
 
 # Awin programme statuses (API token in ClaudeJobs, not the repo); shows newly approved merchants in the log
 python tools\awin_status.py 2>&1 | Out-String
+# Merchant health: pause merchants with offline links or bad payment status (Exposure Level 4) from new picks
+python tools\merchant_health.py 2>&1 | Out-String
 
 # Candles Direct picks (Awin feed) don't depend on the Amazon research, so they go out either way
 python tools\candles.py --pick $Date 2>&1 | Out-String

@@ -197,7 +197,12 @@ def pick(day):
     listing = feed_list()
     rnd = random.Random(day.isoformat())
     picks = []
+    import merchant_health
+    paused = merchant_health.paused_ids()
     for adv, fmt, shop, parse in MERCHANTS:
+        if int(adv) in paused:
+            print(f"  {shop}: paused (merchant health), skipped")
+            continue
         cands = [p for p in merchant_products(listing, adv, fmt, shop, parse) if (shop, p["dedupe"]) not in used]
         rnd.shuffle(cands)
         cands.sort(key=lambda p: 0 if p.get("xmas") or XMAS.search(p["name"] + " " + p["blurb"]) else 1)   # Christmas first
