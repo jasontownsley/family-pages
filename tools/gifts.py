@@ -37,6 +37,10 @@ XMAS = re.compile(r"christmas|xmas|festive|santa|advent|stocking|snow|winter|fir
 RUDE = re.compile(r"\b(fuck\w*|cunt\w*|shit\w*|knobs?|arse\w*|bums?|gusset|twat\w*|wank\w*|dicks?|cocks?|tits|bollock\w*|piss\w*|sex\w*)\b", re.I)
 
 
+CLOTHING = re.compile(r"\b(jumper|sweater|hoodie|t-?shirt|socks?|hat|beanie|scarf|gloves|pyjamas?|apron|tea towel)\b", re.I)
+SIZED = re.compile(r"[-–]\s*(xs|s|sml|m|med|l|lrg|xl|xxl)\s*$", re.I)   # clothing size codes: "Jumper-S", "Socks - Med"
+
+
 def clean(text):
     text = html.unescape(re.sub(r"<[^>]+>", " ", text or ""))
     text = re.sub(r"^[A-Z][\w &'-]{2,30}:\s*", "", text.strip())    # "CHRISTMAS GIFT: Send a..." -> "Send a..."
@@ -60,6 +64,10 @@ def cadbury(r):
     if re.search(r"box of \d+|bulk|corporate|easter|valentine|pack of \d+|\(\d+ ?x|^gift box$|sleeve|personalis|your name|message", text, re.I):
         return None
     if price_of(r["search_price"]) < 4:
+        return None
+    # skip clothing and merch: each size is a separate feed item ("Santa Jumper-S", "-MED", "-LRG"), and
+    # Cadbury's strength is chocolate gifts
+    if CLOTHING.search(name) or SIZED.search(name):
         return None
     kind = ("Chocolate Hamper" if re.search(r"hamper|basket", text, re.I) else
             "Advent Calendar" if re.search(r"advent", text, re.I) else
