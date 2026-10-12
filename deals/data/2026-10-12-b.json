@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-12",
+  "slot": "b",
+  "theme": "Halloween Costumes",
+  "pin_title": "6 Kids' Halloween Costumes UK Parents Rate 4.4 Stars & Up",
+  "pin_title_alt": "Easy Halloween Dress-Up Ideas for Kids This Year",
+  "pin_hook": "Highly rated fancy dress the kids will actually want to wear",
+  "pin_description": "#ad Kids' Halloween costume ideas UK parents love: dinosaur, zombie, ghost, dragon and alien fancy dress, plus a trick-or-treat candy bowl for the big night. Well-reviewed Amazon UK Halloween costumes for school parties and trick-or-treating. #halloweencostumes #kidshalloween #fancydress #ukdeals",
+  "intro": "Sorting the costume box before the big night? These are the Halloween fancy dress buys UK parents keep coming back to, all comfortably rated and ready to wear.",
+  "products": [
+    {"asin": "B0C9BYRT9M", "name": "Spooktacular Creations Realistic Tyrannosaurus Rex Costume", "short_name": "T-Rex dinosaur costume", "headline": "The dinosaur costume everyone asks about", "why": "A realistic jumpsuit style that's a firm favourite for World Book Day and Halloween alike, with a toy egg included.", "category": "Kids Costumes", "photo_query": "dinosaur costume kids halloween"},
+    {"asin": "B08C76324N", "name": "JOYIN 5 Halloween Spider Web Plastic Basket Bowls", "short_name": "Spider web candy bowls", "headline": "Sort the sweets before trick-or-treaters arrive", "why": "A set of five bowls that make handing out sweets (or displaying costume accessories) quick and tidy.", "category": "Halloween", "photo_query": "spider web halloween candy bowl", "photo_id": 5646191},
+    {"asin": "B00TSBBSMQ", "name": "Smiffys Zombie Convict Costume", "short_name": "Zombie convict costume", "headline": "A spooky favourite for school Halloween parties", "why": "Comes with trousers, top, hat and wrist cuffs so there's nothing extra to buy, and it's a longtime bestseller.", "category": "Kids Costumes", "photo_query": "zombie costume kids halloween"},
+    {"asin": "B000GWF62Y", "name": "Rubie's Official Howling Ghost Costume", "short_name": "Howling ghost costume", "headline": "A classic, comfy ghost costume for little ones", "why": "Simple to get in and out of and a reliably well-rated pick for younger trick-or-treaters.", "category": "Kids Costumes", "photo_query": "ghost costume kids halloween"},
+    {"asin": "B0C8TFFTCV", "name": "Spooktacular Creations Child Dragon Costume", "short_name": "Dragon costume with wings", "headline": "Wings, tail and mask for a dramatic entrance", "why": "A step up from the usual Halloween costumes that works for dress-up days all year round too.", "category": "Kids Costumes", "photo_query": "dragon costume kids halloween"},
+    {"asin": "B0F6VCK8Q6", "name": "Morph Alien Costume for Kids", "short_name": "Alien costume", "headline": "An out-of-this-world pick that's a bit different", "why": "A fun alternative to the usual ghosts and witches, and well rated for comfort and fit.", "category": "Kids Costumes", "photo_query": "alien costume kids halloween"}
+  ]
+}
