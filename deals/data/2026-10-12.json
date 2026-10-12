@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-12",
+  "theme": "Kitchen Finds",
+  "pin_title": "6 Coffee & Tea Corner Essentials Under £20 UK Kitchens Love",
+  "pin_title_alt": "Easy Ways to Style a Cosy Coffee Corner at Home",
+  "pin_hook": "Small buys that make mornings nicer",
+  "pin_description": "#ad Coffee and tea corner essentials UK kitchens love: a wooden mug tree, classic Kilner storage jar, tea bag organiser, airtight coffee canister and more. Easy kitchen storage ideas and coffee station inspiration for under £20. #kitchenfinds #coffeestation #teacorner #ukkitchen",
+  "intro": "A tidy little coffee and tea corner makes every morning feel calmer - here are the well-rated buys UK kitchens keep adding to theirs.",
+  "products": [
+    {
+      "asin": "B00U512Z6G",
+      "name": "Premier Housewares Rubberwood Mug Tree",
+      "short_name": "Rubberwood mug tree",
+      "headline": "Keeps mugs tidy and off the worktop",
+      "why": "A sturdy freestanding stand that holds six mugs upright and off the counter, so cupboard space is freed up and favourite mugs stay on display.",
+      "category": "Kitchen",
+      "photo_query": "wooden mug tree holder",
+      "photo_id": 12128381
+    },
+    {
+      "asin": "B0030FUHR8",
+      "name": "Kilner Clip-Top Storage Jar, 1 Litre",
+      "short_name": "Kilner clip-top jar",
+      "headline": "A classic airtight jar for coffee or tea",
+      "why": "The rubber seal keeps coffee, tea or flour fresh for longer, and the clear glass makes it easy to see when it's running low.",
+      "category": "Kitchen",
+      "photo_query": "glass kilner jar kitchen",
+      "photo_id": 3847449
+    },
+    {
+      "asin": "B0BR5BJBG9",
+      "name": "KICHLY Plastic Tea Bag Holder (Pack of 3)",
+      "short_name": "8-compartment tea box",
+      "headline": "Ends the tea bag drawer chaos",
+      "why": "Eight compartments sort different tea varieties at a glance, and the clear lid keeps everything dust-free on the counter.",
+      "category": "Kitchen",
+      "photo_query": "tea bag organiser box"
+    },
+    {
+      "asin": "B0D9B5N9Y4",
+      "name": "1800ML Airtight Coffee Canister with Date Tracker",
+      "short_name": "Airtight coffee canister",
+      "headline": "Keeps coffee beans fresher for longer",
+      "why": "A one-way CO2 valve and date tracker dial help coffee beans stay fresher day to day, with a window so you can see stock levels without opening it.",
+      "category": "Kitchen",
+      "photo_query": "glass coffee canister jar"
+    },
+    {
+      "asin": "B0CHMCTK38",
+      "name": "ANBOXIT Countertop Coffee Station Organizer",
+      "short_name": "2-tier coffee organiser",
+      "headline": "A proper spot for all the coffee bits",
+      "why": "This two-tier wooden shelf corrals the coffee machine, pods and mugs into one neat corner instead of spread across the worktop.",
+      "category": "Kitchen",
+      "photo_query": "wooden coffee station organizer shelf"
+    },
+    {
+      "asin": "B0DPG6SNV1",
+      "name": "CIRCLE JOY Electric Milk Frother",
+      "short_name": "Handheld milk frother",
+      "headline": "Cafe-style froth in under a minute",
+      "why": "A rechargeable handheld whisk that froths milk quickly for lattes and hot chocolate, no barista skills needed.",
+      "category": "Kitchen",
+      "photo_query": "handheld milk frother"
+    }
+  ]
+}
