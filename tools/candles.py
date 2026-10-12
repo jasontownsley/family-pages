@@ -237,7 +237,7 @@ def page(p, site=SITE, price=""):
     title = f"{p['brand']} {p['name']} {p['kind']}"
     notes = ", ".join(p["notes"])
     return f"""<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | Daily Deals UK</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | Daily Deals UK</title><link rel="canonical" href="{url}">
 <meta name="description" content="{e(p['blurb'][:300])}"><meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(p['blurb'][:300])}"><meta property="og:image" content="{url}pin.jpg">
 <meta property="og:url" content="{url}"><meta name="pinterest-rich-pin" content="true">
