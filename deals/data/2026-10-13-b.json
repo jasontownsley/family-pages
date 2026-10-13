@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-13",
+  "slot": "b",
+  "theme": "Halloween",
+  "pin_title": "6 Halloween Party Essentials UK Hosts Swear By This Year",
+  "pin_title_alt": "3 Easy Ways to Set a Spooky Halloween Table This Year",
+  "pin_hook": "Everything you need to host a spooktacular night in",
+  "pin_description": "Halloween party essentials UK hosts rely on: giant spider web decor, black napkins, a plastic tablecloth, photo booth props and a pumpkin carving kit. Easy Halloween party ideas for a spooky table and fun night in with friends and family. #ad #halloweenparty #halloweendecor #hostingideas #ukdeals",
+  "intro": "Hosting this Halloween? These highly rated party buys make it easy to set a spooky scene without the stress.",
+  "products": [
+    {"asin": "B0B31V8SMM", "name": "BOSONER Giant Spider & Stretch Web Set", "short_name": "Giant spider & web set", "headline": "An instant spooky focal point", "why": "A huge stretchable web and giant spider that cover a wall or corner in seconds for an easy dramatic entrance.", "category": "Decorations", "photo_query": "giant spider web halloween decoration", "photo_id": 5477665},
+    {"asin": "B08DFYTRGJ", "name": "ASTARON Disposable Paper Cocktail Napkins", "short_name": "Halloween paper napkins", "headline": "Finish the table in seconds", "why": "A simple pack of 60 that smartens up the party table without any extra effort.", "category": "Party supplies", "photo_query": "orange black paper napkins halloween party table", "photo_id": 29177396},
+    {"asin": "B001GMY7AA", "name": "Solid Black Rectangular Plastic Table Cover", "short_name": "Black party tablecloth", "headline": "An easy base for any spooky table", "why": "A cheap, sturdy black cover that sets the scene for food, drinks and decor and wipes clean after.", "category": "Party supplies", "photo_query": "black party tablecloth"},
+    {"asin": "B0B2R3TSSQ", "name": "Jsdoin Stretchable Cobweb with Fake Spiders", "short_name": "Cobweb with fake spiders", "headline": "Cheap and cheerful spooky filler", "why": "A lightweight web with little spiders that's handy for doorways, mantels or the snack table.", "category": "Decorations", "photo_query": "stretchy cobweb with fake spiders"},
+    {"asin": "B07546L3VR", "name": "KUUQA Halloween Photo Booth Props Kit", "short_name": "Halloween photo booth props", "headline": "Keeps guests entertained all night", "why": "A ready-made set of fun props that gives guests an easy photo moment at the party.", "category": "Party supplies", "photo_query": "halloween photo booth props"},
+    {"asin": "B08DCVVS2M", "name": "Taspire Pumpkin Carving Kit with Stencils", "short_name": "Pumpkin carving kit", "headline": "Turns carving into the party activity", "why": "A set of tools and stencils that makes pumpkin carving an easy group activity before the party starts.", "category": "Activities", "photo_query": "pumpkin carving kit tools"}
+  ]
+}
