@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-13",
+  "theme": "Cleaning & Laundry",
+  "pin_title": "6 Cleaning & Laundry Buys UK Homes Rely On This Autumn",
+  "pin_title_alt": "3 Easy Ways to Get a Streak-Free Bathroom This Week",
+  "pin_hook": "Everyday cleaning that actually works",
+  "pin_description": "Cleaning and laundry buys UK homes rely on: a streak-free shower squeegee, mesh wash bags for delicates, fabric refresher spray, a telescoping feather duster and trusted oven and hob cleaners. Easy home cleaning hacks and tidy home inspiration. #ad #cleaningtiktok #homehacks #cleantok #ukhomes",
+  "intro": "A few small cleaning buys that make a big difference to how tidy everything feels - from a streak-free shower to fresher laundry.",
+  "products": [
+    {
+      "asin": "B0F24MHHFD",
+      "name": "dancemoon JustHang Shower Squeegee with Built-in Hook",
+      "short_name": "Shower squeegee with hook",
+      "headline": "A streak-free shower screen in seconds",
+      "why": "A quick wipe after showering keeps glass and tiles looking clean, and the built-in hook means it's always in reach.",
+      "category": "Bathroom",
+      "photo_query": "shower squeegee on glass",
+      "photo_id": 4239091
+    },
+    {
+      "asin": "B08N65SYD8",
+      "name": "Microfiber Duster with Telescoping Extension Pole",
+      "short_name": "Telescoping feather duster",
+      "headline": "Reach every high shelf and light fitting",
+      "why": "The bendable head and extending pole make it easy to dust blinds, ceiling fans and awkward corners without dragging out a stepladder.",
+      "category": "Home",
+      "photo_query": "feather duster",
+      "photo_id": 9462103
+    },
+    {
+      "asin": "B0DR37ZSRH",
+      "name": "Astonish Fabric Refresher Spray, Cotton Fresh Scent",
+      "short_name": "Astonish fabric refresher",
+      "headline": "Freshen curtains and sofas between washes",
+      "why": "A couple of spritzes on curtains, carpets and soft furnishings lifts musty smells without a full wash.",
+      "category": "Laundry",
+      "photo_query": "fabric refresher spray bottle"
+    },
+    {
+      "asin": "B07H92DFRF",
+      "name": "Kimmama Mesh Laundry Bags for Washing Machine, 4 Pack",
+      "short_name": "Mesh laundry wash bags",
+      "headline": "Protect delicates and stop socks going missing",
+      "why": "Great for bras, tights and small items that otherwise get tangled or lost in the wash.",
+      "category": "Laundry",
+      "photo_query": "white mesh zip laundry bag"
+    },
+    {
+      "asin": "B000TAUMGI",
+      "name": "Mr Muscle Oven Cleaner, 300ml",
+      "short_name": "Mr Muscle oven cleaner",
+      "headline": "Cuts through baked-on grease fast",
+      "why": "A budget-friendly spray that loosens stubborn oven grime so it wipes away with minimal scrubbing.",
+      "category": "Kitchen",
+      "photo_query": "oven cleaner spray"
+    },
+    {
+      "asin": "B000IU40IA",
+      "name": "HG Hob Cleaner Spray for Induction, Ceramic, Gas & Electric Cooktops",
+      "short_name": "HG hob cleaner spray",
+      "headline": "Keeps hobs streak-free after cooking",
+      "why": "A go-to for daily hob wipe-downs - it lifts grease and water marks without scratching the surface.",
+      "category": "Kitchen",
+      "photo_query": "hob cleaner spray bottle"
+    }
+  ]
+}

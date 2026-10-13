@@ -5,7 +5,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "27900252535": {
   "price": 60.0,
@@ -13,7 +13,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "29509817597": {
   "price": 3.28,
@@ -21,7 +21,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "31066460759": {
   "price": 25.0,
@@ -29,7 +29,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "31291341881": {
   "price": 30.0,
@@ -37,7 +37,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "31297154721": {
   "price": 30.0,
@@ -45,7 +45,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "36225688688": {
   "price": 14.0,
@@ -53,7 +53,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "37706679915": {
   "price": 14.0,
@@ -61,39 +61,47 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "37975159505051": {
   "price": 26.39,
-  "was": 32.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "37975402217627": {
   "price": 19.99,
-  "was": 24.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "37975463592091": {
   "price": 8.79,
-  "was": 10.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "38031934423195": {
   "price": 23.99,
-  "was": 29.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
+ },
+ "40267777720": {
+  "price": 20.0,
+  "was": null,
+  "save": 0,
+  "in_stock": true,
+  "shop": "Cadbury Gifts Direct",
+  "checked": "2026-10-13T07:03"
  },
  "41880875526": {
   "price": 4.26,
@@ -101,7 +109,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "41956185965": {
   "price": 50.0,
@@ -109,23 +117,23 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "42223778758811": {
   "price": 28.0,
-  "was": 30.0,
-  "save": 7,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "42896099508379": {
   "price": 23.99,
-  "was": 29.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "42961353009": {
   "price": 6.56,
@@ -133,15 +141,15 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "43098228923": {
   "price": 13.98,
-  "was": 15.98,
-  "save": 13,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "44777982177": {
   "price": 9.0,
@@ -149,7 +157,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "44777982180": {
   "price": 14.0,
@@ -157,23 +165,23 @@
   "save": 0,
   "in_stock": true,
   "shop": "Cadbury Gifts Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "44801176236": {
   "price": 26.97,
-  "was": 29.97,
-  "save": 10,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "45178853201": {
   "price": 26.97,
-  "was": 29.97,
-  "save": 10,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "45805584661": {
   "price": 9.99,
@@ -181,23 +189,31 @@
   "save": 0,
   "in_stock": true,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
+ },
+ "45805584746": {
+  "price": 17.98,
+  "was": null,
+  "save": 0,
+  "in_stock": true,
+  "shop": "Bare Kind",
+  "checked": "2026-10-13T07:03"
  },
  "45805584777": {
   "price": 17.98,
-  "was": 19.98,
-  "save": 10,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "45805584779": {
   "price": 17.98,
-  "was": 19.98,
-  "save": 10,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "45805584792": {
   "price": 17.98,
@@ -205,79 +221,79 @@
   "save": 10,
   "in_stock": false,
   "shop": "Bare Kind",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "45932045205659": {
   "price": 14.49,
-  "was": 28.99,
-  "save": 50,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "47606043836571": {
   "price": 28.0,
-  "was": 30.0,
-  "save": 7,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "47606046392475": {
   "price": 28.0,
-  "was": 30.0,
-  "save": 7,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "48164500111515": {
   "price": 23.99,
-  "was": 29.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "48164500209819": {
   "price": 23.99,
-  "was": 29.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "48164500734107": {
   "price": 19.99,
-  "was": 24.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "48267048943771": {
   "price": 27.99,
-  "was": 34.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "48267050942619": {
   "price": 27.99,
-  "was": 34.99,
-  "save": 20,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "48292325392539": {
   "price": 24.99,
-  "was": 50.0,
-  "save": 50,
+  "was": null,
+  "save": 0,
   "in_stock": true,
   "shop": "Candles Direct",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "53984691224961": {
   "price": 26.95,
@@ -285,7 +301,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Scottish Fine Soaps",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "53984692011393": {
   "price": 19.95,
@@ -293,7 +309,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Scottish Fine Soaps",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "53984693911937": {
   "price": 21.95,
@@ -301,7 +317,15 @@
   "save": 0,
   "in_stock": true,
   "shop": "Scottish Fine Soaps",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
+ },
+ "55738950779265": {
+  "price": 29.95,
+  "was": null,
+  "save": 0,
+  "in_stock": true,
+  "shop": "Scottish Fine Soaps",
+  "checked": "2026-10-13T07:03"
  },
  "55738950844801": {
   "price": 24.95,
@@ -309,7 +333,7 @@
   "save": 0,
   "in_stock": true,
   "shop": "Scottish Fine Soaps",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  },
  "55861156643201": {
   "price": 26.95,
@@ -317,6 +341,6 @@
   "save": 0,
   "in_stock": true,
   "shop": "Scottish Fine Soaps",
-  "checked": "2026-10-12T15:04"
+  "checked": "2026-10-13T07:03"
  }
 }
