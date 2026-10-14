@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-14",
+  "theme": "Halloween",
+  "pin_title": "4 Cosy Indoor Halloween Decorations UK Homes Love This Year",
+  "pin_title_alt": "Easy Ways to Make Your Living Room Feel Halloween-Ready",
+  "pin_hook": "Warm, spooky touches for the whole house",
+  "pin_description": "Cosy indoor Halloween decorations UK shoppers rate highly: flameless pillar candles, pumpkin and bat fairy lights, a balloon garland arch and posable skeleton props. Easy Halloween home decor ideas for the living room, mantel and party table. #ad #halloweendecor #halloweenhome #ukhalloween",
+  "intro": "Turn the living room spooky-cosy in an evening with these highly rated indoor Halloween buys - no carving or ladders required.",
+  "products": [
+    {"asin": "B0965GJ6S7", "name": "Eldnacele Flameless Pillar Candles with Timer", "short_name": "Flameless pillar candles", "headline": "Flickering candlelight with zero fire risk", "why": "Real-wax LED candles with a 6-hour timer so they glow every evening without you remembering to switch them on, and they're safe around kids and pets.", "category": "Home Decor", "photo_query": "pumpkin candles glowing on table"},
+    {"asin": "B088M7JNT7", "name": "Eambrite Pumpkin, Bat & Ghost Fairy Lights Set of 3", "short_name": "Pumpkin & bat fairy lights", "headline": "Instant spooky glow for shelves and windows", "why": "Three battery-powered light strings in pumpkin, bat and ghost shapes that drape easily along mantels, banisters or a mirror frame for a warm Halloween glow.", "category": "Home Decor", "photo_query": "orange fairy lights halloween pumpkin string lights", "photo_id": 18542858},
+    {"asin": "B0D6HQ2QX7", "name": "Orange & Black Halloween Balloon Garland Arch Kit", "short_name": "Balloon garland arch kit", "headline": "A doorway statement that takes minutes to build", "why": "A big, photogenic backdrop for a Halloween party or trick-or-treat night, with enough pre-sorted orange and black balloons to frame a doorway or fireplace.", "category": "Party Decor", "photo_query": "orange black balloon garland arch"},
+    {"asin": "B0C8H95XJS", "name": "JOYIN 2 PCS 24\" Posable Skeletons", "short_name": "Posable mini skeletons", "headline": "Spooky props that pose however you like", "why": "Movable joints mean these can be draped over a sofa, propped on a shelf or hung from a doorway, and shoppers rate them well for the price.", "category": "Decor Props", "photo_query": "posable mini skeleton halloween decoration"}
+  ]
+}
