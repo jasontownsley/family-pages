@@ -5,6 +5,7 @@ several merchants. Each run picks one new product per merchant, writing:
   deals/gifts/<id>/photo.jpg, pin.jpg, index.html
 and appends to deals/data/gifts.json; the board's RSS feed is deals/gifts/feed.xml.
 
+Scribbler is mostly greeting cards (many rude), so only its gift products are used.
 Dean Morris Cards is joined but not featured: its range is mostly crude novelty items and its
 feed images 404.
 
@@ -107,11 +108,33 @@ def scottish_fine_soaps(r):
             "id": f"sfs-{r['id']}"}
 
 
+def scribbler(r):
+    # most of the feed is greeting cards (many rude); only the "Gift Giving" products are gifts
+    title = r["title"].strip()
+    if r.get("availability") != "in_stock" or r.get("google_product_category") != "Arts & Entertainment > Party & Celebration > Gift Giving":
+        return None
+    if re.search(r"\bcard\b|gift bag|wrap|\btags?\b|badge|ribbon|tissue|voucher|personalis|photo upload|balloon|insult", title, re.I):
+        return None
+    if price_of(r["price"]) < 8:
+        return None
+    text = f"{title} {r.get('description', '')}"
+    kind = ("Game" if re.search(r"\bgame\b|dobble|puzzle", text, re.I) else
+            "Soft Toy" if re.search(r"jellycat|plush|soft toy", title, re.I) else
+            "Chocolate Gift" if re.search(r"chocolate|chocolonely|sweets", text, re.I) else
+            "Novelty Light" if re.search(r"\blight\b|lamp", text, re.I) else
+            "Mug" if re.search(r"\bmug\b", title, re.I) else "Gift Idea")
+    brand = re.sub(r"\s+(Ltd|DS)$", "", (r.get("brand") or "").strip()) or "Scribbler"
+    name = re.sub(rf"^{re.escape(brand)}\s+", "", title, flags=re.I) if brand != "Scribbler" else title
+    return {"brand": brand, "name": name, "kind": kind, "price": price_of(r["price"]), "image": r["image_link"],
+            "url": r["aw_deep_link"], "blurb": clean(r.get("description")), "id": f"scr-{r['id']}"}
+
+
 MERCHANTS = [
     # (advertiser id, feed format in the Awin feed list, shop name shown on the pin, parser)
     ("736", "Awin", "Cadbury Gifts Direct", cadbury),
     ("30533", "Awin", "Bare Kind", barekind),
     ("101517", "Google", "Scottish Fine Soaps", scottish_fine_soaps),
+    ("3965", "Google", "Scribbler", scribbler),
 ]
 
 

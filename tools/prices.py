@@ -30,7 +30,8 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) DailyDealsUK/1.0"
 
 # advertiser id, feed format, shop, is Shopify (has <url>.js with compare_at_price)
 FEEDS = [("13560", "Google", "Candles Direct", True), ("101517", "Google", "Scottish Fine Soaps", True),
-         ("30533", "Awin", "Bare Kind", True), ("736", "Awin", "Cadbury Gifts Direct", False)]
+         ("30533", "Awin", "Bare Kind", True), ("736", "Awin", "Cadbury Gifts Direct", False),
+         ("3965", "Google", "Scribbler", True)]
 
 
 def featured_ids():

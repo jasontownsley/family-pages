@@ -187,7 +187,7 @@ def prices():
 def raw_id(item_id):
     """Feed id behind a manifest id ("cgd-123" -> "123", candle ids are already raw)."""
     s = str(item_id)
-    return s.split("-", 1)[1] if s.split("-", 1)[0] in ("cgd", "bk", "sfs", "aw") else s
+    return s.split("-", 1)[1] if s.split("-", 1)[0] in ("cgd", "bk", "sfs", "scr", "aw") else s
 
 
 def price_html(rid, pr=None):
