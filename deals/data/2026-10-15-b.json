@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-15",
+  "slot": "b",
+  "theme": "Halloween Costumes",
+  "pin_title": "5 Halloween Fancy Dress Accessories UK Adults Love This Year",
+  "pin_title_alt": "3 Quick Halloween Costume Add-Ons for a Last-Minute Look",
+  "pin_hook": "Easy add-ons for any Halloween costume",
+  "pin_description": "#ad Easy Halloween fancy dress accessories UK shoppers rate highly: a deluxe witch hat, vampire cape, scary latex mask and spooky fishnet tights for a quick costume upgrade. Great for last-minute Halloween outfits, adult costume parties and dress-up nights. #halloweencostume #fancydress #halloweenuk #halloweenaccessories",
+  "intro": "Need to pull a Halloween costume together fast? These fancy dress accessories are the easiest way to go from plain clothes to full costume in minutes.",
+  "products": [
+    {"asin": "B003B9H8BG", "name": "Smiffys Witch Hat, Feathers & Netting", "short_name": "Deluxe witch hat", "headline": "Instant witch costume in one piece", "why": "A dramatic black witch hat with feathers and netting that works over everyday clothes for a quick, convincing costume.", "category": "Costume", "photo_query": "black witch hat with feathers"},
+    {"asin": "B08BW73LYQ", "name": "JOYIN Adult Vampire Cape", "short_name": "Vampire cape", "headline": "Dramatic Dracula-style cape", "why": "A reversible vampire cape that instantly transforms a plain black outfit into a Transylvania-ready costume.", "category": "Costume", "photo_query": "black red vampire cape"},
+    {"asin": "B07QDKRC5D", "name": "PartyHop MOMO Mask", "short_name": "Scary latex mask", "headline": "A genuinely scary full-head mask", "why": "A full latex horror mask for anyone who wants their costume to actually startle people at the door.", "category": "Costume"},
+    {"asin": "B07Z18ZPVQ", "name": "E-Laurels Fishnet Tights", "short_name": "Fishnet tights", "headline": "The finishing touch for witch or vampire looks", "why": "Classic black fishnets that pair with almost any Halloween outfit and are cheap enough to buy a spare pair.", "category": "Costume"},
+    {"asin": "B09MF4KC6F", "name": "CHRORINE 4 Pack Fishnet Stockings", "short_name": "Fishnet stocking pack", "headline": "Four styles, one order sorted", "why": "A multi-style pack so you've got backup tights if one pair ladders mid-party.", "category": "Costume"}
+  ]
+}
