@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-15",
+  "theme": "Beauty & Self-Care",
+  "pin_title": "6 Beauty Buys UK Shoppers Swear By for a Little Everyday Luxury",
+  "pin_title_alt": "3 Feel-Good Beauty Basics for a Cosy Autumn Routine",
+  "pin_hook": "Small everyday treats, big glow-up",
+  "pin_description": "#ad Beauty and self-care buys UK shoppers rate highly this autumn: a cult lip sleeping mask, whipped shea body butter, satin scrunchies, a hair repair mask, a vitamin C serum and reusable cotton pads. Easy everyday skincare and haircare picks and gift ideas. #beauty #selfcare #skincareroutine #ukdeals",
+  "intro": "A few small beauty swaps that make getting ready feel a bit more special, all well-loved by UK shoppers.",
+  "products": [
+    {"asin": "B07XXPHQZK", "name": "LANEIGE Lip Sleeping Mask", "short_name": "LANEIGE lip sleeping mask", "headline": "Wake up to softer, smoother lips", "why": "A cult overnight lip treatment that's become a bathroom-shelf staple for good reason - it genuinely soothes dry, chapped lips.", "category": "Beauty", "photo_query": "lip balm jar on vanity", "photo_id": 34661037},
+    {"asin": "B0108JQHWM", "name": "The Body Shop Shea Body Butter 400ml", "short_name": "Shea body butter", "headline": "Rich, whipped moisture for dry autumn skin", "why": "Thick enough to tackle properly dry patches without feeling greasy, and the scent lingers nicely all day.", "category": "Beauty", "photo_query": "body butter jar skincare", "photo_id": 4735910},
+    {"asin": "B0BJS1NVKM", "name": "Kitsch Satin Scrunchies 6pcs", "short_name": "Kitsch satin scrunchies", "headline": "Kinder to hair than regular hair ties", "why": "Satin means no creases or snagging, and they double as a pretty wrist accessory between uses.", "category": "Beauty", "photo_query": "satin scrunchies hair ties", "photo_id": 6044135},
+    {"asin": "B07L5WGS2X", "name": "Garnier Hair Food 3-in-1 Hair Mask, Banana", "short_name": "Garnier Hair Food mask", "headline": "Salon-soft hair for under £5", "why": "Works as a mask, conditioner or leave-in and leaves hair noticeably softer after just one use.", "category": "Beauty", "photo_query": "hair mask tube bathroom"},
+    {"asin": "B09BD7L35V", "name": "Garnier Vitamin C Serum", "short_name": "Garnier vitamin C serum", "headline": "Brighter skin without the price tag", "why": "An affordable way to fade dullness and dark spots, and it layers easily under moisturiser.", "category": "Beauty", "photo_query": "serum bottle skincare"},
+    {"asin": "B07T8BVYGS", "name": "Greenzla Reusable Makeup Remover Pads, 20 Pack", "short_name": "Reusable makeup pads", "headline": "A softer, greener way to remove makeup", "why": "Washable and reusable so they pay for themselves quickly, and they come with their own storage box.", "category": "Beauty", "photo_query": "round cotton pads skincare", "photo_id": 4202383}
+  ]
+}
