@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "slot": "b",
+  "theme": "Christmas Night In",
+  "pin_title": "6 Cosy Christmas Night In Buys Under £25 UK Shoppers Love",
+  "pin_title_alt": "3 Christmas Treats to Make Your Night In Feel Extra Cosy",
+  "pin_hook": "Blankets, candles and cocoa for the cosiest nights in",
+  "pin_description": "Cosy Christmas night in essentials UK shoppers love: a festive sherpa throw, Yankee Candle picks, gourmet hot chocolate gift sets and a hot water bottle mug set. Perfect for a relaxed evening in or a thoughtful Christmas gift. #ad #christmasgifts #cosychristmas #hygge #ukdeals",
+  "intro": "Fairy lights on, kettle on - these are the buys making UK living rooms feel properly festive this December.",
+  "products": [
+    {"asin": "B07HGK7LTW", "name": "Happy Linen Company Christmas Patchwork Sherpa Fleece Throw", "short_name": "Christmas sherpa throw", "headline": "The sofa upgrade that makes a room feel festive", "why": "A thick, soft fleece throw in a classic red plaid - perfect for curling up with a film on a dark evening.", "category": "Home", "photo_query": "red christmas sherpa fleece throw on sofa", "photo_id": 35364430},
+    {"asin": "B0155OGEUU", "name": "Yankee Candle Christmas Eve Large Jar Candle", "short_name": "Yankee Christmas Eve candle", "headline": "Up to 150 hours of festive scent", "why": "A long-burning classic that UK shoppers repurchase every year to make the house smell like Christmas.", "category": "Home", "photo_query": "christmas candle jar burning cosy", "photo_id": 5782707},
+    {"asin": "B087X1X8VD", "name": "Thoughtfully Gourmet Hot Chocolate Gift Set", "short_name": "Gourmet hot chocolate set", "headline": "A proper treat for a cold night in", "why": "Salted caramel, toasted marshmallow and more flavours in one gift box - great for sharing or gifting.", "category": "Food & Drink", "photo_query": "hot chocolate gift box mugs", "photo_id": 5994733},
+    {"asin": "B0FH642F4V", "name": "Yankee Candle Mini Votive Candle Gift Set", "short_name": "Yankee votive candle set", "headline": "Little candles, big cosy atmosphere", "why": "Three scented votives in a gift-ready box - an easy stocking filler or table centrepiece.", "category": "Home", "photo_query": "christmas mini votive candles set", "photo_id": 19594406},
+    {"asin": "B07QWBH37R", "name": "BomBombs Hot Chocolate Gift Set, Set of 6", "short_name": "Hot chocolate bombs set", "headline": "Melt one into warm milk for an instant treat", "why": "Six individually wrapped hot chocolate bombs that make a fun, photogenic gift or family night-in activity.", "category": "Food & Drink", "photo_query": "hot chocolate bombs gift set", "photo_id": 6119119},
+    {"asin": "B09F3VS4JW", "name": "Hot Water Bottle, Mug and Hot Chocolate Gift Set", "short_name": "Hot water bottle gift set", "headline": "Warms you up from the mug to the toes", "why": "Bundles a hot water bottle, mug and hot chocolate with marshmallows together - a thoughtful all-in-one gift.", "category": "Home", "photo_query": "hot water bottle cosy christmas"}
+  ]
+}
