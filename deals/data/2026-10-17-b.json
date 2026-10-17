@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-17",
+  "slot": "b",
+  "theme": "Trick-or-Treat",
+  "pin_title": "6 Halloween Sweets & Carving Buys UK Shoppers Stock Up On",
+  "pin_title_alt": "3 Halloween Sweets Everyone Hands Out for Trick-or-Treat",
+  "pin_hook": "Sorted for sweets, bags and pumpkins this Halloween",
+  "pin_description": "Halloween trick-or-treat sweets and pumpkin carving picks UK shoppers stock up on: Swizzels party mix tubs, Haribo Tangfastics, Skittles sharing pouches, pumpkin treat bags and a pro carving kit. Great for Halloween parties, trick-or-treaters and pumpkin night. #ad #halloween #trickortreat #halloweensweets #pumpkincarving",
+  "intro": "Sweets sorted and pumpkins ready to carve - these are the Halloween trick-or-treat buys UK shoppers keep topping up every October.",
+  "products": [
+    {"asin": "B0BD5DPHNB", "name": "Swizzels Party Mix Tub 785g", "short_name": "Swizzels party mix tub", "headline": "A big tub that keeps trick-or-treaters happy", "why": "A generous bulk tub of retro favourites that works out cheaper per sweet than small bags, and it's vegan friendly.", "category": "Halloween", "photo_query": "bowl of colourful halloween sweets", "photo_id": 5420824},
+    {"asin": "B076482QG3", "name": "Haribo Tangfastics Sweets 176g", "short_name": "Haribo Tangfastics", "headline": "The sour gummy bag everyone asks for", "why": "A classic sharing bag that's an easy, reliably well-liked option for Halloween bowls or party bags.", "category": "Halloween", "photo_query": "bowl of gummy sweets", "photo_id": 31665692},
+    {"asin": "B086CD6B5G", "name": "Skittles Giants Sharing Pouch 132g", "short_name": "Skittles giants pouch", "headline": "Oversized sweets for an extra-fun handful", "why": "Bigger-than-usual fruit chews make this a fun, slightly different option to mix into your sweet bowl.", "category": "Halloween", "photo_query": "colourful fruit sweets"},
+    {"asin": "B0DR93YF5H", "name": "Swizzels Sweet Shop Favourites Tub 650g", "short_name": "Swizzels sweet shop tub", "headline": "A proper pick-and-mix tub for the doorstep", "why": "A mixed tub of old-school favourites that's great value for keeping a bowl topped up all evening.", "category": "Halloween", "photo_query": "retro pick and mix sweets tub"},
+    {"asin": "B08CXBTC3X", "name": "Pumpkin Cone Treat Bags, 100 Pack", "short_name": "Pumpkin cone treat bags", "headline": "Pre-portioned bags that make handing out sweets easy", "why": "Clear cone bags with pumpkin and gold ties that make filling and handing out treats quick and tidy.", "category": "Halloween", "photo_query": "orange halloween treat bags"},
+    {"asin": "B07GXJW9W8", "name": "Professional Pumpkin Carving Kit, 11 Piece", "short_name": "Pumpkin carving kit", "headline": "Proper tools make carving easier for everyone", "why": "Heavy duty stainless steel tools with a carry case, far easier and safer to use than a kitchen knife.", "category": "Halloween", "photo_query": "pumpkin carving tools kit", "photo_id": 5634770}
+  ]
+}
