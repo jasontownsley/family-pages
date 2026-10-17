@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-17",
+  "theme": "Halloween Decor",
+  "pin_title": "6 Cosy Halloween Home Buys UK Shoppers Swear By",
+  "pin_title_alt": "Cosy Halloween Blanket, Candle & Cushion Picks for Your Sofa",
+  "pin_hook": "Spooky season, snuggled up at home",
+  "pin_description": "Cosy Halloween home decor UK shoppers love: a soft orange fleece throw, cinnamon spice candle, pumpkin cushion covers, a spooky doormat and posable skeleton props. Perfect for making your living room feel Halloween-ready without losing the cosy autumn vibe. #ad #halloweendecor #cosyhome #halloweenuk #autumndecor",
+  "intro": "Halloween doesn't have to mean giving up on cosy - these are the soft, spooky home touches UK shoppers keep adding to cart this October.",
+  "products": [
+    {
+      "asin": "B0CC9PMZMP",
+      "name": "Bedlam Halloween Fleece Blanket 120 x 150cm",
+      "short_name": "Halloween fleece throw",
+      "headline": "A soft spooky throw for sofa nights in",
+      "why": "Super-soft orange fleece printed with bats and skulls, sized well for curling up on the sofa through spooky season.",
+      "category": "Home",
+      "photo_query": "orange halloween fleece throw blanket",
+      "photo_id": 30380667
+    },
+    {
+      "asin": "B004QOKYCU",
+      "name": "Yankee Candle Cinnamon Stick Large Jar Candle",
+      "short_name": "Cinnamon Stick candle",
+      "headline": "A warm, spiced candle that burns for hours",
+      "why": "A long-time UK bestseller for a reason - warm cinnamon scent that fills a room and burns for up to 150 hours.",
+      "category": "Home",
+      "photo_query": "cinnamon candle jar cosy",
+      "photo_id": 34433313
+    },
+    {
+      "asin": "B0H7RG8B7B",
+      "name": "4 Pack Halloween Throw Pillow Cushion Covers 45x45cm",
+      "short_name": "Pumpkin cushion covers",
+      "headline": "An easy way to add autumn colour to any sofa",
+      "why": "A budget-friendly set of four covers that instantly brings a pumpkin-season feel to the living room.",
+      "category": "Home",
+      "photo_query": "orange pumpkin cushion on sofa",
+      "photo_id": 10045637
+    },
+    {
+      "asin": "B07FQNJXNZ",
+      "name": "Nightmare Before Christmas (A Nightmare Awaits) Doormat",
+      "short_name": "Nightmare doormat",
+      "headline": "A fun first impression for trick-or-treaters",
+      "why": "A hard-wearing coir doormat with a cult-favourite Halloween design that holds up well to autumn weather.",
+      "category": "Home",
+      "photo_query": "black doormat front door welcome",
+      "photo_id": 5840867
+    },
+    {
+      "asin": "B076HTQMZS",
+      "name": "Poseable Skeleton Full Size 165cm/5.4ft",
+      "short_name": "Life-size skeleton prop",
+      "headline": "A showstopper for the hallway or garden",
+      "why": "Full-size and fully poseable, so it's easy to arrange into a different spooky pose on the doorstep or in a corner.",
+      "category": "Halloween"
+    },
+    {
+      "asin": "B0C89QW46X",
+      "name": "JOYIN 2 PCS 16\" Posable Halloween Skeletons",
+      "short_name": "Mini posable skeletons",
+      "headline": "Tiny bendable skeletons for shelves and tables",
+      "why": "Two smaller posable skeletons that are easy to drape over a mantelpiece, shelf or mini graveyard display.",
+      "category": "Halloween"
+    }
+  ]
+}
