@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-19",
+  "theme": "Kitchen Finds",
+  "pin_title": "6 Kitchen Buys Under £25 UK Home Cooks Swear By",
+  "pin_title_alt": "3 Simple Swaps for a Tidier, Calmer Kitchen Counter",
+  "pin_hook": "Small upgrades, big difference in the kitchen",
+  "pin_description": "Kitchen buys UK home cooks rate highly: stackable storage containers, Pyrex glass mixing bowls, a ceramic utensil holder, oil sprayer, digital scale and garlic press. Budget kitchen finds, pantry organisation ideas and gifts for home cooks. #ad #kitchenfinds #kitchenorganisation #ukdeals",
+  "intro": "A few well-rated kitchen buys that make everyday cooking and tidying that bit easier, all under £25.",
+  "products": [
+    {"asin": "B0822KNQKT", "name": "Chef's Path 14-Piece Airtight Food Storage Container Set", "short_name": "Airtight storage containers", "headline": "Keep the pantry tidy and food fresher for longer", "why": "A full set of stackable, airtight containers that home cooks consistently rate highly for keeping cupboards organised.", "category": "Kitchen", "photo_query": "clear plastic food storage containers stacked kitchen", "photo_id": 13968346},
+    {"asin": "B08297H2Q7", "name": "Pyrex Prep & Store 3-Piece Glass Bowl Set", "short_name": "Pyrex glass bowl set", "headline": "Mixing bowls that go from prep to fridge to oven", "why": "Sturdy glass bowls with lids in three sizes, a reliable everyday upgrade from mismatched plastic bowls.", "category": "Kitchen", "photo_query": "glass mixing bowls with lids kitchen", "photo_id": 7601411},
+    {"asin": "B0B71CYMZP", "name": "Ceramic Farmhouse Utensil Holder", "short_name": "Ceramic utensil holder", "headline": "Corral spatulas and spoons off the countertop", "why": "A simple ceramic crock that keeps cooking tools within reach and the counter looking neater.", "category": "Kitchen", "photo_query": "cooking utensils in a holder on counter", "photo_id": 9475254},
+    {"asin": "B0CJF94M8J", "name": "TrendPlain 2-in-1 Olive Oil Spray Bottle", "short_name": "Olive oil spray bottle", "headline": "Control how much oil goes in the pan", "why": "Switches between a spray and a pour, handy for lighter cooking without the mess of a traditional bottle.", "category": "Kitchen"},
+    {"asin": "B07KC3HPVN", "name": "ACCUWEIGHT Digital Kitchen Scales", "short_name": "Digital kitchen scales", "headline": "Accurate weighing for baking and batch cooking", "why": "A no-fuss digital scale with a glass platform, popular for its simple tare function and clear display.", "category": "Kitchen"},
+    {"asin": "B07DNBX1C4", "name": "Jsdoin Professional Garlic Press", "short_name": "Garlic press & peeler", "headline": "Mince garlic in seconds, no peeling needed", "why": "A heavy-duty press that crushes unpeeled garlic cleanly, a small buy that earns its place in the drawer.", "category": "Kitchen"}
+  ]
+}
