@@ -44,9 +44,10 @@ GUIDES = [
         "desc": "How a travel eSIM works, why it can cost far less than roaming, and how to set one up in minutes before you fly. "
                 "No contract, keep your UK number, top up in an app.",
         "updated": "2026-10-08",
-        # affiliate links go in saily / breeze once approved on Awin (then marked #ad); *_site are plain links until then
+        # affiliate links go in saily / breeze once approved (then marked #ad); Breeze approved on Awin 19 Oct 2026; *_site are plain links until then
         "links": {"saily": None, "saily_site": "https://saily.com/",
-                  "breeze": None, "breeze_site": "https://www.breezesim.com/"},
+                  "breeze": "https://www.awin1.com/cread.php?awinmid=84567&awinaffid=3105665&ued=https%3A%2F%2Fwww.breezesim.com%2F",
+                  "breeze_site": "https://www.breezesim.com/"},
         "related": [],
         "og": {"pill": "TRAVEL GUIDE", "lines": ["Travel", "eSIMs"], "sub": "Cheaper data abroad",
                "items": ["No contract", "Keep your UK number", "Set up before you fly", "Data in 190+ countries",
