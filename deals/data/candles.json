@@ -207,5 +207,62 @@
   "price": 28.0,
   "date": "2026-10-11",
   "label": "Candle of the day"
+ },
+ {
+  "id": "48164506501275",
+  "brand": "Yankee Candle",
+  "name": "Seaside Woods",
+  "kind": "Large Jar Candle",
+  "blurb": "Experience a cozy, secluded coastal escape. Warm scents of sun-dried driftwood and soft orange blossoms are met with hints of citrus, evoking the quietude of a balmy shoreline.",
+  "notes": [
+   "Orange Blossoms",
+   "Cool Citrus",
+   "Sweet Alyssum",
+   "Acacia",
+   "Cottonwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Seaside-Woods-Large-Jar-2243919-1.jpg?v=1776766355",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-seaside-woods-signature-large-jar-candle-2243919%3Fvariant%3D48164506501275",
+  "price": 23.99,
+  "date": "2026-10-20",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "37975404249243",
+  "brand": "WoodWick",
+  "name": "White Teak",
+  "kind": "Medium Jar Candle",
+  "blurb": "A nuanced blend of aromas, crisp balsam branches mixed with sandalwood, and oak with hints of moss of tree and cedarwood.",
+  "notes": [
+   "Fresh",
+   "Marine",
+   "Lavender White Teak",
+   "Fir Balsam",
+   "Oak"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/White-Teak-Medium-Jar-2674119E.jpg?v=1776357281",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-white-teak-medium-jar-candle%3Fvariant%3D37975404249243",
+  "price": 19.99,
+  "date": "2026-10-20",
+  "label": "Christmas scent"
+ },
+ {
+  "id": "47606044098715",
+  "brand": "P.F. Candle Co.",
+  "name": "HI-FI Blonde Hinoki",
+  "kind": "Reed Diffuser",
+  "blurb": "Clean and warm, inspired by the light woods used to house records in a hi-fi listening bar.",
+  "notes": [
+   "eucalyptus leaf",
+   "fir needle",
+   "ginger root",
+   "hinoki wood",
+   "cedar leaf"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/BlondeHinokiHI-FIEcommDiffuserBox1.jpg?v=1764025636",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-hi-fi-blonde-hinoki-hfrd1%3Fvariant%3D47606044098715",
+  "price": 19.99,
+  "date": "2026-10-20",
+  "label": "Candle of the day"
  }
 ]
