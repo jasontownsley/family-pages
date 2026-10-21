@@ -264,5 +264,62 @@
   "price": 19.99,
   "date": "2026-10-20",
   "label": "Candle of the day"
+ },
+ {
+  "id": "42896100524187",
+  "brand": "Yankee Candle",
+  "name": "Vanilla Creme Brulee",
+  "kind": "Large Jar Candle",
+  "blurb": "Experience the aromas of a sweet indulgence - rich and creamy vanilla custard made more tempting with toasted praline and a hint of cinnamon.",
+  "notes": [
+   "Cinnamon Bark",
+   "Red Fruits",
+   "Orange Peel",
+   "Coconut Pulp",
+   "Baked Cookie"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Vanilla-Creme-Brulee-Large-Jar-2235835-1.jpg?v=1776853075",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-vanilla-creme-brulee-signature-large-jar-candle-1629981e%3Fvariant%3D42896100524187",
+  "price": 23.99,
+  "date": "2026-10-21",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "37975402217627",
+  "brand": "WoodWick",
+  "name": "Frasier Fir",
+  "kind": "Medium Jar Candle",
+  "blurb": "Aromatic notes are expertly combined to create the essence of fresh cut fir on a crisp winter morning.",
+  "notes": [
+   "Sparkling Fresh Aldehydes",
+   "Fir Needles",
+   "Eucalyptus",
+   "Cypress",
+   "Red Berries"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Fraser-Fir-Medium-Jar-2674129E.jpg?v=1776289933",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-frasier-fir-medium-jar-candle%3Fvariant%3D37975402217627",
+  "price": 19.99,
+  "date": "2026-10-21",
+  "label": "Christmas scent"
+ },
+ {
+  "id": "47606044262555",
+  "brand": "P.F. Candle Co.",
+  "name": "HI-FI Plush Vetiver",
+  "kind": "Reed Diffuser",
+  "blurb": "Plush velvet booths in a dimly lit cocktail lounge. Musky and earthy, with soft floral undertones.",
+  "notes": [
+   "eucalyptus",
+   "cedar leaf",
+   "beetroot",
+   "velvet iris",
+   "patchouli leaf"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/PlushVetiverHI-FIEcommDiffuserBox1.jpg?v=1764025801",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-hi-fi-plush-vetiver-hfrd2%3Fvariant%3D47606044262555",
+  "price": 19.99,
+  "date": "2026-10-21",
+  "label": "Candle of the day"
  }
 ]
