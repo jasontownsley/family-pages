@@ -6,7 +6,7 @@ EFFICIENCY (this runs daily on a limited plan - keep it lean):
   - Aim to finish in about 35 tool calls or fewer (photo checks included).
   - Stop researching as soon as you have 6 verified products. Do not keep looking for "better" ones.
   - Use the Amazon lookup tool (below) for Amazon data; use WebSearch only for ideas from UK round-up sites.
-  - Do not re-read files you have already read. The only shell commands you may run are the two helpers: python tools/recent_deals.py and python tools/amazon_lookup.py (no other commands, no python -c, no cd, ls or loops).
+  - Do not re-read files you have already read. The only shell commands you may run are the three helpers: python tools/recent_deals.py, python tools/amazon_lookup.py and python tools/photo_candidates.py (no other commands, no python -c, no cd, ls or loops).
 
 STEP 1 - Pick today's theme.
 Default rotation by weekday:
