@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-23",
+  "theme": "Stocking Fillers",
+  "pin_title": "8 Christmas Stocking Fillers Under £15 UK Shoppers Rate Highly",
+  "pin_title_alt": "3 Cosy Little Extras to Make Christmas Stockings Feel Special",
+  "pin_hook": "Small treats for the whole family, all well reviewed",
+  "pin_description": "Christmas stocking filler ideas under £15 that UK shoppers rate highly: mini Christmas candles, novelty Christmas socks, Burt's Bees lip balm, rechargeable hand warmers, a Santa surprise bath bomb and more. Easy stocking stuffers for her, him, kids and teens. #ad #stockingfillers #christmasgifts #ukdeals",
+  "intro": "Stockings are all about little treats that still feel thoughtful. Here are eight highly rated stocking fillers under £15, with something for everyone from kids and teens to the grown-ups.",
+  "products": [
+    {"asin": "B0CFQM2VQN", "name": "Dsclavacy Christmas Scented Candles 12 Pack", "short_name": "Mini Christmas candle tins", "headline": "Twelve little festive candles to share out", "why": "A dozen small soy wax tin candles in Christmas scents, so one set can be split across several stockings. Travel tins make them easy to pop in anywhere.", "category": "Home", "photo_query": "small candle tins festive"},
+    {"asin": "B00P2GUNUY", "name": "6 Pairs Christmas Novelty Design Socks", "short_name": "Christmas novelty socks", "headline": "The classic stocking filler, six times over", "why": "Christmas socks are a stocking tradition, and a six-pair pack means there's enough for everyone or a week of festive feet.", "category": "Clothing", "photo_query": "christmas socks"},
+    {"asin": "B09ZVLGHBT", "name": "Burt's Bees Beeswax Bounty Lip Balm Gift Set", "short_name": "Burt's Bees lip balm set", "headline": "A winter lip saver everyone actually uses", "why": "A set of Burt's Bees beeswax lip balms in vanilla bean and cucumber mint, one of the most reviewed lip care sets on Amazon UK. Handy for cold, windy days.", "category": "Beauty", "photo_query": "lip balm"},
+    {"asin": "B0HCTDSHZZ", "name": "Gaiatop Rechargeable Hand Warmers 2 Pack (Avocado)", "short_name": "Avocado hand warmers", "headline": "Warm pockets on frosty mornings", "why": "Two cute avocado-shaped rechargeable hand warmers that clip together magnetically. A reusable alternative to single-use warmers for commuters and dog walkers.", "category": "Gadgets", "photo_query": "hand warmers"},
+    {"asin": "B0DGLCNFL5", "name": "ZIMPLI Large Santa Surprise Bath Bomb", "short_name": "Santa surprise bath bomb", "headline": "Bath time with a toy hidden inside", "why": "A big Santa bath bomb with a small collectable Christmas toy inside, which makes bath time on Christmas Eve a bit more exciting for little ones.", "category": "Kids", "photo_query": "bath bomb"},
+    {"asin": "B08R3JGSQB", "name": "ECtury 12 Glitter Gel Pens", "short_name": "12 glitter gel pens", "headline": "Sparkly pens for doodlers and journallers", "why": "A colourful set of twelve glitter pens that tweens and teens love for journals, cards and colouring. Inexpensive and very well reviewed.", "category": "Stationery", "photo_query": "glitter gel pens"},
+    {"asin": "B0F2F2Q7HJ", "name": "ZOOI 22-in-1 Ratchet Screwdriver", "short_name": "22-in-1 ratchet screwdriver", "headline": "A useful little tool for the DIY-er", "why": "A compact ratchet screwdriver with lots of interchangeable bits stored in the handle, a practical stocking filler for dads, grandads and anyone who fixes things.", "category": "Tools", "photo_query": "multi bit screwdriver"},
+    {"asin": "B0FPMJG6YL", "name": "e.l.f. Squeeze Me Lip Balm Duo", "short_name": "e.l.f. tinted lip balm duo", "headline": "A sheer tint teens will love", "why": "Two squeezy hyaluronic acid lip balms with a sheer wash of colour, a popular, affordable beauty treat for teens and makeup lovers.", "category": "Beauty", "photo_query": "tinted lip balm"}
+  ]
+}
