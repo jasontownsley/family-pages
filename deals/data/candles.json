@@ -359,5 +359,43 @@
   "price": 27.99,
   "date": "2026-10-22",
   "label": "Candle of the day"
+ },
+ {
+  "id": "42896099442843",
+  "brand": "Yankee Candle",
+  "name": "Cinnamon Stick",
+  "kind": "Large Jar Candle",
+  "blurb": "The fragrant mystery of imported cinnamon bundled with cloves.",
+  "notes": [
+   "Cardamom",
+   "Clove",
+   "Cinnamon Stick",
+   "Bay Leaf",
+   "Cedarwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cinnamon-Stick-Large-Jar-2236202-1.jpg?v=1776440266",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-cinnamon-stick-signature-large-jar-candle-1701372e%3Fvariant%3D42896099442843",
+  "price": 23.99,
+  "date": "2026-10-23",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48267050975387",
+  "brand": "WoodWick",
+  "name": "Rose Blush",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Subtle notes of black currant and smooth sandalwood round out this homage to an English rose garden.",
+  "notes": [
+   "Bergamot",
+   "Apple",
+   "Black Currant",
+   "Magnolia",
+   "English Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Rose-Blush-Ellipse-Jar-2670671E.jpg?v=1776342072",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-rose-blush-ellipse-jar-candle-2670671e%3Fvariant%3D48267050975387",
+  "price": 27.99,
+  "date": "2026-10-23",
+  "label": "Candle of the day"
  }
 ]
