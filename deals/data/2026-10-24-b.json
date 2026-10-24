@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-24",
+  "slot": "b",
+  "theme": "Halloween Face Paint",
+  "pin_title": "7 Halloween Face Paint & Makeup Buys Under £15 UK Parents and Partygoers Rate",
+  "pin_title_alt": "3 Easy Face Paint Kits for a Last-Minute Halloween Look",
+  "pin_hook": "Skeletons, cats and sparkle - no costume shop needed",
+  "pin_description": "Halloween face paint and makeup under £15: a Snazaroo black and white kit for skeleton faces, washable face paint crayons for kids, glitter gel, face gems, clown white and a bruise wheel for zombie looks. Easy Halloween makeup ideas for kids and adults in the UK. #ad #halloweenmakeup #facepaint #halloweenuk",
+  "intro": "Sometimes the best Halloween costume is just a brilliant painted face. These well-reviewed face paints and makeup bits cover everything from little ones' cat whiskers to grown-up skeletons and zombies.",
+  "products": [
+    {"asin": "B0753HRDXK", "name": "Snazaroo Halloween Black & White Face Paint Kit", "short_name": "Black & white face paint kit", "headline": "Everything you need for a classic skeleton face", "why": "Black and white water-based paints are the backbone of skeleton, ghost and skull looks, and Snazaroo is the brand many UK parents already trust. Washes off with soap and water.", "category": "Halloween", "photo_query": "face paint palette brushes"},
+    {"asin": "B07KYVVZMJ", "name": "Blue Squid Face Paint Crayons for Kids, 42 Pieces", "short_name": "42 face paint crayons", "headline": "Mess-free face painting for little hands", "why": "Twist-up crayons are far easier than pots and brushes when you're painting a wriggly child, and this big set has plenty of colours for pumpkins, cats and monsters.", "category": "Halloween", "photo_query": "face paint crayons"},
+    {"asin": "B0CD7V3LCH", "name": "Teenitor Face & Body Glitter Gel, 12 Colours", "short_name": "Glitter gel, 12 colours", "headline": "Instant sparkle for witches and fairies", "why": "A quick way to add shimmer to cheeks, hair or a costume without loose glitter going everywhere. Handy for both kids and adults.", "category": "Halloween", "photo_query": "glitter gel pots"},
+    {"asin": "B0B8DX4ZKL", "name": "Self-Adhesive Face Gems, 9 Sheets", "short_name": "Stick-on face gems", "headline": "Glam up any Halloween look in seconds", "why": "Stick-on gems around the eyes turn a simple witch, vampire or cat look into something special, with no glue or skill needed.", "category": "Halloween"},
+    {"asin": "B000H6W2GW", "name": "Snazaroo Classic Face and Body Paint, White", "short_name": "Snazaroo white face paint", "headline": "The base for ghosts, skulls and zombies", "why": "A simple pot of white is the most useful thing in any Halloween face paint stash, and it's an easy top-up if you already have colours.", "category": "Halloween"},
+    {"asin": "B0CBPVGGHL", "name": "UCANBE Goth White Cream to Powder Foundation", "short_name": "Goth white foundation", "headline": "A pale, matte base that stays put", "why": "Aimed at adults wanting a smoother vampire, clown or corpse-bride base than standard face paint gives, with a matte finish that sets.", "category": "Halloween"},
+    {"asin": "B09961WSJT", "name": "Mysense 6 Colour Bruise Wheel SFX Makeup Kit", "short_name": "SFX bruise wheel", "headline": "Convincing zombie bruises and shadows", "why": "Purples, greens and yellows for bruises, sunken eyes and zombie skin - a cheap way to take a costume up a level.", "category": "Halloween"}
+  ]
+}
