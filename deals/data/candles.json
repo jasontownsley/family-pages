@@ -397,5 +397,43 @@
   "price": 27.99,
   "date": "2026-10-23",
   "label": "Candle of the day"
+ },
+ {
+  "id": "48164507156635",
+  "brand": "Yankee Candle",
+  "name": "Caramel Kiss",
+  "kind": "Large Jar Candle",
+  "blurb": "This sophisticated scent blends sweet and savory for an irresistible confectionary kiss. Notes of brown sugar and caramel cream are balanced by the scent of sea salt for a delectable fragrance experience.",
+  "notes": [
+   "Whipped Cream",
+   "Marshmallow",
+   "Lemon Peel",
+   "Sea Salt",
+   "Brown Sugar"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Caramel-Kiss-Large-Jar-2243878-1.jpg?v=1776437033",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-caramel-kiss-signature-large-jar-candle-2243878%3Fvariant%3D48164507156635",
+  "price": 23.99,
+  "date": "2026-10-24",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48267057889435",
+  "brand": "WoodWick",
+  "name": "Coastal Sunberry",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "A tropical getaway where juicy berries grow plump under the hot sun. Scents of lemon blossom, strawberries, and pink Himalayan sea salt add brightness and dimension.",
+  "notes": [
+   "Goji Berry",
+   "Baobab Flowers",
+   "Cucumber",
+   "Moringa",
+   "Violet Leaf"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Coastal-Sunberry-Ellipse-Jar-2670619E.jpg?v=1776334890",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-coastal-sunberry-ellipse-jar-candle-2670619e%3Fvariant%3D48267057889435",
+  "price": 27.99,
+  "date": "2026-10-24",
+  "label": "Candle of the day"
  }
 ]
