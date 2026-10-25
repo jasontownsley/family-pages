@@ -435,5 +435,41 @@
   "price": 27.99,
   "date": "2026-10-24",
   "label": "Candle of the day"
+ },
+ {
+  "id": "48736177455259",
+  "brand": "Yankee Candle",
+  "name": "Sparkling Cinnamon",
+  "kind": "Large Jar Candle",
+  "blurb": "Holiday glow… the spicy warmth of real imported stick cinnamon with a hint of cloves.",
+  "notes": [
+   "Cinnamon Spice Clove",
+   "Cardamom Bay Leaf",
+   "Cedarwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/Yankee-Candle-1629975E-01.jpg?v=1739443492",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-sparkling-cinnamon-signature-large-jar-candle-eol%3Fvariant%3D48736177455259",
+  "price": 14.99,
+  "date": "2026-10-25",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48267071127707",
+  "brand": "WoodWick",
+  "name": "Yuzu and Vetiver",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Bright, aromatic scents of yuzu fruits, soft cedarwood, and dried vetiver slowly rise from tall grass and dense woods.",
+  "notes": [
+   "Yuzu",
+   "Mandarin",
+   "Acai",
+   "Cyclamen",
+   "Waterlily"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yuzu-Vetiver-Ellipse-Jar.jpg?v=1776339672",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-yuzu-and-vetiver-ellipse-jar-candle-2238138%3Fvariant%3D48267071127707",
+  "price": 27.99,
+  "date": "2026-10-25",
+  "label": "Candle of the day"
  }
 ]
