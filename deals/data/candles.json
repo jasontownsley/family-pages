@@ -471,5 +471,43 @@
   "price": 27.99,
   "date": "2026-10-25",
   "label": "Candle of the day"
+ },
+ {
+  "id": "48164499882139",
+  "brand": "Yankee Candle",
+  "name": "Slow Bloom",
+  "kind": "Large Jar Candle",
+  "blurb": "Take a meandering stroll through a peaceful garden where dappled sunlight and gentle rains coax flowers into bloom. Breezy notes of sandalwood, jasmine, and whispering willow complement moments of carefree relaxation.",
+  "notes": [
+   "Sandalwood",
+   "Cedarwood",
+   "Carrot",
+   "Ylang Ylang",
+   "Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Slow-Bloom-Large-Jar-2672617E.jpg?v=1776768783",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-slow-bloom-signature-large-jar-candle-2672617e%3Fvariant%3D48164499882139",
+  "price": 23.99,
+  "date": "2026-10-26",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48267069685915",
+  "brand": "WoodWick",
+  "name": "Cedarwood and Ocean Moss",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Fresh cedarwood notes mingle with scents of ocean moss and sea minerals in a lush coastal forest.",
+  "notes": [
+   "Orange",
+   "Ozone",
+   "Lavender",
+   "Ocean Moss",
+   "Sea Salt"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cedarwood-and-Ocean-Moss-Ellipse-Jar-2238143.jpg?v=1776286961",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cedarwood-and-ocean-moss-ellipse-jar-candle-2238143%3Fvariant%3D48267069685915",
+  "price": 27.99,
+  "date": "2026-10-26",
+  "label": "Candle of the day"
  }
 ]
