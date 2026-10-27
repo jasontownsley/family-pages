@@ -509,5 +509,43 @@
   "price": 27.99,
   "date": "2026-10-26",
   "label": "Candle of the day"
+ },
+ {
+  "id": "45470731862171",
+  "brand": "Yankee Candle",
+  "name": "North Pole Hideaway",
+  "kind": "Large Jar Candle",
+  "blurb": "Be magically transported to a sparkling North Pole wonderland with cool notes of icy air, arctic mint, and snow powder.",
+  "notes": [
+   "Sparkling Snowflakes",
+   "Frosted Greens",
+   "Chilled Bergamot",
+   "Arctic Mint",
+   "Icy Air"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yankee-Candle-northpole-hideaway-large-jar-01.jpg?v=1739443384",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-north-pole-hideaway-signature-large-jar-candle-1759284e%3Fvariant%3D45470731862171",
+  "price": 26.99,
+  "date": "2026-10-27",
+  "label": "Christmas scent"
+ },
+ {
+  "id": "37985649033371",
+  "brand": "WoodWick",
+  "name": "White Tea and Jasmine",
+  "kind": "Small Jar Candle",
+  "blurb": "Notes of pure white tea with a hint of jasmine gently blended with scents of red cedar and rose.",
+  "notes": [
+   "of pure white tea with a hint of jasmine gently blended with scents of red cedar and rose. Fragrance Notes: Bergamot",
+   "Tea Accord",
+   "Rose",
+   "Violet",
+   "Jasmine"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/White-Tea-and-Jasmine-Small-Jar-2674526E.jpg?v=1776356685",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-white-tea-and-jasmine-small-jar-candle%3Fvariant%3D37985649033371",
+  "price": 8.79,
+  "date": "2026-10-27",
+  "label": "Candle of the day"
  }
 ]

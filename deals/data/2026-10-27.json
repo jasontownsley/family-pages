@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-27",
+  "theme": "Bonfire Night",
+  "pin_title": "6 Bonfire Night Essentials Under £15 UK Families Love for a Cosy Night Out",
+  "pin_title_alt": "3 Snug Buys to Keep You Warm at a Chilly Bonfire Night Display",
+  "pin_hook": "Blankets, flasks and toasty extras for 5 November",
+  "pin_description": "Bonfire Night essentials under £15 for a cosy night outdoors: a waterproof fleece picnic blanket, a classic steel flask for hot chocolate, marshmallow toasting forks, glow sticks for the kids and rechargeable hand warmers. Easy ideas for garden bonfires and firework displays in the UK. #ad #bonfirenight #guyfawkesnight #cosynights #ukdeals",
+  "intro": "Heading out for the fireworks or hosting a garden bonfire? These well-loved basics keep everyone warm, fed and glowing on 5 November, and every one is under £15.",
+  "products": [
+    {"asin": "B07PXQ2YPB", "name": "LIVEHITOP Fleece Picnic Blanket with Waterproof Backing, 200x200cm", "short_name": "Waterproof fleece blanket", "headline": "Sit on damp grass without the soggy bum", "why": "Soft fleece on top with a waterproof backing, so it works as a ground mat or a wrap-around blanket at a chilly display. It folds up small with a carry strap.", "category": "Outdoor", "photo_query": "tartan blanket outdoors night", "photo_id": 15759403},
+    {"asin": "B000TASOEK", "name": "ThermoCafe Stainless Steel 500ml Flask", "short_name": "Steel 500ml flask", "headline": "Hot chocolate on tap while you watch the sky", "why": "A no-fuss stainless steel vacuum flask with a cup lid that has been a reliable favourite for years. Fill it with cocoa or soup before you leave the house.", "category": "Outdoor", "photo_query": "steel thermos flask outdoors", "photo_id": 29307238},
+    {"asin": "B07VDKMGPM", "name": "MalloMe Extendable Marshmallow Toasting Forks Set", "short_name": "Marshmallow toasting forks", "headline": "Toasted marshmallows round the fire pit", "why": "Telescopic forks keep little hands a safe distance from the flames, and they are reusable, unlike wooden skewers. Great for garden fire pits and s'mores.", "category": "Garden", "photo_query": "toasting marshmallows over fire", "photo_id": 2929203},
+    {"asin": "B07TRDWHXG", "name": "Contigo Byron Snapseal Leakproof Travel Mug, 470ml", "short_name": "Leakproof travel mug", "headline": "Keeps your tea hot through the whole display", "why": "The snap-seal lid means no spills in a pocket or bag, and it keeps drinks hot for hours. Handy for the walk to the park and back.", "category": "Outdoor", "photo_query": "stainless steel travel mug", "photo_id": 19155039},
+    {"asin": "B00JWTALQI", "name": "The Glowhouse Premium Glow Sticks Party Pack, 205 Pieces", "short_name": "Glow sticks party pack", "headline": "Easy to spot the kids in the crowd", "why": "Bracelets, necklaces and glasses connectors give kids something to play with and make them easier to keep an eye on in the dark. A safe, fun alternative to sparklers.", "category": "Kids", "photo_query": "colourful glow sticks"},
+    {"asin": "B0CG98CH4D", "name": "Lepwings Rechargeable Hand Warmers, 2 Pack", "short_name": "Rechargeable hand warmers", "headline": "Warm fingers all evening, no disposables", "why": "Two USB-rechargeable pocket warmers with three heat levels, so you can share one. They can also double as a small power bank for a phone in a pinch.", "category": "Outdoor", "photo_query": "rechargeable hand warmers"}
+  ]
+}
