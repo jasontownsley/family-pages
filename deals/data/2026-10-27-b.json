@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-27",
+  "slot": "b",
+  "theme": "Halloween Treats",
+  "pin_title": "6 Halloween Party Food & Treat Buys Under £20 for a Spooky UK Spread",
+  "pin_title_alt": "Last-Minute Halloween Dessert Table Ideas for Friday Night",
+  "pin_hook": "Stands, sweets and spooky touches for the 31st",
+  "pin_description": "Halloween party food ideas under £20 for a spooky spread at home: a 3-tier cake stand, fun size chocolate for trick-or-treaters, a cupcake tower, edible candy eyes for monster bakes, skull ice cubes and black food colouring. Easy Halloween treat table and party snack ideas UK hosts rate highly. #ad #halloweenparty #halloweentreats #halloweenbaking #ukdeals",
+  "intro": "Halloween is this Friday, so here are six well-rated bits to turn your snacks and bakes into a proper spooky spread. Everything is under £20 and easy to pull together this week.",
+  "products": [
+    {"asin": "B07JR1GPY5", "name": "Nyxi 3 Tier Glass Cake Stand", "short_name": "3-tier glass cake stand", "headline": "Turn a pile of bakes into a showpiece", "why": "An embossed glass three-tier stand that makes ghost cupcakes and brownies look like a proper dessert table, then carries on for Christmas and birthdays.", "category": "Party Serving", "photo_query": "tiered glass cake stand", "photo_id": 10045933},
+    {"asin": "B086TG1RGQ", "name": "Mars Mixed Fun Size Chocolate Party Bag (71 bars)", "short_name": "Mars fun size party bag", "headline": "Trick-or-treat bowl sorted in one go", "why": "A big bag of Mars, Snickers, Twix, Bounty and Milky Way fun size bars, so you can fill the door bowl and still have some for the party.", "category": "Sweets", "photo_query": "wrapped mini chocolate bars"},
+    {"asin": "B0B5RDPSTC", "name": "BACUTHY 3 Tier Cupcake Stand", "short_name": "3-tier cupcake stand", "headline": "Stack spooky cupcakes without crowding the table", "why": "A lightweight tiered stand that holds a batch of cupcakes or doughnuts upright, easy to wipe down and store flat afterwards.", "category": "Party Serving", "photo_query": "cupcakes on tiered stand", "photo_id": 10279217},
+    {"asin": "B0FFH5JM9S", "name": "Twisweet Candy Eyes 130g", "short_name": "Edible candy eyes", "headline": "Instant monster faces on any bake", "why": "Pop these edible eyeballs on cupcakes, cookies or ghost meringues and plain bakes suddenly look Halloween-ready; a fun job to hand to the kids.", "category": "Baking", "photo_query": "monster cupcakes with candy eyes", "photo_id": 5583532},
+    {"asin": "B09P56W8RZ", "name": "Halloween 10 Skulls Silicone Ice Cube Tray with Lid", "short_name": "Skull ice cube tray", "headline": "Spooky drinks with zero extra effort", "why": "Makes ten little skull ice cubes at a time, so punch, juice or cocktails look the part; the lid stops freezer smells getting in.", "category": "Party Drinks", "photo_query": "skull shaped ice cube"},
+    {"asin": "B005FL5IYW", "name": "Sugarflair Black Extra Food Colouring Paste 42g", "short_name": "Black food colouring paste", "headline": "Get a true black icing, not grey", "why": "A concentrated paste that bakers rely on for deep black buttercream and fondant, ideal for bats, cats and spider-web cupcakes.", "category": "Baking"}
+  ]
+}
