@@ -547,5 +547,43 @@
   "price": 8.79,
   "date": "2026-10-27",
   "label": "Candle of the day"
+ },
+ {
+  "id": "42933165883547",
+  "brand": "Yankee Candle",
+  "name": "Peppermint Pinwheels",
+  "kind": "Large Jar Candle",
+  "blurb": "The scent of homemade peppermint pinwheel cookies made sweeter when shared with friends and family.",
+  "notes": [
+   "Sparkling Peppermint",
+   "Melted Butter",
+   "Sea Salt",
+   "Kettle Corn",
+   "Crushed Candy Cane"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/Yankee-Candle-1721063E-01.jpg?v=1738775005",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-peppermint-pinwheels-signature-large-jar-candle-1721063e%3Fvariant%3D42933165883547",
+  "price": 29.99,
+  "date": "2026-10-28",
+  "label": "Christmas scent"
+ },
+ {
+  "id": "48267050746011",
+  "brand": "WoodWick",
+  "name": "Tangerine and Citron",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "A citrus grove that's ready for picking: sweet tangerine and zesty citron notes waft from the branches, while scents of fresh green herbs perk up at the base of the trees.",
+  "notes": [
+   "Sparkling Lemon",
+   "Clementine",
+   "Tangerine",
+   "Citrus Zest",
+   "Green Tea"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Tangerine-Citron-Ellipse-Jar-2670693E.jpg?v=1776288119",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-tangerine-and-citron-ellipse-jar-candle-2670693e%3Fvariant%3D48267050746011",
+  "price": 27.99,
+  "date": "2026-10-28",
+  "label": "Candle of the day"
  }
 ]
