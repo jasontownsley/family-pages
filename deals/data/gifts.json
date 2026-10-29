@@ -1174,5 +1174,51 @@
   "dedupe": "james bond triple drive",
   "label": "Christmas gift",
   "date": "2026-10-28"
+ },
+ {
+  "brand": "Cadbury",
+  "name": "& Maynards Bassetts Sweet Selection Box 610g",
+  "kind": "Selection Box",
+  "price": 10.0,
+  "image": "https://www.cadburygiftsdirect.co.uk/media/catalog/product/s/w/sweets_box_right.jpg",
+  "url": "https://www.awin1.com/pclick.php?p=41880875541&a=3105665&m=736",
+  "blurb": "Treat yourself or someone special to a delightful mix of chewy and chocolate favourites. Including four popular fruity classic Maynard Bassetts Sweet bags perfectly complimented by a bag of chewy toffee eclairs. Ready to gift: Delivered to chosen recipient in a colourful presentation gift box - making it perfect for thank you gifts, birthdays or leaving gifts. No need to wrap! Perfect for sharing: This treat filled box caters to every taste with a balance of fruity chewy sweets and chocolate delights. Enjoy on your next family movie night or stock up the office's sweet treat supplies! Party supplies: Whatever the occasion, the Cadbury & Maynards Sweet Gift is the ultimate sweet treat box for Christmas gifts, events or gatherings.",
+  "id": "cgd-41880875541",
+  "xmas": true,
+  "shop": "Cadbury Gifts Direct",
+  "notes": [],
+  "dedupe": "& maynards bassetts sweet selection box 610g",
+  "label": "Christmas gift",
+  "date": "2026-10-29"
+ },
+ {
+  "brand": "Bare Kind",
+  "name": "Hedgehog Lover Bundle of 2",
+  "kind": "Bamboo Sock Gift Set",
+  "price": 17.98,
+  "image": "https://cdn.shopify.com/s/files/1/0025/9027/7685/files/Bundles_54.jpg?v=1756231712",
+  "url": "https://www.awin1.com/pclick.php?p=43098228904&a=3105665&m=30533",
+  "blurb": "Snuggle up with the Hedgehog Lover Bundle of 2 bamboo socks - super comfy & cute, it is like a hedge-hug for your feet!. Bring home or share the love with your friends and family to get a wonderful bundle of hedgehog socks in 2 different colours.. We donate 10% of profits to the British Hedgehog Preservation Society. Protecting UK hedgehogs, trying to help their population and save them from extinction.. They are soft, hard-wearing, and comfortable, making great work socks, gym socks, and running socks. They are the perfect thoughtful gift for animal & Christmas lovers. The set includes:. * Green Hedgehog Socks. * Blue Hedgehog Socks",
+  "id": "bk-43098228904",
+  "shop": "Bare Kind",
+  "notes": [],
+  "dedupe": "hedgehog lover bundle of 2",
+  "label": "Christmas gift",
+  "date": "2026-10-29"
+ },
+ {
+  "brand": "Scribbler",
+  "name": "Gromit Palm Pal",
+  "kind": "Gift Idea",
+  "price": 12.99,
+  "image": "https://cdn.shopify.com/s/files/1/0605/0670/2031/files/RU1175-1.png?v=1791197584",
+  "url": "https://www.awin1.com/cread.php?awinmid=3965&awinaffid=3105665&ued=https%3A%2F%2Fwww.scribbler.com%2Fproducts%2Fpp-gromit%3Fvariant%3D64768971047289",
+  "blurb": "Wallace and Gromit has been a family favourite for over 30 years, since appearing in their first adventure, A Close Shave. Gromit Soft Toy measures 17cm. Gromit is Wallace's faithful four legged friend. He spends most of his time saving Wallace from various scrapes and a number of mischievous characters! He's happiest reading the paper in a nice comfy chair.",
+  "id": "scr-64768971047289",
+  "shop": "Scribbler",
+  "notes": [],
+  "dedupe": "gromit palm pal",
+  "label": "Christmas gift",
+  "date": "2026-10-29"
  }
 ]
