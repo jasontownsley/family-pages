@@ -585,5 +585,43 @@
   "price": 27.99,
   "date": "2026-10-28",
   "label": "Candle of the day"
+ },
+ {
+  "id": "48164501258395",
+  "brand": "Yankee Candle",
+  "name": "Amber and Sandalwood",
+  "kind": "Reed Diffuser",
+  "blurb": "Warm yourself on a secluded beach with sun-drenched notes of driftwood, amber, and cardamom. Hints of caramel and patchouli round out this relaxing fragrance experience.",
+  "notes": [
+   "Pepper",
+   "Tonka Bean",
+   "Cardamom",
+   "Caramel",
+   "Lavender"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Reed_Diffuser_Box_Silo_Amber_Sandalwood.jpg?v=1781779396",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-amber-and-sandalwood-reed-diffuser-100ml-2653182e%3Fvariant%3D48164501258395",
+  "price": 13.59,
+  "date": "2026-10-30",
+  "label": "Autumn scent"
+ },
+ {
+  "id": "48267070865563",
+  "brand": "WoodWick",
+  "name": "Cherry Blossom and Vanilla",
+  "kind": "Large Jar Candle",
+  "blurb": "A grove of cherry blossom trees has reached peak bloom. Subtle scents of orange, almond, and vanilla catch the breeze.",
+  "notes": [
+   "Coconut",
+   "Peach",
+   "Orange",
+   "Apple",
+   "Red Fruits"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cherry-Blossom-Vanilla-Large-Jar-2238139.jpg?v=1776287374",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cherry-blossom-and-vanilla-large-jar-candle-2238139%3Fvariant%3D48267070865563",
+  "price": 26.39,
+  "date": "2026-10-30",
+  "label": "Candle of the day"
  }
 ]

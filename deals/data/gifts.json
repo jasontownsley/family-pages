@@ -1220,5 +1220,51 @@
   "dedupe": "gromit palm pal",
   "label": "Christmas gift",
   "date": "2026-10-29"
+ },
+ {
+  "brand": "Cadbury",
+  "name": "Secret Santa Christmas Chocolate House Kit",
+  "kind": "Christmas Chocolate Gift",
+  "price": 14.0,
+  "image": "https://www.cadburygiftsdirect.co.uk/media/catalog/product/h/o/house_lifestyle.webp",
+  "url": "https://www.awin1.com/pclick.php?p=36509375528&a=3105665&m=736",
+  "blurb": "A deliciously fun gift to make your own Christmas Cadbury Dairy Milk chocolate house. A great novelty house shaped gift box which includes all the chocolate components to construct your chocolate house. Self assembly kit includes Cadbury Dairy Milk Chocolate Bars, Cadbury Dairy Milk Chocolate Winter Wonderland Bar, Cadbury Flake and Cadbury White Chocolate buttons. Instructions on how to make the kit and template are on the box. If you havent been able to send a Cadbury Secret Santa to someone special from one of our posters, dont worry. Buy some lovely chocolate from our Secret Santa Shop and well send it to them in secret. *Only gifts from the Cadbury Secret Santa Shop will be anonymous. If you add a gift message in the Secret Santa range it will not be sent anonymously. This Christmas you can send a free chocolate bar, in secret, to someone special. All you have to do is find one of our Postal Service posters. They're popping up all over the country. Find a poster and give someone a little lift. Visit secretsanta.cadbury.co.uk to see how it works",
+  "id": "cgd-36509375528",
+  "xmas": false,
+  "shop": "Cadbury Gifts Direct",
+  "notes": [],
+  "dedupe": "secret santa christmas chocolate house kit",
+  "label": "Christmas gift",
+  "date": "2026-10-30"
+ },
+ {
+  "brand": "Bare Kind",
+  "name": "Green Woodland Wildlife Bundle of 3",
+  "kind": "Bamboo Sock Gift Set",
+  "price": 26.97,
+  "image": "https://cdn.shopify.com/s/files/1/0025/9027/7685/files/GreenWoodlandWildlifeBundleof3.jpg?v=1772216481",
+  "url": "https://www.awin1.com/pclick.php?p=45805584656&a=3105665&m=30533",
+  "blurb": "Bring the magic of the forest to your sock drawer with our Green Woodland Wildlife Bundle of 3 – the perfect trio for nature lovers!. Featuring our beautiful Butterfly, Red Squirrel & Barn Owl socks, this bundle celebrates some of the UK’s most loved woodland creatures. With rich green tones and charming wildlife designs, it’s a cosy nod to peaceful forest walks and countryside adventures.. They make great work socks, gym socks, and dress socks. These animal socks make the perfect colourful gift for wildlife lovers — or a lovely treat for your own collection.. We donate 10% of profits to charities protecting these wonderful animals and their natural habitats. Supporting WildOne, Northumberland Wildlife Trust & North Wales Wildlife Trust.. This Green Woodland Wildlife Bundle includes:. * Butterfly Socks. * Red Squirrel Socks. * Barn Owl Socks",
+  "id": "bk-45805584656",
+  "shop": "Bare Kind",
+  "notes": [],
+  "dedupe": "green woodland wildlife bundle of 3",
+  "label": "Christmas gift",
+  "date": "2026-10-30"
+ },
+ {
+  "brand": "Scribbler",
+  "name": "Tiny Tony's Chocolonely Gift Box",
+  "kind": "Chocolate Gift",
+  "price": 9.99,
+  "image": "https://cdn.shopify.com/s/files/1/0605/0670/2031/files/RT3575.png?v=1771961281",
+  "url": "https://www.awin1.com/cread.php?awinmid=3965&awinaffid=3105665&ued=https%3A%2F%2Fwww.scribbler.com%2Fproducts%2Ftonys-chocolonely-tiny-gift-box-rt3575%3Fvariant%3D43198019305679",
+  "blurb": "Can't choose just one? Problem solved! We've got our hands on the fan favourite (tiny) Tony's gift box which contains a plethora of rainbow-wrapped mini choccies. A great gift for any chocolate lover, your loved one can enjoy all their favourite Chocolonely flavours with this brilliant sharing box. Sharing optional... 20 Tiny Tony’s in 8 classic Tony’s flavours Shareable snack-size chocolates – perfect for gifting or coffee breaks Festive rainbow gift box, ready to share or unwrap yourself Belgian chocolate made with Fairtrade, 100% traceable cocoa beans No plastic – fully recyclable packaging Palm oil free Chocolate bar flavours included in each box are: Milk, Milk caramel sea salt, Milk hazelnut , Milk almond honey nougat, Dark milk pretzel toffee, Dark almond sea salt, Extra dark and White raspberry popping candy. Ingredients: Milk chocolate: sugar, 23% dried whole milk, cocoa butter, cocoa mass, emulsifier (lecithins (soya)). Milk chocolate with honey-almond-nougat: sugar, dried whole milk, cocoa butter, cocoa mass, 10% almond honey nougat (cane sugar, glucose syrup, 20% almonds, potato starch, cocoa butter, 0.7% honey, egg white), emulsifier (lecithins (soya)). Milk chocolate with caramel pieces and sea salt: sugar, dried whole milk, cocoa butter, cocoa mass, 10% caramel pieces (sugar, glucose syrup, butter (milk), cream powder (milk), emulsifier (soya lecithin)), emulsifier (lecithins (soya)), 0.5% sea salt. Milk chocolate with pretzel pieces and toffee: sugar, cocoa mass, dried whole milk, cocoa butter, 7.2% pretzel crumbs (wheat flour, sunflower oil, salt, malted wheat flour, yeast, acidity regulator (sodium hydroxide)), 2.8% caramel pieces (sugar, glucose syrup), sea salt, emulsifier (lecithins (soya)). Milk chocolate with hazelnut: sugar, dried whole milk, cocoa butter, cocoa mass, 10% hazelnuts, emulsifier (lecithins (soya)). Dark chocolate with almond and sea salt: cocoa mass, sugar, 10% almonds, cocoa butter, 0.5% sea salt, emulsifier (lecithins (soya)). Dark chocolate: cocoa mass, sugar, cocoa butter, fat reduced cocoa powder, emulsifier (lecithins (soya)). White chocolate with freeze-dried raspberry and popping candy: Ingredients: sugar, cocoa butter, dried whole milk, 2.7% freeze-dried raspberry, 2% popping candy (glucose syrup, sugar, carbon dioxide), emulsifier (lecithins (soya)). Gift box contains nuts. May contain: gluten and egg.",
+  "id": "scr-43198019305679",
+  "shop": "Scribbler",
+  "notes": [],
+  "dedupe": "tiny tony's chocolonely gift box",
+  "label": "Stocking filler",
+  "date": "2026-10-30"
  }
 ]
