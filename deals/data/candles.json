@@ -623,5 +623,43 @@
   "price": 26.39,
   "date": "2026-10-30",
   "label": "Candle of the day"
+ },
+ {
+  "id": "45470731829403",
+  "brand": "Yankee Candle",
+  "name": "Munich Christmas Market",
+  "kind": "Large Jar Candle",
+  "blurb": "Visit a lively Christmas Market in Munich and tempt yourself with the scent of sweet biscuits with notes of orange, star anise, and dark chocolate.",
+  "notes": [
+   "Juicy Orange",
+   "Citrus Zest",
+   "Nutmeg",
+   "Star Anise",
+   "Crushed Cinnamon"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yankee-Candle-munich-christmas-market-large-jar-01.jpg?v=1739443381",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-munich-christmas-market-signature-large-jar-candle-1759288e%3Fvariant%3D45470731829403",
+  "price": 26.99,
+  "date": "2026-10-31",
+  "label": "Christmas scent"
+ },
+ {
+  "id": "48267043733659",
+  "brand": "WoodWick",
+  "name": "Lush Pomelo",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Pomelo trees bear ripe fruit amongst the flowers. Scents of juicy grapefruit, bright hibiscus, and sweet rosewater fill out the sensory landscape.",
+  "notes": [
+   "Pink Pepper",
+   "Lychee",
+   "Sparkling Aldehydes",
+   "Grapefruit",
+   "Hibiscus"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Lush-Pomelo-Ellipse-Jar-2674461E.jpg?v=1776341245",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-lush-pomelo-ellipse-jar-candle-2674461e%3Fvariant%3D48267043733659",
+  "price": 27.99,
+  "date": "2026-10-31",
+  "label": "Candle of the day"
  }
 ]
