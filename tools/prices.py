@@ -8,12 +8,14 @@ so its items show the current price only.
 Writes deals/data/prices.json: {raw product id: {price, was, save, in_stock, shop, checked}}.
 Amazon products are never priced here (Amazon only allows prices from its own API).
 
-  python tools/prices.py
+  python tools/prices.py            full check (07:00): asks each Shopify shop for its "was" price
+  python tools/prices.py --quick    afternoon check: only asks the shop about products whose feed price changed
 """
 import csv
 import gzip
 import io
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -41,7 +43,7 @@ def featured_ids():
     for m in json.loads((DATA / "candles.json").read_text(encoding="utf-8")) if (DATA / "candles.json").exists() else []:
         ids.add(str(m["id"]))
     for m in json.loads((DATA / "gifts.json").read_text(encoding="utf-8")) if (DATA / "gifts.json").exists() else []:
-        ids.add(str(m["id"]).split("-", 1)[1])
+        ids.add(re.sub(r"-r\d+$", "", str(m["id"])).split("-", 1)[1])     # "sfs-123-r2" -> "123"
     g = DATA / "guide-christmas.json"
     if g.exists():
         for s in json.loads(g.read_text(encoding="utf-8"))["sections"]:
@@ -98,13 +100,14 @@ def shopify_price(link, variant):
     return v["price"] / 100, was, bool(v.get("available"))
 
 
-def main():
+def main(argv=()):
     sys.stdout.reconfigure(encoding="utf-8")
+    quick = "--quick" in argv
     wanted = featured_ids()
     idx = feed_index(wanted)
     checked = datetime.now().strftime("%Y-%m-%dT%H:%M")
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
-    out, offers, missing, kept = {}, 0, 0, 0
+    out, offers, missing, kept, reused = {}, 0, 0, 0, 0
     for rid in sorted(wanted):
         f = idx.get(rid)
         if not f:                      # gone from the feed: treat as out of stock
@@ -112,7 +115,13 @@ def main():
             missing += 1
             continue
         price, was, stock = f["price"], None, f["in_stock"]
-        if f["shopify"] and f["link"]:
+        o = old.get(rid, {})
+        if quick and o.get("price") is not None and abs(o["price"] - price) < 0.01:
+            # quick (afternoon) check: the feed price hasn't moved since the last full check, so the saving
+            # and stock from the shop's own data still stand - no need to ask the shop again
+            was, stock = o.get("was"), stock and o.get("in_stock", True)
+            reused += 1
+        elif f["shopify"] and f["link"]:
             try:
                 sp = shopify_price(f["link"], f["variant"])
                 if sp:
@@ -122,7 +131,6 @@ def main():
                 print(f"  {f['shop']} {rid}: {str(e)[:60]}")
                 # keep the last known "was" price while the current price hasn't changed,
                 # so a failed check doesn't wipe a genuine saving off the site
-                o = old.get(rid, {})
                 if o.get("was") and abs(o.get("price", 0) - price) < 0.01:
                     was = o["was"]
                     kept += 1
@@ -133,9 +141,10 @@ def main():
     OUT.write_text(json.dumps(out, indent=1), encoding="utf-8")
     print(f"Prices: {len(out)} products checked, {offers} on offer, "
           f"{sum(not v.get('in_stock') for v in out.values())} out of stock ({missing} no longer in feeds)"
-          + (f", {kept} savings kept from the last check" if kept else ""))
+          + (f", {kept} savings kept from the last check" if kept else "")
+          + (f", {reused} unchanged since the morning check" if reused else ""))
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

@@ -10,7 +10,7 @@ Dean Morris Cards is joined but not featured: its range is mostly crude novelty 
 feed images 404.
 
 Usage:
-  python tools/gifts.py --pick [YYYY-MM-DD]
+  python tools/gifts.py --pick [YYYY-MM-DD] [--afternoon]
   python tools/gifts.py --render ID
 """
 import csv
@@ -188,7 +188,7 @@ def publish(p):
 def write_feed(manifest):
     e = lambda s: html.escape(str(s), quote=True)
     items = []
-    for n, m in enumerate(sorted(manifest, key=lambda m: (m["date"], m["id"]), reverse=True)[:80]):
+    for n, m in enumerate(sorted(manifest, key=lambda m: (m["date"], m.get("slot", "a"), m["id"]), reverse=True)[:100]):
         url = f"{SITE}/{m['id']}/"
         pin = OUT / m["id"] / "pin.jpg"
         when = datetime.fromisoformat(m["date"]).replace(hour=10 + 3 * (n % 4), tzinfo=timezone.utc)
@@ -228,39 +228,68 @@ def load_manifest():
     return json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else []
 
 
-def pick(day):
+# pins per shop per day, split over the 07:00 run (slot "a", the larger half) and the 15:00 run (slot "b")
+DAILY = {"Cadbury Gifts Direct": 3, "Bare Kind": 2, "Scottish Fine Soaps": 1, "Scribbler": 2}
+REPEAT_AFTER_DAYS = 21       # a product can be pinned again (as a fresh pin) once its last pin is this old
+
+
+def per_run(shop, slot):
+    n = DAILY.get(shop, 1)
+    return (n + 1) // 2 if slot == "a" else n // 2
+
+
+def pick(day, slot="a"):
     manifest = load_manifest()
-    if any(m["date"] == day.isoformat() for m in manifest):
-        print(f"Gifts already picked for {day}")
+    if any(m["date"] == day.isoformat() and m.get("slot", "a") == slot for m in manifest):
+        print(f"Gifts already picked for {day} ({'afternoon' if slot == 'b' else 'morning'})")
         return 0
-    used = {(m["shop"], m["dedupe"]) for m in manifest}
+    last, times = {}, {}
+    for m in manifest:
+        k = (m["shop"], m["dedupe"])
+        last[k] = max(last.get(k, ""), m["date"])
+        times[k] = times.get(k, 0) + 1
     listing = feed_list()
-    rnd = random.Random(day.isoformat())
+    rnd = random.Random(day.isoformat() + slot)
     picks = []
     import merchant_health
     paused = merchant_health.paused_ids()
     for adv, fmt, shop, parse in MERCHANTS:
+        want = per_run(shop, slot)
+        if not want:
+            continue
         if int(adv) in paused:
             print(f"  {shop}: paused (merchant health), skipped")
             continue
-        cands = [p for p in merchant_products(listing, adv, fmt, shop, parse) if (shop, p["dedupe"]) not in used]
+        cands = []
+        for p in merchant_products(listing, adv, fmt, shop, parse):
+            k = (shop, p["dedupe"])
+            if k in last and (day - Date.fromisoformat(last[k])).days < REPEAT_AFTER_DAYS:
+                continue
+            if k in times:                                  # a repeat: new id, so it's a fresh pin and page
+                p["id"] = f"{p['id']}-r{times[k] + 1}"
+            p["_repeat"] = k in times
+            cands.append(p)
         rnd.shuffle(cands)
-        cands.sort(key=lambda p: 0 if p.get("xmas") or XMAS.search(p["name"] + " " + p["blurb"]) else 1)   # Christmas first
-        if cands:
-            picks.append(cands[0])
+        # never-pinned products first, then Christmas ones first, then the longest since their last pin
+        cands.sort(key=lambda p: (p["_repeat"], 0 if p.get("xmas") or XMAS.search(p["name"] + " " + p["blurb"]) else 1,
+                                  last.get((shop, p["dedupe"]), "")))
+        picks += cands[:want]
     for p in picks:
+        p.pop("_repeat", None)
         p["label"] = label_for(p)
         publish(p)
-        manifest.append({**p, "date": day.isoformat()})
+        manifest.append({**p, "date": day.isoformat(), "slot": slot})
     MANIFEST.write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
     write_feed(manifest)
-    print(f"Gifts: {len(picks)} pick(s) for {day}: " + "; ".join(f"{p['shop']}: {p['name']}" for p in picks))
+    print(f"Gifts: {len(picks)} pick(s) for {day} {'afternoon' if slot == 'b' else 'morning'}: "
+          + "; ".join(f"{p['shop']}: {p['name']}" for p in picks))
     return 0
 
 
 def main(argv):
     if len(argv) >= 2 and argv[1] == "--pick":
-        return pick(Date.fromisoformat(argv[2]) if len(argv) > 2 else Date.today())
+        args = [a for a in argv[2:] if a != "--afternoon"]
+        return pick(Date.fromisoformat(args[0]) if args else Date.today(), "b" if "--afternoon" in argv else "a")
     if len(argv) == 3 and argv[1] == "--render":
         publish(next(m for m in load_manifest() if m["id"] == argv[2]))
         write_feed(load_manifest())

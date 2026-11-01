@@ -8,7 +8,7 @@ python tools\awin_status.py 2>&1 | Out-String
 python tools\merchant_health.py 2>&1 | Out-String
 
 # Candles Direct picks (Awin feed) don't depend on the Amazon research, so they go out either way
-python tools\candles.py --pick $Date 2>&1 | Out-String
+python tools\candles.py --pick $Date 2 2>&1 | Out-String
 $candlesOk = -not $LASTEXITCODE
 # Christmas gift picks from the other Awin merchants (own board)
 python tools\gifts.py --pick $Date 2>&1 | Out-String

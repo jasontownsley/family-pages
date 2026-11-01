@@ -30,6 +30,11 @@ CATEGORIES = [
     ("under-20", "Under &pound;20", r"under £(5|10|15|20)\b", None),
 ]
 
+# seasonal categories that are over: no chip in the menu any more, but the page is still built (and stays in
+# Google) with a note pointing to what's current. Remove a slug to bring the chip back next season.
+ARCHIVED = {"halloween": "Halloween is over for this year - thanks for visiting! Our pages for this year's Halloween are below, "
+                         "and fresh Christmas picks are in the menu above."}
+
 e = lambda s: html.escape(str(s), quote=True)
 
 
@@ -155,6 +160,8 @@ def topbar(hero):
 def chips(active):
     out = [f'<a{" class=on" if active == "" else ""} href="{SITE}/">All</a>']
     for slug, label, _, _ in CATEGORIES:
+        if slug in ARCHIVED and active != slug:
+            continue
         out.append(f'<a{" class=on" if active == slug else ""} href="{SITE}/c/{slug}/">{label}</a>')
     out.append(f'<a{" class=on" if active == "guides" else ""} href="{SITE}/guides/">&#128214; Guides</a>')
     out.append(f'<a{" class=on" if active == "vouchers" else ""} href="{SITE}/vouchers/">&#127991;&#65039; Voucher codes</a>')
@@ -200,6 +207,7 @@ def prices():
 def raw_id(item_id):
     """Feed id behind a manifest id ("cgd-123" -> "123", candle ids are already raw)."""
     s = str(item_id)
+    s = re.sub(r"-r\d+$", "", s)                     # repeat pins: "sfs-123-r2"
     return s.split("-", 1)[1] if s.split("-", 1)[0] in ("cgd", "bk", "sfs", "scr", "aw") else s
 
 
@@ -382,7 +390,8 @@ def build(days, spots_by_key):
         name = re.sub(r"&#\d+;\s*", "", label).replace("&pound;", "£")
         rounds = [d for d in days if matches(d, rx)]
         prods = {"gifts": gifts, "candles": candles}.get(coll, [])
-        hero = f'<div class="hero small"><h1>{e(name)} finds</h1><p>Hand-picked {e(name.lower())} picks from UK shops, updated daily.</p></div>'
+        hero = (f'<div class="hero small"><h1>{e(name)} finds</h1><p>' + (e(ARCHIVED[slug]) if slug in ARCHIVED else
+                f'Hand-picked {e(name.lower())} picks from UK shops, updated daily.') + '</p></div>')
         page = [head(f"{name} finds and gift ideas UK | Daily Deals UK",
                      f"Hand-picked {name.lower()} finds from well-reviewed UK listings, updated daily.",
                      f"{SITE}/c/{slug}/", latest_pin), topbar(hero), chips(slug)]

@@ -319,14 +319,14 @@ def publish(p, label):
     (folder / "index.html").write_text(page(p), encoding="utf-8")
 
 
-def pick(day, n):
+def pick(day, n, slot="a"):
     import merchant_health
     if int(MERCHANT) in merchant_health.paused_ids():
         print("Candles: Candles Direct is paused (merchant health), no picks today")
         return 0
     manifest = load_manifest()
-    if any(m["date"] == day.isoformat() for m in manifest):
-        print(f"Candles already picked for {day}")
+    if any(m["date"] == day.isoformat() and m.get("slot", "a") == slot for m in manifest):
+        print(f"Candles already picked for {day} ({'afternoon' if slot == 'b' else 'morning'})")
         return 0
     used = {(m["brand"], m["name"].lower()) for m in manifest}
     fams = season_for(day)
@@ -336,18 +336,18 @@ def pick(day, n):
         if (p["brand"], p["name"].lower()) not in seen:
             seen.add((p["brand"], p["name"].lower()))
             uniq.append(p)
-    rnd = random.Random(day.isoformat())
+    rnd = random.Random(day.isoformat() + slot)
     rnd.shuffle(uniq)
     uniq.sort(key=lambda p: label_for(p, fams)[0])
-    picks, brands = [], set()
-    for p in uniq:                                             # different brands where possible
-        if len(picks) < n and (p["brand"] not in brands or len(uniq) < 3 * n):
+    picks, per_brand = [], {}
+    for p in uniq:                                             # mix the brands: at most half from one brand
+        if len(picks) < n and (per_brand.get(p["brand"], 0) < (n + 1) // 2 or len(uniq) < 3 * n):
             picks.append(p)
-            brands.add(p["brand"])
+            per_brand[p["brand"]] = per_brand.get(p["brand"], 0) + 1
     for p in picks:
         label = label_for(p, fams)[1]
         publish(p, label)
-        manifest.append({**p, "date": day.isoformat(), "label": label})
+        manifest.append({**p, "date": day.isoformat(), "label": label, "slot": slot})
     MANIFEST.write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
     write_feed(manifest)
     print(f"Candles: {len(picks)} pick(s) for {day}: " + "; ".join(f"{p['brand']} {p['name']}" for p in picks))
@@ -357,7 +357,8 @@ def pick(day, n):
 def main(argv):
     if len(argv) >= 2 and argv[1] == "--pick":
         day = Date.fromisoformat(argv[2]) if len(argv) > 2 else Date.today()
-        return pick(day, int(argv[3]) if len(argv) > 3 else 3)
+        nums = [a for a in argv[3:] if a.isdigit()]
+        return pick(day, int(nums[0]) if nums else 2, "b" if "--afternoon" in argv else "a")
     if len(argv) == 3 and argv[1] == "--render":
         p = next(m for m in load_manifest() if m["id"] == argv[2])
         publish(p, p.get("label", "Candle of the day"))
