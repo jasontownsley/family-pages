@@ -321,6 +321,8 @@ def esim_body(g):
         'Turn data roaming <strong>off</strong> on your UK SIM so you are not charged for data on it.</li>'
         '</ol></div></section>',
 
+        home.vouchers_section([v for v in home.vouchers() if v["merchant"].lower().startswith("breeze")],
+                              "&#127991;&#65039; Current eSIM offers", "Live codes and offers from Breeze, checked twice a day.", more=False),
         '<h2 class="ph2" id="picks">Our picks</h2><div class="provs">',
         _provider_card("Saily", L.get("saily"), L.get("saily_site"), "From the team behind NordVPN", [
             "Plans for 200+ destinations, according to Saily",
@@ -417,6 +419,8 @@ def xmas_body(g):
            'order dates for Christmas delivery on each shop&rsquo;s site.</p></div>']
     pr = home.prices()
     out.append(home.offers_strip(pr, [], []))
+    out.append(home.vouchers_section(home.vouchers(exclude={"Breeze eSim", "Breeze eSIM"}), "&#127991;&#65039; Christmas voucher codes &amp; offers",
+                                     "Live codes and offers from the gift shops in this guide, checked twice a day."))
     out.append('<div class="toppicks"><h2>&#11088; Our top picks</h2><ol>' + "".join(
         f'<li><strong>{lab}:</strong> {_a(find[k])}</li>' for lab, k in top) + "</ol></div>")
     import quiz

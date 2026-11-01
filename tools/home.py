@@ -116,6 +116,17 @@ section{padding:34px 0 8px}
 .osave{position:absolute;right:8px;top:8px;background:var(--red);color:#fff;font-weight:800;border-radius:99px;padding:6px 9px;font-size:14px}
 .obrand{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:10px 12px 0}
 .ocard strong{padding:2px 12px 0;font-size:15px;line-height:1.3}.ocard .price,.ocard .pchk{padding:0 12px}
+.vgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(270px,100%),1fr))}
+.vcard{background:var(--surface);border:2px dashed var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.vtop{display:flex;justify-content:space-between;align-items:center;gap:8px}.vshop{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.vtype{font-size:11px;font-weight:700;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:var(--bg);color:var(--dim)}.vtype.c{background:var(--red);color:#fff}
+.vcard h3{font-family:Georgia,serif;font-size:20px;line-height:1.25;margin:0}.vdesc{color:var(--dim);font-size:14px;margin:0}
+.vcode{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:6px 6px 6px 12px}
+.vcode span{font-family:Consolas,monospace;font-weight:700;font-size:17px;letter-spacing:.06em}
+.vcode button{font:600 13px Poppins,system-ui,sans-serif;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
+.vcode.none{color:var(--dim);font-size:14px;padding:10px 12px}
+.vfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:auto}.vend{font-size:13px;color:var(--red);font-weight:600}
+.vcard details{font-size:12px;color:var(--dim)}.vcard summary{cursor:pointer}
 footer{background:var(--dark);color:var(--soft);padding:28px 0 40px;margin-top:20px;font-size:14px}footer strong{color:#fff;font-family:'Archivo Black',sans-serif;font-size:18px}
 footer a{color:#fff}
 @media (max-width:560px){.rgrid{grid-template-columns:1fr}.rcard{grid-template-columns:130px 1fr}.hero p{font-size:16px}.pin span{display:none}}
@@ -145,6 +156,7 @@ def chips(active):
     for slug, label, _, _ in CATEGORIES:
         out.append(f'<a{" class=on" if active == slug else ""} href="{SITE}/c/{slug}/">{label}</a>')
     out.append(f'<a{" class=on" if active == "guides" else ""} href="{SITE}/guides/">&#128214; Guides</a>')
+    out.append(f'<a{" class=on" if active == "vouchers" else ""} href="{SITE}/vouchers/">&#127991;&#65039; Voucher codes</a>')
     return '<div class="chips">' + "".join(out) + "</div>"
 
 
@@ -244,6 +256,69 @@ def offers_strip(pr, gifts, candles_, n=8):
             f'<div class="ostrip">{cards}</div></section>')
 
 
+# ---------------------------------------------------------------- voucher codes and offers (Awin promotions)
+
+def vouchers(merchants=None, exclude=()):
+    """Live voucher codes and offers from deals/data/vouchers.json (refreshed by tools/vouchers.py)."""
+    now = datetime.now().strftime("%Y-%m-%dT%H:%M")
+    return [v for v in load("vouchers.json") if (not v.get("end") or v["end"][:16] >= now)
+            and (merchants is None or v["merchant"] in merchants) and v["merchant"] not in exclude]
+
+
+def ends(v):
+    if not v.get("end"):
+        return "No end date"
+    end = datetime.strptime(v["end"][:10], "%Y-%m-%d").date()
+    days = (end - datetime.now().date()).days
+    if days <= 0:
+        return "Ends today"
+    if days == 1:
+        return "Ends tomorrow"
+    return f"Ends {end.day} {end:%b}" if days > 7 else f"Ends in {days} days"
+
+
+def voucher_card(v):
+    code = (f'<div class="vcode"><span>{e(v["code"])}</span><button type="button" data-code="{e(v["code"])}">Copy code</button></div>'
+            if v.get("code") else '<div class="vcode none">No code needed</div>')
+    desc = f'<p class="vdesc">{e(v["description"])}</p>' if v.get("description") else ""
+    terms = f'<details><summary>Terms</summary><p>{e(v["terms"])}</p></details>' if v.get("terms") else ""
+    return (f'<div class="vcard"><div class="vtop"><span class="vshop">{e(v["merchant"])}</span>'
+            f'<span class="vtype{" c" if v.get("code") else ""}">{"Code" if v.get("code") else "Offer"}</span></div>'
+            f'<h3>{e(v["title"])}</h3>{desc}{code}<div class="vfoot"><span class="vend">{ends(v)}</span>'
+            f'<a class="btn" href="{e(v["url"])}" rel="sponsored nofollow noopener" target="_blank">Shop at {e(v["merchant"])} &rsaquo;</a></div>'
+            f'{terms}</div>')
+
+
+VOUCHER_JS = """<script>document.addEventListener('click',function(ev){var b=ev.target.closest('.vcode button');if(!b)return;
+var c=b.getAttribute('data-code');function done(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy code'},2000)}
+if(navigator.clipboard){navigator.clipboard.writeText(c).then(done,function(){prompt('Copy this code:',c)})}else{prompt('Copy this code:',c)}});</script>"""
+
+
+def vouchers_section(vs, title="&#127991;&#65039; Voucher codes &amp; offers", sub=None, n=6, more=True):
+    if not vs:
+        return ""
+    sub = sub or "Live codes and offers from the shops we feature, checked twice a day. Expired ones are removed automatically."
+    link = f'<a href="{SITE}/vouchers/">All codes &rsaquo;</a>' if more and len(vs) > n else ""
+    return (f'<section id="vouchers"><div class="sh"><div><h2>{title}</h2><p>{sub}</p></div>{link}</div>'
+            '<div class="vgrid">' + "".join(voucher_card(v) for v in vs[:n]) + f'</div>{VOUCHER_JS}</section>')
+
+
+def vouchers_page(image):
+    vs = vouchers()
+    shops = sorted({v["merchant"] for v in vs})
+    hero = ('<div class="hero small"><h1>Voucher codes &amp; offers</h1><p>Working discount codes and deals from '
+            + (", ".join(shops) if shops else "UK shops") + '. Checked twice a day.</p></div>')
+    body = (vouchers_section(vs, "All live codes &amp; offers", f"{len(vs)} live right now.", n=len(vs), more=False) if vs else
+            '<section><p class="empty">No live codes right now - new ones are added as the shops release them, so check back soon.</p></section>')
+    page = [head("Voucher codes and discount offers UK | Daily Deals UK",
+                 "Live voucher codes and discount offers from " + (", ".join(shops) if shops else "UK shops")
+                 + ", checked twice a day by Daily Deals UK.", f"{SITE}/vouchers/", image),
+            topbar(hero), chips("vouchers"), body, footer()]
+    out = DEALS / "vouchers" / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("".join(page), encoding="utf-8")
+
+
 def latest(items, n):
     return sorted(items, key=lambda m: (m["date"], m["id"]), reverse=True)[:n]
 
@@ -271,6 +346,8 @@ def build(days, spots_by_key):
                 "Hand-picked, well-reviewed UK finds for home, kitchen, beauty and gifts, plus Christmas gift ideas - new picks every day.",
                 f"{SITE}/", latest_pin), topbar(hero), chips("")]
     out.append(offers_strip(pr, gifts, candles))
+    out.append(vouchers_section(vouchers()))
+    vouchers_page(latest_pin)
     import quiz
     out[0] = out[0].replace('</style>', quiz.CSS + '</style>')
     out.append(quiz.html())
@@ -398,7 +475,7 @@ def write_sitemap(days):
     urls += [(f"{SITE}/c/{slug}/", newest, "daily", "0.8") for slug, *_ in CATEGORIES]
     urls += [(f"{SITE}/{key(d)}/", d["date"], "weekly", "0.6") for d in days]
     import guides
-    urls += [(f"{SITE}/guides/", newest, "weekly", "0.7")]
+    urls += [(f"{SITE}/guides/", newest, "weekly", "0.7"), (f"{SITE}/vouchers/", newest, "daily", "0.8")]
     urls += [(f"{SITE}/guides/{g['slug']}/", g["updated"], "monthly", "0.7") for g in guides.GUIDES]
     for name, folder in (("gifts.json", "gifts"), ("candles.json", "candles")):
         urls += [(f"{SITE}/{folder}/{m['id']}/", m["date"], "weekly", "0.6") for m in load(name)]

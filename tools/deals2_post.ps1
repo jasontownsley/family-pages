@@ -4,6 +4,8 @@ $file = "deals\data\$Date-b.json"
 
 # Second price check of the day (savings and stock), done even when there is no afternoon roundup
 python tools\prices.py 2>&1 | Out-String
+# Live voucher codes and offers from our Awin merchants (homepage, gift guide, eSIM guide, /vouchers/)
+python tools\vouchers.py 2>&1 | Out-String
 
 if (-not (Test-Path $file)) {
     python tools\build_deals.py 2>&1 | Out-String

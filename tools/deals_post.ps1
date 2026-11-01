@@ -16,6 +16,8 @@ if ($LASTEXITCODE) { $candlesOk = $false }
 
 # Prices, savings and stock for every featured shop product (shown on the site; Amazon is never priced)
 python tools\prices.py 2>&1 | Out-String
+# Live voucher codes and offers from our Awin merchants (homepage, gift guide, eSIM guide, /vouchers/)
+python tools\vouchers.py 2>&1 | Out-String
 
 if (-not (Test-Path $file)) {
     if ($candlesOk) {
