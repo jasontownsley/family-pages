@@ -25,6 +25,10 @@ EXPOSURE = JOBS / "merchant_exposure.json"
 BAD_LEVEL = 4
 
 # merchants we chose not to apply to because of payment risk; reported when they recover
+# never paused, by Jason's choice: their payment level flips between good and bad, and the pins are worth it
+# (still reported in the log)
+NEVER_PAUSE = {13560: "Candles Direct"}
+
 WATCHLIST = {24593: "Chelsea Peers NYC", 122718: "PLUSH", 125742: "Threadbare UK", 1969: "Interflora",
              34627: "Lindt UK", 82077: "PartyLite UK", 20680: "Imagine Experiences"}
 
@@ -66,7 +70,10 @@ def main(argv):
             reasons.append("tracking links offline")
         if level is not None and int(level) >= BAD_LEVEL:
             reasons.append(f"payment Exposure Level {level}")
-        out[str(adv)] = {"name": p["name"], "link": link, "level": level, "paused": bool(reasons), "reasons": reasons}
+        paused = bool(reasons) and int(adv) not in NEVER_PAUSE
+        if reasons and not paused:
+            reasons = [r + " (kept running by choice)" for r in reasons]
+        out[str(adv)] = {"name": p["name"], "link": link, "level": level, "paused": paused, "reasons": reasons}
         time.sleep(3.1)                                   # Awin API rate limit
     HEALTH.write_text(json.dumps({"checked": datetime.now().strftime("%Y-%m-%dT%H:%M"),
                                   "exposure_checked": exposure.get("checked"), "merchants": out}, indent=1), encoding="utf-8")

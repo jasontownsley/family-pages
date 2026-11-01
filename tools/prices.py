@@ -16,6 +16,7 @@ import io
 import json
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime
@@ -78,8 +79,17 @@ def shopify_price(link, variant):
     # ask for pounds explicitly: some shops (e.g. Bare Kind) default to another currency for automated requests
     js = f"{u.scheme}://{u.netloc}{u.path.rstrip('/')}.js?currency=GBP"
     headers = {**UA, "Cookie": "localization=GB; cart_currency=GBP"}
-    with urllib.request.urlopen(urllib.request.Request(js, headers=headers), timeout=30) as r:
-        data = json.load(r)
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(js, headers=headers), timeout=30) as r:
+                data = json.load(r)
+            break
+        except urllib.error.HTTPError as e:
+            # the shop asked us to slow down: wait as long as it says (or a while), then try again
+            if e.code != 429 or attempt == 2:
+                raise
+            wait = e.headers.get("Retry-After", "")
+            time.sleep(min(int(wait), 60) if wait.isdigit() else 20 * (attempt + 1))
     vs = data.get("variants", [])
     v = next((x for x in vs if str(x.get("id")) == str(variant)), vs[0] if len(vs) == 1 else None)
     if not v:
@@ -94,7 +104,7 @@ def main():
     idx = feed_index(wanted)
     checked = datetime.now().strftime("%Y-%m-%dT%H:%M")
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
-    out, offers, missing = {}, 0, 0
+    out, offers, missing, kept = {}, 0, 0, 0
     for rid in sorted(wanted):
         f = idx.get(rid)
         if not f:                      # gone from the feed: treat as out of stock
@@ -110,13 +120,20 @@ def main():
                     was = w if w > price else None
             except Exception as e:     # shop data unavailable: fall back to the feed price
                 print(f"  {f['shop']} {rid}: {str(e)[:60]}")
-            time.sleep(0.3)
+                # keep the last known "was" price while the current price hasn't changed,
+                # so a failed check doesn't wipe a genuine saving off the site
+                o = old.get(rid, {})
+                if o.get("was") and abs(o.get("price", 0) - price) < 0.01:
+                    was = o["was"]
+                    kept += 1
+            time.sleep(1.5)              # be gentle: shops rate-limit fast repeated requests
         save = round((was - price) / was * 100) if was else 0
         offers += save >= 5 and stock
         out[rid] = {"price": round(price, 2), "was": was, "save": save, "in_stock": stock, "shop": f["shop"], "checked": checked}
     OUT.write_text(json.dumps(out, indent=1), encoding="utf-8")
     print(f"Prices: {len(out)} products checked, {offers} on offer, "
-          f"{sum(not v.get('in_stock') for v in out.values())} out of stock ({missing} no longer in feeds)")
+          f"{sum(not v.get('in_stock') for v in out.values())} out of stock ({missing} no longer in feeds)"
+          + (f", {kept} savings kept from the last check" if kept else ""))
     return 0
 
 
