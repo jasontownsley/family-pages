@@ -1,11 +1,16 @@
 # Afternoon run (15:00): same research job as the morning, but writes deals\data\<date>-b.json
-# with a seasonal theme that differs from the morning's. The prompt is made from deals_prompt.txt.
+# with a seasonal theme that differs from the morning's. The prompt is made from deals_research_prompt.txt (or the short paused prompt while tools\amazon_paused.txt exists).
 cmd /c "git pull --ff-only 2>&1" | Out-String
 if ($LASTEXITCODE) { throw "git pull failed" }
 python tools\build_deals.py 2>&1 | Out-String
 if ($LASTEXITCODE) { throw "build_deals.py failed before research" }
 
-$base = Get-Content -Raw -Encoding UTF8 tools\deals_prompt.txt
+if (Test-Path tools\amazon_paused.txt) {
+    Copy-Item tools\deals_prompt.txt C:\Users\User\ClaudeJobs\deals2_prompt.txt -Force
+    "Amazon roundups paused - afternoon run refreshes prices only"
+    return
+}
+$base = Get-Content -Raw -Encoding UTF8 tools\deals_research_prompt.txt
 $extra = @'
 AFTERNOON RUN - this overrides STEP 1's theme choice:
   - This is the SECOND roundup today. This morning's roundup is listed by recent_deals.py (today's date, not marked afternoon). Pick a different theme and angle from it, with no product overlap.

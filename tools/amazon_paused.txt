@@ -1,0 +1,5 @@
+While this file exists, the 07:00 and 15:00 deals jobs skip the Amazon research (no scraping of Amazon)
+and publish only the Awin picks and price refresh, without counting it as a failed run.
+Amazon roundups are added by hand instead (weekly, with Jason). To restart automatic roundups, delete this
+file and restore tools/deals_prompt.txt from tools/deals_research_prompt.txt and tools/deals_tools.txt + deals2_tools.txt from tools/deals_research_tools.txt (only once the official
+Amazon Product Advertising API is set up).

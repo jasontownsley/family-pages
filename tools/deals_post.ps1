@@ -21,9 +21,11 @@ if (-not (Test-Path $file)) {
     if ($candlesOk) {
         python tools\build_deals.py 2>&1 | Out-String     # refresh the homepage with the new picks
         cmd /c "git add deals sitemap.xml robots.txt 2>&1" | Out-String
-        git commit -q -m "Daily Deals UK: $Date candles only" | Out-String
+        git commit -q -m "Daily Deals UK: $Date Awin picks" | Out-String
         cmd /c "git push 2>&1" | Out-String
+        if ($LASTEXITCODE) { throw "git push failed" }
     }
+    if ((Test-Path tools\amazon_paused.txt) -and $candlesOk) { "Amazon roundups paused - published the Awin picks"; return }
     throw "No $file written - no roundup today (candles published: $candlesOk)"
 }
 

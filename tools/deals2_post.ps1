@@ -10,6 +10,8 @@ if (-not (Test-Path $file)) {
     cmd /c "git add deals sitemap.xml robots.txt 2>&1" | Out-String
     git commit -q -m "Daily Deals UK: $Date afternoon price refresh" | Out-String
     cmd /c "git push 2>&1" | Out-String
+    if ($LASTEXITCODE) { throw "git push failed" }
+    if (Test-Path tools\amazon_paused.txt) { "Amazon roundups paused - prices refreshed"; return }
     throw "No $file written - no afternoon roundup today (prices refreshed)"
 }
 
