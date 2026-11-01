@@ -126,6 +126,7 @@ section{padding:34px 0 8px}
 .vcode button{font:600 13px Poppins,system-ui,sans-serif;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
 .vcode.none{color:var(--dim);font-size:14px;padding:10px 12px}
 .vfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:auto}.vend{font-size:13px;color:var(--red);font-weight:600}
+.vcard:target{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue)}.vcard{scroll-margin-top:16px}
 .vcard details{font-size:12px;color:var(--dim)}.vcard summary{cursor:pointer}
 footer{background:var(--dark);color:var(--soft);padding:28px 0 40px;margin-top:20px;font-size:14px}footer strong{color:#fff;font-family:'Archivo Black',sans-serif;font-size:18px}
 footer a{color:#fff}
@@ -282,7 +283,7 @@ def voucher_card(v):
             if v.get("code") else '<div class="vcode none">No code needed</div>')
     desc = f'<p class="vdesc">{e(v["description"])}</p>' if v.get("description") else ""
     terms = f'<details><summary>Terms</summary><p>{e(v["terms"])}</p></details>' if v.get("terms") else ""
-    return (f'<div class="vcard"><div class="vtop"><span class="vshop">{e(v["merchant"])}</span>'
+    return (f'<div class="vcard" id="v{e(v["id"])}"><div class="vtop"><span class="vshop">{e(v["merchant"])}</span>'
             f'<span class="vtype{" c" if v.get("code") else ""}">{"Code" if v.get("code") else "Offer"}</span></div>'
             f'<h3>{e(v["title"])}</h3>{desc}{code}<div class="vfoot"><span class="vend">{ends(v)}</span>'
             f'<a class="btn" href="{e(v["url"])}" rel="sponsored nofollow noopener" target="_blank">Shop at {e(v["merchant"])} &rsaquo;</a></div>'

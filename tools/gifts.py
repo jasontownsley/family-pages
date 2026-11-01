@@ -200,6 +200,23 @@ def write_feed(manifest):
                      f"<pubDate>{format_datetime(when)}</pubDate><description>{e(desc)}</description>"
                      f"<enclosure url=\"{url}pin.jpg\" length=\"{pin.stat().st_size if pin.exists() else 0}\" type=\"image/jpeg\"/>"
                      f"<media:content url=\"{url}pin.jpg\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/></item>")
+    # voucher-code / offer pins from the same gift shops (made by vouchers.py), while they're still live
+    vfile = MANIFEST.parent / "vouchers.json"
+    now = datetime.now(timezone.utc)
+    for v in (json.loads(vfile.read_text(encoding="utf-8")) if vfile.exists() else []):
+        pin = OUT.parent / "vouchers" / "pins" / f"{v['id']}.jpg"
+        if not pin.exists() or (v.get("end") and datetime.fromisoformat(v["end"]) < now):
+            continue
+        url = f"https://dailydealsuk.co.uk/deals/vouchers/?v={v['id']}#v{v['id']}"
+        img = f"https://dailydealsuk.co.uk/deals/vouchers/pins/{v['id']}.jpg"
+        when = datetime.fromisoformat(v.get("added") or v.get("start") or now.isoformat())
+        title = (f"{v['merchant']} voucher code: {v['title']}" if v.get("code") else f"{v['merchant']} offer: {v['title']}")[:100]
+        desc = (f"{v['title']}. " + (f"Use code {v['code']} at {v['merchant']}. " if v.get("code") else f"No code needed at {v['merchant']}. ")
+                + "Check the end date and terms before you buy. #ad #vouchercodes #christmasdeals #giftideas")[:500]
+        items.append(f"<item><title>{e(title)}</title><link>{url}</link><guid isPermaLink=\"true\">{url}</guid>"
+                     f"<pubDate>{format_datetime(when)}</pubDate><description>{e(desc)}</description>"
+                     f"<enclosure url=\"{img}\" length=\"{pin.stat().st_size}\" type=\"image/jpeg\"/>"
+                     f"<media:content url=\"{img}\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/></item>")
     (OUT / "feed.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
         f"<title>Daily Deals UK - Christmas Gift Ideas</title><link>{SITE}/</link><description>Christmas gift picks.</description>"
