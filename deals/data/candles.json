@@ -661,5 +661,43 @@
   "price": 27.99,
   "date": "2026-10-31",
   "label": "Candle of the day"
+ },
+ {
+  "id": "42933165555867",
+  "brand": "Yankee Candle",
+  "name": "Christmas Cookie",
+  "kind": "Large Jar Candle",
+  "blurb": "Buttery rich, vanilla scented, holiday sugar cookies.",
+  "notes": [
+   "Creamy Vanilla Bean Nutmeg",
+   "Cinnamon",
+   "Sugar Vanilla",
+   "Butter",
+   "Baked Notes"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Christmas-Cookie-Large-Jar-2235525-1.jpg?v=1776437872",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-christmas-cookie-signature-large-jar-candle-1629976e%3Fvariant%3D42933165555867",
+  "price": 23.99,
+  "date": "2026-11-01",
+  "label": "Christmas scent"
+ },
+ {
+  "id": "37975157571739",
+  "brand": "WoodWick",
+  "name": "Currant",
+  "kind": "Large Jar Candle",
+  "blurb": "A refreshing blend of sweet currant notes with a hint of juicy tangerine.",
+  "notes": [
+   "Watery Green Accord",
+   "Mandarin Jasmine",
+   "Cyclamen",
+   "Lotus White Musk",
+   "Black Currant"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/Woodwick-Currant-Large-Jar-Candle-1.jpg?v=1738773517",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-currant-large-jar-candle%3Fvariant%3D37975157571739",
+  "price": 19.99,
+  "date": "2026-11-01",
+  "label": "Candle of the day"
  }
 ]

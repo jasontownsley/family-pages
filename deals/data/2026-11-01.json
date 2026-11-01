@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-01",
+  "theme": "Christmas Table",
+  "pin_title": "6 Christmas Table & Baking Buys Under £15 UK Hosts Love",
+  "pin_title_alt": "3 Little Buys That Make Christmas at Home Feel Extra Festive",
+  "pin_hook": "Set the table and bake the biscuits - all highly rated",
+  "pin_description": "Get your Christmas dinner table and festive baking sorted for under £15 each: Christmas candle holders, holly napkins, a red table runner, Christmas cookie cutters and Santa cupcake cases. Easy Christmas table decoration ideas and Christmas baking essentials UK hosts rate highly. #ad #christmastable #christmasbaking #christmasdecor #ukdeals",
+  "intro": "Hosting this Christmas or just love a festive bake? These well-rated table and baking bits make the big day (and the run-up to it) look and taste the part without spending much.",
+  "products": [
+    {
+      "asin": "B0CDR3VPNM",
+      "name": "Sziqiqi Christmas Pillar Candle Holders, 2 Pack",
+      "short_name": "Christmas candle holders",
+      "headline": "Instant candlelit glow for the Christmas table",
+      "why": "A pair of festive pillar candle holders that dress up a dining table or mantelpiece in seconds. Thousands of shoppers rate them, and they come out year after year.",
+      "category": "Christmas Table",
+      "photo_query": "christmas pillar candle holders",
+      "photo_id": 14588916
+    },
+    {
+      "asin": "B0FR39LP15",
+      "name": "Talking Tables Holly & Berries Christmas Paper Napkins, 100 Pack",
+      "short_name": "Holly Christmas napkins",
+      "headline": "Enough festive napkins for every get-together",
+      "why": "A big pack of classic holly-and-berry napkins, so you're covered for Christmas dinner, Boxing Day buffets and drinks with the neighbours.",
+      "category": "Christmas Table",
+      "photo_query": "christmas paper napkins table",
+      "photo_id": 5623212
+    },
+    {
+      "asin": "B07JFK4FW1",
+      "name": "Joyoldelf 5-Piece Stainless Steel Christmas Cookie Cutter Set",
+      "short_name": "Christmas cookie cutters",
+      "headline": "Gingerbread men, trees and snowflakes made easy",
+      "why": "Five classic Christmas shapes in sturdy stainless steel that cut cleanly through biscuit dough. A cheap, cheerful way to start a baking tradition with the kids.",
+      "category": "Christmas Baking",
+      "photo_query": "christmas cookie cutters dough",
+      "photo_id": 7558446
+    },
+    {
+      "asin": "B0C95SH7C2",
+      "name": "Red Linen-Look Christmas Table Runner, 230 x 33 cm",
+      "short_name": "Red Christmas table runner",
+      "headline": "Makes a plain table feel Christmassy in seconds",
+      "why": "A long red runner printed with trees, bells and flowers that fits most dining tables and pairs nicely with candles and greenery.",
+      "category": "Christmas Table",
+      "photo_query": "red christmas table runner"
+    },
+    {
+      "asin": "B0CBRD7P9B",
+      "name": "SANNIX Christmas Cupcake Cases, 450 Pack",
+      "short_name": "Santa cupcake cases",
+      "headline": "Festive cupcakes before you've even iced them",
+      "why": "Hundreds of Santa and snowman print cases in one pack, so they'll last through school bake sales, parties and Christmas Eve baking.",
+      "category": "Christmas Baking",
+      "photo_query": "christmas cupcakes paper cases"
+    },
+    {
+      "asin": "B0BN8ZW5DP",
+      "name": "Culpitt Select Red Baking Cases, 50 Pack",
+      "short_name": "Red baking cases",
+      "headline": "Bold red cases for mince pies and fairy cakes",
+      "why": "Simple, sturdy red cases from a well-known baking brand that look smart on a festive plate. A handy cupboard staple for December baking.",
+      "category": "Christmas Baking"
+    }
+  ]
+}
