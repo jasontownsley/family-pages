@@ -1,0 +1,72 @@
+[
+ {
+  "id": 4131322,
+  "merchant": "Breeze eSim",
+  "merchant_id": 84567,
+  "type": "voucher",
+  "title": "Buy 3 or more and you get 1 eSIM 30% off w/code HALFTERM30",
+  "description": "",
+  "code": "HALFTERM30",
+  "terms": "N/A",
+  "start": "2026-10-02T15:30:00+00:00",
+  "end": "2026-11-02T16:25:00+00:00",
+  "url": "https://www.awin1.com/cread.php?awinmid=84567&awinaffid=3105665&ued=https%3A%2F%2Fbreezesim.com%2F",
+  "added": "2026-10-02T15:27:36+00:00"
+ },
+ {
+  "id": 4129832,
+  "merchant": "Candles Direct",
+  "merchant_id": 13560,
+  "type": "promotion",
+  "title": "50% off Yankee Candle Perfect Christmas Gift Set",
+  "description": "At an exceptional price, it's an ideal gift for loved ones who appreciate quality home fragrance and timeless design.",
+  "code": "",
+  "terms": "Includes - One Signature Medium Jar Candle in Christmas Cookie, Twelve Scented Tea Light Candles in Sparkling Winterberry, One Tea Light Candle Holder, One Perfect Wick Trimmer",
+  "start": "2026-10-01T10:30:00+00:00",
+  "end": "2026-11-05T11:03:00+00:00",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-perfect-christmas-wow-gift-set-2243718",
+  "added": "2026-10-01T10:06:24+00:00"
+ },
+ {
+  "id": 4129825,
+  "merchant": "Candles Direct",
+  "merchant_id": 13560,
+  "type": "promotion",
+  "title": "20% off WoodWick Candles",
+  "description": "Linen, Vanilla Bean, Island Coconut & more now reduced. Grab a deal on gorgeous crackling candles",
+  "code": "",
+  "terms": "Online Exclusive. Earn Loyalty points on all orders. Great range of WoodWick candles now reduced. While Stocks last.",
+  "start": "2026-10-01T11:59:00+00:00",
+  "end": "2026-11-19T10:59:00+00:00",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fcollections%2Fwoodwick",
+  "added": "2026-10-01T10:01:47+00:00"
+ },
+ {
+  "id": 4143800,
+  "merchant": "Scribbler",
+  "merchant_id": 3965,
+  "type": "promotion",
+  "title": "Buy 4 or More Cards and Save 25%",
+  "description": "",
+  "code": "",
+  "terms": "",
+  "start": "2026-10-19T11:08:00+00:00",
+  "end": "2027-02-28T23:59:00+00:00",
+  "url": "https://www.awin1.com/cread.php?awinmid=3965&awinaffid=3105665&ued=https%3A%2F%2Fwww.scribbler.com",
+  "added": "2026-10-19T11:08:58+00:00"
+ },
+ {
+  "id": 4128332,
+  "merchant": "Breeze eSim",
+  "merchant_id": 84567,
+  "type": "promotion",
+  "title": "50% off the global travel pass",
+  "description": "",
+  "code": "",
+  "terms": "N/A",
+  "start": "2026-09-30T00:15:00+00:00",
+  "end": "2029-01-01T01:14:00+00:00",
+  "url": "https://www.awin1.com/cread.php?awinmid=84567&awinaffid=3105665&ued=http%3A%2F%2Fbreezesim.com%2Fdiscount%2F25SMDD8CXWRC%3Fredirect%3D%2Fpages%2Ftravel-pass",
+  "added": "2026-09-30T00:15:17+00:00"
+ }
+]
