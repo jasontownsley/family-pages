@@ -23,6 +23,7 @@ JOBS = Path(r"C:\Users\User\ClaudeJobs")
 HEALTH = JOBS / "merchant_health.json"
 EXPOSURE = JOBS / "merchant_exposure.json"
 BAD_LEVEL = 4
+PAUSE_DAYS = 120      # joined merchants that take longer than this on average to pay commission are paused
 
 # merchants we chose not to apply to because of payment risk; reported when they recover
 # never paused, by Jason's choice: their payment level flips between good and bad, and the pins are worth it
@@ -53,6 +54,8 @@ def main(argv):
         return 0 if int(argv[2]) in paused_ids() else 1
     exposure = json.loads(EXPOSURE.read_text(encoding="utf-8")) if EXPOSURE.exists() else {}
     levels = exposure.get("levels", {})
+    kfile = JOBS / "merchant_kpi.json"          # weekly API payment check (payment_check.py)
+    kpis = json.loads(kfile.read_text(encoding="utf-8")).get("merchants", {}) if kfile.exists() else {}
     old = json.loads(HEALTH.read_text(encoding="utf-8"))["merchants"] if HEALTH.exists() else {}
     out = {}
     for p in aw.programmes("joined"):
@@ -70,6 +73,9 @@ def main(argv):
             reasons.append("tracking links offline")
         if level is not None and int(level) >= BAD_LEVEL:
             reasons.append(f"payment Exposure Level {level}")
+        pay_days = kpis.get(str(adv), {}).get("pay_days")
+        if pay_days is not None and pay_days > PAUSE_DAYS:
+            reasons.append(f"pays commission in {pay_days} days on average")
         paused = bool(reasons) and int(adv) not in NEVER_PAUSE
         if reasons and not paused:
             reasons = [r + " (kept running by choice)" for r in reasons]
