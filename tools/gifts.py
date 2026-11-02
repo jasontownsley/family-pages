@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "deals" / "gifts"
 MANIFEST = ROOT / "deals" / "data" / "gifts.json"
 SITE = "https://dailydealsuk.co.uk/deals/gifts"
+YEAR_TAG = 2026
 
 XMAS = re.compile(r"christmas|xmas|festive|santa|advent|stocking|snow|winter|fir\b|firelight|reindeer|elf\b", re.I)
 RUDE = re.compile(r"\b(fuck\w*|cunt\w*|shit\w*|knobs?|arse\w*|bums?|gusset|twat\w*|wank\w*|dicks?|cocks?|tits|bollock\w*|piss\w*|sex\w*)\b", re.I)
@@ -186,19 +187,46 @@ def publish(p):
 
 
 def write_feed(manifest):
+    import drip
+    import home
     e = lambda s: html.escape(str(s), quote=True)
-    items = []
-    for n, m in enumerate(sorted(manifest, key=lambda m: (m["date"], m.get("slot", "a"), m["id"]), reverse=True)[:100]):
+    items, dates = [], []
+    pr = home.prices()
+    live = [m for m in manifest if drip.released(m)]          # pins come out through the day (drip.py)
+    for n, m in enumerate(sorted(live, key=lambda m: (m["date"], m.get("release", ""), m["id"]), reverse=True)[:100]):
         url = f"{SITE}/{m['id']}/"
         pin = OUT / m["id"] / "pin.jpg"
-        when = datetime.fromisoformat(m["date"]).replace(hour=10 + 3 * (n % 4), tzinfo=timezone.utc)
-        title = f"{m['brand']} {m['name']} - {m['kind']}"[:100]
+        when = drip.pub_date(m, datetime.fromisoformat(m["date"]).replace(hour=10 + 3 * (n % 4), tzinfo=timezone.utc))
+        dates.append(when)
+        price = (pr.get(home.raw_id(m["id"])) or {}).get("price") or m.get("price")
+        hook = drip.under(price)
+        # keyword-first titles, like the pins that rank in Pinterest search
+        title = f"{m['name']} | {m['kind']} UK" + (f" {hook}" if hook else "")
+        if len(title) > 100:
+            title = f"{m['name'][:60]} | {m['kind']}"[:100]
         tag = "#" + re.sub(r"\W", "", m["brand"]).lower()
-        desc = (f"{candles.first_sentence(m['blurb'], 300)} A {m['label'].lower()} idea from {m['shop']}. "
-                f"#ad #christmasgifts #giftideas #stockingfillers {tag}")[:500]
+        desc = (f"{m['kind']} from {m['brand']}" + (f", {hook.lower()}" if hook else "") + ". "
+                f"{candles.first_sentence(m['blurb'], 260)} A {m['label'].lower()} idea from {m['shop']}. "
+                f"#ad #christmasgifts #giftideas #christmasgiftideasuk #stockingfillers {tag}")[:500]
         items.append(f"<item><title>{e(title)}</title><link>{url}</link><guid isPermaLink=\"true\">{url}</guid>"
                      f"<pubDate>{format_datetime(when)}</pubDate><description>{e(desc)}</description>"
                      f"<enclosure url=\"{url}pin.jpg\" length=\"{pin.stat().st_size if pin.exists() else 0}\" type=\"image/jpeg\"/>"
+                     f"<media:content url=\"{url}pin.jpg\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/></item>")
+    # collage roundup pins (collages.py), released through the day like the product pins
+    cfile = MANIFEST.parent / "collages.json"
+    for c in sorted((json.loads(cfile.read_text(encoding="utf-8")) if cfile.exists() else []),
+                    key=lambda c: c.get("release", c["date"]), reverse=True)[:40]:
+        pin = OUT.parent / "lists" / c["id"] / "pin.jpg"
+        if not pin.exists() or not drip.released(c):
+            continue
+        url = f"https://dailydealsuk.co.uk/deals/lists/{c['id']}/"
+        when = drip.pub_date(c, datetime.fromisoformat(c["date"]).replace(hour=12, tzinfo=timezone.utc))
+        dates.append(when)
+        desc = (f"{c['title']}: {c['sub'].lower()}. Hand-picked Christmas gift ideas from UK shops, with prices. "
+                f"#ad {c['tags']} #christmasgiftideasuk #giftguide")[:500]
+        items.append(f"<item><title>{e(c['title'] + ' ' + str(YEAR_TAG))}</title><link>{url}</link><guid isPermaLink=\"true\">{url}</guid>"
+                     f"<pubDate>{format_datetime(when)}</pubDate><description>{e(desc)}</description>"
+                     f"<enclosure url=\"{url}pin.jpg\" length=\"{pin.stat().st_size}\" type=\"image/jpeg\"/>"
                      f"<media:content url=\"{url}pin.jpg\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/></item>")
     # voucher-code / offer pins from the same gift shops (made by vouchers.py), while they're still live
     vfile = MANIFEST.parent / "vouchers.json"
@@ -210,6 +238,7 @@ def write_feed(manifest):
         url = f"https://dailydealsuk.co.uk/deals/vouchers/?v={v['id']}#v{v['id']}"
         img = f"https://dailydealsuk.co.uk/deals/vouchers/pins/{v['id']}.jpg"
         when = datetime.fromisoformat(v.get("added") or v.get("start") or now.isoformat())
+        dates.append(when)
         title = (f"{v['merchant']} voucher code: {v['title']}" if v.get("code") else f"{v['merchant']} offer: {v['title']}")[:100]
         desc = (f"{v['title']}. " + (f"Use code {v['code']} at {v['merchant']}. " if v.get("code") else f"No code needed at {v['merchant']}. ")
                 + "Check the end date and terms before you buy. #ad #vouchercodes #christmasdeals #giftideas")[:500]
@@ -220,7 +249,8 @@ def write_feed(manifest):
     (OUT / "feed.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
         f"<title>Daily Deals UK - Christmas Gift Ideas</title><link>{SITE}/</link><description>Christmas gift picks.</description>"
-        f"<language>en-gb</language><lastBuildDate>{format_datetime(datetime.now(timezone.utc))}</lastBuildDate>"
+        # lastBuildDate = newest pin, so the hourly feed refresh only changes the file when a pin is released
+        f"<language>en-gb</language><lastBuildDate>{format_datetime(max(dates) if dates else datetime.now(timezone.utc))}</lastBuildDate>"
         + "".join(items) + "</channel></rss>\n", encoding="utf-8")
 
 
@@ -278,7 +308,8 @@ def pick(day, slot="a"):
         p.pop("_repeat", None)
         p["label"] = label_for(p)
         publish(p)
-        manifest.append({**p, "date": day.isoformat(), "slot": slot})
+        import drip
+        manifest.append({**p, "date": day.isoformat(), "slot": slot, "release": drip.release(day, slot, p["id"])})
     MANIFEST.write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
     write_feed(manifest)
     print(f"Gifts: {len(picks)} pick(s) for {day} {'afternoon' if slot == 'b' else 'morning'}: "

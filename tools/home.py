@@ -342,6 +342,8 @@ def build(days, spots_by_key):
     gifts, candles = load("gifts.json"), load("candles.json")
     pr = prices()
     refresh_product_pages(gifts, candles, pr)
+    import collages
+    collages.refresh_pages()
     gifts = [p for p in gifts if in_stock(raw_id(p["id"]), pr)]
     candles = [p for p in candles if in_stock(raw_id(p["id"]), pr)]
     spots = [(d, p) for d in days for p, _ in spots_by_key.get(key(d), [])
@@ -487,7 +489,7 @@ def write_sitemap(days):
     import guides
     urls += [(f"{SITE}/guides/", newest, "weekly", "0.7"), (f"{SITE}/vouchers/", newest, "daily", "0.8")]
     urls += [(f"{SITE}/guides/{g['slug']}/", g["updated"], "monthly", "0.7") for g in guides.GUIDES]
-    for name, folder in (("gifts.json", "gifts"), ("candles.json", "candles")):
+    for name, folder in (("gifts.json", "gifts"), ("candles.json", "candles"), ("collages.json", "lists")):
         urls += [(f"{SITE}/{folder}/{m['id']}/", m["date"], "weekly", "0.6") for m in load(name)]
     body = "".join(f"<url><loc>{e(u)}</loc><lastmod>{d}</lastmod><changefreq>{f}</changefreq><priority>{p}</priority></url>"
                    for u, d, f, p in urls)

@@ -18,6 +18,8 @@ if ($LASTEXITCODE) { $candlesOk = $false }
 python tools\prices.py 2>&1 | Out-String
 # Live voucher codes and offers from our Awin merchants (homepage, gift guide, eSIM guide, /vouchers/)
 python tools\vouchers.py 2>&1 | Out-String
+# Collage roundup pin (e.g. "9 Stocking Fillers Under 10 pounds UK") for the Christmas Gift Ideas board
+python tools\collages.py --make $Date 2>&1 | Out-String
 
 if (-not (Test-Path $file)) {
     if ($candlesOk) {

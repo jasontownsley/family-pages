@@ -11,6 +11,7 @@ python tools\gifts.py --pick $Date --afternoon 2>&1 | Out-String
 python tools\prices.py --quick 2>&1 | Out-String
 # Live voucher codes and offers from our Awin merchants (homepage, gift guide, eSIM guide, /vouchers/)
 python tools\vouchers.py 2>&1 | Out-String
+python tools\collages.py --make $Date --afternoon 2>&1 | Out-String
 
 if (-not (Test-Path $file)) {
     python tools\build_deals.py 2>&1 | Out-String

@@ -45,8 +45,8 @@ SERIF_B, SERIF_I = FONTS / "georgiab.ttf", FONTS / "georgiai.ttf"
 HEAVY, BOLD, SEMI = FONTS / "ariblk.ttf", FONTS / "segoeuib.ttf", FONTS / "seguisb.ttf"
 
 # season -> scent words to favour (checked against name + description)
-CHRISTMAS = ("Christmas scent", r"christmas|santa|snow|cookie|gingerbread|candy cane|peppermint|cranberry|fir|"
-                                 r"pine|balsam|spruce|festive|wonderland|nutmeg|clove|mistletoe|winter|sleigh")
+CHRISTMAS = ("Christmas scent", r"christmas|santa|snow|cookie|gingerbread|candy cane|peppermint|cranberry|\bfir\b|"
+                                 r"\bpine\b|balsam|spruce|festive|wonderland|nutmeg|clove|mistletoe|winter|sleigh")
 AUTUMN = ("Autumn scent", r"pumpkin|apple|cinnamon|spice|chai|maple|harvest|cosy|cozy|caramel|leaves|fireside|hearth|bonfire")
 # date range -> scent families to favour, in order (the label follows the scent that matched)
 SEASONS = [
@@ -267,13 +267,21 @@ Prices and stock change often, so check the current price on {e(shop)}.</p></div
 
 def write_feed(manifest):
     e = lambda s: html.escape(str(s), quote=True)
-    items = []
-    for n, m in enumerate(sorted(manifest, key=lambda m: m["date"], reverse=True)[:60]):
+    import drip
+    import home
+    items, dates = [], []
+    pr = home.prices()
+    live = [m for m in manifest if drip.released(m)]          # pins come out through the day (drip.py)
+    for n, m in enumerate(sorted(live, key=lambda m: (m["date"], m.get("release", "")), reverse=True)[:60]):
         url = f"{SITE}/{m['id']}/"
         pin = OUT / m["id"] / "pin.jpg"
-        hour = 11 + 4 * (n % 3)                       # spread the day's picks out
-        when = datetime.fromisoformat(m["date"]).replace(hour=hour, tzinfo=timezone.utc)
-        title = f"{m['brand']} {m['name']} {m['kind']}"[:100]
+        hour = 11 + 4 * (n % 3)
+        when = drip.pub_date(m, datetime.fromisoformat(m["date"]).replace(hour=hour, tzinfo=timezone.utc))
+        dates.append(when)
+        hook = drip.under((pr.get(str(m["id"])) or {}).get("price") or m.get("price"))
+        title = f"{m['brand']} {m['name']} Candle | Christmas Candle Gift UK" + (f" {hook}" if hook else "")
+        if len(title) > 100:
+            title = f"{m['brand']} {m['name']} | {m['kind']}"[:100]
         tags = "#candles #homefragrance #" + re.sub(r"\W", "", m["brand"]).lower() + (
             " #christmascandles" if "Christmas" in m["label"] else " #autumnvibes" if "Autumn" in m["label"] else "")
         desc = f"{first_sentence(m['blurb'], 300)} Fragrance notes: {', '.join(m['notes'][:4]).lower()}. #ad {tags}"[:500]
@@ -284,7 +292,7 @@ def write_feed(manifest):
     (OUT / "feed.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
         f"<title>Daily Deals UK - Candles</title><link>{SITE}/</link><description>Candle and home fragrance picks.</description>"
-        f"<language>en-gb</language><lastBuildDate>{format_datetime(datetime.now(timezone.utc))}</lastBuildDate>"
+        f"<language>en-gb</language><lastBuildDate>{format_datetime(max(dates) if dates else datetime.now(timezone.utc))}</lastBuildDate>"
         + "".join(items) + "</channel></rss>\n", encoding="utf-8")
 
 
@@ -347,7 +355,8 @@ def pick(day, n, slot="a"):
     for p in picks:
         label = label_for(p, fams)[1]
         publish(p, label)
-        manifest.append({**p, "date": day.isoformat(), "label": label, "slot": slot})
+        import drip
+        manifest.append({**p, "date": day.isoformat(), "label": label, "slot": slot, "release": drip.release(day, slot, p["id"])})
     MANIFEST.write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
     write_feed(manifest)
     print(f"Candles: {len(picks)} pick(s) for {day}: " + "; ".join(f"{p['brand']} {p['name']}" for p in picks))
