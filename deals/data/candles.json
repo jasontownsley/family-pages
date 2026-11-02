@@ -699,5 +699,45 @@
   "price": 19.99,
   "date": "2026-11-01",
   "label": "Candle of the day"
+ },
+ {
+  "id": "42896099475611",
+  "brand": "Yankee Candle",
+  "name": "Clean Cotton",
+  "kind": "Large Jar Candle",
+  "blurb": "Sun dried cotton combined with green notes, white flowers and a hint of lemon.",
+  "notes": [
+   "Ozone",
+   "Leafy Greens",
+   "Bergamot",
+   "Lily of the Valley",
+   "Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Clean-Cotton-Large-Jar-2236179-1.jpg?v=1776464408",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-clean-cotton-signature-large-jar-candle-1630644e%3Fvariant%3D42896099475611",
+  "price": 23.99,
+  "date": "2026-11-02",
+  "label": "Candle of the day",
+  "slot": "a"
+ },
+ {
+  "id": "37975404118171",
+  "brand": "WoodWick",
+  "name": "White Honey",
+  "kind": "Medium Jar Candle",
+  "blurb": "Scents of sweet candied orange blossom with cascading vanilla orchid and roasted toffee.",
+  "notes": [
+   "Pistachio",
+   "Bergamot",
+   "Candied Orange Blossom",
+   "Coffee Bean",
+   "Vanilla Orchid"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/White-Honey-Medium-Jar-2674510E.jpg?v=1776291750",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-white-honey-medium-jar-candle%3Fvariant%3D37975404118171",
+  "price": 19.99,
+  "date": "2026-11-02",
+  "label": "Candle of the day",
+  "slot": "a"
  }
 ]
