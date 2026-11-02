@@ -739,5 +739,45 @@
   "date": "2026-11-02",
   "label": "Candle of the day",
   "slot": "a"
+ },
+ {
+  "id": "42896100589723",
+  "brand": "Yankee Candle",
+  "name": "Vanilla Lime",
+  "kind": "Large Jar Candle",
+  "blurb": "Smooth and refreshing aromas of rich, creamy vanilla layered with sweet cane sugar and a zesty lime twist",
+  "notes": [
+   "Kaffir Lime",
+   "Lemon Zest",
+   "Sugar",
+   "Cocoa",
+   "Vanilla"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Vanilla-Lime-Large-Jar-2236229-1.jpg?v=1776942804",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-vanilla-lime-signature-large-jar-candle-1630694e%3Fvariant%3D42896100589723",
+  "price": 23.99,
+  "date": "2026-11-02",
+  "label": "Candle of the day",
+  "slot": "b"
+ },
+ {
+  "id": "48267050647707",
+  "brand": "WoodWick",
+  "name": "Dark Cherry",
+  "kind": "Large Jar Candle",
+  "blurb": "Wild-growing black cherry trees exude sweetness deep within darkened woods. Scents of dark cherry and amberwood are warmed by notes of cashmere and smoked vanilla.",
+  "notes": [
+   "Dark Cherry",
+   "Raspberry",
+   "Rhubarb",
+   "Amberwood",
+   "Moss"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Dark-Cherry-Large-Jar-2670707E.jpg?v=1776287628",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-dark-cherry-large-jar-candle-2670707e%3Fvariant%3D48267050647707",
+  "price": 26.39,
+  "date": "2026-11-02",
+  "label": "Candle of the day",
+  "slot": "b"
  }
 ]
