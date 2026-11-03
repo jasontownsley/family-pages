@@ -779,5 +779,47 @@
   "date": "2026-11-02",
   "label": "Candle of the day",
   "slot": "b"
+ },
+ {
+  "id": "42896103211163",
+  "brand": "Yankee Candle",
+  "name": "Ocean Air",
+  "kind": "Medium Jar Candle",
+  "blurb": "Fresh, invigorating ocean air carried in by white capped waves - clean, sunny notes mingle with jasmine, white amber and sandalwood.",
+  "notes": [
+   "Blue Ozone",
+   "Linen Breeze",
+   "Bergamot",
+   "Lemon",
+   "Cotton Flower"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Ocean-Air-Medium-Jar-2236191.jpg?v=1776711540",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-ocean-air-signature-medium-jar-candle-1630018e%3Fvariant%3D42896103211163",
+  "price": 19.99,
+  "date": "2026-11-03",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-03T09:48"
+ },
+ {
+  "id": "48267050451099",
+  "brand": "WoodWick",
+  "name": "Lakeside Mist",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "A morning mist floats across the lakefront in faint sunlight. Refreshing notes of aldehydes, cedarwood, and mossy earth linger in the quiet scene.",
+  "notes": [
+   "Aldehydes",
+   "Orange",
+   "Rainy Mist",
+   "Eucalyptus",
+   "Jasmine"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Lakeside-Mist-Ellipse-Jar-2670708E.jpg?v=1776336668",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-lakeside-mist-ellipse-jar-candle-2670708e%3Fvariant%3D48267050451099",
+  "price": 27.99,
+  "date": "2026-11-03",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-03T11:46"
  }
 ]
