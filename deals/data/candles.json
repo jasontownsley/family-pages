@@ -821,5 +821,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-03T11:46"
+ },
+ {
+  "id": "42896099246235",
+  "brand": "Yankee Candle",
+  "name": "Bayside Cedar",
+  "kind": "Large Jar Candle",
+  "blurb": "A walk along the forest path right after the rain with refreshing notes of grapefruit, mandarin blossoms, and warm amber filling the air.",
+  "notes": [
+   "Bergamot",
+   "Green Pear",
+   "Grapefruit",
+   "Mandarin Blossom",
+   "Water Lily"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Bayside-Cedar-Large-Jar-2236264-1.jpg?v=1776419303",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-bayside-cedar-signature-large-jar-candle-1629980e%3Fvariant%3D42896099246235",
+  "price": 23.99,
+  "date": "2026-11-03",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-03T16:20"
+ },
+ {
+  "id": "42896104521883",
+  "brand": "WoodWick",
+  "name": "Sagewood and Seagrass",
+  "kind": "Medium Jar Candle",
+  "blurb": "An airy yet complex combination of crisp citrus, ocean minerals, and white sage notes.",
+  "notes": [
+   "Sea Salt",
+   "Crisp Citrus",
+   "Dune Grass",
+   "Rosemary",
+   "White Sage"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Sagewood-and-Seagrass-Medium-Jar-2674181E.jpg?v=1776355195",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-sagewood-and-seagrass-medium-jar-candle-1728613e%3Fvariant%3D42896104521883",
+  "price": 19.99,
+  "date": "2026-11-03",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-03T17:12"
  }
 ]
