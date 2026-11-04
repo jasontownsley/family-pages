@@ -94,5 +94,41 @@
    ]
   ],
   "release": "2026-11-03T18:52"
+ },
+ {
+  "id": "2026-11-04-fun-gifts",
+  "theme": "fun-gifts",
+  "title": "6 Fun & Quirky Christmas Gifts UK",
+  "sub": "Games, novelty lights & treats",
+  "tags": "#funnygifts #quirkygifts #secretsanta",
+  "date": "2026-11-04",
+  "slot": "a",
+  "products": [
+   [
+    "gifts",
+    "scr-43856409755855"
+   ],
+   [
+    "gifts",
+    "scr-64768961151353"
+   ],
+   [
+    "gifts",
+    "scr-63841712144761"
+   ],
+   [
+    "gifts",
+    "scr-56312679104889"
+   ],
+   [
+    "gifts",
+    "scr-63841710506361"
+   ],
+   [
+    "gifts",
+    "scr-64768971047289"
+   ]
+  ],
+  "release": "2026-11-04T12:04"
  }
 ]

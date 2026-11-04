@@ -863,5 +863,47 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-03T17:12"
+ },
+ {
+  "id": "42896100032667",
+  "brand": "Yankee Candle",
+  "name": "Pink Sands",
+  "kind": "Large Jar Candle",
+  "blurb": "It's an exotic island escape in the beautiful mix of bright citrus, sweet florals and spicy vanilla.",
+  "notes": [
+   "Citrus",
+   "Melon",
+   "Berry",
+   "Osmanthus",
+   "Spicy Vanilla"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Pink-Sands-Large-Jar-2235838-1.jpg?v=1778859498",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-pink-sands-signature-large-jar-candle-1629962e%3Fvariant%3D42896100032667",
+  "price": 23.99,
+  "date": "2026-11-04",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-04T11:28"
+ },
+ {
+  "id": "37975172776091",
+  "brand": "WoodWick",
+  "name": "Lavender and Cedar",
+  "kind": "Large Jar Candle",
+  "blurb": "Notes of pink pepper and aromatic lavender are layered with sage flower, patchouli, and blonde woods.",
+  "notes": [
+   "of pink pepper and aromatic lavender are layered with sage flower",
+   "patchouli",
+   "and blonde woods. Fragrance Notes: Leafy Green",
+   "Pink Pepper",
+   "Lemon Rinds"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Lavender-and-Cedar-Large-Jar-2674537E-1.jpg?v=1777371457",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-lavender-and-cedar-large-jar-candle%3Fvariant%3D37975172776091",
+  "price": 24.99,
+  "date": "2026-11-04",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-04T13:28"
  }
 ]
