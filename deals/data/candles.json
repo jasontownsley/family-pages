@@ -905,5 +905,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-04T13:28"
+ },
+ {
+  "id": "45470731894939",
+  "brand": "Yankee Candle",
+  "name": "Parisian Holiday Brunch",
+  "kind": "Large Jar Candle",
+  "blurb": "Be swept away to a dreamy bakery in Paris filled with the fragrance notes of buttery croissants, raspberry preserves, fig, and brown sugar.",
+  "notes": [
+   "Orange",
+   "Rhubarb Jam",
+   "Fig Spread",
+   "Buttery Croissant",
+   "Biscuit Crumbs"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yankee-Candle-parisian-holiday-brunch-large-jar-01.jpg?v=1739443401",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-parisian-holiday-brunch-signature-large-jar-candle-1759285e%3Fvariant%3D45470731894939",
+  "price": 26.99,
+  "date": "2026-11-04",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-04T16:27"
+ },
+ {
+  "id": "42486888890523",
+  "brand": "WoodWick",
+  "name": "Cashmere",
+  "kind": "Medium Jar Candle",
+  "blurb": "A delightful combination of fragrance notes, including sandalwood, tonka bean, and quince, blend to create a sumptuous, compelling scent.",
+  "notes": [
+   "Quince",
+   "Pear",
+   "Red Fruit",
+   "Iced Ginger",
+   "Orris"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cashmere-Medium-Jar-2674529E.jpg?v=1781365080",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cashmere-medium-jar-candle%3Fvariant%3D42486888890523",
+  "price": 19.99,
+  "date": "2026-11-04",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-04T19:50"
  }
 ]
