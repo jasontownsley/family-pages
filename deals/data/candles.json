@@ -947,5 +947,47 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-04T19:50"
+ },
+ {
+  "id": "42896098984091",
+  "brand": "Yankee Candle",
+  "name": "Wild Orchid",
+  "kind": "Large Jar Candle",
+  "blurb": "Escape to a lush tropical paradise that's equal parts intoxicating florals and sweet, ripe fruit.",
+  "notes": [
+   "Sunny Ozone",
+   "Mandarin Blossom",
+   "Bergamot",
+   "Palm Leaf",
+   "Wild Orchid"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Wild-Orchid-Large-Jar-2236193-1.jpg?v=1776945258",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-wild-orchid-signature-large-jar-candle-1629979e%3Fvariant%3D42896098984091",
+  "price": 23.99,
+  "date": "2026-11-05",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-05T11:04"
+ },
+ {
+  "id": "37975402971291",
+  "brand": "WoodWick",
+  "name": "Rosewood",
+  "kind": "Medium Jar Candle",
+  "blurb": "Roseberry and soothing tea accords unite with notes of cedarwood and musk.",
+  "notes": [
+   "Tangerine",
+   "Tea Accord",
+   "Plum",
+   "Roseberry",
+   "Star Jasmine"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/Woodwick-Rosewood-Medium-Jar-1.jpg?v=1739442937",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-rosewood-medium-jar-candle%3Fvariant%3D37975402971291",
+  "price": 12.49,
+  "date": "2026-11-05",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-05T09:24"
  }
 ]
