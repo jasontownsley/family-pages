@@ -21,7 +21,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import candles
@@ -29,6 +29,9 @@ import candles
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "deals" / "data"
 OUT = DATA / "prices.json"
+MAX_CALLS, MAX_CALLS_QUICK = 40, 15   # shop look-ups per run (07:00 full / 15:00 quick)
+TIME_BUDGET = 12 * 60                 # seconds: stop asking shops after this, so a run never drags on for hours
+STALE_DAYS = 3                        # re-ask a shop about an unchanged product after this many days
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) DailyDealsUK/1.0"}
 
 # advertiser id, feed format, shop, is Shopify (has <url>.js with compare_at_price)
@@ -108,6 +111,21 @@ def main(argv=()):
     checked = datetime.now().strftime("%Y-%m-%dT%H:%M")
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     out, offers, missing, kept, reused = {}, 0, 0, 0, 0
+    # Asking the shops is slow (they rate-limit us), so each run asks about a limited number of products:
+    # new ones and ones whose feed price moved first, then (full 07:00 run only) the ones checked longest ago.
+    # Everything else keeps its last saving while its price is unchanged.
+    stale_before = (datetime.now() - timedelta(days=STALE_DAYS)).strftime("%Y-%m-%dT%H:%M")
+    def priority(rid):
+        f, o = idx.get(rid), old.get(rid, {})
+        if not f or not (f["shopify"] and f["link"]):
+            return None
+        if o.get("price") is None or abs(o["price"] - f["price"]) >= 0.01:
+            return (0, "")                                   # new or price changed: always worth asking
+        if not quick and o.get("shop_checked", "") < stale_before:
+            return (1, o.get("shop_checked", ""))            # not asked for a while
+        return None
+    ask = sorted((r for r in wanted if priority(r)), key=priority)[:MAX_CALLS_QUICK if quick else MAX_CALLS]
+    ask, deadline = set(ask), time.time() + TIME_BUDGET
     for rid in sorted(wanted):
         f = idx.get(rid)
         if not f:                      # gone from the feed: treat as out of stock
@@ -116,17 +134,14 @@ def main(argv=()):
             continue
         price, was, stock = f["price"], None, f["in_stock"]
         o = old.get(rid, {})
-        if quick and o.get("price") is not None and abs(o["price"] - price) < 0.01:
-            # quick (afternoon) check: the feed price hasn't moved since the last full check, so the saving
-            # and stock from the shop's own data still stand - no need to ask the shop again
-            was, stock = o.get("was"), stock and o.get("in_stock", True)
-            reused += 1
-        elif f["shopify"] and f["link"]:
+        shop_checked = o.get("shop_checked", "")
+        if rid in ask and time.time() < deadline:
             try:
                 sp = shopify_price(f["link"], f["variant"])
                 if sp:
                     price, w, stock = sp[0], sp[1], sp[2] and stock
                     was = w if w > price else None
+                    shop_checked = checked
             except Exception as e:     # shop data unavailable: fall back to the feed price
                 print(f"  {f['shop']} {rid}: {str(e)[:60]}")
                 # keep the last known "was" price while the current price hasn't changed,
@@ -135,14 +150,19 @@ def main(argv=()):
                     was = o["was"]
                     kept += 1
             time.sleep(1.5)              # be gentle: shops rate-limit fast repeated requests
+        elif o.get("price") is not None and abs(o["price"] - price) < 0.01:
+            # price unchanged since the shop was last asked: its saving and stock still stand
+            was, stock = o.get("was"), stock and o.get("in_stock", True)
+            reused += 1
         save = round((was - price) / was * 100) if was else 0
         offers += save >= 5 and stock
-        out[rid] = {"price": round(price, 2), "was": was, "save": save, "in_stock": stock, "shop": f["shop"], "checked": checked}
+        out[rid] = {"price": round(price, 2), "was": was, "save": save, "in_stock": stock, "shop": f["shop"],
+                    "checked": checked, "shop_checked": shop_checked}
     OUT.write_text(json.dumps(out, indent=1), encoding="utf-8")
     print(f"Prices: {len(out)} products checked, {offers} on offer, "
           f"{sum(not v.get('in_stock') for v in out.values())} out of stock ({missing} no longer in feeds)"
           + (f", {kept} savings kept from the last check" if kept else "")
-          + (f", {reused} unchanged since the morning check" if reused else ""))
+          + (f", {reused} unchanged (last saving kept)" if reused else "") + f", {len(ask)} asked the shop")
     return 0
 
 
