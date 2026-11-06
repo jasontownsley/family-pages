@@ -1010,5 +1010,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-05T15:05"
+ },
+ {
+  "id": "48164506697883",
+  "brand": "Yankee Candle",
+  "name": "Blooming Love",
+  "kind": "Large Jar Candle",
+  "blurb": "An addictive scent of a flower bouquet perfectly accented with fruit to make you swoon. Notes of juicy pear and fresh cucumber blend sweetly with dewy rose.",
+  "notes": [
+   "Juicy Pear",
+   "Green Apple",
+   "Dewdrops",
+   "Dewy Rose",
+   "Lily of the Valley"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Blooming-Love-Large-Jar-2243917.jpg?v=1776433267",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-blooming-love-signature-large-jar-candle-2243917%3Fvariant%3D48164506697883",
+  "price": 23.99,
+  "date": "2026-11-06",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-06T13:34"
  }
 ]
