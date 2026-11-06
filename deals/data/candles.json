@@ -1031,5 +1031,26 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-06T13:34"
+ },
+ {
+  "id": "42896100556955",
+  "brand": "Yankee Candle",
+  "name": "Vanilla Cupcake",
+  "kind": "Large Jar Candle",
+  "blurb": "The rich, creamy aroma of vanilla cupcakes with hints of lemon and lots of buttery icing.",
+  "notes": [
+   "Vanilla Icing",
+   "Malted Sugar",
+   "Cake Batter",
+   "Chocolate",
+   "Cocoa"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Vanilla-Cupcake-Large-Jar-2236228-1.jpg?v=1776942141",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-vanilla-cupcake-signature-large-jar-candle-1629969e%3Fvariant%3D42896100556955",
+  "price": 23.99,
+  "date": "2026-11-06",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-06T18:31"
  }
 ]
