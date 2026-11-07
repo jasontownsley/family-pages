@@ -1052,5 +1052,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-06T18:31"
+ },
+ {
+  "id": "42896099934363",
+  "brand": "Yankee Candle",
+  "name": "Midsummers Night",
+  "kind": "Large Jar Candle",
+  "blurb": "An intoxicating and masculine blend of musk, patchouli, sage and mahogany cologne.",
+  "notes": [
+   "Citrus",
+   "Herbaceous",
+   "Woody",
+   "Bergamot",
+   "Lime"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Midsummers-Night-Large-Jar-2236198-1.jpg?v=1779723646",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-midsummers-night-signature-large-jar-candle-1629968e%3Fvariant%3D42896099934363",
+  "price": 23.99,
+  "date": "2026-11-07",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-07T09:38"
  }
 ]
