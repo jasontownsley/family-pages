@@ -1073,5 +1073,26 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-07T09:38"
+ },
+ {
+  "id": "42896100294811",
+  "brand": "Yankee Candle",
+  "name": "Soft Blanket",
+  "kind": "Large Jar Candle",
+  "blurb": "Wrapped in sweet dreams… a lullaby of clean citrus, luxurious vanilla and warm amber.",
+  "notes": [
+   "Bergamot",
+   "Citrus",
+   "Blackberry",
+   "Cashmere Vanilla",
+   "Powdery Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Soft-Blanket-Large-Jar-2236197-1.jpg?v=1776771269",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-soft-blanket-signature-large-jar-candle-1701376e%3Fvariant%3D42896100294811",
+  "price": 23.99,
+  "date": "2026-11-07",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-07T17:23"
  }
 ]
