@@ -158,22 +158,34 @@ def sparkles(img, seed, area, n=18):
     img.alpha_composite(layer.filter(ImageFilter.GaussianBlur(9)))
 
 
+def palette(today=None):
+    """Pin colours: festive red, gold and evergreen from 1 Nov to 31 Dec, the site's blue otherwise."""
+    from datetime import date
+    m = (today or date.today()).month
+    if m in (11, 12):
+        return {"top": "#5C0B16", "bottom": "#9B1C24", "pill": "#F5D27A", "pill_text": "#5C0B16", "accent": "#F5D27A",
+                "soft": "#F6DCC8", "footer": "#0F3D2E"}
+    return {"top": BLUE_DEEP, "bottom": BLUE, "pill": RED, "pill_text": "white", "accent": GOLD, "soft": SOFT,
+            "footer": BLUE_DARK}
+
+
 def make_pin(p, photo, out, label):
     W, H, M = 1000, 1500, 64
+    pal = palette()
     # vertical gradient: deep blue at the top to brand blue at the bottom
     grad = Image.linear_gradient("L").resize((W, H))
-    img = Image.composite(Image.new("RGBA", (W, H), BLUE), Image.new("RGBA", (W, H), BLUE_DEEP), grad)
+    img = Image.composite(Image.new("RGBA", (W, H), pal["bottom"]), Image.new("RGBA", (W, H), pal["top"]), grad)
     sparkles(img, p["id"], (0, 0, W, 1100))
     dr = ImageDraw.Draw(img)
 
     # label pill + brand
     f_pill = font(BOLD, 30)
     pw = dr.textlength(label.upper(), font=f_pill)
-    dr.rounded_rectangle([M, 56, M + pw + 44, 110], radius=27, fill=RED)
-    dr.text((M + 22, 83), label.upper(), font=f_pill, fill="white", anchor="lm")
+    dr.rounded_rectangle([M, 56, M + pw + 44, 110], radius=27, fill=pal["pill"])
+    dr.text((M + 22, 83), label.upper(), font=f_pill, fill=pal["pill_text"], anchor="lm")
     f_brand = font(BOLD, 30)
     brand = " ".join(p["brand"].upper())
-    dr.text((W - M, 83), brand, font=f_brand, fill=GOLD, anchor="rm")
+    dr.text((W - M, 83), brand, font=f_brand, fill=pal["accent"], anchor="rm")
 
     # product name (serif) + type
     size = 92
@@ -187,8 +199,8 @@ def make_pin(p, photo, out, label):
     for ln in lines:
         dr.text((M, y), ln, font=f_name, fill="white")
         y += int(size * 1.08)
-    dr.text((M, y + 6), p["kind"], font=font(SEMI, 36), fill=SOFT)
-    dr.line([M, y + 66, M + 120, y + 66], fill=GOLD, width=4)
+    dr.text((M, y + 6), p["kind"], font=font(SEMI, 36), fill=pal["soft"])
+    dr.line([M, y + 66, M + 120, y + 66], fill=pal["accent"], width=4)
     y += 80
 
     # product on a white card with a soft shadow
@@ -217,12 +229,12 @@ def make_pin(p, photo, out, label):
         ns = [n.lower() for n in p["notes"][:4]]
         while len(ns) > 1 and dr.textlength("Notes: " + " · ".join(ns), font=f_notes) > W - 2 * M:
             ns.pop()
-        dr.text((M, y + 14), "Notes: " + " · ".join(ns), font=f_notes, fill=GOLD)
+        dr.text((M, y + 14), "Notes: " + " · ".join(ns), font=f_notes, fill=pal["accent"])
 
     # footer
-    dr.rectangle([0, H - 130, W, H], fill=BLUE_DARK)
+    dr.rectangle([0, H - 130, W, H], fill=pal["footer"])
     dr.text((M, H - 65), "DAILY DEALS UK", font=font(HEAVY, 42), fill="white", anchor="lm")
-    dr.text((W - M, H - 65), f"Shop at {p.get('shop', 'Candles Direct')} \u203A", font=font(SEMI, 30), fill=SOFT, anchor="rm")
+    dr.text((W - M, H - 65), f"Shop at {p.get('shop', 'Candles Direct')} \u203A", font=font(SEMI, 30), fill=pal["soft"], anchor="rm")
 
     out.parent.mkdir(parents=True, exist_ok=True)
     img.convert("RGB").save(out, "JPEG", quality=90, optimize=True)
@@ -308,9 +320,12 @@ def season_for(day):
 def label_for(p, fams):
     """(rank, label): which seasonal family the scent belongs to, best first."""
     for i, (label, rx) in enumerate(fams):
-        if rx.search(p["name"]) or rx.search(p["blurb"]):
-            return i, label
-    return len(fams), "Candle of the day"
+        if rx.search(p["name"]):
+            return 2 * i, label
+    for i, (label, rx) in enumerate(fams):
+        if rx.search(p["blurb"]):
+            return 2 * i + 1, label
+    return 2 * len(fams), "Candle of the day"
 
 
 def load_manifest():

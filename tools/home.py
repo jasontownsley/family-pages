@@ -350,10 +350,18 @@ def build(days, spots_by_key):
              if (DEALS / key(d) / "photos" / f"{p['asin']}.jpg").exists()][:10]
     latest_pin = f"{SITE}/{key(days[0])}/pin.jpg" if days else ""
 
-    hero = ('<div class="hero"><h1>Hand-picked UK finds &amp; gift ideas, fresh every day</h1>'
-            '<p>Well-reviewed home, kitchen, beauty and gift picks from UK shops, plus Christmas gift ideas from brands you love.</p>'
-            f'<div class="cta"><a class="a1" href="{SITE}/guides/christmas-gift-guide/">&#127876; Christmas gift guide</a><a class="a2" href="#today">Today\'s finds</a></div></div>')
-    out = [head("Daily Deals UK - hand-picked UK finds and gift ideas",
+    xmas = datetime.now().month in (11, 12)
+    hero = (('<div class="hero"><h1>Christmas gift ideas from UK shops, fresh every day</h1>'
+             '<p>Hand-picked gifts for her, him, the kids and Secret Santa - with prices and savings checked twice a day.</p>'
+             f'<div class="cta"><a class="a1" href="{SITE}/guides/christmas-gift-guide/">&#127876; Christmas gift guide</a>'
+             '<a class="a2" href="#gift-lists">Gift lists</a><a class="a2" href="#gift-finder">Gift finder</a></div></div>') if xmas else
+            ('<div class="hero"><h1>Hand-picked UK finds &amp; gift ideas, fresh every day</h1>'
+             '<p>Well-reviewed home, kitchen, beauty and gift picks from UK shops, plus Christmas gift ideas from brands you love.</p>'
+             f'<div class="cta"><a class="a1" href="{SITE}/guides/christmas-gift-guide/">&#127876; Christmas gift guide</a><a class="a2" href="#today">Today\'s finds</a></div></div>'))
+    out = [head("Christmas Gift Ideas UK 2026 - gift lists, stocking fillers & deals | Daily Deals UK" if xmas else
+                "Daily Deals UK - hand-picked UK finds and gift ideas",
+                "Christmas gift ideas from UK shops: gift lists for her, him and kids, stocking fillers, Secret Santa ideas and "
+                "voucher codes, with prices checked twice a day." if xmas else
                 "Hand-picked, well-reviewed UK finds for home, kitchen, beauty and gifts, plus Christmas gift ideas - new picks every day.",
                 f"{SITE}/", latest_pin), topbar(hero), chips("")]
     out.append(offers_strip(pr, gifts, candles))
@@ -367,7 +375,19 @@ def build(days, spots_by_key):
                    f'Cadbury Gifts Direct, Bare Kind, Scottish Fine Soaps and more. New picks daily.</p></div>'
                    f'<a href="{SITE}/c/christmas/">See all &rsaquo;</a></div><div class="grid">'
                    + "".join(product_card(p, "gifts") for p in latest(gifts, 8)) + "</div></section>")
-    out.append(f'<section id="today"><div class="band"><div class="sh"><div><h2>Today\'s Amazon finds</h2><p>Two fresh roundups a day, '
+    lists = sorted(load("collages.json"), key=lambda c: c.get("release", c["date"]), reverse=True)
+    seen_themes, cards = set(), []
+    for c in lists:                                             # newest list of each theme
+        if c["theme"] not in seen_themes and (DEALS / "lists" / c["id"] / "pin.jpg").exists():
+            seen_themes.add(c["theme"])
+            cards.append(f'<a class="scard" href="{SITE}/lists/{c["id"]}/"><span class="simg"><img src="{SITE}/lists/{c["id"]}/pin.jpg" '
+                         f'alt="{e(c["title"])}" loading="lazy"></span><span class="cat">Gift list</span><strong>{e(c["title"])}</strong>'
+                         f'<small>{e(c["sub"])}</small></a>')
+    if cards:
+        out.append('<section id="gift-lists"><div class="sh"><div><h2>&#127873; Christmas gift lists</h2><p>Ready-made shortlists by '
+                   'budget and person - stocking fillers, Secret Santa, gifts for her and him, and more.</p></div></div>'
+                   '<div class="sgrid">' + "".join(cards[:10]) + "</div></section>")
+    out.append(f'<section id="today"><div class="band"><div class="sh"><div><h2>Amazon finds</h2><p>Hand-picked Amazon roundups, '
                f'every product checked for great reviews.</p></div><a href="#archive">Archive &rsaquo;</a></div><div class="rgrid">'
                + "".join(roundup_card(d) for d in days[:4]) + "</div></div></section>")
     import guides
