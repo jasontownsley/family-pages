@@ -130,12 +130,37 @@ def scribbler(r):
             "url": r["aw_deep_link"], "blurb": clean(r.get("description")), "id": f"scr-{r['id']}"}
 
 
+BR_XMAS = re.compile(r"christmas|xmas|festive|santa|reindeer|\belf\b|elves|snowm[ae]n|gingerbread|advent|nativity|"
+                     r"bauble|stocking|nutcracker|robin|penguin|polar bear|snowflake|christmas tree|winter wonderland", re.I)
+BR_NOT = re.compile(r"mother'?s day|father'?s day|easter|valentine|halloween|autumn|birthday|bulk|class pack|"
+                    r"value pack|teacher|school", re.I)
+
+
+def baker_ross(r):
+    # kids' Christmas crafts and stocking fillers; the feed carries a "was" price (product_price_old)
+    name, cat = r["product_name"].strip(), r.get("merchant_category", "")
+    if re.search(r"\((Pack|Box) of|\(Per kit\)", name):             # "... (Pack of 6) Christmas Crafts, All In One Kit" -> "... (Pack of 6)"
+        name = re.sub(r"\)\s.*$", ")", name)
+    # Christmas words in the product's own name (not just the shop's category or a "Christmas Crafts" suffix),
+    # and only kits, decorations and toys - not plain craft supplies like card packs or glue dots
+    if r.get("in_stock") != "1" or price_of(r["search_price"]) < 2.5 or not BR_XMAS.search(name):
+        return None
+    if not (cat.startswith(("Craft Kits", "Toys")) or "Decoration" in cat) or BR_NOT.search(name):
+        return None
+    kind = ("Kids' Christmas Craft Kit" if cat.startswith("Craft Kits") else
+            "Christmas Stocking Filler" if cat.startswith("Toys") else "Christmas Craft Supplies")
+    return {"brand": "Baker Ross", "name": name, "kind": kind, "price": price_of(r["search_price"]),
+            "image": r.get("merchant_image_url") or r.get("aw_image_url"), "url": r["aw_deep_link"],
+            "blurb": clean(r.get("description")), "id": f"br-{r['aw_product_id']}", "xmas": True}
+
+
 MERCHANTS = [
     # (advertiser id, feed format in the Awin feed list, shop name shown on the pin, parser)
     ("736", "Awin", "Cadbury Gifts Direct", cadbury),
     ("30533", "Awin", "Bare Kind", barekind),
     ("101517", "Google", "Scottish Fine Soaps", scottish_fine_soaps),
     ("3965", "Google", "Scribbler", scribbler),
+    ("1902", "Awin", "Baker Ross", baker_ross),
 ]
 
 
@@ -259,7 +284,7 @@ def load_manifest():
 
 
 # pins per shop per day, split over the 07:00 run (slot "a", the larger half) and the 15:00 run (slot "b")
-DAILY = {"Cadbury Gifts Direct": 3, "Bare Kind": 2, "Scottish Fine Soaps": 1, "Scribbler": 2}
+DAILY = {"Cadbury Gifts Direct": 3, "Bare Kind": 2, "Scottish Fine Soaps": 1, "Scribbler": 2, "Baker Ross": 2}
 REPEAT_AFTER_DAYS = 21       # a product can be pinned again (as a fresh pin) once its last pin is this old
 
 

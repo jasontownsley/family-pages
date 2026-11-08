@@ -208,7 +208,7 @@ def raw_id(item_id):
     """Feed id behind a manifest id ("cgd-123" -> "123", candle ids are already raw)."""
     s = str(item_id)
     s = re.sub(r"-r\d+$", "", s)                     # repeat pins: "sfs-123-r2"
-    return s.split("-", 1)[1] if s.split("-", 1)[0] in ("cgd", "bk", "sfs", "scr", "aw") else s
+    return s.split("-", 1)[1] if s.split("-", 1)[0] in ("cgd", "bk", "sfs", "scr", "br", "aw") else s
 
 
 def price_html(rid, pr=None):

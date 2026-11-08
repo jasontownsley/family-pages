@@ -64,6 +64,8 @@ THEMES = [
     ("pamper-gift-sets", "Pamper Gift Sets", "Bath, body & home fragrance",
      lambda p, pr: p["shop"] == "Scottish Fine Soaps" or re.search(r"bath|body|hand care|diffuser|spa", _txt(p)),
      "#pampergifts #giftsets #selfcaregifts"),
+    ("kids-christmas-crafts", "Christmas Crafts For Kids", "Easy festive makes & stocking fillers",
+     lambda p, pr: p["shop"] == "Baker Ross", "#christmascrafts #kidscrafts #christmasactivities"),
     ("fun-gifts", "Fun & Quirky Christmas Gifts", "Games, novelty lights & treats",
      lambda p, pr: p["shop"] == "Scribbler", "#funnygifts #quirkygifts #secretsanta"),
 ]

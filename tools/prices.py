@@ -37,7 +37,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) DailyDealsUK/1.0"
 # advertiser id, feed format, shop, is Shopify (has <url>.js with compare_at_price)
 FEEDS = [("13560", "Google", "Candles Direct", True), ("101517", "Google", "Scottish Fine Soaps", True),
          ("30533", "Awin", "Bare Kind", True), ("736", "Awin", "Cadbury Gifts Direct", False),
-         ("3965", "Google", "Scribbler", True)]
+         ("3965", "Google", "Scribbler", True), ("1902", "Awin", "Baker Ross", False)]
 
 
 def featured_ids():
@@ -73,8 +73,11 @@ def feed_index(wanted):
             else:
                 link = r.get("merchant_deep_link", "")
                 var = urllib.parse.parse_qs(urllib.parse.urlparse(link).query).get("variant", [""])[0]
+                old_price = (r.get("product_price_old") or "").split()
                 found[rid] = {"shop": shop, "shopify": shopify, "link": link, "variant": var,
-                              "price": float(r["search_price"] or 0), "in_stock": r.get("in_stock") != "0"}
+                              "price": float(r["search_price"] or 0), "in_stock": r.get("in_stock") != "0",
+                              # some feeds (e.g. Baker Ross) carry the shop's own "was" price
+                              "was_feed": float(old_price[0]) if old_price and old_price[0].replace(".", "", 1).isdigit() else None}
     return found
 
 
@@ -154,6 +157,8 @@ def main(argv=()):
             # price unchanged since the shop was last asked: its saving and stock still stand
             was, stock = o.get("was"), stock and o.get("in_stock", True)
             reused += 1
+        if not f["shopify"] and f.get("was_feed") and f["was_feed"] > price:
+            was = f["was_feed"]
         save = round((was - price) / was * 100) if was else 0
         offers += save >= 5 and stock
         out[rid] = {"price": round(price, 2), "was": was, "save": save, "in_stock": stock, "shop": f["shop"],
