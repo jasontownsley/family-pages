@@ -454,5 +454,53 @@
    ]
   ],
   "release": "2026-11-07T20:42"
+ },
+ {
+  "id": "2026-11-08-chocolate-christmas-gifts",
+  "theme": "chocolate-christmas-gifts",
+  "title": "9 Chocolate Christmas Gifts UK",
+  "sub": "Hampers, selection boxes & more",
+  "tags": "#chocolategifts #christmaschocolate #cadbury",
+  "date": "2026-11-08",
+  "slot": "a",
+  "products": [
+   [
+    "gifts",
+    "cgd-41880875541"
+   ],
+   [
+    "gifts",
+    "cgd-42961353009"
+   ],
+   [
+    "gifts",
+    "cgd-30271795501"
+   ],
+   [
+    "gifts",
+    "scr-63841710506361"
+   ],
+   [
+    "gifts",
+    "cgd-41934970854"
+   ],
+   [
+    "gifts",
+    "cgd-37245514930"
+   ],
+   [
+    "gifts",
+    "cgd-40267777718"
+   ],
+   [
+    "gifts",
+    "scr-43198018617551"
+   ],
+   [
+    "gifts",
+    "scr-43198019305679"
+   ]
+  ],
+  "release": "2026-11-08T08:04"
  }
 ]

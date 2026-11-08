@@ -1094,5 +1094,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-07T17:23"
+ },
+ {
+  "id": "42896099344539",
+  "brand": "Yankee Candle",
+  "name": "Black Coconut",
+  "kind": "Large Jar Candle",
+  "blurb": "Sunset in paradise … rich coconut, cedarwood and island blossoms promise an evening of luxurious tranquility.",
+  "notes": [
+   "Fruity Pineapple",
+   "Coconut",
+   "Coconut Blossom",
+   "Powdery notes",
+   "Woody notes"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Black-Coconut-Large-Jar-2236184-1.jpg?v=1776432453",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-black-coconut-signature-large-jar-candle-1701371e%3Fvariant%3D42896099344539",
+  "price": 23.99,
+  "date": "2026-11-08",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-08T10:39"
  }
 ]
