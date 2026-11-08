@@ -1115,5 +1115,26 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-08T10:39"
+ },
+ {
+  "id": "42896099901595",
+  "brand": "Yankee Candle",
+  "name": "Midnight Jasmine",
+  "kind": "Large Jar Candle",
+  "blurb": "A seductively lush perfume of water jasmine, sweet honeysuckle, neroli and mandarin blossom.",
+  "notes": [
+   "Neroli",
+   "Orantique",
+   "Mandarin Blossom",
+   "Yellow Grapefruit",
+   "Grapefruit"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Midnight-Jasmine-Large-Jar-2236256-1.jpg?v=1776700343",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-midnight-jasmine-signature-large-jar-candle-1630688e%3Fvariant%3D42896099901595",
+  "price": 23.99,
+  "date": "2026-11-08",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-08T17:11"
  }
 ]
