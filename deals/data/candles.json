@@ -1136,5 +1136,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-08T17:11"
+ },
+ {
+  "id": "48164500078747",
+  "brand": "Yankee Candle",
+  "name": "Winter Night Stars",
+  "kind": "Medium Jar Candle",
+  "blurb": "Scattered like diamonds across the cold winter sky, bright stars twinkle. This complex fragrance brings the moment to life with a captivating mix of woody, botanical, and icy aquatic notes.",
+  "notes": [
+   "Citrus",
+   "Fresh Fallen Snow",
+   "Eucalyptus",
+   "Rose",
+   "Solar Winter Bloom"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Winter-Night-Stars-Medium-Jar-2671957E.jpg?v=1776944395",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-winter-night-stars-signature-medium-jar-candle-2671957e%3Fvariant%3D48164500078747",
+  "price": 19.99,
+  "date": "2026-11-09",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-09T11:47"
  }
 ]
