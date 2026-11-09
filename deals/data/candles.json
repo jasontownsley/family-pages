@@ -1157,5 +1157,26 @@
   "label": "Christmas scent",
   "slot": "a",
   "release": "2026-11-09T11:47"
+ },
+ {
+  "id": "48164500013211",
+  "brand": "Yankee Candle",
+  "name": "Spiced Pumpkin",
+  "kind": "Medium Jar Candle",
+  "blurb": "Spiced Pumpkin is the essence of autumn. A smooth, comforting fragrance blends pumpkin with notes of cinnamon, nutmeg, and clove. A dash of mellow vanilla and baked aromas round out the base to create a warm, satisfying gourmand scent.",
+  "notes": [
+   "Citrus",
+   "Orange",
+   "Nutmeg",
+   "Spiced Pumpkin",
+   "Cinnamon"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Spiced-Pumpkin-Medium-Jar-2671961E.jpg?v=1776786557",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-spiced-pumpkin-signature-medium-jar-candle-2671961e%3Fvariant%3D48164500013211",
+  "price": 19.99,
+  "date": "2026-11-09",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-09T16:41"
  }
 ]
