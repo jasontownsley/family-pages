@@ -1178,5 +1178,26 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-09T16:41"
+ },
+ {
+  "id": "42933165752475",
+  "brand": "Yankee Candle",
+  "name": "Red Apple Wreath",
+  "kind": "Large Jar Candle",
+  "blurb": "A happy holiday homecoming with the festive aroma of sweet apples, cinnamon, walnuts and maple.",
+  "notes": [
+   "Golden Apples",
+   "Cinnamon Leaf",
+   "Clove Apple Peel",
+   "Cracked Walnuts",
+   "Brown Sugar Amber"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Red-Apple-Wreath-Large-Jar-2236218-1.jpg?v=1776719881",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-red-apple-wreath-signature-large-jar-candle-1629977e%3Fvariant%3D42933165752475",
+  "price": 23.99,
+  "date": "2026-11-10",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-10T12:58"
  }
 ]
