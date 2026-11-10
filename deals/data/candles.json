@@ -1199,5 +1199,26 @@
   "label": "Autumn scent",
   "slot": "a",
   "release": "2026-11-10T12:58"
+ },
+ {
+  "id": "48164506960027",
+  "brand": "Yankee Candle",
+  "name": "Pink Sands Glow",
+  "kind": "Large Jar Candle",
+  "blurb": "Pink Sands™ reimagined — this tropical fragrance takes your island escape to new heights. Mingling on a summer breeze, juicy watermelon, tangy citrus, and sun-warmed vanilla beckon you to a paradise aglow with a rosy sunset.",
+  "notes": [
+   "Pink Papaya",
+   "Watermelon",
+   "Sea Salt",
+   "Star Jasmine",
+   "Pistachio Cream"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Pink-SandsGlow-Large-Jar-2243913-1.jpg?v=1776719246",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-pink-sands-glow-signature-large-jar-candle-2243913%3Fvariant%3D48164506960027",
+  "price": 23.99,
+  "date": "2026-11-10",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-10T20:17"
  }
 ]
