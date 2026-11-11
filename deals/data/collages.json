@@ -754,5 +754,53 @@
    ]
   ],
   "release": "2026-11-11T08:30"
+ },
+ {
+  "id": "2026-11-11-b-pamper-gift-sets",
+  "theme": "pamper-gift-sets",
+  "title": "9 Pamper Gift Sets UK",
+  "sub": "Bath, body & home fragrance",
+  "tags": "#pampergifts #giftsets #selfcaregifts",
+  "date": "2026-11-11",
+  "slot": "b",
+  "products": [
+   [
+    "candles",
+    "42223778758811"
+   ],
+   [
+    "candles",
+    "47606046392475"
+   ],
+   [
+    "candles",
+    "48164501258395"
+   ],
+   [
+    "gifts",
+    "sfs-53984692011393-r2"
+   ],
+   [
+    "gifts",
+    "sfs-53984691224961-r2"
+   ],
+   [
+    "gifts",
+    "sfs-55181425574273-r2"
+   ],
+   [
+    "gifts",
+    "scr-63827540443513"
+   ],
+   [
+    "gifts",
+    "cgd-31297154721"
+   ],
+   [
+    "gifts",
+    "cgd-31291341881"
+   ]
+  ],
+  "release": "2026-11-11T18:18"
  }
 ]

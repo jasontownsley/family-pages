@@ -1241,5 +1241,26 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-11T08:37"
+ },
+ {
+  "id": "48164500340891",
+  "brand": "Yankee Candle",
+  "name": "Enchanting Cherry Blossom",
+  "kind": "Large Jar Candle",
+  "blurb": "Blooming cherry trees herald the arrival of spring's magic. Bright fruity aromas of red berries and grapefruit settle into a delicate floral heart of pink rose, freesia, and cherry blossom notes, warmed at the base by creamy gourmands.",
+  "notes": [
+   "Red Berries",
+   "Apple",
+   "Pink Grapefruit",
+   "Rose",
+   "Freesia"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Enchanting-Cherry-Large-Jar-2671939E-1.jpg?v=1776683319",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-enchanting-cherry-blossom-signature-large-jar-candle-2671939e%3Fvariant%3D48164500340891",
+  "price": 23.99,
+  "date": "2026-11-11",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-11T20:54"
  }
 ]
