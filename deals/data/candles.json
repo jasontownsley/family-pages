@@ -1220,5 +1220,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-10T20:17"
+ },
+ {
+  "id": "48164499652763",
+  "brand": "Yankee Candle",
+  "name": "Lavender Bliss",
+  "kind": "Medium Jar Candle",
+  "blurb": "Relax in a tranquil spa where fluffy towels, trickling waterfalls, and aromatic treatments soothe. Captured in notes of orchid petals, lavender, and cedarwood, this fragrance is a lovely way to enhance moments of serenity.",
+  "notes": [
+   "Orchid Petals",
+   "Sugared Violet",
+   "White Sage",
+   "Lavender",
+   "Jasmine"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Lavender-Bliss-Medium-Jar-2672622E-1a.jpg?v=1776690434",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-lavender-bliss-signature-medium-jar-candle-2672622e%3Fvariant%3D48164499652763",
+  "price": 22.49,
+  "date": "2026-11-11",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-11T08:37"
  }
 ]

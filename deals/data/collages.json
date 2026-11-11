@@ -706,5 +706,53 @@
    ]
   ],
   "release": "2026-11-10T16:18"
+ },
+ {
+  "id": "2026-11-11-christmas-gifts-under-20",
+  "theme": "christmas-gifts-under-20",
+  "title": "9 Christmas Gifts Under £20 UK",
+  "sub": "Budget-friendly gift ideas",
+  "tags": "#christmasgiftideas #giftsunder20 #budgetgifts",
+  "date": "2026-11-11",
+  "slot": "a",
+  "products": [
+   [
+    "gifts",
+    "bk-43098228904"
+   ],
+   [
+    "gifts",
+    "bk-45805584790"
+   ],
+   [
+    "candles",
+    "37985649033371"
+   ],
+   [
+    "candles",
+    "42896103211163"
+   ],
+   [
+    "gifts",
+    "bk-46188309945"
+   ],
+   [
+    "candles",
+    "48164501258395"
+   ],
+   [
+    "gifts",
+    "br-42131638798"
+   ],
+   [
+    "gifts",
+    "scr-43856409755855"
+   ],
+   [
+    "gifts",
+    "cgd-36159775140"
+   ]
+  ],
+  "release": "2026-11-11T08:30"
  }
 ]
