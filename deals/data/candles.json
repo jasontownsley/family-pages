@@ -1262,5 +1262,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-11T20:54"
+ },
+ {
+  "id": "42896099737755",
+  "brand": "Yankee Candle",
+  "name": "Lemon Lavender",
+  "kind": "Large Jar Candle",
+  "blurb": "Clean and inviting … a powdery fresh blend of tangy lemon citrus and sweet lavender flowers.",
+  "notes": [
+   "Tangerine",
+   "Lemon",
+   "Aromatic Lavender",
+   "Fruity Notes",
+   "Orange"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Lemon-Lavender-Large-Jar-2235526-1.jpg?v=1776696961",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-lemon-lavender-signature-large-jar-candle-1629970e%3Fvariant%3D42896099737755",
+  "price": 23.99,
+  "date": "2026-11-12",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-12T12:51"
  }
 ]
