@@ -1283,5 +1283,26 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-12T12:51"
+ },
+ {
+  "id": "48164499914907",
+  "brand": "Yankee Candle",
+  "name": "Cliffside Sunrise",
+  "kind": "Medium Jar Candle",
+  "blurb": "An early morning hike brings you to an idyllic seaside scene with the sun’s first light. Exotic fruit and flower scents are carried along in the warm breeze, accompanied by notes of strawberry, geranium, and hibiscus.",
+  "notes": [
+   "Hibiscus",
+   "Strawberry",
+   "Dwarf Citrus",
+   "Nectarine",
+   "Red Fruit"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cliffside-Sunrise-Medium-Jar-2671964E.jpg?v=1776504532",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-cliffside-sunrise-signature-medium-jar-candle-2671964e%3Fvariant%3D48164499914907",
+  "price": 19.99,
+  "date": "2026-11-12",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-12T20:32"
  }
 ]

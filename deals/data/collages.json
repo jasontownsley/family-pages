@@ -850,5 +850,53 @@
    ]
   ],
   "release": "2026-11-12T13:43"
+ },
+ {
+  "id": "2026-11-12-b-cosy-christmas-gifts",
+  "theme": "cosy-christmas-gifts",
+  "title": "9 Cosy Christmas Gifts UK",
+  "sub": "For snug nights in",
+  "tags": "#cosygifts #hygge #christmasgifts",
+  "date": "2026-11-12",
+  "slot": "b",
+  "products": [
+   [
+    "gifts",
+    "bk-45805584790"
+   ],
+   [
+    "gifts",
+    "bk-46516970834"
+   ],
+   [
+    "candles",
+    "48267070865563"
+   ],
+   [
+    "gifts",
+    "bk-45805584656"
+   ],
+   [
+    "candles",
+    "48267048943771"
+   ],
+   [
+    "candles",
+    "48164501258395"
+   ],
+   [
+    "gifts",
+    "scr-63914859987321"
+   ],
+   [
+    "gifts",
+    "sfs-53984692011393-r2"
+   ],
+   [
+    "gifts",
+    "sfs-21424791519315-r2"
+   ]
+  ],
+  "release": "2026-11-12T15:30"
  }
 ]
