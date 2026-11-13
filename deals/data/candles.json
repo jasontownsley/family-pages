@@ -1304,5 +1304,26 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-12T20:32"
+ },
+ {
+  "id": "49553896243355",
+  "brand": "Yankee Candle",
+  "name": "Sage and Citrus",
+  "kind": "Large Jar Candle",
+  "blurb": "A blend of earthy sage notes, mingled with notes of luxurious talc and lemon-lime to create a natural harmony.",
+  "notes": [
+   "Herbaceous",
+   "Lavender",
+   "Citrus",
+   "Geranium",
+   "Lavender"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yankee-Candle-Sage-Citrus-Large-Jar-Candle-1_156e87b3-7866-49e6-a57f-99e1e89d5906_copy.jpg?v=1792538976",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fsage-and-citrus%3Fvariant%3D49553896243355",
+  "price": 23.99,
+  "date": "2026-11-13",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-13T13:30"
  }
 ]
