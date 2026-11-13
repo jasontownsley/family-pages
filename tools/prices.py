@@ -44,7 +44,7 @@ def featured_ids():
     """Raw feed ids of every Awin product shown on the site."""
     ids = set()
     for m in json.loads((DATA / "candles.json").read_text(encoding="utf-8")) if (DATA / "candles.json").exists() else []:
-        ids.add(str(m["id"]))
+        ids.add(re.sub(r"-r\d+$", "", str(m["id"])))      # repeat candle pins: "123-r2" -> "123"
     for m in json.loads((DATA / "gifts.json").read_text(encoding="utf-8")) if (DATA / "gifts.json").exists() else []:
         ids.add(re.sub(r"-r\d+$", "", str(m["id"])).split("-", 1)[1])     # "sfs-123-r2" -> "123"
     g = DATA / "guide-christmas.json"

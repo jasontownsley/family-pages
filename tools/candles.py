@@ -35,6 +35,7 @@ OUT = ROOT / "deals" / "candles"
 MANIFEST = ROOT / "deals" / "data" / "candles.json"
 SITE = "https://dailydealsuk.co.uk/deals/candles"
 PUBLISHER, MERCHANT = "3105665", "13560"
+REPEAT_AFTER_DAYS = 21          # re-pin a scent (as a fresh pin) after this many days
 KEY_FILE = Path(r"C:\Users\User\ClaudeJobs\awin_key.txt")
 UA = {"User-Agent": "Mozilla/5.0 DailyDealsUK/1.0"}
 
@@ -290,7 +291,7 @@ def write_feed(manifest):
         hour = 11 + 4 * (n % 3)
         when = drip.pub_date(m, datetime.fromisoformat(m["date"]).replace(hour=hour, tzinfo=timezone.utc))
         dates.append(when)
-        hook = drip.under((pr.get(str(m["id"])) or {}).get("price") or m.get("price"))
+        hook = drip.under((pr.get(home.raw_id(m["id"])) or {}).get("price") or m.get("price"))
         title = f"{m['brand']} {m['name']} Candle | Christmas Candle Gift UK" + (f" {hook}" if hook else "")
         if len(title) > 100:
             title = f"{m['brand']} {m['name']} | {m['kind']}"[:100]
@@ -351,22 +352,38 @@ def pick(day, n, slot="a"):
     if any(m["date"] == day.isoformat() and m.get("slot", "a") == slot for m in manifest):
         print(f"Candles already picked for {day} ({'afternoon' if slot == 'b' else 'morning'})")
         return 0
-    used = {(m["brand"], m["name"].lower()) for m in manifest}
+    # a scent can be pinned again (as a fresh pin with a new id) once its last pin is REPEAT_AFTER_DAYS old,
+    # so in Nov-Dec we keep pinning Christmas scents rather than running out and falling back to summer ones
+    last, times = {}, {}
+    for m in manifest:
+        k = (m["brand"], m["name"].lower())
+        last[k] = max(last.get(k, ""), m["date"])
+        times[k] = times.get(k, 0) + 1
     fams = season_for(day)
-    cands = [p for p in map(parse, feed_rows()) if p and (p["brand"], p["name"].lower()) not in used]
     seen, uniq = set(), []
-    for p in sorted(cands, key=lambda p: -p["price"]):        # one size per scent (largest)
-        if (p["brand"], p["name"].lower()) not in seen:
-            seen.add((p["brand"], p["name"].lower()))
-            uniq.append(p)
+    for p in sorted((p for p in map(parse, feed_rows()) if p), key=lambda p: -p["price"]):   # one size per scent (largest)
+        k = (p["brand"], p["name"].lower())
+        if k in seen or (k in last and (day - Date.fromisoformat(last[k])).days < REPEAT_AFTER_DAYS):
+            continue
+        seen.add(k)
+        if k in times:
+            p["id"] = f"{p['id']}-r{times[k] + 1}"
+        p["_repeat"] = k in times
+        uniq.append(p)
     rnd = random.Random(day.isoformat() + slot)
     rnd.shuffle(uniq)
-    uniq.sort(key=lambda p: label_for(p, fams)[0])
+    # seasonal scents first (new before repeats), then everything else
+    uniq.sort(key=lambda p: (label_for(p, fams)[0], p["_repeat"]))
+    brands = {p["brand"] for p in uniq}
     picks, per_brand = [], {}
-    for p in uniq:                                             # mix the brands: at most half from one brand
-        if len(picks) < n and (per_brand.get(p["brand"], 0) < (n + 1) // 2 or len(uniq) < 3 * n):
+    for p in uniq:                                  # mix the brands where there's a choice: at most half from one brand
+        if len(picks) < n and (per_brand.get(p["brand"], 0) < (n + 1) // 2 or len(brands) < 2):
             picks.append(p)
             per_brand[p["brand"]] = per_brand.get(p["brand"], 0) + 1
+    if len(picks) < n:                              # not enough mix available: fill up from the best of the rest
+        picks += [p for p in uniq if p not in picks][:n - len(picks)]
+    for p in picks:
+        p.pop("_repeat", None)
     for p in picks:
         label = label_for(p, fams)[1]
         publish(p, label)
