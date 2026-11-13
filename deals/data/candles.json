@@ -1325,5 +1325,26 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-13T13:30"
+ },
+ {
+  "id": "48164506665115",
+  "brand": "Yankee Candle",
+  "name": "Sun and Sand",
+  "kind": "Large Jar Candle",
+  "blurb": "The irresistible fragrance of a warm breeze on a tropical beach, carrying the scents of sweet orange flower, lemony citrus, and powdery musk. Heart and base notes of fresh lavender and neroli will have you spreading out your towel for a day lying in the sun.",
+  "notes": [
+   "Orange Flower",
+   "Freshness",
+   "Citrus",
+   "Orange Flower",
+   "Elemi"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Sun-and-Sand-Large-Jar-2243918-1.jpg?v=1776798519",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-sun-and-sand-signature-large-jar-candle-2243918%3Fvariant%3D48164506665115",
+  "price": 23.99,
+  "date": "2026-11-13",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-13T18:40"
  }
 ]
