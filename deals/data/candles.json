@@ -1388,5 +1388,47 @@
   "label": "Christmas scent",
   "slot": "a",
   "release": "2026-11-14T09:16"
+ },
+ {
+  "id": "42896099442843-r2",
+  "brand": "Yankee Candle",
+  "name": "Cinnamon Stick",
+  "kind": "Large Jar Candle",
+  "blurb": "The fragrant mystery of imported cinnamon bundled with cloves.",
+  "notes": [
+   "Cardamom",
+   "Clove",
+   "Cinnamon Stick",
+   "Bay Leaf",
+   "Cedarwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cinnamon-Stick-Large-Jar-2236202-1.jpg?v=1776440266",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-cinnamon-stick-signature-large-jar-candle-1701372e%3Fvariant%3D42896099442843",
+  "price": 23.99,
+  "date": "2026-11-14",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-14T14:45"
+ },
+ {
+  "id": "37975463592091-r2",
+  "brand": "WoodWick",
+  "name": "Cinnamon Chai",
+  "kind": "Small Jar Candle",
+  "blurb": "Relish the warm, intoxicating aroma of spicy cinnamon and rich vanilla notes.",
+  "notes": [
+   "Fruity",
+   "Peach Nectar",
+   "Coconut Milk",
+   "Cinnamon",
+   "Clove"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cinnamon-Chai-Small-Jar-2674572E.jpg?v=1776289034",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cinnamon-chai-small-jar-candle%3Fvariant%3D37975463592091",
+  "price": 8.79,
+  "date": "2026-11-14",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-14T17:42"
  }
 ]
