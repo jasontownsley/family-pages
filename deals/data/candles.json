@@ -1346,5 +1346,47 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-13T18:40"
+ },
+ {
+  "id": "37975404249243-r2",
+  "brand": "WoodWick",
+  "name": "White Teak",
+  "kind": "Medium Jar Candle",
+  "blurb": "A nuanced blend of aromas, crisp balsam branches mixed with sandalwood, and oak with hints of moss of tree and cedarwood.",
+  "notes": [
+   "Fresh",
+   "Marine",
+   "Lavender White Teak",
+   "Fir Balsam",
+   "Oak"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/White-Teak-Medium-Jar-2674119E.jpg?v=1776357281",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-white-teak-medium-jar-candle%3Fvariant%3D37975404249243",
+  "price": 19.99,
+  "date": "2026-11-14",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-14T12:49"
+ },
+ {
+  "id": "48164500111515-r2",
+  "brand": "Yankee Candle",
+  "name": "Silver Birch",
+  "kind": "Large Jar Candle",
+  "blurb": "Crisp fall air swirls among the just-turning leaves of a silver-barked birch tree. Notes of Siberian pine and eucalyptus add freshness, while a hint of patchouli contributes grounding spiciness.",
+  "notes": [
+   "Watery Notes",
+   "Ozone",
+   "Siberian Pine",
+   "Clove",
+   "Eucalyptus"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Silver-Birch-Large-Jar-2671955E-1.jpg?v=1776767750",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-silver-birch-signature-large-jar-candle-2671955e%3Fvariant%3D48164500111515",
+  "price": 23.99,
+  "date": "2026-11-14",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-14T09:16"
  }
 ]
