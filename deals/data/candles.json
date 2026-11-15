@@ -1472,5 +1472,47 @@
   "label": "Autumn scent",
   "slot": "a",
   "release": "2026-11-15T13:09"
+ },
+ {
+  "id": "48164500668571-r2",
+  "brand": "Yankee Candle",
+  "name": "Sugared Cinnamon Apple",
+  "kind": "Large Jar Candle",
+  "blurb": "The delicious aroma of crunchy apple slices sugared with cinnamon and vanilla. This sweet and spicy fragrance will make you crave the fruits of autumn — or a big mug of cider.",
+  "notes": [
+   "Apple Slices",
+   "Cinnamon Cider",
+   "Sugar",
+   "Fresh Vanilla",
+   "Nutmeg"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Sugared-Cinnamon-Apple-Large-Jar-2671928E-1.jpg?v=1776797656",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-sugared-cinnamon-apple-signature-large-jar-candle-2671928e%3Fvariant%3D48164500668571",
+  "price": 23.99,
+  "date": "2026-11-15",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-15T19:20"
+ },
+ {
+  "id": "42223778758811-r2",
+  "brand": "P.F. Candle Co.",
+  "name": "Ojai Lavender",
+  "kind": "Reed Diffuser",
+  "blurb": "Inspired by idyllic days spent in Ojai, surrounded by the Topatopa Mountains and nestled amongst golden hills of dry grass, citrus groves, and lavender farms. This bright and aromatic scent folds herbaceous mint and calming lavender with zesty citrus and grounding red cedar.",
+  "notes": [
+   "Bergamot",
+   "Orange",
+   "Eucalyptus",
+   "Rose",
+   "Lily"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/PF-Candle-Co-Ojai-Lavender-Reed-Diffuser-1.jpg?v=1657710108",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-ojai-lavender-reed-diffuser-reed-diffuser%3Fvariant%3D42223778758811",
+  "price": 28.0,
+  "date": "2026-11-15",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-15T20:47"
  }
 ]
