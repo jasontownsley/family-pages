@@ -1430,5 +1430,47 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-14T17:42"
+ },
+ {
+  "id": "48164507156635-r2",
+  "brand": "Yankee Candle",
+  "name": "Caramel Kiss",
+  "kind": "Large Jar Candle",
+  "blurb": "This sophisticated scent blends sweet and savory for an irresistible confectionary kiss. Notes of brown sugar and caramel cream are balanced by the scent of sea salt for a delectable fragrance experience.",
+  "notes": [
+   "Whipped Cream",
+   "Marshmallow",
+   "Lemon Peel",
+   "Sea Salt",
+   "Brown Sugar"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Caramel-Kiss-Large-Jar-2243878-1.jpg?v=1776437033",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-caramel-kiss-signature-large-jar-candle-2243878%3Fvariant%3D48164507156635",
+  "price": 23.99,
+  "date": "2026-11-15",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-15T12:48"
+ },
+ {
+  "id": "48267048943771-r2",
+  "brand": "WoodWick",
+  "name": "Verdant Fig",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "The luscious scent of ripe, juicy fig is tempered by woody notes of fig leaves and cedarwood.",
+  "notes": [
+   "Juicy Fig",
+   "Black Currant",
+   "Green Stems",
+   "Fig Leaves",
+   "Geranium"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Verdant-Fig-Ellipse-Jar-2674291E.jpg?v=1776352112",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-verdant-fig-ellipse-jar-candle-2674291e%3Fvariant%3D48267048943771",
+  "price": 27.99,
+  "date": "2026-11-15",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-15T13:09"
  }
 ]
