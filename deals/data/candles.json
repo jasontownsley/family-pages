@@ -1514,5 +1514,47 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-15T20:47"
+ },
+ {
+  "id": "48164502470811",
+  "brand": "Yankee Candle",
+  "name": "Snow Kissed Pine",
+  "kind": "Medium Jar Candle",
+  "blurb": "Notes of crisp frosty air, iced lavender, and a wave of aquatic freshness combine to capture the cool beauty of a holiday journey through a winter wonderland.",
+  "notes": [
+   "of crisp frosty air",
+   "iced lavender",
+   "and a wave of aquatic freshness combine to capture the cool beauty of a holiday journey through a winter wonderland. Fragrance Notes:",
+   "Watery Marine",
+   "Icy Snow"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Snow-Kissed-Pine-Medium-Jar-2247891.jpg?v=1776769663",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-snow-kissed-pine-signature-medium-jar-candle-2247891%3Fvariant%3D48164502470811",
+  "price": 19.99,
+  "date": "2026-11-16",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-16T08:45"
+ },
+ {
+  "id": "37975159505051-r2",
+  "brand": "WoodWick",
+  "name": "Fireside",
+  "kind": "Large Jar Candle",
+  "blurb": "The balance of the rich scents of amber, vetiver and musk to perfectly capture the essence of a perfect evening by a warm fire.",
+  "notes": [
+   "Italian Bergamot",
+   "Apple Peel",
+   "Golden Amber",
+   "Black Oak",
+   "Smoked Mahogany"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Fireside-Large-Jar-2674263E.jpg?v=1776289500",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-fireside-large-jar-candle%3Fvariant%3D37975159505051",
+  "price": 26.39,
+  "date": "2026-11-16",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-16T09:56"
  }
 ]
