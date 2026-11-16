@@ -1556,5 +1556,47 @@
   "label": "Autumn scent",
   "slot": "a",
   "release": "2026-11-16T09:56"
+ },
+ {
+  "id": "48164499882139-r2",
+  "brand": "Yankee Candle",
+  "name": "Slow Bloom",
+  "kind": "Large Jar Candle",
+  "blurb": "Take a meandering stroll through a peaceful garden where dappled sunlight and gentle rains coax flowers into bloom. Breezy notes of sandalwood, jasmine, and whispering willow complement moments of carefree relaxation.",
+  "notes": [
+   "Sandalwood",
+   "Cedarwood",
+   "Carrot",
+   "Ylang Ylang",
+   "Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Slow-Bloom-Large-Jar-2672617E.jpg?v=1776768783",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-slow-bloom-signature-large-jar-candle-2672617e%3Fvariant%3D48164499882139",
+  "price": 23.99,
+  "date": "2026-11-16",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-16T19:47"
+ },
+ {
+  "id": "48267055825051-r2",
+  "brand": "WoodWick",
+  "name": "Wood Smoke",
+  "kind": "Medium Jar Candle",
+  "blurb": "Sophisticated notes of black cedar logs and leaves are enveloped in smouldering embers, evoking late-night bonfires.",
+  "notes": [
+   "Clove Bud",
+   "Warm Incense",
+   "Pine Needle",
+   "Cedar Leaf",
+   "Glowing Amber"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Wood-Smoke-Medium-Jar-2670648E-1.jpg?v=1776352420",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-wood-smoke-medium-jar-candle-2670648e%3Fvariant%3D48267055825051",
+  "price": 19.99,
+  "date": "2026-11-16",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-16T17:43"
  }
 ]
