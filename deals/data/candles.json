@@ -1598,5 +1598,47 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-16T17:43"
+ },
+ {
+  "id": "45470731862171-r2",
+  "brand": "Yankee Candle",
+  "name": "North Pole Hideaway",
+  "kind": "Large Jar Candle",
+  "blurb": "Be magically transported to a sparkling North Pole wonderland with cool notes of icy air, arctic mint, and snow powder.",
+  "notes": [
+   "Sparkling Snowflakes",
+   "Frosted Greens",
+   "Chilled Bergamot",
+   "Arctic Mint",
+   "Icy Air"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yankee-Candle-northpole-hideaway-large-jar-01.jpg?v=1739443384",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-north-pole-hideaway-signature-large-jar-candle-1759284e%3Fvariant%3D45470731862171",
+  "price": 26.99,
+  "date": "2026-11-17",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-17T12:04"
+ },
+ {
+  "id": "48267050909851-r2",
+  "brand": "WoodWick",
+  "name": "Rose Blush",
+  "kind": "Large Jar Candle",
+  "blurb": "Subtle notes of black currant and smooth sandalwood round out this homage to an English rose garden.",
+  "notes": [
+   "Bergamot",
+   "Apple",
+   "Black Currant",
+   "Magnolia",
+   "English Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Rose-Blush-Large-Jar-2670673E.jpg?v=1776342018",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-rose-blush-large-jar-candle-2670673e%3Fvariant%3D48267050909851",
+  "price": 26.39,
+  "date": "2026-11-17",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-17T12:31"
  }
 ]
