@@ -1640,5 +1640,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-17T12:31"
+ },
+ {
+  "id": "48164506501275-r2",
+  "brand": "Yankee Candle",
+  "name": "Seaside Woods",
+  "kind": "Large Jar Candle",
+  "blurb": "Experience a cozy, secluded coastal escape. Warm scents of sun-dried driftwood and soft orange blossoms are met with hints of citrus, evoking the quietude of a balmy shoreline.",
+  "notes": [
+   "Orange Blossoms",
+   "Cool Citrus",
+   "Sweet Alyssum",
+   "Acacia",
+   "Cottonwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Seaside-Woods-Large-Jar-2243919-1.jpg?v=1776766355",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-seaside-woods-signature-large-jar-candle-2243919%3Fvariant%3D48164506501275",
+  "price": 23.99,
+  "date": "2026-11-17",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-17T15:57"
+ },
+ {
+  "id": "48267069685915-r2",
+  "brand": "WoodWick",
+  "name": "Cedarwood and Ocean Moss",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Fresh cedarwood notes mingle with scents of ocean moss and sea minerals in a lush coastal forest.",
+  "notes": [
+   "Orange",
+   "Ozone",
+   "Lavender",
+   "Ocean Moss",
+   "Sea Salt"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cedarwood-and-Ocean-Moss-Ellipse-Jar-2238143.jpg?v=1776286961",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cedarwood-and-ocean-moss-ellipse-jar-candle-2238143%3Fvariant%3D48267069685915",
+  "price": 27.99,
+  "date": "2026-11-17",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-17T18:01"
  }
 ]
