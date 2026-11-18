@@ -1724,5 +1724,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-18T11:34"
+ },
+ {
+  "id": "48164500209819-r2",
+  "brand": "Yankee Candle",
+  "name": "Dried Lavender and Oak",
+  "kind": "Large Jar Candle",
+  "blurb": "At an outdoor farmer’s market, the scents of hand-tied bunches of lavender combine with woodsy notes and spices. Enriching the scene are top notes of peppercorn and a base of cedarwood and vanilla.",
+  "notes": [
+   "White Peppercorn",
+   "Lavender",
+   "Bergamot",
+   "Davana",
+   "White Flowers"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Dried-Lavender-and-Oak-Large-Jar-2671949E-1.jpg?v=1776682261",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-dried-lavender-and-oak-signature-large-jar-candle-2671949e%3Fvariant%3D48164500209819",
+  "price": 23.99,
+  "date": "2026-11-18",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-18T19:54"
+ },
+ {
+  "id": "48267057889435-r2",
+  "brand": "WoodWick",
+  "name": "Coastal Sunberry",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "A tropical getaway where juicy berries grow plump under the hot sun. Scents of lemon blossom, strawberries, and pink Himalayan sea salt add brightness and dimension.",
+  "notes": [
+   "Goji Berry",
+   "Baobab Flowers",
+   "Cucumber",
+   "Moringa",
+   "Violet Leaf"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Coastal-Sunberry-Ellipse-Jar-2670619E.jpg?v=1776334890",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-coastal-sunberry-ellipse-jar-candle-2670619e%3Fvariant%3D48267057889435",
+  "price": 27.99,
+  "date": "2026-11-18",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-18T19:12"
  }
 ]
