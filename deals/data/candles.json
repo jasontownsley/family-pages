@@ -1766,5 +1766,47 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-18T19:12"
+ },
+ {
+  "id": "42933165588635",
+  "brand": "Yankee Candle",
+  "name": "Christmas Eve",
+  "kind": "Large Jar Candle",
+  "blurb": "Traditional holiday scents of a warm hearth, sugared plums, and candied fruits.",
+  "notes": [
+   "Orange",
+   "Almond",
+   "Lime",
+   "Lemon Red Berry",
+   "Cinnamon"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Christmas-Eve-Large-Jar-2236777-1.jpg?v=1776512548",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-christmas-eve-signature-large-jar-candle-1631776e%3Fvariant%3D42933165588635",
+  "price": 23.99,
+  "date": "2026-11-19",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-19T08:17"
+ },
+ {
+  "id": "48267056578715-r2",
+  "brand": "WoodWick",
+  "name": "Tangerine and Citron",
+  "kind": "Large Jar Candle",
+  "blurb": "A citrus grove that's ready for picking: sweet tangerine and zesty citron notes waft from the branches, while scents of fresh green herbs perk up at the base of the trees.",
+  "notes": [
+   "Sparkling Lemon",
+   "Clementine",
+   "Tangerine",
+   "Citrus Zest",
+   "Green Tea"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Tangerine-Citron-Large-Jar-2670634E.jpg?v=1776288228",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-tangerine-and-citron-large-jar-candle-2670634e%3Fvariant%3D48267056578715",
+  "price": 26.39,
+  "date": "2026-11-19",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-19T11:33"
  }
 ]
