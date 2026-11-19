@@ -1,19 +1,5 @@
 [
  {
-  "id": 4129825,
-  "merchant": "Candles Direct",
-  "merchant_id": 13560,
-  "type": "promotion",
-  "title": "20% off WoodWick Candles",
-  "description": "Linen, Vanilla Bean, Island Coconut & more now reduced. Grab a deal on gorgeous crackling candles",
-  "code": "",
-  "terms": "Online Exclusive. Earn Loyalty points on all orders. Great range of WoodWick candles now reduced. While Stocks last.",
-  "start": "2026-10-01T11:59:00+00:00",
-  "end": "2026-11-19T10:59:00+00:00",
-  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fcollections%2Fwoodwick",
-  "added": "2026-10-01T10:01:47+00:00"
- },
- {
   "id": 4180387,
   "merchant": "Breeze eSim",
   "merchant_id": 84567,

@@ -1808,5 +1808,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-19T11:33"
+ },
+ {
+  "id": "48164505845915",
+  "brand": "Yankee Candle",
+  "name": "White Spruce and Grapefruit",
+  "kind": "Small Jar Candle",
+  "blurb": "Tart citrus notes are joined by the lively scent of spruce in this refreshing, exuberant fragrance — like enjoying fresh-squeezed grapefruit juice on a crisp winter morning. A base of rich vanilla, cedar, and musk notes adds a touch of warmth and depth to the scent.",
+  "notes": [
+   "Grapefruit",
+   "Pomelo",
+   "Pine",
+   "Orange",
+   "Spruce"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/White-Spruce-and-Grapefruit-Small-Jar-2244629.jpg?v=1776947783",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-white-spruce-and-grapefruit-signature-small-jar-candle-2244629%3Fvariant%3D48164505845915",
+  "price": 7.99,
+  "date": "2026-11-19",
+  "label": "Christmas scent",
+  "slot": "b",
+  "release": "2026-11-19T18:50"
+ },
+ {
+  "id": "48267058282651-r2",
+  "brand": "WoodWick",
+  "name": "Radiant Amber",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "The feeling of basking in warm sunlight. Notes of golden amber, smoky incense, and vanilla bean radiate as one.",
+  "notes": [
+   "Golden Amber",
+   "Aromatics",
+   "Warm Resin",
+   "Incense",
+   "Powder"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Radiant-Amber-Ellipse-Jar-2670614E.jpg?v=1776341807",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-radiant-amber-ellipse-jar-candle-2670614e%3Fvariant%3D48267058282651",
+  "price": 27.99,
+  "date": "2026-11-19",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-19T15:08"
  }
 ]
