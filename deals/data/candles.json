@@ -1850,5 +1850,47 @@
   "label": "Candle of the day",
   "slot": "b",
   "release": "2026-11-19T15:08"
+ },
+ {
+  "id": "48164505485467",
+  "brand": "Yankee Candle",
+  "name": "Shimmering Christmas Tree",
+  "kind": "Small Jar Candle",
+  "blurb": "Decked in the warm glow of twinkling lights, the outdoor fir tree shimmers with drops of melted snow. Decorated with lavender sprigs and eucalyptus, its airy fragrance captures the natural beauty of the holidays.",
+  "notes": [
+   "Sparkling Aldehydes",
+   "Bergamot",
+   "Dewy Greens",
+   "Fir Needle",
+   "Lavender"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Shimmering-Christmas-Tree-Small-Jar-2244636.jpg?v=1776767303",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-shimmering-christmas-tree-signature-small-jar-candle-2244636%3Fvariant%3D48164505485467",
+  "price": 7.99,
+  "date": "2026-11-20",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-20T08:36"
+ },
+ {
+  "id": "48267071127707-r2",
+  "brand": "WoodWick",
+  "name": "Yuzu and Vetiver",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Bright, aromatic scents of yuzu fruits, soft cedarwood, and dried vetiver slowly rise from tall grass and dense woods.",
+  "notes": [
+   "Yuzu",
+   "Mandarin",
+   "Acai",
+   "Cyclamen",
+   "Waterlily"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yuzu-Vetiver-Ellipse-Jar.jpg?v=1776339672",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-yuzu-and-vetiver-ellipse-jar-candle-2238138%3Fvariant%3D48267071127707",
+  "price": 27.99,
+  "date": "2026-11-20",
+  "label": "Candle of the day",
+  "slot": "a",
+  "release": "2026-11-20T08:13"
  }
 ]
