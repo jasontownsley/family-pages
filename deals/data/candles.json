@@ -1892,5 +1892,45 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-20T08:13"
+ },
+ {
+  "id": "42933165621403-r2",
+  "brand": "Yankee Candle",
+  "name": "Sparkling Cinnamon",
+  "kind": "Large Jar Candle",
+  "blurb": "Holiday glow… the spicy warmth of real imported stick cinnamon with a hint of cloves.",
+  "notes": [
+   "Cinnamon Spice Clove",
+   "Cardamom Bay Leaf",
+   "Cedarwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Sparkling-Cinnamon-Large-Jar-2235530-1.jpg?v=1776785812",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-sparkling-cinnamon-signature-large-jar-candle-1629975e%3Fvariant%3D42933165621403",
+  "price": 23.99,
+  "date": "2026-11-20",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-20T19:00"
+ },
+ {
+  "id": "47606046392475-r2",
+  "brand": "P.F. Candle Co.",
+  "name": "Wild Herb Tonic",
+  "kind": "Reed Diffuser",
+  "blurb": "Barefoot walks through wild herb gardens, cool mountain stream baths, crisp morning air.",
+  "notes": [
+   "lemon balm",
+   "orange rind",
+   "canadian fir needle",
+   "eucalyptus",
+   "clove leaf"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/RD36_WildHerbTonic.png?v=1767566886",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fpf-candle-co-wild-herb-tonic-rd36%3Fvariant%3D47606046392475",
+  "price": 28.0,
+  "date": "2026-11-20",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-20T21:21"
  }
 ]
