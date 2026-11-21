@@ -1974,5 +1974,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-21T08:29"
+ },
+ {
+  "id": "42896099508379-r2",
+  "brand": "Yankee Candle",
+  "name": "Coconut Beach",
+  "kind": "Large Jar Candle",
+  "blurb": "A taste of the tropics - warm coconut notes blended with scents of pineapple and vanilla.",
+  "notes": [
+   "Salty Air",
+   "Pineapple",
+   "Fresh Coconut",
+   "Lei Blossom",
+   "Airy Musk"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Coconut-Beach-Large-Jar-2235529-1.jpg?v=1776505284",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-coconut-beach-signature-large-jar-candle-1629967e%3Fvariant%3D42896099508379",
+  "price": 23.99,
+  "date": "2026-11-21",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-21T17:49"
+ },
+ {
+  "id": "48267070865563-r2",
+  "brand": "WoodWick",
+  "name": "Cherry Blossom and Vanilla",
+  "kind": "Large Jar Candle",
+  "blurb": "A grove of cherry blossom trees has reached peak bloom. Subtle scents of orange, almond, and vanilla catch the breeze.",
+  "notes": [
+   "Coconut",
+   "Peach",
+   "Orange",
+   "Apple",
+   "Red Fruits"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Cherry-Blossom-Vanilla-Large-Jar-2238139.jpg?v=1776287374",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-cherry-blossom-and-vanilla-large-jar-candle-2238139%3Fvariant%3D48267070865563",
+  "price": 26.39,
+  "date": "2026-11-21",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-21T17:00"
  }
 ]
