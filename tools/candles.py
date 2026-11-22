@@ -36,6 +36,7 @@ MANIFEST = ROOT / "deals" / "data" / "candles.json"
 SITE = "https://dailydealsuk.co.uk/deals/candles"
 PUBLISHER, MERCHANT = "3105665", "13560"
 REPEAT_AFTER_DAYS = 21          # re-pin a scent (as a fresh pin) after this many days
+SEASONAL_REPEAT_DAYS = 10       # ...or sooner for Christmas / autumn scents in their season (the pool is small)
 KEY_FILE = Path(r"C:\Users\User\ClaudeJobs\awin_key.txt")
 UA = {"User-Agent": "Mozilla/5.0 DailyDealsUK/1.0"}
 
@@ -363,7 +364,12 @@ def pick(day, n, slot="a"):
     seen, uniq = set(), []
     for p in sorted((p for p in map(parse, feed_rows()) if p), key=lambda p: -p["price"]):   # one size per scent (largest)
         k = (p["brand"], p["name"].lower())
-        if k in seen or (k in last and (day - Date.fromisoformat(last[k])).days < REPEAT_AFTER_DAYS):
+        rank = label_for(p, fams)[0]
+        seasonal = fams and rank < 2 * len(fams)
+        if fams and day.month in (11, 12) and not seasonal:
+            continue                                # no summer scents in the Christmas season: fewer pins instead
+        gap = SEASONAL_REPEAT_DAYS if seasonal else REPEAT_AFTER_DAYS
+        if k in seen or (k in last and (day - Date.fromisoformat(last[k])).days < gap):
             continue
         seen.add(k)
         if k in times:
