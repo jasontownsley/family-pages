@@ -2058,5 +2058,47 @@
   "label": "Candle of the day",
   "slot": "a",
   "release": "2026-11-22T08:00"
+ },
+ {
+  "id": "42896100098203",
+  "brand": "Yankee Candle",
+  "name": "Red Raspberry",
+  "kind": "Large Jar Candle",
+  "blurb": "Tangy sweet and full of nature's goodness… there is nothing quite as delicious as ripe, rosy red raspberries.",
+  "notes": [
+   "Juicy Orange",
+   "Sweet Mandarin",
+   "Black Cherry",
+   "Black Raspberries",
+   "Juicy Strawberries"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Red-Raspberry-Large-Jar-2236225-1.jpg?v=1781364892",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-red-raspberry-signature-large-jar-candle-1701375e%3Fvariant%3D42896100098203",
+  "price": 23.99,
+  "date": "2026-11-22",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-22T15:20"
+ },
+ {
+  "id": "48164508663963",
+  "brand": "Yankee Candle",
+  "name": "Starfruit and Sunshine",
+  "kind": "Large Jar Candle",
+  "blurb": "Enjoy the afternoon while sunshine filters through the palm trees by your cabana. This joyful scent is the perfect combination of fruit nectar, spicy cardamom, red ginger, and tropical mango notes.",
+  "notes": [
+   "Tropical Fruit Nectar",
+   "Tangelo",
+   "Orange",
+   "Red Ginger",
+   "Peach"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Starfruit-and-Sunshine-Large-Jar-2235509-1.jpg?v=1776796853",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-starfruit-and-sunshine-signature-large-jar-candle-2235509%3Fvariant%3D48164508663963",
+  "price": 23.99,
+  "date": "2026-11-22",
+  "label": "Candle of the day",
+  "slot": "b",
+  "release": "2026-11-22T20:46"
  }
 ]
