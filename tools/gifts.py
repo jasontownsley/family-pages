@@ -237,8 +237,8 @@ def write_feed(manifest):
                      f"<pubDate>{format_datetime(when)}</pubDate><description>{e(desc)}</description>"
                      f"<enclosure url=\"{url}pin.jpg\" length=\"{pin.stat().st_size if pin.exists() else 0}\" type=\"image/jpeg\"/>"
                      f"<media:content url=\"{url}pin.jpg\" medium=\"image\" type=\"image/jpeg\" width=\"1000\" height=\"1500\"/></item>")
-    # collage roundup pins (collages.py), released through the day like the product pins
-    cfile = MANIFEST.parent / "collages.json"
+    # collage roundup pins (collages.py) - switched off 22 Nov 2026: product pins only
+    cfile = MANIFEST.parent / "collages.json-off"
     for c in sorted((json.loads(cfile.read_text(encoding="utf-8")) if cfile.exists() else []),
                     key=lambda c: c.get("release", c["date"]), reverse=True)[:40]:
         pin = OUT.parent / "lists" / c["id"] / "pin.jpg"

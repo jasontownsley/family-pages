@@ -354,7 +354,7 @@ def build(days, spots_by_key):
     hero = (('<div class="hero"><h1>Christmas gift ideas from UK shops, fresh every day</h1>'
              '<p>Hand-picked gifts for her, him, the kids and Secret Santa - with prices and savings checked twice a day.</p>'
              f'<div class="cta"><a class="a1" href="{SITE}/guides/christmas-gift-guide/">&#127876; Christmas gift guide</a>'
-             '<a class="a2" href="#gift-lists">Gift lists</a><a class="a2" href="#gift-finder">Gift finder</a></div></div>') if xmas else
+             '<a class="a2" href="#gift-finder">Gift finder</a></div></div>') if xmas else
             ('<div class="hero"><h1>Hand-picked UK finds &amp; gift ideas, fresh every day</h1>'
              '<p>Well-reviewed home, kitchen, beauty and gift picks from UK shops, plus Christmas gift ideas from brands you love.</p>'
              f'<div class="cta"><a class="a1" href="{SITE}/guides/christmas-gift-guide/">&#127876; Christmas gift guide</a><a class="a2" href="#today">Today\'s finds</a></div></div>'))
@@ -383,7 +383,7 @@ def build(days, spots_by_key):
             cards.append(f'<a class="scard" href="{SITE}/lists/{c["id"]}/"><span class="simg"><img src="{SITE}/lists/{c["id"]}/pin.jpg" '
                          f'alt="{e(c["title"])}" loading="lazy"></span><span class="cat">Gift list</span><strong>{e(c["title"])}</strong>'
                          f'<small>{e(c["sub"])}</small></a>')
-    if cards:
+    if cards and False:                                         # collage gift lists switched off 22 Nov 2026
         out.append('<section id="gift-lists"><div class="sh"><div><h2>&#127873; Christmas gift lists</h2><p>Ready-made shortlists by '
                    'budget and person - stocking fillers, Secret Santa, gifts for her and him, and more.</p></div></div>'
                    '<div class="sgrid">' + "".join(cards[:10]) + "</div></section>")
