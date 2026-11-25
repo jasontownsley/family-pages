@@ -2310,5 +2310,47 @@
   "label": "Autumn scent",
   "slot": "a",
   "release": "2026-11-25T12:43"
+ },
+ {
+  "id": "48164507156635-r3",
+  "brand": "Yankee Candle",
+  "name": "Caramel Kiss",
+  "kind": "Large Jar Candle",
+  "blurb": "This sophisticated scent blends sweet and savory for an irresistible confectionary kiss. Notes of brown sugar and caramel cream are balanced by the scent of sea salt for a delectable fragrance experience.",
+  "notes": [
+   "Whipped Cream",
+   "Marshmallow",
+   "Lemon Peel",
+   "Sea Salt",
+   "Brown Sugar"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Caramel-Kiss-Large-Jar-2243878-1.jpg?v=1776437033",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-caramel-kiss-signature-large-jar-candle-2243878%3Fvariant%3D48164507156635",
+  "price": 23.99,
+  "date": "2026-11-25",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-25T19:24"
+ },
+ {
+  "id": "48164504273051",
+  "brand": "Yankee Candle",
+  "name": "Iced Berry Lemonade",
+  "kind": "Small Jar Candle",
+  "blurb": "A refreshing fragrance blend of lemon, tart grapefruit, and strawberry aromas, chilled and ready for enjoying on a beautiful, shaded patio. Yuzu and pineapple scents enliven the heart of the fragrance, while vanilla bean and violet leaf notes add depth.",
+  "notes": [
+   "Strawberry Leaf",
+   "Lemon Sugar",
+   "Sweet Mandarin",
+   "Ruby Red Grapefruit",
+   "Yuzu"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Iced-Berry-Lemonade-Small-Jar-2244656.jpg?v=1776689450",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-iced-berry-lemonade-signature-small-jar-candle-2244656%3Fvariant%3D48164504273051",
+  "price": 7.99,
+  "date": "2026-11-25",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-25T20:42"
  }
 ]
