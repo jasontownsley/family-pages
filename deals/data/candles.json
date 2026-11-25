@@ -2268,5 +2268,47 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-24T20:49"
+ },
+ {
+  "id": "48164500668571-r3",
+  "brand": "Yankee Candle",
+  "name": "Sugared Cinnamon Apple",
+  "kind": "Large Jar Candle",
+  "blurb": "The delicious aroma of crunchy apple slices sugared with cinnamon and vanilla. This sweet and spicy fragrance will make you crave the fruits of autumn — or a big mug of cider.",
+  "notes": [
+   "Apple Slices",
+   "Cinnamon Cider",
+   "Sugar",
+   "Fresh Vanilla",
+   "Nutmeg"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Sugared-Cinnamon-Apple-Large-Jar-2671928E-1.jpg?v=1776797656",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-sugared-cinnamon-apple-signature-large-jar-candle-2671928e%3Fvariant%3D48164500668571",
+  "price": 23.99,
+  "date": "2026-11-25",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-25T10:20"
+ },
+ {
+  "id": "48267050221723-r3",
+  "brand": "WoodWick",
+  "name": "Verdant Fig",
+  "kind": "Large Jar Candle",
+  "blurb": "The luscious scent of ripe, juicy fig is tempered by woody notes of fig leaves and cedarwood.",
+  "notes": [
+   "Juicy Fig",
+   "Black Currant",
+   "Green Stems",
+   "Fig Leaves",
+   "Geranium"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Verdant-Fig-Large-Jar-2674136E.jpg?v=1776352192",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-verdant-fig-large-jar-candle-2674136e%3Fvariant%3D48267050221723",
+  "price": 26.39,
+  "date": "2026-11-25",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-25T12:43"
  }
 ]
