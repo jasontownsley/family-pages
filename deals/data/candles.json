@@ -2394,5 +2394,47 @@
   "label": "Autumn scent",
   "slot": "a",
   "release": "2026-11-26T12:06"
+ },
+ {
+  "id": "48164501684379",
+  "brand": "Yankee Candle",
+  "name": "Black Cherry",
+  "kind": "Reed Diffuser",
+  "blurb": "The rich, sweet and tart scent of deliciously ripe black cherries. The fragrance gains extra facets with touches of cinnamon and almond notes.",
+  "notes": [
+   "Cherry",
+   "Almond",
+   "Cherry",
+   "Cinnamon",
+   "Sweet Cherry"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Reed_Diffuser_Box_Silo_Black_Cherry.jpg?v=1781779440",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-black-cherry-reed-diffuser-100ml-2653176e%3Fvariant%3D48164501684379",
+  "price": 13.59,
+  "date": "2026-11-26",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-26T20:52"
+ },
+ {
+  "id": "48164503322779",
+  "brand": "Yankee Candle",
+  "name": "Warm Cashmere",
+  "kind": "Small Jar Candle",
+  "blurb": "The comforting embrace of your favorite sweater or blanket. Equal parts calming and luxurious, this cozy cashmere scent is warmed further by notes of golden amber and soft sandalwood.",
+  "notes": [
+   "Sun-Kissed Orange",
+   "Cashmere Wood",
+   "Golden Amber",
+   "Cardamom",
+   "Creamy Sandalwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Warm-Cashmere-Small-Jar-2244670.jpg?v=1776948865",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-warm-cashmere-signature-small-jar-candle-2244670%3Fvariant%3D48164503322779",
+  "price": 7.99,
+  "date": "2026-11-26",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-26T20:44"
  }
 ]
