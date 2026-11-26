@@ -2352,5 +2352,47 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-25T20:42"
+ },
+ {
+  "id": "48164502470811-r2",
+  "brand": "Yankee Candle",
+  "name": "Snow Kissed Pine",
+  "kind": "Medium Jar Candle",
+  "blurb": "Notes of crisp frosty air, iced lavender, and a wave of aquatic freshness combine to capture the cool beauty of a holiday journey through a winter wonderland.",
+  "notes": [
+   "of crisp frosty air",
+   "iced lavender",
+   "and a wave of aquatic freshness combine to capture the cool beauty of a holiday journey through a winter wonderland. Fragrance Notes:",
+   "Watery Marine",
+   "Icy Snow"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Snow-Kissed-Pine-Medium-Jar-2247891.jpg?v=1776769663",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-snow-kissed-pine-signature-medium-jar-candle-2247891%3Fvariant%3D48164502470811",
+  "price": 19.99,
+  "date": "2026-11-26",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-26T11:15"
+ },
+ {
+  "id": "48267050942619-r3",
+  "brand": "WoodWick",
+  "name": "Wood Smoke",
+  "kind": "Ellipse Jar Candle",
+  "blurb": "Sophisticated notes of black cedar logs and leaves are enveloped in smouldering embers, evoking late-night bonfires.",
+  "notes": [
+   "Clove Bud",
+   "Warm Incense",
+   "Pine Needle",
+   "Cedar Leaf",
+   "Glowing Amber"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Wood-Smoke-Ellipse-Jar-2670672E.jpg?v=1776352249",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fwoodwick-wood-smoke-ellipse-jar-candle-2670672e%3Fvariant%3D48267050942619",
+  "price": 27.99,
+  "date": "2026-11-26",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-26T12:06"
  }
 ]
