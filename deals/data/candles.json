@@ -2436,5 +2436,47 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-26T20:44"
+ },
+ {
+  "id": "45470731862171-r3",
+  "brand": "Yankee Candle",
+  "name": "North Pole Hideaway",
+  "kind": "Large Jar Candle",
+  "blurb": "Be magically transported to a sparkling North Pole wonderland with cool notes of icy air, arctic mint, and snow powder.",
+  "notes": [
+   "Sparkling Snowflakes",
+   "Frosted Greens",
+   "Chilled Bergamot",
+   "Arctic Mint",
+   "Icy Air"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Yankee-Candle-northpole-hideaway-large-jar-01.jpg?v=1739443384",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-north-pole-hideaway-signature-large-jar-candle-1759284e%3Fvariant%3D45470731862171",
+  "price": 26.99,
+  "date": "2026-11-27",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-27T10:53"
+ },
+ {
+  "id": "48164503224475-r2",
+  "brand": "Yankee Candle",
+  "name": "Soft Blanket",
+  "kind": "Small Jar Candle",
+  "blurb": "Snuggle up in the irresistible softness of a fluffy blanket warm from the dryer. Washed in fragrances of cashmere vanilla, powdery rose, and a hint of amber, this relaxing fragrance surrounds you in cozy comfort.",
+  "notes": [
+   "Bergamot",
+   "Citrus",
+   "Blackberry",
+   "Cashmere Vanilla",
+   "Powdery Rose"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Soft-Blanket-Small-Jar-2244671.jpg?v=1776771471",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-soft-blanket-signature-small-jar-candle-2244671%3Fvariant%3D48164503224475",
+  "price": 7.99,
+  "date": "2026-11-27",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-27T08:04"
  }
 ]
