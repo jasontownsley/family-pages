@@ -2478,5 +2478,47 @@
   "label": "Autumn scent",
   "slot": "a",
   "release": "2026-11-27T08:04"
+ },
+ {
+  "id": "48164501258395-r2",
+  "brand": "Yankee Candle",
+  "name": "Amber and Sandalwood",
+  "kind": "Reed Diffuser",
+  "blurb": "Warm yourself on a secluded beach with sun-drenched notes of driftwood, amber, and cardamom. Hints of caramel and patchouli round out this relaxing fragrance experience.",
+  "notes": [
+   "Pepper",
+   "Tonka Bean",
+   "Cardamom",
+   "Caramel",
+   "Lavender"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Reed_Diffuser_Box_Silo_Amber_Sandalwood.jpg?v=1781779396",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-amber-and-sandalwood-reed-diffuser-100ml-2653182e%3Fvariant%3D48164501258395",
+  "price": 13.59,
+  "date": "2026-11-27",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-27T16:10"
+ },
+ {
+  "id": "48164506501275-r3",
+  "brand": "Yankee Candle",
+  "name": "Seaside Woods",
+  "kind": "Large Jar Candle",
+  "blurb": "Experience a cozy, secluded coastal escape. Warm scents of sun-dried driftwood and soft orange blossoms are met with hints of citrus, evoking the quietude of a balmy shoreline.",
+  "notes": [
+   "Orange Blossoms",
+   "Cool Citrus",
+   "Sweet Alyssum",
+   "Acacia",
+   "Cottonwood"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Seaside-Woods-Large-Jar-2243919-1.jpg?v=1776766355",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-seaside-woods-signature-large-jar-candle-2243919%3Fvariant%3D48164506501275",
+  "price": 23.99,
+  "date": "2026-11-27",
+  "label": "Autumn scent",
+  "slot": "b",
+  "release": "2026-11-27T18:25"
  }
 ]
