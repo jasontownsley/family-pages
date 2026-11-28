@@ -2520,5 +2520,47 @@
   "label": "Autumn scent",
   "slot": "b",
   "release": "2026-11-27T18:25"
+ },
+ {
+  "id": "42933165883547-r3",
+  "brand": "Yankee Candle",
+  "name": "Peppermint Pinwheels",
+  "kind": "Large Jar Candle",
+  "blurb": "The scent of homemade peppermint pinwheel cookies made sweeter when shared with friends and family.",
+  "notes": [
+   "Sparkling Peppermint",
+   "Melted Butter",
+   "Sea Salt",
+   "Kettle Corn",
+   "Crushed Candy Cane"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/products/Yankee-Candle-1721063E-01.jpg?v=1738775005",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-peppermint-pinwheels-signature-large-jar-candle-1721063e%3Fvariant%3D42933165883547",
+  "price": 29.99,
+  "date": "2026-11-28",
+  "label": "Christmas scent",
+  "slot": "a",
+  "release": "2026-11-28T10:22"
+ },
+ {
+  "id": "48164504567963-r2",
+  "brand": "Yankee Candle",
+  "name": "Black Coconut",
+  "kind": "Small Jar Candle",
+  "blurb": "Fruity pineapple and coconut notes add color to a vibrant sunset in the tropics, promising an enticing evening. Mysterious musk, powdery florals, and woody notes help deliver this sensuous fragrance experience.",
+  "notes": [
+   "Fruity Pineapple",
+   "Coconut",
+   "Coconut Blossom",
+   "Powdery Notes",
+   "Woody Notes"
+  ],
+  "image": "https://cdn.shopify.com/s/files/1/0444/8429/6859/files/Black-Coconut-Small-Jar-2244650.jpg?v=1776432772",
+  "url": "https://www.awin1.com/cread.php?awinmid=13560&awinaffid=3105665&ued=https%3A%2F%2Fcandlesdirect.com%2Fproducts%2Fyankee-candle-black-coconut-signature-small-jar-candle-2244650%3Fvariant%3D48164504567963",
+  "price": 7.99,
+  "date": "2026-11-28",
+  "label": "Autumn scent",
+  "slot": "a",
+  "release": "2026-11-28T13:18"
  }
 ]
